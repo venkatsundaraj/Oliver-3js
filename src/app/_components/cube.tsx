@@ -74,8 +74,18 @@ const Cube: FC<CubeProps> = ({}) => {
     setMotionValue(modifiedValue)
   })
 
+  const spring = useSpring(scrollYProgress, {
+    stiffness: 100,
+    damping: 30,
+    restDelta: 0.001,
+  })
+
+  useEffect(() => {
+    console.log(spring)
+  }, [scrollYProgress, spring])
+
   return (
-    <motion.mesh rotation-y={motionValue} ref={mesh}>
+    <motion.mesh rotation-y={spring} ref={mesh}>
       <boxGeometry args={[2, 2, 2]} />
 
       <meshStandardMaterial map={texture_1} />
