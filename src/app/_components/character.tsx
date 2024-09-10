@@ -1,46 +1,34 @@
 "use effect"
 
-import { useAnimations, useGLTF } from "@react-three/drei"
+import { useAnimations, useGLTF, useScroll } from "@react-three/drei"
 import { useFrame } from "@react-three/fiber"
+import { useMotionValueEvent } from "framer-motion"
 import { FC, useRef, useEffect } from "react"
-import { Group } from "three"
+import { Group, SkinnedMesh } from "three"
 
 interface CharacterProps {}
 
-useGLTF.preload("shaman.glb")
+useGLTF.preload("robot_playground.glb")
 const Character: FC<CharacterProps> = ({}) => {
   const group = useRef<Group>(null)
-  const { animations, scene } = useGLTF("shaman.glb")
-  const { actions } = useAnimations(animations, scene)
+  const { animations, scene } = useGLTF("robot_playground.glb")
+  const { actions, ...values } = useAnimations(animations, scene)
+  console.log(values)
+  const scroll = useScroll()
 
   useEffect(() => {
-    console.log("Available actions:", actions)
-    for (const property in actions) {
-      if (actions.hasOwnProperty(property)) {
-        // @ts-ignore
-        actions[property].play().paused = true
-        // console.log("Playing action:", property);
-      }
-    }
-  }, [actions])
+    console.log(actions)
+    //@ts-ignore
+    actions["Experiment"].play().paused = true
+  }, [])
 
   useFrame(() => {
     //@ts-ignore
-    // (actions["NurbsPath.003Action.001"].time =
-    //@ts-ignore
-    // actions["NurbsPath.003Action.001"].getClip().duration * scroll.offset)
-
-    // @ts-ignore
-    for (const property in actions) {
+    actions["Experiment"].time =
       //@ts-ignore
-      actions[property].time =
-        //@ts-ignore
-        actions[property].getClip().duration * scroll.offset
-      // console.log(property)
-    }
+      (actions["Experiment"].getClip().duration * scroll.offset) / 4
   })
 
-  console.log(actions)
   return (
     <group ref={group}>
       <primitive object={scene} />

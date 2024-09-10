@@ -13,10 +13,10 @@ function Loader() {
 
 const Model: FC<ModelProps> = ({}) => {
   return (
-    <Canvas>
-      <ambientLight />
+    <Canvas gl={{ antialias: true }} dpr={[1, 1.5]}>
+      <directionalLight position={[-5, -5, 5]} intensity={4} />
       <Suspense fallback={<Loader />}>
-        <ScrollControls damping={0.5} pages={3}>
+        <ScrollControls damping={0.5} pages={10}>
           <Character />
         </ScrollControls>
       </Suspense>
