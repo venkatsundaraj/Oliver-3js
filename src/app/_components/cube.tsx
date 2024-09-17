@@ -85,7 +85,7 @@ const Cube: FC<CubeProps> = ({}) => {
   }, [scrollYProgress, spring])
 
   return (
-    <motion.mesh rotation-y={spring} ref={mesh}>
+    <motion.mesh rotation-y={spring} rotation-x={spring} ref={mesh}>
       <boxGeometry args={[2, 2, 2]} />
 
       <meshStandardMaterial map={texture_1} />
