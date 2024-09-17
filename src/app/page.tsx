@@ -1,10 +1,11 @@
-"use client"
+"use client";
 
-import { FC } from "react"
-import { Canvas } from "@react-three/fiber"
-import Cube from "./_components/cube"
-import { Suspense } from "react"
-import { OrbitControls } from "@react-three/drei"
+import { FC } from "react";
+import { Canvas } from "@react-three/fiber";
+import Cube from "./_components/cube";
+import { Suspense } from "react";
+import { OrbitControls } from "@react-three/drei";
+import Square from "./_components/square";
 
 interface pageProps {}
 
@@ -16,6 +17,7 @@ const page: FC<pageProps> = ({}) => {
           <Canvas className="w-screen min-h-screen flex items-center justify-center">
             <OrbitControls enablePan={true} enableZoom={false} />
             <Cube />
+            {/* <Square /> */}
             <ambientLight intensity={2} />
             <directionalLight position={[2, 1, 1]} />
           </Canvas>
@@ -25,7 +27,7 @@ const page: FC<pageProps> = ({}) => {
         <h1>Hello world</h1>
       </section>
     </main>
-  )
-}
+  );
+};
 
-export default page
+export default page;
