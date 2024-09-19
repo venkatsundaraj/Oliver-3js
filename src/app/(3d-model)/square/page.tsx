@@ -1,11 +1,11 @@
-"use client";
+"use client"
 
-import { FC } from "react";
-import { Canvas } from "@react-three/fiber";
-import Cube from "./_components/cube";
-import { Suspense } from "react";
-import { OrbitControls } from "@react-three/drei";
-import Square from "./_components/square";
+import { FC } from "react"
+import { Canvas } from "@react-three/fiber"
+import Cube from "@/app/_components/cube"
+import { Suspense } from "react"
+import { OrbitControls } from "@react-three/drei"
+import Square from "@/app/_components/square"
 
 interface pageProps {}
 
@@ -27,7 +27,7 @@ const page: FC<pageProps> = ({}) => {
         <h1>Hello world</h1>
       </section>
     </main>
-  );
-};
+  )
+}
 
-export default page;
+export default page

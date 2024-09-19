@@ -1,7 +1,7 @@
 "use client"
 
 import { FC, useEffect } from "react"
-import { Button } from "../_components/button"
+import { Button } from "../../_components/button"
 import { useSpring } from "framer-motion"
 import { motion } from "framer-motion-3d"
 import { cn } from "@/lib/utils"
