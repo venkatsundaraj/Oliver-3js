@@ -1,11 +1,11 @@
-"use client";
+"use client"
 
-import { FC } from "react";
-import Link from "next/link";
-import Image from "next/image";
-import { Icons } from "@/app/_components/icons";
-import { MainNavItems } from "@/types";
-import { cn } from "@/lib/utils";
+import { FC } from "react"
+import Link from "next/link"
+import Image from "next/image"
+import { Icons } from "@/app/_components/icons"
+import { MainNavItems } from "@/types"
+import { cn } from "@/lib/utils"
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -14,10 +14,10 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
-} from "@/app/_components/ui/navigation-menu";
+} from "@/app/_components/ui/navigation-menu"
 
 interface NavbarProps {
-  items: MainNavItems;
+  items: MainNavItems
 }
 
 const Navbar: FC<NavbarProps> = ({ items }) => {
@@ -51,7 +51,7 @@ const Navbar: FC<NavbarProps> = ({ items }) => {
                       key={index}
                       href={item.disabled ? "#" : item.href}
                       className={cn(
-                        "inline-flex items-center text-foreground flex-row justify-center group-hover:text-foreground/50 text-sm font-medium font-paragraph",
+                        "inline-flex items-center text-foreground flex-row justify-center group-hover:text-primary-foreground text-sm font-medium font-paragraph",
                         {
                           "cursor-not-allowed text-foreground/50":
                             item.disabled,
@@ -61,37 +61,32 @@ const Navbar: FC<NavbarProps> = ({ items }) => {
                       {item.title}
                     </Link>
                   </NavigationMenuTrigger>
-                  <NavigationMenuContent className="bg-yellow-400  w-screen rounded-none">
-                    <ul className="grid w-screen gap-3 p-6 lg:grid-cols-[.75fr_1fr] rounded-none">
-                      <li className="row-span-3">
-                        <NavigationMenuLink asChild>
-                          <a
-                            className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md"
-                            href="/"
+
+                  {item?.subItems.length ? (
+                    <NavigationMenuContent className="bg-slate-50 w-screen">
+                      <ul className="flex items-center justify-end w-screen gap-4 px-4 py-6">
+                        {item.subItems.map((subItem, i) => (
+                          <li
+                            key={i}
+                            className="flex items-center justify-center"
                           >
-                            <div className="mb-2 mt-4 text-lg font-medium">
-                              shadcn/ui
-                            </div>
-                            <p className="text-sm leading-tight text-muted-foreground">
-                              Beautifully designed components that you can copy
-                              and paste into your apps. Accessible.
-                              Customizable. Open Source.
-                            </p>
-                          </a>
-                        </NavigationMenuLink>
-                      </li>
-                      <li title="Introduction">
-                        Re-usable components built using Radix UI and Tailwind
-                        CSS.
-                      </li>
-                      <li title="Installation">
-                        How to install dependencies and structure your app.
-                      </li>
-                      <li title="Typography">
-                        Styles for headings, paragraphs, lists...etc
-                      </li>
-                    </ul>
-                  </NavigationMenuContent>
+                            <Link
+                              className={cn(
+                                "inline-flex items-center text-black flex-row justify-center group-hover:text-primary-foreground text-sm font-medium font-paragraph",
+                                {
+                                  "cursor-not-allowed text-foreground/50":
+                                    item.disabled,
+                                }
+                              )}
+                              href={subItem.href}
+                            >
+                              {subItem.title}
+                            </Link>
+                          </li>
+                        ))}
+                      </ul>
+                    </NavigationMenuContent>
+                  ) : null}
                 </NavigationMenuItem>
               </NavigationMenuList>
             </NavigationMenu>
@@ -99,7 +94,7 @@ const Navbar: FC<NavbarProps> = ({ items }) => {
         </nav>
       ) : null}
     </div>
-  );
-};
+  )
+}
 
-export default Navbar;
+export default Navbar

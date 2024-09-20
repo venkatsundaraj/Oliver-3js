@@ -5,7 +5,7 @@ export type SubNavItem = {
 }
 
 export type NavItem = SubNavItem & {
-  subItems?: SubNavItem[]
+  subItems: SubNavItem[]
 }
 
 export type MainNavItems = NavItem[]
