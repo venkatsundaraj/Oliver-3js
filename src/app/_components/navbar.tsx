@@ -1,11 +1,11 @@
-"use client"
+"use client";
 
-import { FC } from "react"
-import Link from "next/link"
-import Image from "next/image"
-import { Icons } from "@/app/_components/icons"
-import { MainNavItems } from "@/types"
-import { cn } from "@/lib/utils"
+import { FC } from "react";
+import Link from "next/link";
+import Image from "next/image";
+import { Icons } from "@/app/_components/icons";
+import { MainNavItems } from "@/types";
+import { cn } from "@/lib/utils";
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -14,15 +14,15 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
-} from "@/app/_components/ui/navigation-menu"
+} from "@/app/_components/ui/navigation-menu";
 
 interface NavbarProps {
-  items: MainNavItems
+  items: MainNavItems;
 }
 
 const Navbar: FC<NavbarProps> = ({ items }) => {
   return (
-    <div className="sm:flex flex-row items-center justify-center gap-8 py-4 px-10 border-b">
+    <div className="sm:flex relative flex-row items-center justify-between gap-8 py-4 px-10 border-b">
       <Link
         href="/"
         className="flex z-40 font-semibold items-center justify-center flex-nowrap gap-2"
@@ -39,15 +39,19 @@ const Navbar: FC<NavbarProps> = ({ items }) => {
       {items?.length ? (
         <nav className="hidden md:flex items-center justify-center gap-8 flex-row">
           {items.map((item, index) => (
-            <NavigationMenu key={index} orientation="vertical">
+            <NavigationMenu
+              key={index}
+              orientation="vertical"
+              className="static"
+            >
               <NavigationMenuList>
                 <NavigationMenuItem>
-                  <NavigationMenuTrigger>
+                  <NavigationMenuTrigger className="static">
                     <Link
                       key={index}
                       href={item.disabled ? "#" : item.href}
                       className={cn(
-                        "inline-flex items-center text-foreground flex-row justify-center hover:text-foreground/50 text-sm font-medium font-paragraph",
+                        "inline-flex items-center text-foreground flex-row justify-center group-hover:text-foreground/50 text-sm font-medium font-paragraph",
                         {
                           "cursor-not-allowed text-foreground/50":
                             item.disabled,
@@ -57,8 +61,8 @@ const Navbar: FC<NavbarProps> = ({ items }) => {
                       {item.title}
                     </Link>
                   </NavigationMenuTrigger>
-                  <NavigationMenuContent>
-                    <ul className="grid gap-3 p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
+                  <NavigationMenuContent className="bg-yellow-400  w-screen rounded-none">
+                    <ul className="grid w-screen gap-3 p-6 lg:grid-cols-[.75fr_1fr] rounded-none">
                       <li className="row-span-3">
                         <NavigationMenuLink asChild>
                           <a
@@ -95,7 +99,7 @@ const Navbar: FC<NavbarProps> = ({ items }) => {
         </nav>
       ) : null}
     </div>
-  )
-}
+  );
+};
 
-export default Navbar
+export default Navbar;

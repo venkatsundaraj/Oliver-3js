@@ -1,4 +1,4 @@
-import type { Config } from "tailwindcss"
+import type { Config } from "tailwindcss";
 
 const config: Config = {
   content: [
@@ -105,9 +105,9 @@ const config: Config = {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
         scaleIn: "scaleIn 200ms ease",
-        scaleOut: "scaleOut 200ms ease",
-        fadeIn: "fadeIn 200ms ease",
-        fadeOut: "fadeOut 200ms ease",
+        scaleOut: "scaleOut 1000ms ease",
+        "fade-in": "fadeIn 1000ms ease",
+        "fade-out": "fadeOut 200ms ease",
         enterFromLeft: "enterFromLeft 250ms ease",
         enterFromRight: "enterFromRight 250ms ease",
         exitToLeft: "exitToLeft 250ms ease",
@@ -116,5 +116,5 @@ const config: Config = {
     },
   },
   plugins: [],
-}
-export default config
+};
+export default config;
