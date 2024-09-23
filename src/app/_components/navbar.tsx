@@ -63,7 +63,7 @@ const Navbar: FC<NavbarProps> = ({ items }) => {
                   </NavigationMenuTrigger>
 
                   {item?.subItems.length ? (
-                    <NavigationMenuContent className="bg-slate-50 w-screen">
+                    <NavigationMenuContent className="bg-slate-50 w-screen mt-0">
                       <ul className="flex items-center justify-end w-screen gap-4 px-4 py-6">
                         {item.subItems.map((subItem, i) => (
                           <li
