@@ -73,28 +73,61 @@ const config: Config = {
           to: { transform: "translateX(0)" },
         },
         "slide-in-from-right-52": {
-          from: { transform: "translateX(13rem)" },
-          to: { transform: "translateX(0)" },
+          from: { transform: "translateX(13rem)", opacity: "0" },
+          to: { transform: "translateX(0)", opacity: "1" },
         },
         "slide-out-to-left-52": {
-          from: { transform: "translateX(0)" },
-          to: { transform: "translateX(-13rem)" },
+          from: { transform: "translateX(0)", opacity: "1" },
+          to: { transform: "translateX(-13rem)", opacity: "0" },
         },
         "slide-out-to-right-52": {
-          from: { transform: "translateX(0)" },
-          to: { transform: "translateX(13rem)" },
+          from: { transform: "translateX(13rem)", opacity: "0" },
+          to: { transform: "translateX(0)", opacity: "1" },
+        },
+        "slide-down": {
+          from: { transform: "translateX(0)", opacity: "0" },
+          to: { transform: "translateX(-13rem)", opacity: "1" },
+        },
+        "slide-up": {
+          from: { transform: "translateX(-13rem)" },
+          to: { transform: "translateY(0)" },
+        },
+        "fade-in": {
+          from: { opacity: "0" },
+          to: { opacity: "1" },
+        },
+        "fade-out": {
+          from: { opacity: "1" },
+          to: { opacity: "0" },
+        },
+        "rotate-180": {
+          from: { transform: "rotate(-180deg)" },
+          to: { transform: "rotate(0deg)" },
         },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
         "slide-in-from-left-52": "slide-in-from-left-52 0.3s ease-out",
-        "slide-in-from-right-52": "slide-in-from-right-52 0.3s ease-out",
+        "slide-in-from-right-52": "slide-in-from-right-52 5s ease-out",
         "slide-out-to-left-52": "slide-out-to-left-52 0.3s ease-out",
         "slide-out-to-right-52": "slide-out-to-right-52 0.3s ease-out",
+        "slide-down": "slide-down 0.3s ease-out",
+        "slide-up": "slide-up 0.3s ease-out",
+        "fade-in": "fade-in 0.2s ease-out",
+        "fade-out": "fade-out 0.2s ease-out",
+        "rotate-180": "rotate-180 200ms linear forwards infinite",
       },
     },
   },
   plugins: [require("tailwindcss-animate")],
 }
 export default config
+
+// ("data-[motion=from-end]:slide-in-from-right-52  data-[motion^=from-start]:animate-slide-out-to-right-52 data-[motion^=from-end]:animate-slide-out-to-left-52")
+// "data-[motion^=from-]:animate-in data-[motion^=to-]:animate-out"
+// data-[motion^=from-]:bg-green-400 data-[motion^=to-]:bg-violet-500
+// data-[motion^=from-]:animate-slide-out-to-left-52 data-[motion^=to-]:animate-animate-slide-out-to-left-52
+
+// left-0 top-0 w-full data-[motion^=from-]:animate-in data-[motion^=to-]:animate-out data-[motion^=from-]:fade-in data-[motion^=to-]:fade-out data-[motion=from-end]:slide-in-from-right-52 data-[motion=from-start]:slide-in-from-left-52 data-[motion=to-end]:slide-out-to-right-52 data-[motion=to-start]:slide-out-to-left-52 md:absolute md:w-auto
+// data-[motion=from-end]:animate-slide-out-to-left-52 data-[motion^=from-start]:animate-slide-out-to-right-52

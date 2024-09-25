@@ -20,7 +20,11 @@ export const marketingConfig: MainNavItems = [
   {
     title: "Our Offer",
     href: "/our-offer",
-    subItems: [],
+    subItems: [
+      { title: "Our Terrain - One", href: "/our-terrain" },
+      { title: "Our Differentiators - One", href: "/our-differentiators" },
+      { title: "Our Practices - One", href: "/our-practices" },
+    ],
   },
   {
     title: "Our People",

@@ -21,8 +21,16 @@ interface NavbarProps {
 }
 
 const Navbar: FC<NavbarProps> = ({ items }) => {
+  const valueChangeHanlder = function (e: string) {
+    console.log(e)
+  }
   return (
-    <div className="sm:flex relative flex-row items-center justify-between gap-8 py-4 px-10 border-b">
+    <div
+      className={cn(
+        "sm:flex relative flex-row items-center justify-between gap-8 py-4 px-10 border-b",
+        true && "justify-between"
+      )}
+    >
       <Link
         href="/"
         className="flex z-40 font-semibold items-center justify-center flex-nowrap gap-2"
@@ -37,21 +45,26 @@ const Navbar: FC<NavbarProps> = ({ items }) => {
         />
       </Link>
       {items?.length ? (
-        <nav className="hidden md:flex items-center justify-center gap-8 flex-row">
-          {items.map((item, index) => (
-            <NavigationMenu
-              key={index}
-              orientation="vertical"
-              className="static"
-            >
-              <NavigationMenuList>
-                <NavigationMenuItem>
+        <nav
+          className={cn(
+            "hidden md:flex items-center justify-center gap-8 flex-row ",
+            {}
+          )}
+        >
+          <NavigationMenu
+            orientation="horizontal"
+            className="static"
+            onValueChange={(e) => valueChangeHanlder(e)}
+          >
+            <NavigationMenuList>
+              {items.map((item, index) => (
+                <NavigationMenuItem className="" key={index}>
                   <NavigationMenuTrigger className="static">
                     <Link
                       key={index}
                       href={item.disabled ? "#" : item.href}
                       className={cn(
-                        "inline-flex items-center text-foreground flex-row justify-center group-hover:text-primary-foreground text-sm font-medium font-paragraph",
+                        "inline-flex  items-center text-foreground flex-row justify-center hover:text-primary-foreground text-sm font-medium font-paragraph",
                         {
                           "cursor-not-allowed text-foreground/50":
                             item.disabled,
@@ -63,8 +76,11 @@ const Navbar: FC<NavbarProps> = ({ items }) => {
                   </NavigationMenuTrigger>
 
                   {item?.subItems.length ? (
-                    <NavigationMenuContent className="bg-slate-50 w-screen mt-0">
-                      <ul className="flex items-center justify-end w-screen gap-4 px-4 py-6">
+                    <NavigationMenuContent
+                      asChild={false}
+                      className={cn("border-none ")}
+                    >
+                      <ul className="flex items-center justify-end w-screen gap-4 px-8 py-6">
                         {item.subItems.map((subItem, i) => (
                           <li
                             key={i}
@@ -72,7 +88,7 @@ const Navbar: FC<NavbarProps> = ({ items }) => {
                           >
                             <Link
                               className={cn(
-                                "inline-flex items-center text-black flex-row justify-center group-hover:text-primary-foreground text-sm font-medium font-paragraph",
+                                "inline-flex  items-center text-black flex-row justify-center group-hover:text-primary-foreground text-sm font-medium font-paragraph",
                                 {
                                   "cursor-not-allowed text-foreground/50":
                                     item.disabled,
@@ -88,9 +104,9 @@ const Navbar: FC<NavbarProps> = ({ items }) => {
                     </NavigationMenuContent>
                   ) : null}
                 </NavigationMenuItem>
-              </NavigationMenuList>
-            </NavigationMenu>
-          ))}
+              ))}
+            </NavigationMenuList>
+          </NavigationMenu>
         </nav>
       ) : null}
     </div>
