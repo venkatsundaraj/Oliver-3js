@@ -25,7 +25,7 @@ const Navbar: FC<NavbarProps> = ({ items }) => {
     console.log(e)
   }
   return (
-    <div
+    <header
       className={cn(
         "sm:flex relative flex-row items-center justify-between gap-8 py-4 px-10 border-b",
         true && "justify-between"
@@ -109,7 +109,7 @@ const Navbar: FC<NavbarProps> = ({ items }) => {
           </NavigationMenu>
         </nav>
       ) : null}
-    </div>
+    </header>
   )
 }
 
