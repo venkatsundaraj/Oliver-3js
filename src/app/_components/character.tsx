@@ -6,14 +6,23 @@ import { useMotionValueEvent } from "framer-motion";
 import { FC, useRef, useEffect, useState } from "react";
 import { Group, SkinnedMesh } from "three";
 import { MutableRefObject } from "react";
+import { motion } from "framer-motion-3d";
+import {
+  THRESHOLD_MINIMUM_SCALE_VALUE,
+  THRESHOLD_MAXIMUM_SCALE_VALUE,
+} from "@/config/threejs-constants";
 
 interface CharacterProps {
   height: number;
 }
 
 useGLTF.preload("robot_playground.glb") as any;
+
 const Character: FC<CharacterProps> = ({ height }) => {
   const [scrollValue, setScrollValue] = useState<number>(0);
+  const [scaleValue, setScaleValue] = useState<number>(0);
+
+  // invoking all the actions from the 3d model
   const group = useRef<Group>(null);
   const { animations, scene } = useGLTF("robot_playground.glb") as any;
   const { actions, ...values } = useAnimations(animations, scene);
@@ -29,25 +38,42 @@ const Character: FC<CharacterProps> = ({ height }) => {
   }, []);
 
   useEffect(() => {
-    console.log(actions, group.current);
     if (actions["Experiment"]) {
       actions["Experiment"].play().paused = true;
     }
   }, []);
 
   useFrame(() => {
+    // scroll factor which varies from 0 to 1
     const maxScroll = height - window.innerHeight;
     const scrollFactor = Math.min(scrollValue / maxScroll, 1);
+
+    // it's basically varying the time upto the end
     if (actions["Experiment"]) {
       actions["Experiment"].time =
         actions["Experiment"].getClip().duration * scrollFactor;
     }
+
+    // enlarging and reducing the scales
+    const scaleNumber =
+      scrollFactor < THRESHOLD_MINIMUM_SCALE_VALUE
+        ? 0
+        : scrollFactor > THRESHOLD_MINIMUM_SCALE_VALUE &&
+          scrollFactor < THRESHOLD_MAXIMUM_SCALE_VALUE
+        ? 1
+        : scrollFactor > THRESHOLD_MAXIMUM_SCALE_VALUE
+        ? 0
+        : NaN;
+
+    if (group.current) {
+      group.current.scale.set(scaleNumber, scaleNumber, scaleNumber);
+    }
   });
 
   return (
-    <group ref={group}>
+    <motion.group ref={group as any}>
       <primitive object={scene} />
-    </group>
+    </motion.group>
   );
 };
 
