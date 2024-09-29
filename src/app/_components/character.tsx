@@ -57,21 +57,24 @@ const Character: FC<CharacterProps> = ({ height }) => {
     // enlarging and reducing the scales
     const scaleNumber =
       scrollFactor < THRESHOLD_MINIMUM_SCALE_VALUE
-        ? 0
+        ? scrollFactor / THRESHOLD_MINIMUM_SCALE_VALUE
         : scrollFactor > THRESHOLD_MINIMUM_SCALE_VALUE &&
           scrollFactor < THRESHOLD_MAXIMUM_SCALE_VALUE
         ? 1
         : scrollFactor > THRESHOLD_MAXIMUM_SCALE_VALUE
-        ? 0
+        ? (1 - scrollFactor) / THRESHOLD_MINIMUM_SCALE_VALUE
         : NaN;
 
-    if (group.current) {
-      group.current.scale.set(scaleNumber, scaleNumber, scaleNumber);
-    }
+    setScaleValue(scaleNumber);
+    // console.log(scaleNumber);
   });
 
   return (
-    <motion.group ref={group as any}>
+    <motion.group
+      animate={{ scale: [scaleValue, scaleValue, scaleValue] }}
+      transition={{ ease: "easeInOut", duration: 2 }}
+      ref={group as any}
+    >
       <primitive object={scene} />
     </motion.group>
   );
