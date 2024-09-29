@@ -14,11 +14,12 @@ import {
 
 interface CharacterProps {
   height: number;
+  frameValue: (value: number) => void;
 }
 
 useGLTF.preload("robot_playground.glb") as any;
 
-const Character: FC<CharacterProps> = ({ height }) => {
+const Character: FC<CharacterProps> = ({ height, frameValue }) => {
   const [scrollValue, setScrollValue] = useState<number>(0);
   const [scaleValue, setScaleValue] = useState<number>(0);
 
@@ -47,6 +48,7 @@ const Character: FC<CharacterProps> = ({ height }) => {
     // scroll factor which varies from 0 to 1
     const maxScroll = height - window.innerHeight;
     const scrollFactor = Math.min(scrollValue / maxScroll, 1);
+    frameValue(scrollFactor);
 
     // it's basically varying the time upto the end
     if (actions["Experiment"]) {
@@ -57,7 +59,7 @@ const Character: FC<CharacterProps> = ({ height }) => {
     // enlarging and reducing the scales
     const scaleNumber =
       scrollFactor < THRESHOLD_MINIMUM_SCALE_VALUE
-        ? scrollFactor / THRESHOLD_MINIMUM_SCALE_VALUE
+        ? Math.max(scrollFactor / THRESHOLD_MINIMUM_SCALE_VALUE, 0)
         : scrollFactor > THRESHOLD_MINIMUM_SCALE_VALUE &&
           scrollFactor < THRESHOLD_MAXIMUM_SCALE_VALUE
         ? 1
@@ -66,7 +68,6 @@ const Character: FC<CharacterProps> = ({ height }) => {
         : NaN;
 
     setScaleValue(scaleNumber);
-    // console.log(scaleNumber);
   });
 
   return (

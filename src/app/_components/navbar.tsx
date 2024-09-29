@@ -1,11 +1,11 @@
-"use client"
+"use client";
 
-import { FC } from "react"
-import Link from "next/link"
-import Image from "next/image"
-import { Icons } from "@/app/_components/icons"
-import { MainNavItems } from "@/types"
-import { cn } from "@/lib/utils"
+import { FC } from "react";
+import Link from "next/link";
+import Image from "next/image";
+import { Icons } from "@/app/_components/icons";
+import { MainNavItems } from "@/types";
+import { cn } from "@/lib/utils";
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -14,16 +14,16 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
-} from "@/app/_components/ui/navigation-menu"
+} from "@/app/_components/ui/navigation-menu";
 
 interface NavbarProps {
-  items: MainNavItems
+  items: MainNavItems;
 }
 
 const Navbar: FC<NavbarProps> = ({ items }) => {
   const valueChangeHanlder = function (e: string) {
-    console.log(e)
-  }
+    console.log(e);
+  };
   return (
     <header
       className={cn(
@@ -110,7 +110,7 @@ const Navbar: FC<NavbarProps> = ({ items }) => {
         </nav>
       ) : null}
     </header>
-  )
-}
+  );
+};
 
-export default Navbar
+export default Navbar;
