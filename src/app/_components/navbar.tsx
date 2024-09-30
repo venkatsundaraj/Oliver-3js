@@ -1,11 +1,11 @@
-"use client";
+"use client"
 
-import { FC } from "react";
-import Link from "next/link";
-import Image from "next/image";
-import { Icons } from "@/app/_components/icons";
-import { MainNavItems } from "@/types";
-import { cn } from "@/lib/utils";
+import { FC } from "react"
+import Link from "next/link"
+import Image from "next/image"
+import { Icons } from "@/app/_components/icons"
+import { MainNavItems } from "@/types"
+import { cn } from "@/lib/utils"
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -14,20 +14,20 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
-} from "@/app/_components/ui/navigation-menu";
+} from "@/app/_components/ui/navigation-menu"
 
 interface NavbarProps {
-  items: MainNavItems;
+  items: MainNavItems
 }
 
 const Navbar: FC<NavbarProps> = ({ items }) => {
   const valueChangeHanlder = function (e: string) {
-    console.log(e);
-  };
+    console.log(e)
+  }
   return (
     <header
       className={cn(
-        "sm:flex relative flex-row items-center justify-between gap-8 py-4 px-10 border-b",
+        "sm:flex relative flex-row items-center justify-between gap-8 py-4 z-20 px-10 border-b",
         true && "justify-between"
       )}
     >
@@ -39,7 +39,7 @@ const Navbar: FC<NavbarProps> = ({ items }) => {
           height={100}
           width={200}
           src={
-            "https://utfs.io/f/ZowmNmBHF7rV4k9DHq58tCRcZbLox5S9hfdI037uwUEjeQWF"
+            "https://utfs.io/f/ZowmNmBHF7rVyt3CMIEiorYCB6GnRhmpVzbsTv5EZJ1LQ7Xc"
           }
           alt="Logo"
         />
@@ -64,7 +64,7 @@ const Navbar: FC<NavbarProps> = ({ items }) => {
                       key={index}
                       href={item.disabled ? "#" : item.href}
                       className={cn(
-                        "inline-flex  items-center text-foreground flex-row justify-center hover:text-primary-foreground text-sm font-medium font-paragraph",
+                        "inline-flex bg-transparent items-center text-foreground flex-row justify-center hover:text-primary-foreground text-sm font-medium font-paragraph",
                         {
                           "cursor-not-allowed text-foreground/50":
                             item.disabled,
@@ -84,11 +84,11 @@ const Navbar: FC<NavbarProps> = ({ items }) => {
                         {item.subItems.map((subItem, i) => (
                           <li
                             key={i}
-                            className="flex items-center justify-center"
+                            className="flex items-center justify-center "
                           >
                             <Link
                               className={cn(
-                                "inline-flex  items-center text-black flex-row justify-center group-hover:text-primary-foreground text-sm font-medium font-paragraph",
+                                "inline-flex  items-center text-black flex-row justify-center group-hover:text-primary-foreground text-sm font-medium font-paragraph ",
                                 {
                                   "cursor-not-allowed text-foreground/50":
                                     item.disabled,
@@ -110,7 +110,7 @@ const Navbar: FC<NavbarProps> = ({ items }) => {
         </nav>
       ) : null}
     </header>
-  );
-};
+  )
+}
 
-export default Navbar;
+export default Navbar

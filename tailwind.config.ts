@@ -85,12 +85,12 @@ const config: Config = {
           to: { transform: "translateX(0)", opacity: "1" },
         },
         "slide-down": {
-          from: { transform: "translateX(0)", opacity: "0" },
-          to: { transform: "translateX(-13rem)", opacity: "1" },
+          from: { opacity: "0" },
+          to: { transform: "1" },
         },
         "slide-up": {
-          from: { transform: "translateX(-13rem)" },
-          to: { transform: "translateY(0)" },
+          from: { transform: "1" },
+          to: { transform: "0" },
         },
         "fade-in": {
           from: { opacity: "0" },
