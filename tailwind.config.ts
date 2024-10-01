@@ -59,6 +59,10 @@ const config: Config = {
         paragraph: ["var(--paragraph)"],
         heading: ["var(--heading)"],
       },
+      fontSize: {
+        extra_paragraph_heading: "clamp(16px,2.4vw,28px)",
+        secondary_heading: "clamp(28px, 4.8vw, 56px)",
+      },
       keyframes: {
         "accordion-down": {
           from: { height: "0" },

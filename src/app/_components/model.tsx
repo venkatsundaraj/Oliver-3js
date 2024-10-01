@@ -1,39 +1,39 @@
-"use client";
+"use client"
 
-import { FC, Suspense, useEffect, useRef } from "react";
-import { Canvas } from "@react-three/fiber";
-import { ScrollControls, useProgress, Html } from "@react-three/drei";
-import Character from "./character";
-import { useState } from "react";
-import { cn } from "@/lib/utils";
+import { FC, Suspense, useEffect, useRef } from "react"
+import { Canvas } from "@react-three/fiber"
+import { ScrollControls, useProgress, Html } from "@react-three/drei"
+import Character from "./character"
+import { useState } from "react"
+import { cn } from "@/lib/utils"
 
 interface ModelProps {}
 
 function Loader() {
-  const { progress, active } = useProgress();
+  const { progress, active } = useProgress()
 
-  return <Html center>{progress.toFixed(1)} % loaded</Html>;
+  return <Html center>{progress.toFixed(1)} % loaded</Html>
 }
 
 const Model: FC<ModelProps> = ({}) => {
-  const [sectionHeight, setSectionHeight] = useState<number>(0);
-  const [frameValue, setFrameValue] = useState<number>(0);
-  const sectionRef = useRef<HTMLDivElement | null>(null);
+  const [sectionHeight, setSectionHeight] = useState<number>(0)
+  const [frameValue, setFrameValue] = useState<number>(0)
+  const sectionRef = useRef<HTMLDivElement | null>(null)
 
   useEffect(() => {
     if (sectionRef.current) {
-      setSectionHeight(sectionRef.current.offsetHeight); // Set the section height
+      setSectionHeight(sectionRef.current.offsetHeight) // Set the section height
     }
-  }, [sectionRef]);
+  }, [sectionRef])
 
   const getFrameValue = function (value: number) {
-    setFrameValue(value);
-  };
+    setFrameValue(value)
+  }
 
   return (
     <main
       ref={sectionRef}
-      className="w-screen h-[1000vh] relative overflow-hidden"
+      className="w-screen h-[1000vh] relative overflow-hidden hidden"
     >
       <Canvas
         gl={{ antialias: true }}
@@ -76,7 +76,7 @@ const Model: FC<ModelProps> = ({}) => {
         <h1 className="text-slate-50 text-6xl">section-2</h1>
       </section>
     </main>
-  );
-};
+  )
+}
 
-export default Model;
+export default Model
