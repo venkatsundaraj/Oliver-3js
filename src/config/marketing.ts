@@ -1,4 +1,4 @@
-import { MainNavItems } from "@/types"
+import { locationItem, MainNavItems } from "@/types"
 export const marketingConfig: MainNavItems = [
   {
     title: "Home",
@@ -40,5 +40,29 @@ export const marketingConfig: MainNavItems = [
     title: "Our Blogs",
     href: "/our-blogs",
     subItems: [],
+  },
+]
+
+// Footer contents
+export const locationContents: locationItem[] = [
+  {
+    locationCount: "Location 1",
+    location: "Address Line 1, Address Line 2, Address Line 3, City - Pincode.",
+  },
+  {
+    locationCount: "Location 2",
+    location: "Address Line 1, Address Line 2, Address Line 3, City - Pincode.",
+  },
+  {
+    locationCount: "Location 3",
+    location: "Address Line 1, Address Line 2, Address Line 3, City - Pincode.",
+  },
+  {
+    locationCount: "Location 4",
+    location: "Address Line 1, Address Line 2, Address Line 3, City - Pincode.",
+  },
+  {
+    locationCount: "Location 5",
+    location: "Address Line 1, Address Line 2, Address Line 3, City - Pincode.",
   },
 ]

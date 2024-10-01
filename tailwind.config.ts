@@ -62,6 +62,7 @@ const config: Config = {
       fontSize: {
         extra_paragraph_heading: "clamp(16px,2.4vw,28px)",
         secondary_heading: "clamp(28px, 4.8vw, 56px)",
+        tertiary_heading: "clamp(20px, 4vw, 38px)",
       },
       keyframes: {
         "accordion-down": {

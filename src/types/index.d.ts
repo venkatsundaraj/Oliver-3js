@@ -9,3 +9,8 @@ export type NavItem = SubNavItem & {
 }
 
 export type MainNavItems = NavItem[]
+
+export type locationItem = {
+  locationCount: string
+  location: string
+}

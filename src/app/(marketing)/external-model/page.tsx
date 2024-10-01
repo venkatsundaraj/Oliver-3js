@@ -111,14 +111,14 @@ const page: FC<pageProps> = ({}) => {
                   Some of our
                 </span>
                 <span className="text-primary-foreground text-secondary_heading font-normal">
-                  People
+                  Projects
                 </span>
               </h2>
-              <p className="max-w-md text-extra_paragraph_heading text-foreground">
-                The leadership team at Cosmos comprises senior professionals,
-                with more than 500 years of Cumulative experience in building,
-                managing & growing large businesses across various geographies
-                globally.
+              <p className="max-w-4xl text-extra_paragraph_heading text-foreground">
+                Our Team of Leaders has particularly enjoyed collaborating on &
+                answering some really complex yet exciting questions, resulting
+                in real project experience across more than 80 projects in
+                recent past.
               </p>
               <Link
                 href={"/know-more"}
