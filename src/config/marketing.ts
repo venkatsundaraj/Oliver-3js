@@ -1,4 +1,4 @@
-import { locationItem, MainNavItems } from "@/types"
+import { contactUsItem, locationItem, MainNavItems } from "@/types"
 export const marketingConfig: MainNavItems = [
   {
     title: "Home",
@@ -64,5 +64,28 @@ export const locationContents: locationItem[] = [
   {
     locationCount: "Location 5",
     location: "Address Line 1, Address Line 2, Address Line 3, City - Pincode.",
+  },
+]
+
+export const contactUsBody: contactUsItem[] = [
+  {
+    icon: "https://utfs.io/f/ZowmNmBHF7rVuWjyjgtWdTHI3LNzMgCnc7u9iRa5BAtXG2yv",
+    name: "+91 22670 00505",
+    link: "tel:+91 22670 00505",
+  },
+  {
+    icon: "https://utfs.io/f/ZowmNmBHF7rVj1hVHcW8lWpd9eUfvNKun5Rza3Jr2k7oD6Gb",
+    name: "contact@cosmostrategy.com",
+    link: "email:contact@cosmostrategy.com",
+  },
+  {
+    icon: "https://utfs.io/f/ZowmNmBHF7rVKgolOqILRN7EY2f498lBm1DhqtyXeHvZVid5",
+    name: "contact@cosmostrategy.com",
+    link: "email:contact@cosmostrategy.com",
+  },
+  {
+    icon: "https://utfs.io/f/ZowmNmBHF7rVy1dEBYiorYCB6GnRhmpVzbsTv5EZJ1LQ7Xc0",
+    name: "cosmos-strategy-consultants-llp/",
+    link: "cosmos-strategy-consultants-llp/",
   },
 ]

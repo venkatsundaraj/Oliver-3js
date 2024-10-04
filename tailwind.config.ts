@@ -9,7 +9,7 @@ const config: Config = {
   theme: {
     container: {
       center: true,
-      padding: "2rem",
+      padding: "1rem",
       screens: {
         "2xl": "1400px",
       },
@@ -63,6 +63,8 @@ const config: Config = {
         extra_paragraph_heading: "clamp(16px,2.4vw,28px)",
         secondary_heading: "clamp(28px, 4.8vw, 56px)",
         tertiary_heading: "clamp(20px, 4vw, 38px)",
+        subtitle_heading: "clamp(16px,1.8vw,20px)",
+        extra_subtitle_heading: "clamp(14px,1.6vw,18px)",
       },
       keyframes: {
         "accordion-down": {

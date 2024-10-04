@@ -14,3 +14,9 @@ export type locationItem = {
   locationCount: string
   location: string
 }
+
+export type contactUsItem = {
+  icon: string
+  name: string
+  link: string
+}
