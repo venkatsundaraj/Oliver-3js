@@ -133,3 +133,14 @@ export const domainsData: string[] = [
   "Startup Ventures",
   "Not-for-Profit Organisation",
 ]
+
+export const tailSectionData: { title: string; palette: string }[] = [
+  {
+    title: "A multi billion dollar, emerging markets, FMCG conglomerate",
+    palette: "#DA3633",
+  },
+  { title: "A global telecom giant", palette: "#BF4B8A" },
+  { title: "An Indian premium fashion boutique", palette: "#BF4B8A" },
+  { title: "An Indian FMCG snacking startup", palette: "#388BFD" },
+  { title: "An Indian amusement parks leader", palette: "#2EA043" },
+]

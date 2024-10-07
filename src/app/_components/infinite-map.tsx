@@ -3,16 +3,10 @@ import Autoplay from "embla-carousel-autoplay"
 import useEmblaCarousel from "embla-carousel-react"
 import { useAnimation } from "framer-motion"
 import { motion } from "framer-motion"
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  type CarouselApi,
-  CarouselPrevious,
-} from "@/app/_components/ui/carousel"
+import { tailSectionData } from "@/config/marketing"
 import Image from "next/image"
 import { MotionCanvas } from "framer-motion-3d"
+import { cn } from "@/lib/utils"
 
 interface InfiniteMapProps {}
 
