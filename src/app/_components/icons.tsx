@@ -13,8 +13,9 @@ import {
   Sun,
   Pencil,
   Moon,
+  ArrowLeft,
   Laptop,
-} from "lucide-react"
+} from "lucide-react";
 
 export const Icons = {
   User,
@@ -24,6 +25,7 @@ export const Icons = {
   Pencil,
   Webhook,
   Loader2,
+  ArrowLeft,
   Plus,
   MapPin,
   Sun,
@@ -32,6 +34,6 @@ export const Icons = {
   ArrowRight,
   X,
   Activity,
-}
+};
 
-export type Icon = keyof typeof Icons
+export type Icon = keyof typeof Icons;

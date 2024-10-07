@@ -1,4 +1,4 @@
-import type { Config } from "tailwindcss"
+import type { Config } from "tailwindcss";
 
 const config: Config = {
   content: [
@@ -111,6 +111,10 @@ const config: Config = {
           from: { transform: "rotate(-180deg)" },
           to: { transform: "rotate(0deg)" },
         },
+        "scroll-one": {
+          from: { transform: "translateX(0)" },
+          to: { transform: "translateX(-100%)" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -124,9 +128,10 @@ const config: Config = {
         "fade-in": "fade-in 0.2s ease-out",
         "fade-out": "fade-out 0.2s ease-out",
         "rotate-180": "rotate-180 200ms linear forwards infinite",
+        "scroll-one": "scroll 30s linear infinite",
       },
     },
   },
   plugins: [require("tailwindcss-animate")],
-}
-export default config
+};
+export default config;
