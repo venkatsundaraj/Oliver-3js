@@ -1,4 +1,9 @@
-import { contactUsItem, locationItem, MainNavItems } from "@/types"
+import {
+  contactUsItem,
+  locationItem,
+  MainNavItems,
+  functionalSpiralItem,
+} from "@/types"
 export const marketingConfig: MainNavItems = [
   {
     title: "Home",
@@ -88,4 +93,43 @@ export const contactUsBody: contactUsItem[] = [
     name: "cosmos-strategy-consultants-llp/",
     link: "cosmos-strategy-consultants-llp/",
   },
+]
+
+export const functionalSpiralContent: functionalSpiralItem[] = [
+  {
+    data: "Functional",
+    value: "Business",
+  },
+  {
+    data: "Brand",
+    value: "Brand & Marketing",
+  },
+  {
+    data: "Innovation",
+    value: "Innovation",
+  },
+  {
+    data: "Human Capital",
+    value: "Human Resources",
+  },
+  {
+    data: "Sales",
+    value: "Sales, Business Development & Distribution",
+  },
+  {
+    data: "Finance",
+    value: "Financeial Management, Management Accountancy",
+  },
+  {
+    data: "Operations",
+    value: "Operations & Supply Chain",
+  },
+]
+
+export const domainsData: string[] = [
+  "Global International",
+  "Regional Giants",
+  "SME's",
+  "Startup Ventures",
+  "Not-for-Profit Organisation",
 ]

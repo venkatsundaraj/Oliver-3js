@@ -20,3 +20,5 @@ export type contactUsItem = {
   name: string
   link: string
 }
+
+export type functionalSpiralItem = { data: string; value: string }

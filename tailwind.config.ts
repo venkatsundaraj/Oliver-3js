@@ -60,7 +60,7 @@ const config: Config = {
         heading: ["var(--heading)"],
       },
       fontSize: {
-        extra_paragraph_heading: "clamp(16px,2.4vw,28px)",
+        extra_paragraph_heading: "clamp(16px,1.8vw,24px)",
         secondary_heading: "clamp(28px, 4.8vw, 56px)",
         tertiary_heading: "clamp(20px, 4vw, 38px)",
         subtitle_heading: "clamp(16px,1.8vw,20px)",
