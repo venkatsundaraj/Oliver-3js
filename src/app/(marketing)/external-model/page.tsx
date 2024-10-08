@@ -1,21 +1,25 @@
-"use client";
+"use client"
 
-import { Button, buttonVariants } from "@/app/_components/button";
-import { cn } from "@/lib/utils";
-import { Canvas } from "@react-three/fiber";
-import dynamic from "next/dynamic";
-import Image from "next/image";
-import Link from "next/link";
-import { FC } from "react";
-import { functionalSpiralContent, domainsData } from "@/config/marketing";
-import InfiniteMap from "@/app/_components/infinite-map";
+import { Button, buttonVariants } from "@/app/_components/button"
+import { cn } from "@/lib/utils"
+import { Canvas } from "@react-three/fiber"
+import dynamic from "next/dynamic"
+import Image from "next/image"
+import Link from "next/link"
+import { FC } from "react"
+import {
+  functionalSpiralContent,
+  domainsData,
+  differentiatorData,
+} from "@/config/marketing"
+import InfiniteMap from "@/app/_components/infinite-map"
 
 interface pageProps {}
 
 const Model = dynamic(() => import("@/app/_components/model"), {
   loading: () => <p>Loading</p>,
   ssr: false,
-});
+})
 
 const page: FC<pageProps> = ({}) => {
   return (
@@ -23,7 +27,7 @@ const page: FC<pageProps> = ({}) => {
       <Model />
 
       {/* Our Terrain Section */}
-      <section className="w-screen flex items-center justify-center h-screen bg-background">
+      <section className="w-screen flex items-center justify-center h-screen bg-background py-5">
         <div className="container flex items-center justify-center">
           <div className="grid grid-cols-1 md:grid-cols-2 w-full">
             <div className="flex items-start flex-col justify-center gap-4">
@@ -62,8 +66,56 @@ const page: FC<pageProps> = ({}) => {
         </div>
       </section>
 
+      {/* Our Differentiator Section */}
+      <section className="w-screen flex items-start justify-center bg-background py-5">
+        <div className="container flex items-start justify-center flex-col relative">
+          <div className="flex items-start flex-col justify-center gap-2 sticky bg-background w-full top-0">
+            <h2 className="flex items-start justify-start flex-col">
+              <span className="text-extra_paragraph_heading text-foreground font-paragraph">
+                our
+              </span>
+              <span className="text-primary-foreground text-secondary_heading font-normal">
+                Differentiators
+              </span>
+            </h2>
+            <h4 className="text-foreground font-paragraph  mb-4 text-extra_paragraph_heading ">
+              Cosmos approach vs Traditional approach
+            </h4>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 w-full">
+            <div className="grid grid-cols-2 gap-12 mt-8">
+              {differentiatorData.map((item, i) => (
+                <div
+                  key={i}
+                  className={cn(
+                    "w-full flex-col bg-background flex items-start justify-start "
+                  )}
+                >
+                  <span className="text-subtitle_heading font-heading text-primary-foreground">
+                    {item.serialNumber}
+                  </span>
+                  <p className="text-extra_paragraph_heading font-heading text-foreground">
+                    {item.description}
+                  </p>
+                </div>
+              ))}
+            </div>
+            <div className="flex items-center justify-center w-full  aspect-square md:h-screen bg-transparent static md:sticky  top-0">
+              <Image
+                src={
+                  "https://utfs.io/f/ZowmNmBHF7rVZzAeYmBHF7rVAK6CWauMPjmJlROdkngGeUw2"
+                }
+                width={300}
+                height={300}
+                alt="Sphere Image"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Our Practices Section */}
-      <section className="w-screen flex items-center justify-center h-screen bg-background ">
+      <section className="w-screen flex items-center justify-center h-screen bg-background py-5">
         <div className="container flex items-center justify-center">
           <div className="grid grid-cols-1  w-full">
             <div className="flex items-start flex-col justify-center gap-4">
@@ -116,7 +168,7 @@ const page: FC<pageProps> = ({}) => {
       </section>
 
       {/* Functional Spiral Section */}
-      <section className="w-screen flex items-center justify-center h-screen bg-background bg-[url('https://utfs.io/f/ZowmNmBHF7rV60Iee5hbQOfRazMg3kr4BxVuqK1noU7SLJGE')] bg-center bg-no-repeat bg-contain">
+      <section className="w-screen flex items-center justify-center h-screen bg-background py-5 bg-[url('https://utfs.io/f/ZowmNmBHF7rV60Iee5hbQOfRazMg3kr4BxVuqK1noU7SLJGE')] bg-center bg-no-repeat bg-contain">
         <div className="container flex items-center justify-center">
           <div className="grid grid-cols-1  w-full">
             <div className="flex items-start flex-col justify-center gap-4">
@@ -151,44 +203,8 @@ const page: FC<pageProps> = ({}) => {
         </div>
       </section>
 
-      {/* Our Differentiator Section */}
-      <section className="w-screen flex items-start justify-center bg-background">
-        <div className="container flex items-start justify-center flex-col relative">
-          <div className="flex items-start flex-col justify-center gap-4 sticky bg-background w-full top-0">
-            <h2 className="flex items-start justify-start flex-col">
-              <span className="text-extra_paragraph_heading text-foreground font-paragraph">
-                Some of our
-              </span>
-              <span className="text-primary-foreground text-secondary_heading font-normal">
-                People
-              </span>
-            </h2>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 w-full">
-            <div className="grid grid-cols-2">
-              {Array.from({ length: 10 }).map((item, i) => (
-                <span
-                  key={i}
-                  className={cn(
-                    "w-full aspect-square bg-foreground flex items-center justify-center text-secondary_heading ",
-                    i % 2 === 0
-                      ? "text-slate-900 bg-foreground"
-                      : "text-foreground bg-secondary-foreground"
-                  )}
-                >
-                  {i}
-                </span>
-              ))}
-            </div>
-            <div className="flex items-center justify-center w-full bg-primary-foreground aspect-square sticky  top-0">
-              Static
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Client Domains */}
-      <section className="w-screen flex flex-col items-center justify-center bg-background">
+      <section className="w-screen flex flex-col items-center justify-center bg-background py-5">
         <div className="container flex flex-col items-center justify-center">
           <h2 className="flex justify-start flex-col text-center">
             <span className="text-extra_paragraph_heading text-foreground font-paragraph">
@@ -213,7 +229,7 @@ const page: FC<pageProps> = ({}) => {
       </section>
 
       {/* People Section */}
-      <section className="w-screen flex items-center justify-center h-screen bg-background">
+      <section className="w-screen flex items-center justify-center h-screen bg-background py-5">
         <div className="container flex items-center justify-center">
           <div className="grid grid-cols-1 md:grid-cols-2 w-full">
             <div className="flex items-start flex-col justify-center gap-4">
@@ -254,7 +270,7 @@ const page: FC<pageProps> = ({}) => {
       </section>
 
       {/* Projectjs Section */}
-      <section className="w-screen flex items-center justify-center h-screen bg-background">
+      <section className="w-screen flex items-center justify-center h-screen bg-background py-5">
         <div className="container flex items-center justify-center">
           <div className="grid grid-cols-1  w-full">
             <div className="flex items-start flex-col justify-center gap-4">
@@ -286,7 +302,7 @@ const page: FC<pageProps> = ({}) => {
         </div>
       </section>
     </>
-  );
-};
+  )
+}
 
-export default page;
+export default page

@@ -33,7 +33,7 @@ const Model: FC<ModelProps> = ({}) => {
   return (
     <main
       ref={sectionRef}
-      className="w-screen h-[1000vh] relative overflow-hidden hidden"
+      className="w-screen h-[1000vh] relative overflow-hidden"
     >
       <Canvas
         gl={{ antialias: true }}

@@ -153,3 +153,52 @@ export const tailSectionData: { title: string; palette: string }[] = [
     palette: "bg-tail-e",
   },
 ]
+
+export const differentiatorData: {
+  serialNumber: string
+  description: string
+}[] = [
+  {
+    serialNumber: "A.",
+    description:
+      "Insight centered strategy instead of value chain driven strategy",
+  },
+  {
+    serialNumber: "B.",
+    description:
+      "Root growth driver centered approach instead of algorithmic approach to problem solving",
+  },
+  {
+    serialNumber: "C.",
+    description:
+      "Enterprise and organization design instead of functional design alone",
+  },
+  {
+    serialNumber: "D.",
+    description: "Not just reports - Hero actions and programs to do",
+  },
+  {
+    serialNumber: "E.",
+    description:
+      "Collaborative solution creation around the table instead of transactional delivery across the table",
+  },
+  {
+    serialNumber: "F.",
+    description: "practitioners as consultants instead of career consultants",
+  },
+  {
+    serialNumber: "G.",
+    description:
+      "Only senior professionals with 25 years+ each and 500+ years experience instead of an army of junior applications",
+  },
+  {
+    serialNumber: "H.",
+    description:
+      "Diverse experience harnessing horizontal knowledge complementing client's category depth instead of narrow specialization reflecting what clients",
+  },
+  {
+    serialNumber: "I.",
+    description:
+      "Expeerience across x categories, y geographies, z domains versus tunneled expertise",
+  },
+]

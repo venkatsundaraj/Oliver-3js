@@ -62,12 +62,12 @@ const InfiniteMap: FC<InfiniteMapProps> = ({}) => {
                 height={700}
                 objectFit="cover"
               />
-              <div className="w-full h-16 py-8 bg-background  border-t border-t-foreground border-b border-b-foreground flex items-center justify-center gap-8">
-                <ul className="flex items-center flex-row justify-between flex-nowrap gap-8">
+              <div className="w-full h-16 py-8 bg-background  border-t overflow-visible border-t-foreground border-b border-b-foreground flex items-center gap-8">
+                <ul className="flex items-center flex-row justify-between w-full flex-nowrap overflow-visible ml-8">
                   {tailSectionData.map((item, i) => (
                     <li
                       className={cn(
-                        "text-foreground px-2 py-2 rounded-sm",
+                        "text-foreground px-2 py-2 rounded-sm text-nowrap",
                         item.palette
                       )}
                       key={i}
