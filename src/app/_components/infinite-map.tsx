@@ -1,12 +1,12 @@
-import React, { FC, useEffect, useState, useCallback, useRef } from "react";
-import Autoplay from "embla-carousel-autoplay";
-import useEmblaCarousel from "embla-carousel-react";
-import { useAnimation } from "framer-motion";
-import { motion } from "framer-motion";
-import { tailSectionData } from "@/config/marketing";
-import Image from "next/image";
-import { MotionCanvas } from "framer-motion-3d";
-import { cn } from "@/lib/utils";
+import React, { FC, useEffect, useState, useCallback, useRef } from "react"
+import Autoplay from "embla-carousel-autoplay"
+import useEmblaCarousel from "embla-carousel-react"
+import { useAnimation } from "framer-motion"
+import { motion } from "framer-motion"
+import { tailSectionData } from "@/config/marketing"
+import Image from "next/image"
+import { MotionCanvas } from "framer-motion-3d"
+import { cn } from "@/lib/utils"
 import {
   Carousel,
   CarouselContent,
@@ -14,7 +14,7 @@ import {
   CarouselNext,
   CarouselPrevious,
   type CarouselApi,
-} from "@/app/_components/ui/carousel";
+} from "@/app/_components/ui/carousel"
 
 interface InfiniteMapProps {}
 
@@ -24,7 +24,7 @@ const colors = [
   "bg-orange-500",
   "bg-green-500",
   "bg-yellow-500",
-];
+]
 
 const InfiniteMap: FC<InfiniteMapProps> = ({}) => {
   return (
@@ -49,7 +49,7 @@ const InfiniteMap: FC<InfiniteMapProps> = ({}) => {
           <CarouselItem key={index} className=" pl-0">
             <div
               className={cn(
-                "w-full bg-background h-full border-b-primary-foreground flex items-center flex-col justify-center"
+                "w-full bg-background h-full border-b-primary-foreground flex items-center flex-col justify-center "
               )}
             >
               <Image
@@ -62,16 +62,30 @@ const InfiniteMap: FC<InfiniteMapProps> = ({}) => {
                 height={700}
                 objectFit="cover"
               />
-              <div className="w-full h-16 bg-gradient-to-tr from-violet-400 to-slate-50"></div>
+              <div className="w-full h-16 py-8 bg-background  border-t border-t-foreground border-b border-b-foreground flex items-center justify-center gap-8">
+                <ul className="flex items-center flex-row justify-between flex-nowrap gap-8">
+                  {tailSectionData.map((item, i) => (
+                    <li
+                      className={cn(
+                        "text-foreground px-2 py-2 rounded-sm",
+                        item.palette
+                      )}
+                      key={i}
+                    >
+                      {item.title}
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
           </CarouselItem>
         ))}
       </CarouselContent>
     </Carousel>
-  );
-};
+  )
+}
 
-export default InfiniteMap;
+export default InfiniteMap
 
 // opts={{
 //         align: "start",

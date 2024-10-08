@@ -1,4 +1,4 @@
-import type { Config } from "tailwindcss";
+import type { Config } from "tailwindcss"
 
 const config: Config = {
   content: [
@@ -48,6 +48,13 @@ const config: Config = {
         card: {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
+        },
+        tail: {
+          a: "hsl(var(--tail-a))",
+          b: "hsl(var(--tail-b))",
+          c: "hsl(var(--tail-c))",
+          d: "hsl(var(--tail-d))",
+          e: "hsl(var(--tail-e))",
         },
       },
       borderRadius: {
@@ -133,5 +140,5 @@ const config: Config = {
     },
   },
   plugins: [require("tailwindcss-animate")],
-};
-export default config;
+}
+export default config
