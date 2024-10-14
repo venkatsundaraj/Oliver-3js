@@ -6,6 +6,7 @@ import { ScrollControls, useProgress, Html } from "@react-three/drei"
 import Character from "./character"
 import { useState } from "react"
 import { cn } from "@/lib/utils"
+import CharacterOne from "./character-one"
 
 interface ModelProps {}
 
@@ -42,12 +43,13 @@ const Model: FC<ModelProps> = ({}) => {
       >
         <directionalLight position={[-5, -5, 5]} intensity={4} />
         <Suspense fallback={<Loader />}>
-          <Character height={sectionHeight} frameValue={getFrameValue} />
+          {/* <Character height={sectionHeight} frameValue={getFrameValue} /> */}
+          <CharacterOne height={sectionHeight} frameValue={getFrameValue} />
         </Suspense>
       </Canvas>
       <section
         className={cn(
-          "flex items-center p-48 justify-center fixed left-0 top-0 bg-white/10 w-screen h-screen duration-150 transition-opacity overflow-hidden",
+          "hidden items-center p-48 justify-center fixed left-0 top-0 bg-white/10 w-screen h-screen duration-150 transition-opacity overflow-hidden",
           frameValue === 0 || frameValue < 0
             ? "opacity-1 z-10"
             : "opacity-0 z-0"
