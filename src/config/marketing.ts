@@ -3,7 +3,7 @@ import {
   locationItem,
   MainNavItems,
   functionalSpiralItem,
-} from "@/types"
+} from "@/types";
 export const marketingConfig: MainNavItems = [
   {
     title: "Home",
@@ -46,7 +46,7 @@ export const marketingConfig: MainNavItems = [
     href: "/our-blogs",
     subItems: [],
   },
-]
+];
 
 // Footer contents
 export const locationContents: locationItem[] = [
@@ -70,7 +70,7 @@ export const locationContents: locationItem[] = [
     locationCount: "Location 5",
     location: "Address Line 1, Address Line 2, Address Line 3, City - Pincode.",
   },
-]
+];
 
 export const contactUsBody: contactUsItem[] = [
   {
@@ -93,7 +93,7 @@ export const contactUsBody: contactUsItem[] = [
     name: "cosmos-strategy-consultants-llp/",
     link: "cosmos-strategy-consultants-llp/",
   },
-]
+];
 
 export const functionalSpiralContent: functionalSpiralItem[] = [
   {
@@ -124,7 +124,7 @@ export const functionalSpiralContent: functionalSpiralItem[] = [
     data: "Operations",
     value: "Operations & Supply Chain",
   },
-]
+];
 
 export const domainsData: string[] = [
   "Global International",
@@ -132,7 +132,7 @@ export const domainsData: string[] = [
   "SME's",
   "Startup Ventures",
   "Not-for-Profit Organisation",
-]
+];
 
 export const tailSectionData: { title: string; palette: string }[] = [
   {
@@ -152,11 +152,11 @@ export const tailSectionData: { title: string; palette: string }[] = [
     title: "An Indian amusement parks leader",
     palette: "bg-tail-e",
   },
-]
+];
 
 export const differentiatorData: {
-  serialNumber: string
-  description: string
+  serialNumber: string;
+  description: string;
 }[] = [
   {
     serialNumber: "A.",
@@ -201,4 +201,47 @@ export const differentiatorData: {
     description:
       "Expeerience across x categories, y geographies, z domains versus tunneled expertise",
   },
-]
+];
+
+export const ourDifferentiatorContent: { title: string; imgPath: string }[] = [
+  {
+    title: "Insights centered strategy",
+    imgPath:
+      "https://utfs.io/f/ZowmNmBHF7rVS7N3l6RkTnuUMoapyhGFmg9lwIYORcVixtW1",
+  },
+  {
+    title: "Hero actions",
+    imgPath:
+      "https://utfs.io/f/ZowmNmBHF7rVbWDCKXkH2jDYzO9VfQms1UPwlxZdI8GBNqX7",
+  },
+  {
+    title: "360 deg co-creation",
+    imgPath:
+      "https://utfs.io/f/ZowmNmBHF7rVerDO2THzKF8PVfhHaR7CmudUQywI1cWtxBk2",
+  },
+  {
+    title: "Only senior consultants",
+    imgPath:
+      "https://utfs.io/f/ZowmNmBHF7rVKD9il6ILRN7EY2f498lBm1DhqtyXeHvZVid5",
+  },
+  {
+    title: "500+ years, 70% practitioners",
+    imgPath:
+      "https://utfs.io/f/ZowmNmBHF7rVWFoOmX2uX31TIjKoHYR0aPnSbMcFkhvmy76G",
+  },
+  {
+    title: "Tremendous diversity",
+    imgPath:
+      "https://utfs.io/f/ZowmNmBHF7rVcGmgyCFL0cRPUsJHtd7pnFIgDZAmaLNfuQi6",
+  },
+  {
+    title: "End to end Accountability",
+    imgPath:
+      "https://utfs.io/f/ZowmNmBHF7rVih5Fmu12L9SrhBkonyJq4Z8l0ANjKH7a5euM",
+  },
+  {
+    title: "Bespoke approach",
+    imgPath:
+      "https://utfs.io/f/ZowmNmBHF7rVgAnj0u8GZmO7D95FyjUwVrPNpCBfxz4KHMWX",
+  },
+];

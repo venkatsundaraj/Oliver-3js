@@ -1,97 +1,97 @@
-"use client"
+"use client";
 
-import React, { useRef, useLayoutEffect, useEffect, useState } from "react"
-import { useGLTF, useAnimations, useScroll, Line } from "@react-three/drei"
-import { useFrame, useThree } from "@react-three/fiber"
-import gsap from "gsap"
-import * as THREE from "three"
+import React, { useRef, useLayoutEffect, useEffect, useState } from "react";
+import { useGLTF, useAnimations, useScroll, Line } from "@react-three/drei";
+import { useFrame, useThree } from "@react-three/fiber";
+import gsap from "gsap";
+import * as THREE from "three";
 import {
   THRESHOLD_MINIMUM_SCALE_VALUE,
   THRESHOLD_MAXIMUM_SCALE_VALUE,
-} from "@/config/threejs-constants"
+} from "@/config/threejs-constants";
 
-import { motion } from "framer-motion-3d"
+import { motion } from "framer-motion-3d";
 
 interface CharacterOneProps {
-  height: number
-  frameValue: (value: number) => void
+  height: number;
+  frameValue: (value: number) => void;
 }
 
 export default function CharacterOne({
   height,
   frameValue,
 }: CharacterOneProps) {
-  const [scrollValue, setScrollValue] = useState<number>(0)
-  const [scaleValue, setScaleValue] = useState<number>(0)
+  const [scrollValue, setScrollValue] = useState<number>(0);
+  const [scaleValue, setScaleValue] = useState<number>(0);
 
-  const { nodes, materials, animations } = useGLTF("f22noanime.glb") as any
-  const { actions } = useAnimations(animations)
-  const ref = useRef<THREE.Group>(null)
-  const tl = useRef<gsap.core.Timeline | null>(null)
-  const { viewport } = useThree()
-  const resRatio = viewport.width / 2
-  const isMobile = window.innerWidth < 768
+  const { nodes, materials, animations } = useGLTF("f22noanime.glb") as any;
+  const { actions } = useAnimations(animations);
+  const ref = useRef<THREE.Group>(null);
+  const tl = useRef<gsap.core.Timeline | null>(null);
+  const { viewport } = useThree();
+  const resRatio = viewport.width / 2;
+  const isMobile = window.innerWidth < 768;
 
   useEffect(() => {
     const scrollEvent = function (e: Event) {
-      setScrollValue(window.scrollY)
-    }
-    window.addEventListener("scroll", scrollEvent)
+      setScrollValue(window.scrollY);
+    };
+    window.addEventListener("scroll", scrollEvent);
     return () => {
-      window.removeEventListener("scroll", scrollEvent)
-    }
-  }, [])
+      window.removeEventListener("scroll", scrollEvent);
+    };
+  }, []);
 
   const CircleOutline = ({
     radius = 1,
     segments = 64,
     color = "black",
   }: {
-    radius?: number
-    segments?: number
-    color?: string
+    radius?: number;
+    segments?: number;
+    color?: string;
   }) => {
-    const points: Array<[number, number, number]> = []
+    const points: Array<[number, number, number]> = [];
     for (let i = 0; i <= segments; i++) {
-      const angle = (i / segments) * Math.PI * 2
-      points.push([Math.cos(angle) * radius, Math.sin(angle) * radius, 0])
+      const angle = (i / segments) * Math.PI * 2;
+      points.push([Math.cos(angle) * radius, Math.sin(angle) * radius, 0]);
     }
 
-    return <Line points={points} color={color} lineWidth={2.5} />
-  }
+    return <Line points={points} color={color} lineWidth={2.5} />;
+  };
 
-  const spira = useRef<THREE.Group>(null)
-  const dot1 = useRef<THREE.Mesh>(null)
-  const dot2 = useRef<THREE.Mesh>(null)
-  const dot3 = useRef<THREE.Mesh>(null)
-  const dot4 = useRef<THREE.Mesh>(null)
-  const dot5 = useRef<THREE.Mesh>(null)
-  const dot9 = useRef<THREE.Mesh>(null)
-  const dot10 = useRef<THREE.Mesh>(null)
-  const dot8 = useRef<THREE.Mesh>(null)
-  const dot7 = useRef<THREE.Mesh>(null)
-  const dot6 = useRef<THREE.Mesh>(null)
-  const onecir = useRef<THREE.Group>(null)
-  const seccir = useRef<THREE.Group>(null)
-  const three = useRef<THREE.Group>(null)
-  const four = useRef<THREE.Group>(null)
-  const five = useRef<THREE.Group>(null)
-  const outonecir = useRef<THREE.Group>(null)
-  const centercir = useRef<THREE.Group>(null)
-  const centerball = useRef<THREE.Mesh>(null)
-  const spreaone = useRef<THREE.Group>(null)
-  const finalsma = useRef<THREE.Group>(null)
-  const sprea = useRef<THREE.Group>(null)
-  const overalls = useRef<THREE.Group>(null)
-  const scroll = useScroll()
+  const spira = useRef<THREE.Group>(null);
+  const dot1 = useRef<THREE.Mesh>(null);
+  const dot2 = useRef<THREE.Mesh>(null);
+  const dot3 = useRef<THREE.Mesh>(null);
+  const dot4 = useRef<THREE.Mesh>(null);
+  const dot5 = useRef<THREE.Mesh>(null);
+  const dot9 = useRef<THREE.Mesh>(null);
+  const dot10 = useRef<THREE.Mesh>(null);
+  const dot8 = useRef<THREE.Mesh>(null);
+  const dot7 = useRef<THREE.Mesh>(null);
+  const dot6 = useRef<THREE.Mesh>(null);
+  const onecir = useRef<THREE.Group>(null);
+  const seccir = useRef<THREE.Group>(null);
+  const three = useRef<THREE.Group>(null);
+  const four = useRef<THREE.Group>(null);
+  const five = useRef<THREE.Group>(null);
+  const outonecir = useRef<THREE.Group>(null);
+  const centercir = useRef<THREE.Group>(null);
+  const centerball = useRef<THREE.Mesh>(null);
+  const spreaone = useRef<THREE.Group>(null);
+  const finalsma = useRef<THREE.Group>(null);
+  const sprea = useRef<THREE.Group>(null);
+  const overalls = useRef<THREE.Group>(null);
+  const scroll = useScroll();
 
   useFrame(() => {
-    const maxScroll = height - window.innerHeight
-    const scrollFactor = Math.min(scrollValue / maxScroll, 1)
-    frameValue(scrollFactor)
+    const maxScroll = height - window.innerHeight;
+    const scrollFactor = Math.min(scrollValue / maxScroll, 1);
+    frameValue(scrollFactor);
 
     if (tl.current) {
-      tl.current.seek(scrollFactor * tl.current.duration())
+      tl.current.seek(scrollFactor * tl.current.duration());
     }
 
     // enlarging and reducing the scales
@@ -103,13 +103,13 @@ export default function CharacterOne({
         ? 1
         : scrollFactor > THRESHOLD_MAXIMUM_SCALE_VALUE
         ? (1 - scrollFactor) / THRESHOLD_MINIMUM_SCALE_VALUE
-        : NaN
+        : NaN;
 
-    setScaleValue(scaleNumber)
-  })
+    setScaleValue(scaleNumber);
+  });
 
   useLayoutEffect(() => {
-    tl.current = gsap.timeline()
+    tl.current = gsap.timeline();
 
     if (spira.current) {
       tl.current.to(
@@ -120,7 +120,7 @@ export default function CharacterOne({
           y: -0.2,
         },
         -0.5
-      )
+      );
     }
 
     if (spira.current) {
@@ -132,7 +132,7 @@ export default function CharacterOne({
           y: isMobile ? -0.09 : -0.19,
         },
         -0.5
-      )
+      );
     }
 
     if (dot5.current) {
@@ -144,7 +144,7 @@ export default function CharacterOne({
           y: 0.02,
         },
         -0.5
-      )
+      );
     }
 
     if (dot9.current) {
@@ -156,7 +156,7 @@ export default function CharacterOne({
           y: 0.01,
         },
         -0.5
-      )
+      );
     }
 
     if (dot4.current) {
@@ -168,7 +168,7 @@ export default function CharacterOne({
           y: 0.02,
         },
         -0.5
-      )
+      );
     }
 
     if (dot10.current) {
@@ -180,7 +180,7 @@ export default function CharacterOne({
           y: 0.01,
         },
         -0.5
-      )
+      );
     }
 
     if (dot3.current) {
@@ -192,7 +192,7 @@ export default function CharacterOne({
           y: 0.02,
         },
         -0.5
-      )
+      );
     }
 
     if (dot8.current) {
@@ -204,7 +204,7 @@ export default function CharacterOne({
           y: 0.01,
         },
         -0.5
-      )
+      );
     }
 
     if (dot2.current) {
@@ -216,7 +216,7 @@ export default function CharacterOne({
           y: 0.02,
         },
         -0.5
-      )
+      );
     }
 
     if (dot7.current) {
@@ -228,7 +228,7 @@ export default function CharacterOne({
           y: 0.01,
         },
         -0.5
-      )
+      );
     }
 
     if (dot1.current) {
@@ -240,7 +240,7 @@ export default function CharacterOne({
           y: 0.02,
         },
         -0.5
-      )
+      );
     }
 
     if (dot6.current) {
@@ -252,7 +252,7 @@ export default function CharacterOne({
           y: 0.01,
         },
         -0.5
-      )
+      );
     }
 
     if (spira.current) {
@@ -264,7 +264,7 @@ export default function CharacterOne({
           y: -0.2,
         },
         -0.5
-      )
+      );
 
       tl.current.to(
         spira.current.position,
@@ -274,7 +274,7 @@ export default function CharacterOne({
           y: isMobile ? -0.09 : -0.19,
         },
         -0.5
-      )
+      );
 
       tl.current.to(
         spira.current.scale,
@@ -285,7 +285,7 @@ export default function CharacterOne({
           z: 0,
         },
         0
-      )
+      );
 
       tl.current.to(
         spira.current.position,
@@ -296,7 +296,7 @@ export default function CharacterOne({
           z: 0,
         },
         0
-      )
+      );
     }
 
     if (onecir.current) {
@@ -307,7 +307,7 @@ export default function CharacterOne({
           z: -3.1,
         },
         0.5
-      )
+      );
     }
 
     if (seccir.current) {
@@ -318,7 +318,7 @@ export default function CharacterOne({
           z: -3.1,
         },
         0.52
-      )
+      );
     }
 
     if (three.current) {
@@ -329,7 +329,7 @@ export default function CharacterOne({
           z: -3.1,
         },
         0.54
-      )
+      );
     }
 
     if (four.current) {
@@ -340,7 +340,7 @@ export default function CharacterOne({
           z: -3.1,
         },
         0.56
-      )
+      );
     }
 
     if (five.current) {
@@ -351,7 +351,7 @@ export default function CharacterOne({
           z: -3.1,
         },
         0.58
-      )
+      );
     }
 
     if (overalls.current) {
@@ -363,10 +363,10 @@ export default function CharacterOne({
           y: 1.25,
         },
         0.7
-      )
+      );
     }
 
-    const radius = 0.22 // 50% of the original radius
+    const radius = 0.22; // 50% of the original radius
 
     if (dot1.current) {
       tl.current.to(
@@ -378,7 +378,7 @@ export default function CharacterOne({
           z: 0.3,
         },
         0.7
-      )
+      );
     }
 
     if (dot2.current) {
@@ -391,7 +391,7 @@ export default function CharacterOne({
           z: 0.3,
         },
         0.7
-      )
+      );
     }
 
     if (dot3.current) {
@@ -404,7 +404,7 @@ export default function CharacterOne({
           z: 0.3,
         },
         0.7
-      )
+      );
     }
 
     if (dot4.current) {
@@ -417,7 +417,7 @@ export default function CharacterOne({
           z: 0.3,
         },
         0.7
-      )
+      );
     }
 
     if (dot5.current) {
@@ -430,7 +430,7 @@ export default function CharacterOne({
           z: 0.3,
         },
         0.7
-      )
+      );
     }
     if (dot6.current) {
       tl.current.to(
@@ -442,7 +442,7 @@ export default function CharacterOne({
           z: 0.3,
         },
         0.7
-      )
+      );
     }
     if (dot7.current) {
       tl.current.to(
@@ -454,7 +454,7 @@ export default function CharacterOne({
           z: 0.3,
         },
         0.7
-      )
+      );
     }
     if (dot8.current) {
       tl.current.to(
@@ -466,7 +466,7 @@ export default function CharacterOne({
           z: 0.3,
         },
         0.7
-      )
+      );
     }
     if (dot9.current) {
       tl.current.to(
@@ -478,7 +478,7 @@ export default function CharacterOne({
           z: 0.3,
         },
         0.7
-      )
+      );
     }
     if (dot10.current) {
       tl.current.to(
@@ -490,7 +490,7 @@ export default function CharacterOne({
           z: 0.3,
         },
         0.7
-      )
+      );
     }
     if (overalls.current) {
       tl.current.to(
@@ -501,7 +501,7 @@ export default function CharacterOne({
           z: -6.3,
         },
         1
-      )
+      );
     }
     if (sprea.current) {
       tl.current.to(
@@ -513,7 +513,7 @@ export default function CharacterOne({
           z: 0.25,
         },
         0.9
-      )
+      );
     }
     if (overalls.current) {
       tl.current.to(
@@ -525,7 +525,7 @@ export default function CharacterOne({
           z: 0,
         },
         1.4
-      )
+      );
     }
     if (sprea.current) {
       tl.current.to(
@@ -538,7 +538,7 @@ export default function CharacterOne({
           z: 8,
         },
         2.5
-      )
+      );
     }
 
     if (centerball.current) {
@@ -551,7 +551,7 @@ export default function CharacterOne({
           z: 0,
         },
         2.5
-      )
+      );
     }
 
     if (spreaone.current) {
@@ -564,7 +564,7 @@ export default function CharacterOne({
           z: 0.25,
         },
         2.1
-      )
+      );
     }
     if (spreaone.current) {
       tl.current.to(
@@ -577,9 +577,9 @@ export default function CharacterOne({
           z: 8,
         },
         2.8
-      )
+      );
     }
-  }, [isMobile])
+  }, [isMobile]);
 
   return (
     <motion.group
@@ -755,7 +755,7 @@ export default function CharacterOne({
         </group>
       </group>
     </motion.group>
-  )
+  );
 }
 
-useGLTF.preload("f22noanime.glb")
+useGLTF.preload("f22noanime.glb");
