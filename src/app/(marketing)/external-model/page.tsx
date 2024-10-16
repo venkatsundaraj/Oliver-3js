@@ -1,25 +1,25 @@
-"use client"
+"use client";
 
-import { Button, buttonVariants } from "@/app/_components/button"
-import { cn } from "@/lib/utils"
-import { Canvas } from "@react-three/fiber"
-import dynamic from "next/dynamic"
-import Image from "next/image"
-import Link from "next/link"
-import { FC } from "react"
+import { Button, buttonVariants } from "@/app/_components/button";
+import { cn } from "@/lib/utils";
+import { Canvas } from "@react-three/fiber";
+import dynamic from "next/dynamic";
+import Image from "next/image";
+import Link from "next/link";
+import { FC } from "react";
 import {
   functionalSpiralContent,
   domainsData,
   differentiatorData,
-} from "@/config/marketing"
-import InfiniteMap from "@/app/_components/infinite-map"
+} from "@/config/marketing";
+import InfiniteMap from "@/app/_components/infinite-map";
 
 interface pageProps {}
 
 const Model = dynamic(() => import("@/app/_components/model"), {
   loading: () => <p>Loading</p>,
   ssr: false,
-})
+});
 
 const page: FC<pageProps> = ({}) => {
   return (
@@ -67,7 +67,7 @@ const page: FC<pageProps> = ({}) => {
       </section>
 
       {/* Our Differentiator Section */}
-      <section className="w-screen flex items-start justify-center bg-background py-5">
+      <section className="w-screen hidden items-start justify-center bg-background py-5">
         <div className="container flex items-start justify-center flex-col relative">
           <div className="flex items-start flex-col justify-center gap-2 sticky bg-background w-full top-0">
             <h2 className="flex items-start justify-start flex-col">
@@ -302,7 +302,7 @@ const page: FC<pageProps> = ({}) => {
         </div>
       </section>
     </>
-  )
-}
+  );
+};
 
-export default page
+export default page;

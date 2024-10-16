@@ -100,19 +100,14 @@ const Model: FC<ModelProps> = ({}) => {
         <div className="container w-full h-full flex flex-col items-center justify-center gap-48">
           <div className="self-start">
             <span className="text-foreground text-center text-6xl font-heading text-extra_paragraph_heading">
-              Who utilize
+              We unlock <strong>Business Growth Spirals</strong>
             </span>
-            <h1 className="text-secondary_heading text-center font-heading text-primary-foreground">
-              Insights
-            </h1>
           </div>
           <div className="self-end">
             <span className="text-foreground text-center text-6xl font-heading text-extra_paragraph_heading">
-              to unlock
+              that are <strong>Transformative and Profitable</strong> for our
+              clients
             </span>
-            <h1 className="text-secondary_heading text-center font-heading text-primary-foreground">
-              Heigher Profits
-            </h1>
           </div>
         </div>
       </section>
@@ -129,7 +124,7 @@ const Model: FC<ModelProps> = ({}) => {
             Our
           </span>
           <h1 className="text-secondary_heading text-center font-heading text-primary-foreground mb-8">
-            Offer
+            Proposition
           </h1>
           <p className="text-foreground leading-10 text-center text-6xl font-heading text-extra_paragraph_heading max-w-lg">
             <strong>
