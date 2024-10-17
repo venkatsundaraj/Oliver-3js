@@ -41,9 +41,9 @@ const page: FC<pageProps> = ({}) => {
                 </span>
               </h2>
               <p className="max-w-md text-extra_paragraph_heading font-paragraph leading-loose text-foreground">
-                Operating Contexts that are Complex, or Represent
+                Operating Contexts that are Complex, or represent
                 discontinuities, or have a history of failure. Across
-                Industries, & Geographies Categories, & Domains.
+                Industries, & Geographies categories, & Domains.
               </p>
               <Link
                 href={"/know-more"}
@@ -193,7 +193,7 @@ const page: FC<pageProps> = ({}) => {
               </h2>
               <p className="max-w-md text-extra_paragraph_heading leading-loose text-foreground">
                 The leadership team at Cosmos comprises senior professionals,
-                with more than 500 years of Cumulative experience in building,
+                with more than 500 years of cumulative experience in building,
                 managing & growing large businesses across various geographies
                 globally.
               </p>
