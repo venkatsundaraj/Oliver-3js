@@ -41,9 +41,9 @@ const page: FC<pageProps> = ({}) => {
                 </span>
               </h2>
               <p className="max-w-md text-extra_paragraph_heading font-paragraph leading-loose text-foreground">
-                Operating Contexts that are Complex, or represent
+                Operating Contexts that are complex, or represent
                 discontinuities, or have a history of failure. Across
-                Industries, & Geographies categories, & Domains.
+                industries, & geographies categories, & domains.
               </p>
               <Link
                 href={"/know-more"}
