@@ -75,7 +75,7 @@ const page: FC<pageProps> = ({}) => {
             <div className="flex items-start flex-col justify-center gap-4">
               <h2 className="flex items-start justify-start flex-col">
                 <span className="text-our_text_heading text-foreground font-heading">
-                  our
+                  Our
                 </span>
                 <span className="text-primary-foreground text-secondary_heading font-heading font-bold leading-tight">
                   Practices

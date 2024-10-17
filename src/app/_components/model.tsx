@@ -7,6 +7,7 @@ import Character from "./character"
 import { useState } from "react"
 import { cn } from "@/lib/utils"
 import CharacterOne from "./character-one"
+import { THRESHOLD_MAXIMUM_SCALE_VALUE } from "@/config/threejs-constants"
 
 interface ModelProps {}
 
@@ -38,7 +39,10 @@ const Model: FC<ModelProps> = ({}) => {
     >
       <Canvas
         gl={{ antialias: true }}
-        className="!h-svh !fixed top-0 left-0 flex items-center justify-center"
+        className={cn(
+          "!h-svh !fixed top-0 left-0 flex items-center justify-center",
+          frameValue === 1 ? "opacity-0" : ""
+        )}
       >
         <ambientLight intensity={4} />
         <Suspense fallback={<Loader />}>
@@ -83,7 +87,8 @@ const Model: FC<ModelProps> = ({}) => {
               to unlock
             </span>
             <h1 className="text-secondary_heading text-center font-heading text-primary-foreground leading-tight">
-              Heigher Profits
+              Heigher <br />
+              Profits
             </h1>
           </div>
         </div>
@@ -98,7 +103,7 @@ const Model: FC<ModelProps> = ({}) => {
       >
         <div className="container w-full h-full flex flex-col items-center justify-center gap-48">
           <div className="self-start">
-            <span className="text-foreground text-center text-6xl font-paragraph text-our_text_heading leading-tight">
+            <span className="text-foreground text-center text-6xl font-paragraph text-extra_paragraph_heading leading-tight">
               We unlock <br />
               <strong>
                 Business Growth
@@ -107,7 +112,7 @@ const Model: FC<ModelProps> = ({}) => {
             </span>
           </div>
           <div className="self-end">
-            <span className="text-foreground text-center text-6xl font-paragraph text-our_text_heading leading-tight">
+            <span className="text-foreground text-center text-6xl font-paragraph text-extra_paragraph_heading leading-tight">
               that are
               <strong>
                 Transformative
