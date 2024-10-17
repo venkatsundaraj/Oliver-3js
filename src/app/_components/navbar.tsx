@@ -27,7 +27,7 @@ const Navbar: FC<NavbarProps> = ({ items }) => {
   return (
     <header
       className={cn(
-        "sm:flex relative flex-row items-center justify-between gap-8 py-4 z-20 px-10 border-b",
+        "sm:flex flex-row items-center justify-between gap-8 py-4 z-20 px-10 border-b sticky top-0 backdrop-blur-sm",
         true && "justify-between"
       )}
     >
