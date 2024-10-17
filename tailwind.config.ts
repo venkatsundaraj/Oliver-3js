@@ -1,4 +1,4 @@
-import type { Config } from "tailwindcss";
+import type { Config } from "tailwindcss"
 
 const config: Config = {
   content: [
@@ -68,6 +68,7 @@ const config: Config = {
       },
       fontSize: {
         extra_paragraph_heading: "clamp(16px,1.8vw,24px)",
+        our_text_heading: "clamp(20px,2.4vw,36px)",
         secondary_heading: "clamp(28px, 5.8vw, 68px)",
         tertiary_heading: "clamp(20px, 4vw, 38px)",
         subtitle_heading: "clamp(16px,1.8vw,20px)",
@@ -140,5 +141,5 @@ const config: Config = {
     },
   },
   plugins: [require("tailwindcss-animate")],
-};
-export default config;
+}
+export default config

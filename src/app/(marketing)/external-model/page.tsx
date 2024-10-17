@@ -1,26 +1,26 @@
-"use client";
+"use client"
 
-import { Button, buttonVariants } from "@/app/_components/button";
-import { cn } from "@/lib/utils";
-import { Canvas } from "@react-three/fiber";
-import dynamic from "next/dynamic";
-import Image from "next/image";
-import Link from "next/link";
-import { FC } from "react";
+import { Button, buttonVariants } from "@/app/_components/button"
+import { cn } from "@/lib/utils"
+import { Canvas } from "@react-three/fiber"
+import dynamic from "next/dynamic"
+import Image from "next/image"
+import Link from "next/link"
+import { FC } from "react"
 import {
   functionalSpiralContent,
   domainsData,
   differentiatorData,
   ourDifferentiatorContent,
-} from "@/config/marketing";
-import InfiniteMap from "@/app/_components/infinite-map";
+} from "@/config/marketing"
+import InfiniteMap from "@/app/_components/infinite-map"
 
 interface pageProps {}
 
 const Model = dynamic(() => import("@/app/_components/model"), {
   loading: () => <p>Loading</p>,
   ssr: false,
-});
+})
 
 const page: FC<pageProps> = ({}) => {
   return (
@@ -33,10 +33,10 @@ const page: FC<pageProps> = ({}) => {
           <div className="grid grid-cols-1 md:grid-cols-2 w-full gap-8 md:gap-0">
             <div className="flex items-start flex-col justify-center gap-4">
               <h2 className="flex items-start justify-start flex-col">
-                <span className="text-extra_paragraph_heading text-foreground font-heading">
+                <span className="text-our_text_heading text-foreground font-heading">
                   Our
                 </span>
-                <span className="text-primary-foreground text-secondary_heading font-heading font-normal">
+                <span className="text-primary-foreground text-secondary_heading font-heading font-normal leading-tight">
                   Terrain
                 </span>
               </h2>
@@ -74,10 +74,10 @@ const page: FC<pageProps> = ({}) => {
           <div className="grid grid-cols-1  w-full">
             <div className="flex items-start flex-col justify-center gap-4">
               <h2 className="flex items-start justify-start flex-col">
-                <span className="text-extra_paragraph_heading text-foreground font-heading">
+                <span className="text-our_text_heading text-foreground font-heading">
                   our
                 </span>
-                <span className="text-primary-foreground text-secondary_heading font-heading font-bold">
+                <span className="text-primary-foreground text-secondary_heading font-heading font-bold leading-tight">
                   Practices
                 </span>
               </h2>
@@ -125,10 +125,10 @@ const page: FC<pageProps> = ({}) => {
       <section className="w-screen flex items-center justify-center min-h-screen bg-background py-5">
         <div className="container flex flex-col items-start justify-center gap-8">
           <h2 className="flex items-start justify-start flex-col">
-            <span className="text-extra_paragraph_heading text-foreground font-heading">
+            <span className="text-our_text_heading text-foreground font-heading">
               Our
             </span>
-            <span className="text-primary-foreground text-secondary_heading font-heading font-bold">
+            <span className="text-primary-foreground text-secondary_heading font-heading font-bold leading-tight">
               Differentiators
             </span>
           </h2>
@@ -157,10 +157,10 @@ const page: FC<pageProps> = ({}) => {
       <section className="w-screen flex flex-col items-center justify-center bg-background relative py-5">
         <div className="container flex flex-col items-center justify-center md:absolute md:top-[50%] md:z-10 md:left-[50%] md:translate-x-[-50%] md:translate-y-[-50%]">
           <h2 className="flex justify-start flex-col text-center">
-            <span className="text-extra_paragraph_heading text-foreground font-heading">
+            <span className="text-our_text_heading text-foreground font-heading">
               Our
             </span>
-            <span className="text-primary-foreground text-secondary_heading font-normal font-heading">
+            <span className="text-primary-foreground text-secondary_heading font-normal font-heading leading-tight">
               Client Domains
             </span>
           </h2>
@@ -184,10 +184,10 @@ const page: FC<pageProps> = ({}) => {
           <div className="grid grid-cols-1 md:grid-cols-2 w-full gap-8 md:gap-0">
             <div className="flex items-start flex-col justify-center gap-4">
               <h2 className="flex items-start justify-start flex-col">
-                <span className="text-extra_paragraph_heading text-foreground font-heading">
+                <span className="text-our_text_heading text-foreground font-heading">
                   Some of our
                 </span>
-                <span className="text-primary-foreground text-secondary_heading font-normal font-heading">
+                <span className="text-primary-foreground text-secondary_heading font-normal leading-tight font-heading">
                   People
                 </span>
               </h2>
@@ -226,10 +226,10 @@ const page: FC<pageProps> = ({}) => {
           <div className="grid grid-cols-1  w-full">
             <div className="flex items-start flex-col justify-center gap-4">
               <h2 className="flex items-start justify-start flex-col">
-                <span className="text-extra_paragraph_heading text-foreground font-heading ">
+                <span className="text-our_text_heading text-foreground font-heading ">
                   Our
                 </span>
-                <span className="text-primary-foreground text-secondary_heading font-normal font-heading">
+                <span className="text-primary-foreground text-secondary_heading font-normal font-heading leading-tight">
                   Engagements
                 </span>
               </h2>
@@ -256,7 +256,7 @@ const page: FC<pageProps> = ({}) => {
         </div>
       </section>
     </>
-  );
-};
+  )
+}
 
-export default page;
+export default page

@@ -1,35 +1,35 @@
-"use client";
+"use client"
 
-import { FC, Suspense, useEffect, useRef } from "react";
-import { Canvas } from "@react-three/fiber";
-import { ScrollControls, useProgress, Html } from "@react-three/drei";
-import Character from "./character";
-import { useState } from "react";
-import { cn } from "@/lib/utils";
-import CharacterOne from "./character-one";
+import { FC, Suspense, useEffect, useRef } from "react"
+import { Canvas } from "@react-three/fiber"
+import { ScrollControls, useProgress, Html } from "@react-three/drei"
+import Character from "./character"
+import { useState } from "react"
+import { cn } from "@/lib/utils"
+import CharacterOne from "./character-one"
 
 interface ModelProps {}
 
 function Loader() {
-  const { progress, active } = useProgress();
+  const { progress, active } = useProgress()
 
-  return <Html center>{progress.toFixed(1)} % loaded</Html>;
+  return <Html center>{progress.toFixed(1)} % loaded</Html>
 }
 
 const Model: FC<ModelProps> = ({}) => {
-  const [sectionHeight, setSectionHeight] = useState<number>(0);
-  const [frameValue, setFrameValue] = useState<number>(0);
-  const sectionRef = useRef<HTMLDivElement | null>(null);
+  const [sectionHeight, setSectionHeight] = useState<number>(0)
+  const [frameValue, setFrameValue] = useState<number>(0)
+  const sectionRef = useRef<HTMLDivElement | null>(null)
 
   useEffect(() => {
     if (sectionRef.current) {
-      setSectionHeight(sectionRef.current.offsetHeight); // Set the section height
+      setSectionHeight(sectionRef.current.offsetHeight) // Set the section height
     }
-  }, [sectionRef]);
+  }, [sectionRef])
 
   const getFrameValue = function (value: number) {
-    setFrameValue(value);
-  };
+    setFrameValue(value)
+  }
 
   return (
     <main
@@ -38,10 +38,9 @@ const Model: FC<ModelProps> = ({}) => {
     >
       <Canvas
         gl={{ antialias: true }}
-        dpr={[1, 1.5]}
         className="!h-svh !fixed top-0 left-0 flex items-center justify-center"
       >
-        <directionalLight intensity={4} />
+        <ambientLight intensity={4} />
         <Suspense fallback={<Loader />}>
           {/* <Character height={sectionHeight} frameValue={getFrameValue} /> */}
           <CharacterOne height={sectionHeight} frameValue={getFrameValue} />
@@ -55,10 +54,10 @@ const Model: FC<ModelProps> = ({}) => {
             : "opacity-0 z-[-1]"
         )}
       >
-        <span className="text-foreground text-center text-6xl font-heading text-extra_paragraph_heading">
+        <span className="text-foreground text-center font-heading text-our_text_heading">
           We are
         </span>
-        <h1 className="text-secondary_heading text-center font-heading text-primary-foreground">
+        <h1 className="text-secondary_heading text-center font-heading text-primary-foreground leading-tight">
           Growth Strategies
         </h1>
       </section>
@@ -72,18 +71,18 @@ const Model: FC<ModelProps> = ({}) => {
       >
         <div className="container w-full h-full flex flex-col items-center justify-center gap-48">
           <div className="self-start">
-            <span className="text-foreground text-center text-6xl font-heading text-extra_paragraph_heading">
+            <span className="text-foreground text-center text-6xl font-heading text-our_text_heading">
               Who utilize
             </span>
-            <h1 className="text-secondary_heading text-center font-heading text-primary-foreground">
+            <h1 className="text-secondary_heading text-center font-heading text-primary-foreground leading-tight">
               Insights
             </h1>
           </div>
           <div className="self-end">
-            <span className="text-foreground text-center text-6xl font-heading text-extra_paragraph_heading">
+            <span className="text-foreground text-center text-6xl font-heading text-our_text_heading">
               to unlock
             </span>
-            <h1 className="text-secondary_heading text-center font-heading text-primary-foreground">
+            <h1 className="text-secondary_heading text-center font-heading text-primary-foreground leading-tight">
               Heigher Profits
             </h1>
           </div>
@@ -99,7 +98,7 @@ const Model: FC<ModelProps> = ({}) => {
       >
         <div className="container w-full h-full flex flex-col items-center justify-center gap-48">
           <div className="self-start">
-            <span className="text-foreground text-center text-6xl font-paragraph text-extra_paragraph_heading leading-7">
+            <span className="text-foreground text-center text-6xl font-paragraph text-our_text_heading leading-tight">
               We unlock <br />
               <strong>
                 Business Growth
@@ -108,7 +107,7 @@ const Model: FC<ModelProps> = ({}) => {
             </span>
           </div>
           <div className="self-end">
-            <span className="text-foreground text-center text-6xl font-paragraph text-extra_paragraph_heading leading-7">
+            <span className="text-foreground text-center text-6xl font-paragraph text-our_text_heading leading-tight">
               that are
               <strong>
                 Transformative
@@ -129,10 +128,10 @@ const Model: FC<ModelProps> = ({}) => {
         )}
       >
         <div className="container w-full h-full flex flex-col items-center justify-center ">
-          <span className="text-foreground text-center text-6xl font-heading text-extra_paragraph_heading">
+          <span className="text-foreground text-center text-6xl font-heading text-our_text_heading">
             Our
           </span>
-          <h1 className="text-secondary_heading text-center font-heading text-primary-foreground mb-2">
+          <h1 className="text-secondary_heading text-center font-heading text-primary-foreground mb-2 leading-tight">
             Proposition
           </h1>
           <p className="text-foreground leading-10 text-center text-6xl font-paragraph text-extra_paragraph_heading md:max-w-lg">
@@ -144,7 +143,7 @@ const Model: FC<ModelProps> = ({}) => {
         </div>
       </section>
     </main>
-  );
-};
+  )
+}
 
-export default Model;
+export default Model
