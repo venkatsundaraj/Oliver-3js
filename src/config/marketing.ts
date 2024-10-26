@@ -245,3 +245,16 @@ export const ourDifferentiatorContent: { title: string; imgPath: string }[] = [
       "https://utfs.io/f/ZowmNmBHF7rVgAnj0u8GZmO7D95FyjUwVrPNpCBfxz4KHMWX",
   },
 ];
+
+export const valueEngineContent = [
+  "Granular Insights",
+  "Rich Empathy",
+  "Practiced Expertise",
+  "Holistic Perspective",
+  "Collaborative Working",
+  "Accountable Partnership",
+  "Joyful Experience",
+  "Mutual Learning",
+  "Actionable Strategy",
+  "Customisable Solution",
+];
