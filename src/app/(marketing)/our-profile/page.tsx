@@ -31,7 +31,7 @@ const page: FC<pageProps> = ({}) => {
       </section>
 
       {/* Who are we Section */}
-      <section className="w-screen flex items-center justify-center h-screen bg-background py-5 ">
+      <section className="w-screen flex items-center justify-center bg-background py-6 md:py-32">
         <div className="container flex items-center justify-center relative">
           <div className="grid grid-cols-1 md:grid-cols-2 w-full gap-8 md:gap-0">
             <div className="flex items-start flex-col justify-center gap-4">
@@ -60,7 +60,7 @@ const page: FC<pageProps> = ({}) => {
       </section>
 
       {/* Our Believe Section */}
-      <section className="w-screen flex items-center justify-center h-screen bg-background py-5 ">
+      <section className="w-screen flex items-center justify-center bg-background py-6 md:py-32">
         <div className="container flex items-center justify-center">
           <div className="grid grid-cols-1 md:grid-cols-3 w-full gap-8 md:gap-0">
             <h2 className="flex items-start justify-start flex-col">
@@ -77,7 +77,7 @@ const page: FC<pageProps> = ({}) => {
       </section>
 
       {/* Our Values Engine Section */}
-      <section className="w-screen flex items-center justify-center min-h-screen bg-background py-10 flex-col">
+      <section className="w-screen flex items-center justify-center min-h-screen bg-background py-6 md:py-32 flex-col">
         <div className="container flex items-center justify-center mb-16">
           <div className="container w-full h-full flex flex-col items-center justify-center ">
             <h2 className="flex items-center justify-center flex-col">
@@ -109,13 +109,18 @@ const page: FC<pageProps> = ({}) => {
                     className={cn(
                       "inline-flex items-center justify-center px-6 py-2 bg-secondary-foreground text-foreground font-paragraph text-extra_paragraph_heading min-w-[300px] md:min-w-[400px] relative",
                       i % 2 === 0
-                        ? "before:md:content-[''] before:w-2/3 before:h-[1px] before:absolute before:top-[50%] before:translate-y-[-50%] before:left-[100%] before:bg-foreground"
+                        ? `before:md:content-[''] before:w-2/3 before:h-[1px] before:absolute before:top-[50%] before:translate-y-[-50%] before:left-[100%] before:bg-foreground`
                         : ""
                     )}
                   >
                     {item}
                   </span>
                 </li>
+              ))}
+            </ul>
+            <ul className="relative">
+              {Array.from({ length: 5 }).map((_, i) => (
+                <li>{}</li>
               ))}
             </ul>
           </div>
@@ -130,4 +135,4 @@ const page: FC<pageProps> = ({}) => {
 
 export default page;
 
-// odd:before:'' odd:before:w-1/3 h-[1px] odd:before:absolute odd:before:top-[50%] odd:before:translate-y-[-50%] odd:before:left-[50%]
+// after:content-[''] after:w-0 after:h-0  after:border-r-[20px] after:border-l-[20px] after:border-l-transparent after:border-r-transparent after:border-t-[35px] after:border-t-foreground after:absolute after:top-[50%] after:left-[100%] translate-y-[-50%]

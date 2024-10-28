@@ -15,6 +15,7 @@ import {
   Moon,
   ArrowLeft,
   Laptop,
+  Play,
 } from "lucide-react";
 
 export const Icons = {
@@ -34,6 +35,7 @@ export const Icons = {
   ArrowRight,
   X,
   Activity,
+  Play,
 };
 
 export type Icon = keyof typeof Icons;
