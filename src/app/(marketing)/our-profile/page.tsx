@@ -135,7 +135,7 @@ const page: FC<pageProps> = ({}) => {
               ))}
             </ul>
           </div>
-          <p className="text-foreground leading-10 text-center mt-4 md:mt-8 font-heading text-tertiary_heading">
+          <p className="text-foreground leading-10 text-center mt-4 md:mt-16 font-heading text-tertiary_heading">
             Depth, Empathy, Holism, Practice, Collaboration, Joy
           </p>
         </div>
