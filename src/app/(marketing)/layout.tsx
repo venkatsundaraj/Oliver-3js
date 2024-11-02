@@ -1,10 +1,11 @@
-import React, { FC } from "react"
-import Navbar from "@/app/_components/navbar"
-import { marketingConfig } from "@/config/marketing"
-import Footer from "@/app/_components/footer"
+import React, { FC } from "react";
+import Navbar from "@/app/_components/navbar";
+import { marketingConfig } from "@/config/marketing";
+import Footer from "@/app/_components/footer";
+import { Toaster } from "@/app/_components/ui/toaster";
 
 interface layoutProps {
-  children: React.ReactNode
+  children: React.ReactNode;
 }
 
 const layout: FC<layoutProps> = ({ children }) => {
@@ -13,8 +14,9 @@ const layout: FC<layoutProps> = ({ children }) => {
       <Navbar items={marketingConfig} />
       {children}
       <Footer />
+      <Toaster />
     </main>
-  )
-}
+  );
+};
 
-export default layout
+export default layout;
