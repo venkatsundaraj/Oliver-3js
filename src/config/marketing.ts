@@ -265,3 +265,27 @@ export const ourProfileContent: string[] = [
   "Realising the advantage lies in the design of precise programs at the front-end on brand, innovation, customer engagement helped by a specific, enabling people & operations perspective.",
   " To give customised advice on making this happen requires intense collaboration, shared accountability, personal involvement by a sound blend of global practitioner + consulting experience at the core with a network of best in class program experts.",
 ];
+
+export const addressData: { location: string; description: string }[] = [
+  {
+    location: "India",
+    description: "Level 9, Platina, BKC, Mumbai - 400051. Maharashtra, India.",
+  },
+  {
+    location: "Singapore",
+    description: "Level 19 & 20, Tower 2, 1 Raffles Place 048616, Singapore.",
+  },
+  {
+    location: "UK",
+    description: "Level 5,167 - 169 Great Portland St., London W1W 5PF, UK.",
+  },
+  {
+    location: "Kenya",
+    description:
+      "Level 3, Royal Offices, Mogotio Road, Nairobi, PO 6578-00200, Kenya.",
+  },
+  {
+    location: "location",
+    description: "Address Line 1 Address line 2 Pincode - 123456, City.",
+  },
+];
