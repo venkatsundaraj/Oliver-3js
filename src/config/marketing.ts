@@ -1,9 +1,11 @@
 import {
   contactUsItem,
   locationItem,
+  SubNavItem,
   MainNavItems,
   functionalSpiralItem,
-} from "@/types"
+} from "@/types";
+import { title } from "process";
 export const marketingConfig: MainNavItems = [
   {
     title: "Home",
@@ -46,7 +48,7 @@ export const marketingConfig: MainNavItems = [
     href: "/our-blogs",
     subItems: [],
   },
-]
+];
 
 // Footer contents
 export const locationContents: locationItem[] = [
@@ -70,7 +72,7 @@ export const locationContents: locationItem[] = [
     locationCount: "Location 5",
     location: "Address Line 1, Address Line 2, Address Line 3, City - Pincode.",
   },
-]
+];
 
 export const contactUsBody: contactUsItem[] = [
   {
@@ -93,7 +95,7 @@ export const contactUsBody: contactUsItem[] = [
     name: "cosmos-strategy-consultants-llp/",
     link: "cosmos-strategy-consultants-llp/",
   },
-]
+];
 
 export const functionalSpiralContent: functionalSpiralItem[] = [
   {
@@ -124,7 +126,7 @@ export const functionalSpiralContent: functionalSpiralItem[] = [
     data: "Operations",
     value: "Operations & Supply Chain",
   },
-]
+];
 
 export const domainsData: string[] = [
   "Global International",
@@ -132,7 +134,7 @@ export const domainsData: string[] = [
   "SME's",
   "Startup Ventures",
   "Not-for-Profit Organisation",
-]
+];
 
 export const tailSectionData: { title: string; palette: string }[] = [
   {
@@ -152,11 +154,11 @@ export const tailSectionData: { title: string; palette: string }[] = [
     title: "An Indian amusement parks leader",
     palette: "bg-tail-e",
   },
-]
+];
 
 export const differentiatorData: {
-  serialNumber: string
-  description: string
+  serialNumber: string;
+  description: string;
 }[] = [
   {
     serialNumber: "A.",
@@ -201,7 +203,7 @@ export const differentiatorData: {
     description:
       "Expeerience across x categories, y geographies, z domains versus tunneled expertise",
   },
-]
+];
 
 export const ourDifferentiatorContent: { title: string; imgPath: string }[] = [
   {
@@ -244,7 +246,7 @@ export const ourDifferentiatorContent: { title: string; imgPath: string }[] = [
     imgPath:
       "https://utfs.io/f/ZowmNmBHF7rVgAnj0u8GZmO7D95FyjUwVrPNpCBfxz4KHMWX",
   },
-]
+];
 
 export const valueEngineContent: string[] = [
   "Granular Insights",
@@ -257,14 +259,14 @@ export const valueEngineContent: string[] = [
   "Mutual Learning",
   "Actionable Strategy",
   "Customisable Solution",
-]
+];
 
 export const ourProfileContent: string[] = [
   "Businesses exist for growth and they often require help in unlocking it especially when the markets are complex. At the heart of all such problems & opportunities lies a core business insight, a market value driver, around which spirals a specific growth construct.",
   "Uncovering the right insight & having the entire business strategy and model revolve around it is the beginning of sustained growth advantage. This advantage often leads to new ways of expanding business & portfolio.",
   "Realising the advantage lies in the design of precise programs at the front-end on brand, innovation, customer engagement helped by a specific, enabling people & operations perspective.",
   " To give customised advice on making this happen requires intense collaboration, shared accountability, personal involvement by a sound blend of global practitioner + consulting experience at the core with a network of best in class program experts.",
-]
+];
 
 export const addressData: { location: string; description: string }[] = [
   {
@@ -288,7 +290,7 @@ export const addressData: { location: string; description: string }[] = [
     location: "location",
     description: "Address Line 1 Address line 2 Pincode - 123456, City.",
   },
-]
+];
 
 export const blogCategoryTitle: { title: string; value: string }[] = [
   {
@@ -307,7 +309,7 @@ export const blogCategoryTitle: { title: string; value: string }[] = [
     title: "Category 3",
     value: "category-3",
   },
-]
+];
 
 export const blogCategoryContent = [
   {
@@ -315,24 +317,28 @@ export const blogCategoryContent = [
     contents: [
       {
         category: "all",
+        id: 1,
         categoryTitle: "Lorem ipsum dolor sit amet, consect adipiscing elit?",
         image:
           "https://utfs.io/f/ZowmNmBHF7rVbWDCKXkH2jDYzO9VfQms1UPwlxZdI8GBNqX7",
       },
       {
         category: "all",
+        id: 2,
         categoryTitle: "Lorem ipsum dolor sit amet, consect adipiscing elit?",
         image:
           "https://utfs.io/f/ZowmNmBHF7rVbWDCKXkH2jDYzO9VfQms1UPwlxZdI8GBNqX7",
       },
       {
         category: "all",
+        id: 3,
         categoryTitle: "Lorem ipsum dolor sit amet, consect adipiscing elit?",
         image:
           "https://utfs.io/f/ZowmNmBHF7rVbWDCKXkH2jDYzO9VfQms1UPwlxZdI8GBNqX7",
       },
       {
         category: "all",
+        id: 4,
         categoryTitle: "Lorem ipsum dolor sit amet, consect adipiscing elit?",
         image:
           "https://utfs.io/f/ZowmNmBHF7rVbWDCKXkH2jDYzO9VfQms1UPwlxZdI8GBNqX7",
@@ -344,24 +350,28 @@ export const blogCategoryContent = [
     contents: [
       {
         category: "category-1",
+        id: 5,
         categoryTitle: "Lorem ipsum dolor sit amet, consect adipiscing elit?",
         image:
           "https://utfs.io/f/ZowmNmBHF7rVbWDCKXkH2jDYzO9VfQms1UPwlxZdI8GBNqX7",
       },
       {
         category: "category-1",
+        id: 6,
         categoryTitle: "Lorem ipsum dolor sit amet, consect adipiscing elit?",
         image:
           "https://utfs.io/f/ZowmNmBHF7rVbWDCKXkH2jDYzO9VfQms1UPwlxZdI8GBNqX7",
       },
       {
         category: "category-1",
+        id: 7,
         categoryTitle: "Lorem ipsum dolor sit amet, consect adipiscing elit?",
         image:
           "https://utfs.io/f/ZowmNmBHF7rVbWDCKXkH2jDYzO9VfQms1UPwlxZdI8GBNqX7",
       },
       {
         category: "category-1",
+        id: 8,
         categoryTitle: "Lorem ipsum dolor sit amet, consect adipiscing elit?",
         image:
           "https://utfs.io/f/ZowmNmBHF7rVbWDCKXkH2jDYzO9VfQms1UPwlxZdI8GBNqX7",
@@ -373,24 +383,28 @@ export const blogCategoryContent = [
     contents: [
       {
         category: "category-2",
+        id: 9,
         categoryTitle: "Lorem ipsum dolor sit amet, consect adipiscing elit?",
         image:
           "https://utfs.io/f/ZowmNmBHF7rVbWDCKXkH2jDYzO9VfQms1UPwlxZdI8GBNqX7",
       },
       {
         category: "category-2",
+        id: 10,
         categoryTitle: "Lorem ipsum dolor sit amet, consect adipiscing elit?",
         image:
           "https://utfs.io/f/ZowmNmBHF7rVbWDCKXkH2jDYzO9VfQms1UPwlxZdI8GBNqX7",
       },
       {
         category: "category-2",
+        id: 11,
         categoryTitle: "Lorem ipsum dolor sit amet, consect adipiscing elit?",
         image:
           "https://utfs.io/f/ZowmNmBHF7rVbWDCKXkH2jDYzO9VfQms1UPwlxZdI8GBNqX7",
       },
       {
         category: "category-2",
+        id: 12,
         categoryTitle: "Lorem ipsum dolor sit amet, consect adipiscing elit?",
         image:
           "https://utfs.io/f/ZowmNmBHF7rVbWDCKXkH2jDYzO9VfQms1UPwlxZdI8GBNqX7",
@@ -402,28 +416,47 @@ export const blogCategoryContent = [
     contents: [
       {
         category: "category-3",
+        id: 13,
         categoryTitle: "Lorem ipsum dolor sit amet, consect adipiscing elit?",
         image:
           "https://utfs.io/f/ZowmNmBHF7rVbWDCKXkH2jDYzO9VfQms1UPwlxZdI8GBNqX7",
       },
       {
         category: "category-3",
+        id: 14,
         categoryTitle: "Lorem ipsum dolor sit amet, consect adipiscing elit?",
         image:
           "https://utfs.io/f/ZowmNmBHF7rVbWDCKXkH2jDYzO9VfQms1UPwlxZdI8GBNqX7",
       },
       {
         category: "category-3",
+        id: 15,
         categoryTitle: "Lorem ipsum dolor sit amet, consect adipiscing elit?",
         image:
           "https://utfs.io/f/ZowmNmBHF7rVbWDCKXkH2jDYzO9VfQms1UPwlxZdI8GBNqX7",
       },
       {
         category: "category-3",
+        id: 16,
         categoryTitle: "Lorem ipsum dolor sit amet, consect adipiscing elit?",
         image:
           "https://utfs.io/f/ZowmNmBHF7rVbWDCKXkH2jDYzO9VfQms1UPwlxZdI8GBNqX7",
       },
     ],
   },
-]
+];
+
+export const contentLists: SubNavItem[] = [
+  {
+    title: "Blogs",
+    href: "/dashboard/blog",
+  },
+  {
+    title: "People",
+    href: "/dashboard/people",
+  },
+  {
+    title: "Work",
+    href: "/dashboard/work",
+  },
+];

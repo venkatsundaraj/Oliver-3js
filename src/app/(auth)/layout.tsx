@@ -10,9 +10,10 @@ interface layoutProps {
 
 const layout: FC<layoutProps> = ({ children }) => {
   return (
-    <main className="min-h-screen w-screen flex items-center justify-center bg-background">
+    <main className="min-h-screen w-screen bg-background">
       <Navbar items={marketingConfig} />
       {children}
+      <Footer />
       <Toaster />
     </main>
   );
