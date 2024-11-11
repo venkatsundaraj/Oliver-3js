@@ -1,26 +1,26 @@
-import { Button } from "@/app/_components/ui/button"
+import { Button } from "@/app/_components/ui/button";
 
-import { Input } from "@/app/_components/ui/input"
-import { Label } from "@/app/_components/ui/label"
-import { blogCategoryTitle } from "@/config/marketing"
-import { FC } from "react"
-import { blogCategoryContent } from "@/config/marketing"
+import { Input } from "@/app/_components/ui/input";
+import { Label } from "@/app/_components/ui/label";
+import { blogCategoryTitle } from "@/config/marketing";
+import { FC } from "react";
+import { blogCategoryContent } from "@/config/marketing";
 import {
   Tabs,
   TabsContent,
   TabsList,
   TabsTrigger,
-} from "@/app/_components/ui/tabs"
-import Image from "next/image"
-import Link from "next/link"
-import { slugify } from "@/lib/utils"
+} from "@/app/_components/ui/tabs";
+import Image from "next/image";
+import Link from "next/link";
+import { slugify } from "@/lib/utils";
 
 interface BlogListsProps {}
 
 const BlogLists: FC<BlogListsProps> = ({}) => {
   return (
     <Tabs defaultValue="all" className="w-full md:max-w-3xl bg-transparent">
-      <TabsList className="flex w-full gap-24 flex-wrap md:flex-nowrap">
+      <TabsList className="flex w-full gap-8 md:gap-24 flex-wrap md:flex-nowrap">
         {blogCategoryTitle.map((item, i) => (
           <TabsTrigger key={i} value={item.value}>
             {item.title}
@@ -56,7 +56,7 @@ const BlogLists: FC<BlogListsProps> = ({}) => {
         </TabsContent>
       ))}
     </Tabs>
-  )
-}
+  );
+};
 
-export default BlogLists
+export default BlogLists;

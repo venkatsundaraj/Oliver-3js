@@ -52,7 +52,7 @@ const FeaturedBlogs: FC<FeaturedBlogsProps> = ({}) => {
             </CarouselItem>
           ))}
         </CarouselContent>
-        <div className="absolute top-[100%] right-0 translate-y-[-50%]">
+        <div className="absolute top-[100%] right-[20%] md:right-0 translate-y-[-50%]">
           <CarouselPrevious />
           <CarouselNext />
         </div>

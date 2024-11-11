@@ -10,7 +10,7 @@ const Sidebar: FC<SidebarProps> = ({}) => {
     <nav className="max-w-sm w-full flex items-start justify-center border-e border-e-foreground h-screen overflow-hidden p-4">
       <ul className="flex list-none items-center flex-col justify-between w-full">
         {contentLists.map((item, i) => (
-          <li className="text-subtitle_heading w-full" key={i}>
+          <li className="text-subtitle_heading w-full text-center" key={i}>
             <Link
               href={item.disabled ? "#" : item.href}
               className={cn(

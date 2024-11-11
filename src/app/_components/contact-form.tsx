@@ -35,12 +35,12 @@ const ContactForm: FC<ContactFormProps> = ({}) => {
       console.log(data);
       if (data.status === 200) {
         console.log(data);
-        return toast({
+        toast({
           title: "Your data has been Submitted",
           description: "Please Check your data",
           variant: "default",
         });
-        // return reset();
+        return reset();
       }
 
       return toast({

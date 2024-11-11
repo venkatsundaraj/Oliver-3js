@@ -2,6 +2,8 @@ import {
   pgTable,
   serial,
   text,
+  varchar,
+  date,
   timestamp,
   pgTableCreator,
 } from "drizzle-orm/pg-core";
@@ -18,6 +20,18 @@ export const contactFormTable = createTable("contact_form", {
   companyName: text("company_name"),
   companyWebsite: text("company_website"),
   message: text("message").notNull(),
+  createdAt: timestamp("created_at").notNull().defaultNow(),
+  updatedAt: timestamp("updated_at")
+    .notNull()
+    .$onUpdate(() => new Date()),
+});
+
+export const blogTable = createTable("blog", {
+  id: serial("id").primaryKey(),
+  title: varchar("title", { length: 255 }).notNull(),
+  category: varchar("category", { length: 255 }).notNull(),
+  date: date("date").notNull(),
+  content: text("content").notNull(),
   createdAt: timestamp("created_at").notNull().defaultNow(),
   updatedAt: timestamp("updated_at")
     .notNull()
