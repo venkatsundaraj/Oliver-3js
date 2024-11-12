@@ -41,7 +41,7 @@ const category: string[] = ["Category 1", "Category 2", "Category 3"];
 const AddBlog: FC<AddBlogProps> = ({}) => {
   const [content, setContent] = useState<any>();
 
-  const searchParams = useSearchParams();
+  // const searchParams = useSearchParams();
   const {
     register,
     handleSubmit,
