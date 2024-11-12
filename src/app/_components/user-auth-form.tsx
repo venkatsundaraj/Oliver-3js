@@ -6,7 +6,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { userAuthSchema } from "@/lib/validation/auth";
 import { useForm } from "react-hook-form";
 import * as z from "zod";
-
+import { signIn } from "next-auth/react";
 import { cn } from "@/lib/utils";
 
 import { buttonVariants } from "@/app/_components/ui/button";
@@ -34,6 +34,18 @@ export function UserAuthForm({ className, ...props }: UserAuthFormProps) {
 
   async function onSubmit(data: FormData) {
     try {
+      const res = await signIn("email", {
+        email: data.email.toLowerCase(),
+        redirect: false,
+        callbackUrl: searchParams.get("from") || "/dashboard",
+      });
+      if (!res?.ok) {
+        return toast({
+          title: "Something went wrong",
+          description: "Your sign in request failed. Please try again.",
+          variant: "destructive",
+        });
+      }
       toast({
         title: "Please check your mail",
         description:
@@ -62,6 +74,7 @@ export function UserAuthForm({ className, ...props }: UserAuthFormProps) {
               type="email"
               autoCapitalize="none"
               autoComplete="email"
+              className="text-foreground"
               autoCorrect="off"
               disabled={isSubmitting}
               {...register("email")}

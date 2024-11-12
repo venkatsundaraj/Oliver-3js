@@ -26,6 +26,9 @@ export const env = createEnv({
       .min(1)
       .url({ message: "Please enter the correct url" }),
     TURSO_AUTH_TOKEN: z.string().min(1),
+    NEXT_PUBLIC_APP_URL: z.string().min(1),
+    RESEND_API_KEY: z.string().min(1),
+    SMTP_FROM: z.string().min(1),
   },
 
   /**
@@ -47,6 +50,9 @@ export const env = createEnv({
     NEXTAUTH_URL: process.env.NEXTAUTH_URL,
     DATABASE_URL: process.env.DATABASE_URL,
     TURSO_AUTH_TOKEN: process.env.TURSO_AUTH_TOKEN,
+    RESEND_API_KEY: process.env.RESEND_API_KEY,
+    SMTP_FROM: process.env.SMTP_FROM,
+    NEXT_PUBLIC_APP_URL: process.env.NEXT_PUBLIC_APP_URL,
   },
   /**
    * Run `build` or `dev` with `SKIP_ENV_VALIDATION` to skip env validation. This is especially

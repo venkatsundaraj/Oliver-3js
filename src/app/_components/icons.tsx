@@ -15,12 +15,14 @@ import {
   Moon,
   ArrowLeft,
   Laptop,
+  UserRoundCog,
   Play,
 } from "lucide-react";
 
 export const Icons = {
   User,
   Snail,
+  UserRoundCog,
   Sliders,
   ChevronLeft,
   Pencil,
