@@ -4,6 +4,7 @@ import {
   SubNavItem,
   MainNavItems,
   functionalSpiralItem,
+  OurProjectsType,
 } from "@/types";
 import { title } from "process";
 export const marketingConfig: MainNavItems = [
@@ -134,6 +135,53 @@ export const domainsData: string[] = [
   "SME's",
   "Startup Ventures",
   "Not-for-Profit Organisation",
+];
+
+export const clientDomains: string[] = [
+  "Fortune 500",
+  "MNC's",
+  "Regional Giants",
+  "Promoter Driver Enterprises",
+  "MSME's",
+  "Start Ups",
+  "Not for Profit NGO's",
+];
+
+export const clientData: { title: string; color: string }[] = [
+  { title: "A PE backed Ed-Tech start up", color: "blue" },
+  {
+    title: "A multi billion dollar, emerging markets, FMCG conglomerate",
+    color: "blue",
+  },
+  { title: "An Indian premium fashion boutique", color: "yellow" },
+  { title: "An Indian health & wellness leader", color: "blue" },
+  { title: "A global media & entertainment powerhouse", color: "blue" },
+  { title: "A global adult nutrition brand", color: "blue" },
+  { title: "LA global, Indian jewellery leader", color: "blue" },
+  {
+    title: "An emerging Indian professional beauty products enterprise",
+    color: "blue",
+  },
+  { title: "A global, multi category B2B and B2C conglomerate", color: "blue" },
+  { title: "Home service startup", color: "blue" },
+  { title: "An Indian diaspora targeted retail enterprise", color: "blue" },
+  { title: "An Indian FMCG snacking start up", color: "blue" },
+  { title: "A US Dollar Store Chain", color: "blue" },
+  { title: "An Indian automotive leader", color: "blue" },
+  { title: "An Indonesian FMCG major", color: "blue" },
+  { title: "A global polyester fiber & filaments major", color: "blue" },
+  { title: "A global, operations consulting group", color: "blue" },
+  { title: "An Indian premium jewellery retailer", color: "blue" },
+  { title: "An Indian amusement parks leader", color: "blue" },
+  { title: "A PE funded FMCG personal care player", color: "blue" },
+  { title: "A global home appliances start up", color: "blue" },
+  { title: "An Indonesian fashion retailer", color: "blue" },
+  { title: "An Indian e-tailer start up", color: "blue" },
+  { title: "An Indian fashion & apparel leader", color: "blue" },
+  { title: "An OOH media start up", color: "blue" },
+  { title: "An Indian school education leader", color: "blue" },
+  { title: "An emerging markets health & wellness FMCG major", color: "blue" },
+  { title: "An South African Hair Retailer", color: "blue" },
 ];
 
 export const tailSectionData: { title: string; palette: string }[] = [
@@ -458,5 +506,43 @@ export const contentLists: SubNavItem[] = [
   {
     title: "Work",
     href: "/dashboard/work",
+  },
+];
+
+export const ourProjects: OurProjectsType = [
+  {
+    type: "Insights for the future readiness",
+    subTitle: "Cultural Fore-sighting with business implications",
+    location: "Chennai",
+  },
+  {
+    type: "Insights Centered Strategy",
+    subTitle: "Cultural Fore-sighting with business implications One",
+    location: "Chennai",
+  },
+  {
+    type: "Insights Centered Strategy",
+    subTitle: "Cultural Fore-sighting with business implications Two",
+    location: "Chennai",
+  },
+  {
+    type: "Insights Centered Strategy",
+    subTitle: "Cultural Fore-sighting with business implications Three",
+    location: "Chennai",
+  },
+  {
+    type: "Insights Centered Programmes",
+    subTitle: "Cultural Fore-sighting with business implications Four",
+    location: "Chennai",
+  },
+  {
+    type: "Insights Centered Programmes",
+    subTitle: "Cultural Fore-sighting with business implications Five",
+    location: "Chennai",
+  },
+  {
+    type: "Insights Centered Programmes",
+    subTitle: "Cultural Fore-sighting with business implications Six",
+    location: "Chennai",
   },
 ];

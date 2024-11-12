@@ -1,9 +1,14 @@
-import BlogLists from "@/app/_components/blog-lists"
-import { FC } from "react"
+import BlogLists from "@/app/_components/blog-lists";
+import axios from "axios";
+import { FC } from "react";
+import { db } from "@/server/db";
+import { blogTable } from "@/server/db/schema";
 
 interface pageProps {}
 
-const page: FC<pageProps> = ({}) => {
+const page = async ({}: pageProps) => {
+  const data = await db.select().from(blogTable);
+
   return (
     <>
       {/* Hero section */}
@@ -23,11 +28,11 @@ const page: FC<pageProps> = ({}) => {
       {/* Blogs section */}
       <section className="w-screen flex items-center justify-center bg-background py-16 ">
         <div className="container flex items-center justify-center">
-          <BlogLists />
+          <BlogLists blogs={data} />
         </div>
       </section>
     </>
-  )
-}
+  );
+};
 
-export default page
+export default page;

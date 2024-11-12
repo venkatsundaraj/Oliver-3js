@@ -22,3 +22,11 @@ export type contactUsItem = {
 };
 
 export type functionalSpiralItem = { data: string; value: string };
+
+export type OurProjectType = {
+  type: string;
+  subTitle: string;
+  location: string;
+};
+
+export type OurProjectsType = OurProjectType[];

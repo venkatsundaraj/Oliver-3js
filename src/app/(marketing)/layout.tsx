@@ -14,6 +14,7 @@ const layout: FC<layoutProps> = ({ children }) => {
       <Navbar items={marketingConfig} />
       {children}
       <Toaster />
+      <Footer />
     </main>
   );
 };
