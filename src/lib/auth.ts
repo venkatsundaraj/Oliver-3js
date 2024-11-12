@@ -20,13 +20,13 @@ export const authOptions: NextAuthOptions = {
     EmailProvider({
       from: env.SMTP_FROM,
       sendVerificationRequest: async ({ identifier, url, provider }) => {
-        // if (identifier !== "venkatesh@firebrandlabs.in") return;
         const user = await db
           .select({ emailVerified: users.emailVerified })
           .from(users)
           .where(eq(users.email, identifier))
           .limit(1)
           .then((res) => res[0]);
+
         const resend = new Resend(env.RESEND_API_KEY);
         const response = await resend.emails.create({
           from: provider.from as string,

@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 import Link from "next/link";
-
+import { Suspense } from "react";
 import { Icons } from "@/app/_components/icons";
 import { UserAuthForm } from "@/app/_components/user-auth-form";
 
@@ -25,8 +25,9 @@ export default function LoginPage() {
             Enter your email to sign in to your account
           </p>
         </div>
-
-        <UserAuthForm />
+        <Suspense fallback={<div>Loading...</div>}>
+          <UserAuthForm />
+        </Suspense>
       </div>
     </div>
   );

@@ -39,6 +39,7 @@ export function UserAuthForm({ className, ...props }: UserAuthFormProps) {
         redirect: false,
         callbackUrl: searchParams.get("from") || "/dashboard",
       });
+      console.log(res);
       if (!res?.ok) {
         return toast({
           title: "Something went wrong",
