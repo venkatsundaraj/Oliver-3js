@@ -75,7 +75,7 @@ export function UserAuthForm({ className, ...props }: UserAuthFormProps) {
               type="email"
               autoCapitalize="none"
               autoComplete="email"
-              className="text-foreground"
+              className="text-foreground focus-within:ring-0 focus-visible:ring-0"
               autoCorrect="off"
               disabled={isSubmitting}
               {...register("email")}
