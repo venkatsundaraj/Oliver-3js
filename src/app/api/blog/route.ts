@@ -4,6 +4,7 @@ import { NextRequest, NextResponse } from "next/server"
 import { ZodError } from "zod"
 import { blogTable, contactFormTable } from "@/server/db/schema"
 import { blogAuthSchema, extendedBlogSchema } from "@/lib/validation/auth"
+import { slugify } from "@/lib/utils"
 
 export async function POST(req: NextRequest, res: NextResponse) {
   try {
@@ -11,7 +12,9 @@ export async function POST(req: NextRequest, res: NextResponse) {
 
     const validatedBody = extendedBlogSchema.parse(body)
 
-    const returnedValue = await db.insert(blogTable).values(validatedBody)
+    const tableData = { ...validatedBody, slug: slugify(validatedBody.title) }
+
+    const returnedValue = await db.insert(blogTable).values(tableData)
 
     return NextResponse.json({
       message: "Message Received Successfully",

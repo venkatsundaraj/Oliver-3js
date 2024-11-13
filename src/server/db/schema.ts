@@ -35,7 +35,8 @@ export const blogTable = createTable("blog", {
   title: varchar("title", { length: 255 }).notNull(),
   category: varchar("category", { length: 255 }).notNull(),
   date: date("date").notNull(),
-  fileUrl: varchar("fileUrl", { length: 255 }),
+  fileUrl: varchar("fileUrl", { length: 255 }).notNull(),
+  slug: varchar("slug", { length: 255 }).notNull(),
   content: text("content").notNull(),
   createdAt: timestamp("created_at").notNull().defaultNow(),
   updatedAt: timestamp("updated_at")

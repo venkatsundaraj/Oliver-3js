@@ -66,5 +66,5 @@ export const blogAuthSchema = baseBlogSchema.extend({
 export type BlogAuthSchema = z.infer<typeof blogAuthSchema>
 
 export const extendedBlogSchema = baseBlogSchema.extend({
-  fileUrl: z.string().url("Invalid URL format").optional(), // Optional URL field with validation
+  fileUrl: z.string().url("Invalid URL format"), // Optional URL field with validation
 })

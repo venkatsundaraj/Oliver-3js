@@ -1,31 +1,31 @@
-import { Button } from "@/app/_components/ui/button";
+import { Button } from "@/app/_components/ui/button"
 
-import { Input } from "@/app/_components/ui/input";
-import { Label } from "@/app/_components/ui/label";
-import { blogCategoryTitle } from "@/config/marketing";
-import { FC } from "react";
-import { blogCategoryContent } from "@/config/marketing";
+import { Input } from "@/app/_components/ui/input"
+import { Label } from "@/app/_components/ui/label"
+import { blogCategoryTitle } from "@/config/marketing"
+import { FC } from "react"
+import { blogCategoryContent } from "@/config/marketing"
 import {
   Tabs,
   TabsContent,
   TabsList,
   TabsTrigger,
-} from "@/app/_components/ui/tabs";
-import Image from "next/image";
-import Link from "next/link";
-import { slugify } from "@/lib/utils";
-import { blogTable } from "@/server/db/schema";
-import { InferModel } from "drizzle-orm";
+} from "@/app/_components/ui/tabs"
+import Image from "next/image"
+import Link from "next/link"
+import { slugify } from "@/lib/utils"
+import { blogTable } from "@/server/db/schema"
+import { InferModel } from "drizzle-orm"
 
-type Blog = InferModel<typeof blogTable>;
+type Blog = InferModel<typeof blogTable>
 
 interface BlogListsProps {
-  blogs: Blog[];
+  blogs: Blog[]
 }
 
 const BlogLists: FC<BlogListsProps> = ({ blogs }) => {
   if (blogs.length === 0) {
-    return <p>Blogs are yet to be uploaded</p>;
+    return <p>Blogs are yet to be uploaded</p>
   }
 
   return (
@@ -63,19 +63,21 @@ const BlogLists: FC<BlogListsProps> = ({ blogs }) => {
                   <h3 className="text-primary-foreground font-paragraph text-subtitle_heading">
                     {item.title}
                   </h3>
-                  {/* <Image
-                    alt={item.category}
-                    src={item.image}
-                    width="280"
-                    height="280"
-                  /> */}
+                  {item.fileUrl ? (
+                    <Image
+                      alt={item.category}
+                      src={item.fileUrl}
+                      width="280"
+                      height="280"
+                    />
+                  ) : null}
                 </Link>
               </TabsContent>
             ))
           : null}
       </div>
     </Tabs>
-  );
-};
+  )
+}
 
-export default BlogLists;
+export default BlogLists
