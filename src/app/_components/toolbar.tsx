@@ -1,7 +1,7 @@
-"use client";
+"use client"
 
-import React from "react";
-import { type Editor } from "@tiptap/react";
+import React from "react"
+import { type Editor } from "@tiptap/react"
 import {
   Bold,
   Strikethrough,
@@ -14,16 +14,16 @@ import {
   Undo,
   Redo,
   Code,
-} from "lucide-react";
+} from "lucide-react"
 
 type Props = {
-  editor: Editor | null;
-  content: string;
-};
+  editor: Editor | null
+  content: string
+}
 
-const Toolbar = ({ editor, content }: Props) => {
+const Toolbar = ({ editor }: Props) => {
   if (!editor) {
-    return null;
+    return null
   }
   return (
     <div
@@ -33,8 +33,8 @@ const Toolbar = ({ editor, content }: Props) => {
       <div className="flex justify-start items-center gap-5 w-full lg:w-10/12 flex-wrap ">
         <button
           onClick={(e) => {
-            e.preventDefault();
-            editor.chain().focus().toggleBold().run();
+            e.preventDefault()
+            editor.chain().focus().toggleBold().run()
           }}
           className={
             editor.isActive("bold")
@@ -46,8 +46,8 @@ const Toolbar = ({ editor, content }: Props) => {
         </button>
         <button
           onClick={(e) => {
-            e.preventDefault();
-            editor.chain().focus().toggleItalic().run();
+            e.preventDefault()
+            editor.chain().focus().toggleItalic().run()
           }}
           className={
             editor.isActive("italic")
@@ -59,8 +59,8 @@ const Toolbar = ({ editor, content }: Props) => {
         </button>
         <button
           onClick={(e) => {
-            e.preventDefault();
-            editor.chain().focus().toggleUnderline().run();
+            e.preventDefault()
+            editor.chain().focus().toggleUnderline().run()
           }}
           className={
             editor.isActive("underline")
@@ -72,8 +72,8 @@ const Toolbar = ({ editor, content }: Props) => {
         </button>
         <button
           onClick={(e) => {
-            e.preventDefault();
-            editor.chain().focus().toggleStrike().run();
+            e.preventDefault()
+            editor.chain().focus().toggleStrike().run()
           }}
           className={
             editor.isActive("strike")
@@ -85,8 +85,8 @@ const Toolbar = ({ editor, content }: Props) => {
         </button>
         <button
           onClick={(e) => {
-            e.preventDefault();
-            editor.chain().focus().toggleHeading({ level: 2 }).run();
+            e.preventDefault()
+            editor.chain().focus().toggleHeading({ level: 2 }).run()
           }}
           className={
             editor.isActive("heading", { level: 2 })
@@ -99,8 +99,8 @@ const Toolbar = ({ editor, content }: Props) => {
 
         <button
           onClick={(e) => {
-            e.preventDefault();
-            editor.chain().focus().toggleBulletList().run();
+            e.preventDefault()
+            editor.chain().focus().toggleBulletList().run()
           }}
           className={
             editor.isActive("bulletList")
@@ -112,8 +112,8 @@ const Toolbar = ({ editor, content }: Props) => {
         </button>
         <button
           onClick={(e) => {
-            e.preventDefault();
-            editor.chain().focus().toggleOrderedList().run();
+            e.preventDefault()
+            editor.chain().focus().toggleOrderedList().run()
           }}
           className={
             editor.isActive("orderedList")
@@ -125,8 +125,8 @@ const Toolbar = ({ editor, content }: Props) => {
         </button>
         <button
           onClick={(e) => {
-            e.preventDefault();
-            editor.chain().focus().toggleBlockquote().run();
+            e.preventDefault()
+            editor.chain().focus().toggleBlockquote().run()
           }}
           className={
             editor.isActive("blockquote")
@@ -138,8 +138,8 @@ const Toolbar = ({ editor, content }: Props) => {
         </button>
         <button
           onClick={(e) => {
-            e.preventDefault();
-            editor.chain().focus().setCode().run();
+            e.preventDefault()
+            editor.chain().focus().setCode().run()
           }}
           className={
             editor.isActive("code")
@@ -151,41 +151,33 @@ const Toolbar = ({ editor, content }: Props) => {
         </button>
         <button
           onClick={(e) => {
-            e.preventDefault();
-            editor.chain().focus().undo().run();
+            e.preventDefault()
+            editor.chain().focus().undo().run()
           }}
           className={
             editor.isActive("undo")
               ? "bg-sky-700 text-white p-2 rounded-lg"
-              : "text-primary-foreground p-2 hover:bg-sky-700 hover:text-white p-1 hover:rounded-lg"
+              : "text-primary-foreground p-2 hover:bg-sky-700 hover:text-white  hover:rounded-lg"
           }
         >
           <Undo className="w-5 h-5" />
         </button>
         <button
           onClick={(e) => {
-            e.preventDefault();
-            editor.chain().focus().redo().run();
+            e.preventDefault()
+            editor.chain().focus().redo().run()
           }}
           className={
             editor.isActive("redo")
               ? "bg-sky-700 text-white p-2 rounded-lg"
-              : "text-primary-foreground p-2 hover:bg-sky-700 hover:text-white p-1 hover:rounded-lg"
+              : "text-primary-foreground p-2 hover:bg-sky-700 hover:text-white  hover:rounded-lg"
           }
         >
           <Redo className="w-5 h-5" />
         </button>
       </div>
-      {content && (
-        <button
-          type="button"
-          className="px-4 bg-sky-700 text-white py-2 rounded-md hidden"
-        >
-          Add
-        </button>
-      )}
     </div>
-  );
-};
+  )
+}
 
-export default Toolbar;
+export default Toolbar
