@@ -1,13 +1,20 @@
-import BlogLists from "@/app/_components/blog-lists";
-import axios from "axios";
-import { FC } from "react";
-import { db } from "@/server/db";
-import { blogTable } from "@/server/db/schema";
+import BlogLists from "@/app/_components/blog-lists"
+import axios from "axios"
+import { FC } from "react"
+import { db } from "@/server/db"
+import { blogTable } from "@/server/db/schema"
+
+export const revalidate = 0 // This forces the page to be dynamic
+
+async function getData() {
+  const data = await db.select().from(blogTable)
+  return data
+}
 
 interface pageProps {}
 
 const page = async ({}: pageProps) => {
-  const data = await db.select().from(blogTable);
+  const data = await getData()
 
   return (
     <>
@@ -32,7 +39,7 @@ const page = async ({}: pageProps) => {
         </div>
       </section>
     </>
-  );
-};
+  )
+}
 
-export default page;
+export default page

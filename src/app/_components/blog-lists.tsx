@@ -27,7 +27,7 @@ const BlogLists: FC<BlogListsProps> = ({ blogs }) => {
   if (blogs.length === 0) {
     return <p>Blogs are yet to be uploaded</p>
   }
-
+  console.log(blogs)
   return (
     <Tabs
       defaultValue={blogs[0].category}
@@ -50,6 +50,7 @@ const BlogLists: FC<BlogListsProps> = ({ blogs }) => {
               <TabsContent
                 className="w-full bg-background gap-4 md:gap-8 "
                 value={item.category}
+                key={i}
               >
                 <Link
                   key={i}
