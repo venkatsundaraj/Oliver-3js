@@ -6,7 +6,7 @@ interface pageProps {}
 const page: FC<pageProps> = ({}) => {
   return (
     <main className="bg-background min-h-screen w-full flex items-center justify-center">
-      <AddBlog />
+      {/* <AddBlog /> */}
     </main>
   )
 }

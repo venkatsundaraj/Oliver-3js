@@ -3,12 +3,12 @@
 import { useEditor, EditorContent } from "@tiptap/react"
 import StarterKit from "@tiptap/starter-kit"
 import Link from "@tiptap/extension-link"
-import { useEffect } from "react"
+import { FC, useEffect } from "react"
 import Toolbar from "@/app/_components/toolbar"
 import Underline from "@tiptap/extension-underline"
 import Heading from "@tiptap/extension-heading"
 
-const RichTextEditor = ({ onChange, resetTrigger }: any) => {
+const RichTextEditor = ({ onChange, resetTrigger, defaultValue }: any) => {
   const handleChange = (newContent: string) => {
     onChange(newContent)
   }
@@ -25,6 +25,7 @@ const RichTextEditor = ({ onChange, resetTrigger }: any) => {
         levels: [1, 2, 3],
       }),
     ],
+    content: defaultValue,
     editorProps: {
       attributes: {
         class:

@@ -32,14 +32,20 @@ import { Calendar } from "@/app/_components/ui/calendar"
 import { DatePicker } from "./ui/date-picker"
 import RichTextEditor from "@/app/_components/rich-text-editor"
 import { useUploadThing } from "@/lib/uploadthing"
+import { blogTable } from "@/server/db/schema"
+import { InferModel } from "drizzle-orm"
 
-interface AddBlogProps {}
+type Blog = InferModel<typeof blogTable>
+
+interface AddBlogProps {
+  blog: Blog
+}
 
 type FormData = z.infer<typeof blogAuthSchema>
 
 const category: string[] = ["Category 1", "Category 2", "Category 3"]
 
-const AddBlog: FC<AddBlogProps> = ({}) => {
+const AddBlog: FC<AddBlogProps> = ({ blog }) => {
   const [content, setContent] = useState<any>()
   const [trigger, setTrigger] = useState<boolean>(false)
   const [progressValue, setProgressValue] = useState<number>(0)
@@ -98,7 +104,7 @@ const AddBlog: FC<AddBlogProps> = ({}) => {
 
       clearInterval(progressTrigger)
 
-      const { data } = await axios.post("/api/blog", {
+      const { data } = await axios.post("/api/post/blog", {
         ...formData,
         fileUrl: `https://utfs.io/f/${imageResponse[0].key}`,
       })
@@ -148,6 +154,7 @@ const AddBlog: FC<AddBlogProps> = ({}) => {
               type="text"
               {...register("title")}
               disabled={isSubmitting}
+              defaultValue={blog.title}
               required
             />
             {errors?.title ? (
@@ -166,6 +173,7 @@ const AddBlog: FC<AddBlogProps> = ({}) => {
               min={0}
               label="Category"
               category={category}
+              defaultValue={blog.category}
               className="min-w-full p-2 border border-gray-300 rounded-md text-foreground h-10 bg-background focus:outline-none focus:ring-2 focus:ring-blue-500"
             />
             {errors?.category ? (
@@ -186,6 +194,7 @@ const AddBlog: FC<AddBlogProps> = ({}) => {
               id="file"
               className="text-foreground max-w-full"
               name="file"
+              defaultValue={blog.fileUrl}
               type="file"
               disabled={isSubmitting}
             />
@@ -207,6 +216,7 @@ const AddBlog: FC<AddBlogProps> = ({}) => {
               id="date"
               className="text-foreground"
               name="date"
+              defaultValue={blog.date}
               type="date"
               disabled={isSubmitting}
             />
@@ -226,6 +236,7 @@ const AddBlog: FC<AddBlogProps> = ({}) => {
             <RichTextEditor
               {...register("content")}
               name="content"
+              defaultValue={blog.fileUrl}
               id="content"
               onChange={(newContent: string) => handleContentChange(newContent)}
               resetTrigger={trigger}
