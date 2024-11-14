@@ -14,6 +14,8 @@ import {
   Undo,
   Redo,
   Code,
+  Link,
+  Heading4,
 } from "lucide-react"
 
 type Props = {
@@ -24,6 +26,29 @@ type Props = {
 const Toolbar = ({ editor }: Props) => {
   if (!editor) {
     return null
+  }
+
+  const setLink = () => {
+    const previousUrl = editor.getAttributes("link").href
+    const url = window.prompt("Enter the URL", previousUrl)
+
+    if (url === null) {
+      // If canceled, don't apply any changes
+      return
+    }
+
+    if (url === "") {
+      // Empty string will remove the link
+      editor.chain().focus().extendMarkRange("link").unsetLink().run()
+    } else {
+      // Apply the link with the URL provided
+      editor
+        .chain()
+        .focus()
+        .extendMarkRange("link")
+        .setLink({ href: url })
+        .run()
+    }
   }
   return (
     <div
@@ -84,6 +109,16 @@ const Toolbar = ({ editor }: Props) => {
           <Strikethrough className="w-5 h-5" />
         </button>
         <button
+          onClick={setLink}
+          className={
+            editor.isActive("link")
+              ? "bg-sky-700 text-white p-2 rounded-lg"
+              : "text-primary-foreground p-2"
+          }
+        >
+          <Link className="w-5 h-5" />
+        </button>
+        <button
           onClick={(e) => {
             e.preventDefault()
             editor.chain().focus().toggleHeading({ level: 2 }).run()
@@ -95,6 +130,20 @@ const Toolbar = ({ editor }: Props) => {
           }
         >
           <Heading2 className="w-5 h-5" />
+        </button>
+
+        <button
+          onClick={(e) => {
+            e.preventDefault()
+            editor.chain().focus().toggleHeading({ level: 4 }).run()
+          }}
+          className={
+            editor.isActive("heading", { level: 4 })
+              ? "bg-sky-700 text-white p-2 rounded-lg"
+              : "text-primary-foreground p-2"
+          }
+        >
+          <Heading4 className="w-5 h-5" />
         </button>
 
         <button

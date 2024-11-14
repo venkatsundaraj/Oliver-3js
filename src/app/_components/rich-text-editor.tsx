@@ -2,16 +2,29 @@
 
 import { useEditor, EditorContent } from "@tiptap/react"
 import StarterKit from "@tiptap/starter-kit"
+import Link from "@tiptap/extension-link"
 import { useEffect } from "react"
 import Toolbar from "@/app/_components/toolbar"
 import Underline from "@tiptap/extension-underline"
+import Heading from "@tiptap/extension-heading"
 
 const RichTextEditor = ({ onChange, resetTrigger }: any) => {
   const handleChange = (newContent: string) => {
     onChange(newContent)
   }
   const editor = useEditor({
-    extensions: [StarterKit, Underline],
+    extensions: [
+      StarterKit,
+      Underline,
+      Link.configure({
+        openOnClick: false,
+        autolink: true,
+        linkOnPaste: true,
+      }),
+      Heading.configure({
+        levels: [1, 2, 3],
+      }),
+    ],
     editorProps: {
       attributes: {
         class:
@@ -30,7 +43,7 @@ const RichTextEditor = ({ onChange, resetTrigger }: any) => {
   }, [resetTrigger, editor])
 
   return (
-    <div className="w-full px-4">
+    <div className="w-full">
       <Toolbar editor={editor} content="" />
       <EditorContent style={{ whiteSpace: "pre-line" }} editor={editor} />
     </div>

@@ -60,13 +60,14 @@ const BlogLists: FC<BlogListsProps> = ({ blogs }) => {
                     {item.category}
                   </span>
 
-                  <h3 className="text-primary-foreground font-paragraph text-subtitle_heading">
+                  <h3 className="text-primary-foreground font-paragraph text-subtitle_heading md:min-h-[70px]">
                     {item.title}
                   </h3>
                   {item.fileUrl ? (
                     <Image
                       alt={item.category}
                       src={item.fileUrl}
+                      className="w-full h-[260px] object-cover overflow-hidden"
                       width="280"
                       height="280"
                     />

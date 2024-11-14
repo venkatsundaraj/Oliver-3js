@@ -1,13 +1,13 @@
-import ProjectCard from "@/app/_components/project-card";
+import ProjectCard from "@/app/_components/project-card"
 import {
   domainsData,
   tailSectionData,
   clientDomains,
   clientData,
   ourProjects,
-} from "@/config/marketing";
-import { cn } from "@/lib/utils";
-import { FC } from "react";
+} from "@/config/marketing"
+import { cn } from "@/lib/utils"
+import { FC } from "react"
 
 interface pageProps {}
 
@@ -18,12 +18,12 @@ const colors: string[] = [
   "#2EA043",
   "#388BFD",
   "#BF4B8A",
-];
+]
 
 const chooseColor = function () {
-  const value = Math.floor(Math.random() * 5);
-  return colors[value];
-};
+  const value = Math.floor(Math.random() * 5)
+  return colors[value]
+}
 
 const page: FC<pageProps> = ({}) => {
   return (
@@ -36,7 +36,7 @@ const page: FC<pageProps> = ({}) => {
               Our
             </span>
             <span className="text-primary-foreground text-secondary_heading font-heading font-normal">
-              Works
+              Work
             </span>
           </h2>
           <p className="text-foreground font-paragraph text-extra_paragraph_heading text-center max-w-prose">
@@ -106,7 +106,7 @@ const page: FC<pageProps> = ({}) => {
         </div>
       </section>
     </>
-  );
-};
+  )
+}
 
-export default page;
+export default page

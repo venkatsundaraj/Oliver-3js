@@ -219,7 +219,7 @@ const AddBlog: FC<AddBlogProps> = ({}) => {
             )}
           </div>
 
-          <div className="flex items-start flex-col cols col-start-1 col-end-4 justify-start gap-2 w-full bg-background">
+          <div className="flex items-start flex-col cols col-start-1 col-end-3 justify-start gap-2 w-full bg-background">
             <Label className="text-foreground mb-2" htmlFor="content">
               Content
             </Label>
@@ -234,9 +234,9 @@ const AddBlog: FC<AddBlogProps> = ({}) => {
         </div>
 
         <Button
-          variant={"default"}
-          size={"sm"}
-          className="max-w-[120px] mt-8"
+          variant={"outline"}
+          size={"lg"}
+          className="max-w-[120px] mt-8 rounded-lg text-secondary-foreground hover:text-secondary-foreground"
           disabled={isSubmitting}
           type="submit"
         >
