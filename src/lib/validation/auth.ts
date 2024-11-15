@@ -26,7 +26,7 @@ const baseBlogSchema = z.object({
 
 export const blogAuthSchema = baseBlogSchema.extend({
   file: z.custom<File[]>().superRefine((files, ctx) => {
-    console.log(files[0])
+    console.log(files[0], this)
     if (files.length === 0) {
       ctx.addIssue({
         code: z.ZodIssueCode.custom,
@@ -68,3 +68,5 @@ export type BlogAuthSchema = z.infer<typeof blogAuthSchema>
 export const extendedBlogSchema = baseBlogSchema.extend({
   fileUrl: z.string().url("Invalid URL format"), // Optional URL field with validation
 })
+
+export type ExtendedBlogSchema = z.infer<typeof extendedBlogSchema>

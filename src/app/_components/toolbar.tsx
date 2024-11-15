@@ -135,10 +135,10 @@ const Toolbar = ({ editor }: Props) => {
         <button
           onClick={(e) => {
             e.preventDefault()
-            editor.chain().focus().toggleHeading({ level: 4 }).run()
+            editor.chain().focus().toggleHeading({ level: 3 }).run()
           }}
           className={
-            editor.isActive("heading", { level: 4 })
+            editor.isActive("heading", { level: 3 })
               ? "bg-sky-700 text-white p-2 rounded-lg"
               : "text-primary-foreground p-2"
           }

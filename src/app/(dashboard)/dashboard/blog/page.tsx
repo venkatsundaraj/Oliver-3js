@@ -7,6 +7,9 @@ const page: FC<pageProps> = ({}) => {
   return (
     <main className="bg-background min-h-screen w-full flex items-center justify-center">
       {/* <AddBlog /> */}
+      <h1 className="text-7xl text-secondary-foreground text-center font-heading">
+        Blog page
+      </h1>
     </main>
   )
 }

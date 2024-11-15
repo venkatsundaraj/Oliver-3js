@@ -8,7 +8,13 @@ import Toolbar from "@/app/_components/toolbar"
 import Underline from "@tiptap/extension-underline"
 import Heading from "@tiptap/extension-heading"
 
-const RichTextEditor = ({ onChange, resetTrigger, defaultValue }: any) => {
+const RichTextEditor = ({
+  onChange,
+  resetTrigger,
+  defaultValue,
+  loading,
+}: any) => {
+  console.log(defaultValue)
   const handleChange = (newContent: string) => {
     onChange(newContent)
   }
@@ -25,6 +31,7 @@ const RichTextEditor = ({ onChange, resetTrigger, defaultValue }: any) => {
         levels: [1, 2, 3],
       }),
     ],
+    editable: !loading,
     content: defaultValue,
     editorProps: {
       attributes: {
@@ -39,9 +46,10 @@ const RichTextEditor = ({ onChange, resetTrigger, defaultValue }: any) => {
 
   useEffect(() => {
     if (editor) {
-      editor.commands.setContent("") // Clear the editor content
+      editor.setEditable(!loading) // Dynamically toggle editor's editability
+      editor.commands.setContent(resetTrigger ? "" : defaultValue)
     }
-  }, [resetTrigger, editor])
+  }, [resetTrigger, editor, defaultValue])
 
   return (
     <div className="w-full">

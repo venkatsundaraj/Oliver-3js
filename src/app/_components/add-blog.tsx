@@ -33,6 +33,7 @@ import { DatePicker } from "./ui/date-picker"
 import RichTextEditor from "@/app/_components/rich-text-editor"
 import { useUploadThing } from "@/lib/uploadthing"
 import { blogTable } from "@/server/db/schema"
+import { useRouter } from "next/navigation"
 import { InferModel } from "drizzle-orm"
 
 type Blog = InferModel<typeof blogTable>
@@ -52,6 +53,7 @@ const AddBlog: FC<AddBlogProps> = ({ blog }) => {
   const [isUploading, setIsUploading] = useState<boolean>(false)
 
   // const searchParams = useSearchParams();
+  const router = useRouter()
   const { startUpload } = useUploadThing("imageUploader")
   const {
     register,
@@ -104,9 +106,16 @@ const AddBlog: FC<AddBlogProps> = ({ blog }) => {
 
       clearInterval(progressTrigger)
 
-      const { data } = await axios.post("/api/post/blog", {
-        ...formData,
-        fileUrl: `https://utfs.io/f/${imageResponse[0].key}`,
+      const data = await fetch(`/api/post/blog/${blog.id}`, {
+        method: "PATCH",
+
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          ...formData,
+          fileUrl: `https://utfs.io/f/${imageResponse[0].key}`,
+        }),
       })
       console.log(formData, content)
 
@@ -118,7 +127,7 @@ const AddBlog: FC<AddBlogProps> = ({ blog }) => {
           variant: "default",
         })
         setTrigger((prev) => !prev)
-        return reset()
+        return router.push("/dashboard/blog")
       }
 
       return toast({
@@ -236,7 +245,8 @@ const AddBlog: FC<AddBlogProps> = ({ blog }) => {
             <RichTextEditor
               {...register("content")}
               name="content"
-              defaultValue={blog.fileUrl}
+              loading={isSubmitting}
+              defaultValue={blog.content}
               id="content"
               onChange={(newContent: string) => handleContentChange(newContent)}
               resetTrigger={trigger}

@@ -500,8 +500,8 @@ export const contentLists: NavItem[] = [
     title: "Blogs",
     href: "/dashboard/blog",
     subItems: [
-      { title: "Add Blog", href: "/dashboard/blogs/", type: "button" },
-      { title: "All Blogs", href: "/dashboard/blogs/" },
+      { title: "Add Blog", href: "/dashboard/blog/", type: "button" },
+      { title: "All Blogs", href: "/dashboard/blog/" },
     ],
   },
   {
