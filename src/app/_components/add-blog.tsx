@@ -4,7 +4,11 @@ import { FC, useState } from "react"
 import * as React from "react"
 import { useSearchParams } from "next/navigation"
 import { zodResolver } from "@hookform/resolvers/zod"
-import { userAuthSchema } from "@/lib/validation/auth"
+import {
+  extendedBlogSchema,
+  userAuthSchema,
+  ExtendedBlogSchema,
+} from "@/lib/validation/auth"
 import { useForm, Controller } from "react-hook-form"
 import * as z from "zod"
 import axios from "axios"
@@ -35,6 +39,7 @@ import { useUploadThing } from "@/lib/uploadthing"
 import { blogTable } from "@/server/db/schema"
 import { useRouter } from "next/navigation"
 import { InferModel } from "drizzle-orm"
+import { UploadButton } from "@/lib/uploadthing"
 
 type Blog = InferModel<typeof blogTable>
 
@@ -42,7 +47,7 @@ interface AddBlogProps {
   blog: Blog
 }
 
-type FormData = z.infer<typeof blogAuthSchema>
+type FormData = z.infer<typeof extendedBlogSchema>
 
 const category: string[] = ["Category 1", "Category 2", "Category 3"]
 
@@ -64,7 +69,10 @@ const AddBlog: FC<AddBlogProps> = ({ blog }) => {
     setValue,
     formState: { errors, isSubmitting },
   } = useForm<FormData>({
-    resolver: zodResolver(blogAuthSchema),
+    resolver: zodResolver(extendedBlogSchema),
+    defaultValues: {
+      fileUrl: blog.fileUrl,
+    },
   })
 
   //Utility Function
@@ -73,38 +81,10 @@ const AddBlog: FC<AddBlogProps> = ({ blog }) => {
     setValue("content", reason)
   }
 
-  const triggerInterval = () => {
-    const interval = setInterval(() => {
-      setProgressValue((prev) => {
-        if (prev >= 95) {
-          clearInterval(interval)
-          return prev
-        }
-
-        return prev + 5
-      })
-    }, 400)
-
-    return interval
-  }
-
   const onSubmit = async function (formData: FormData) {
     try {
       //Uploadthing image uploader
       setIsUploading(true)
-      const progressTrigger = triggerInterval()
-
-      const imageResponse = await startUpload([formData.file[0]])
-
-      if (!imageResponse) {
-        return toast({
-          title: "File upload Failed",
-          description: "File upload Failed",
-          variant: "destructive",
-        })
-      }
-
-      clearInterval(progressTrigger)
 
       const data = await fetch(`/api/post/blog/${blog.id}`, {
         method: "PATCH",
@@ -114,7 +94,6 @@ const AddBlog: FC<AddBlogProps> = ({ blog }) => {
         },
         body: JSON.stringify({
           ...formData,
-          fileUrl: `https://utfs.io/f/${imageResponse[0].key}`,
         }),
       })
       console.log(formData, content)
@@ -195,28 +174,6 @@ const AddBlog: FC<AddBlogProps> = ({ blog }) => {
           </div>
 
           <div className="flex items-start flex-col justify-start gap-2 w-full">
-            <Label className="text-foreground mb-2" htmlFor="file">
-              Image
-            </Label>
-            <Input
-              {...register("file")}
-              id="file"
-              className="text-foreground max-w-full"
-              name="file"
-              defaultValue={blog.fileUrl}
-              type="file"
-              disabled={isSubmitting}
-            />
-            {errors?.file ? (
-              <p className="px-1 text-xs text-destructive h-4">
-                {errors.file.message}
-              </p>
-            ) : (
-              <p className="h-4"></p>
-            )}
-          </div>
-
-          <div className="flex items-start flex-col justify-start gap-2 w-full">
             <Label className="text-foreground mb-2" htmlFor="date">
               Date
             </Label>
@@ -232,6 +189,52 @@ const AddBlog: FC<AddBlogProps> = ({ blog }) => {
             {errors?.date ? (
               <p className="px-1 text-xs text-destructive h-4">
                 {errors.date.message}
+              </p>
+            ) : (
+              <p className="h-4"></p>
+            )}
+          </div>
+
+          <div className="flex items-start flex-col justify-start gap-2 w-full">
+            <Label className="text-foreground mb-2" htmlFor="file">
+              Image
+            </Label>
+            <Controller
+              name="fileUrl"
+              control={control}
+              render={({ field }) => (
+                <UploadButton
+                  endpoint="imageUploader"
+                  appearance={{
+                    button:
+                      "ut-ready:bg-green-500 ut-uploading:cursor-not-allowed rounded-r-none bg-background border px-2 after:bg-orange-400",
+                    container:
+                      "w-max flex-row rounded-md border-cyan-300 bg-background",
+                    allowedContent:
+                      "flex h-8 flex-col items-center justify-center px-2 text-white",
+                  }}
+                  onClientUploadComplete={(res) => {
+                    if (res && res.length > 0) {
+                      const uploadedFileUrl = res[0].key
+
+                      setValue(
+                        "fileUrl",
+                        `https://utfs.io/f/${uploadedFileUrl}`,
+                        {
+                          shouldValidate: true,
+                        }
+                      )
+                    }
+                  }}
+                  onUploadError={(error) => {
+                    console.error("Upload error: ", error)
+                  }}
+                />
+              )}
+            />
+            {errors?.fileUrl ? (
+              <p className="px-1 text-xs text-destructive h-4">
+                {errors.fileUrl.message}
               </p>
             ) : (
               <p className="h-4"></p>
