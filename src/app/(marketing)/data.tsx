@@ -26,6 +26,17 @@ const teamMembers: TeamMember[] = [
     },
   },
   {
+    name: "Jeremy Holmes",
+    slug: "jeremy-holmes",
+    role: "Founder | Director",
+    imageUrl: "https://via.placeholder.com/150",
+    detailedinfo: {
+      imageUrltwo: "https://via.placeholder.com/150",
+      para: "+1234567890",
+      paratwo: "+1234567890",
+    },
+  },
+  {
     name: "Aseem Chhiber",
     slug: "aseem-chhiber",
     role: "Partner",
@@ -135,17 +146,7 @@ const teamMembers: TeamMember[] = [
       paratwo: "+1234567890",
     },
   },
-  {
-    name: "Jeremy Holmes",
-    slug: "jeremy-holmes",
-    role: "Founder | Director",
-    imageUrl: "https://via.placeholder.com/150",
-    detailedinfo: {
-      imageUrltwo: "https://via.placeholder.com/150",
-      para: "+1234567890",
-      paratwo: "+1234567890",
-    },
-  },
+
   {
     name: "Ninad Pandharkar",
     slug: "ninad-pandharkar",

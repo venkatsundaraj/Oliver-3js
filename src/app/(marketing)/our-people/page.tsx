@@ -5,7 +5,7 @@ interface pageProps {}
 const page: FC<pageProps> = function () {
   return (
     <>
-      <div className="bg-black text-white text-center py-12">
+      <div className="bg-black text-white text-center py-16 md:pt-64 md:pb-16">
         {/* OUR text */}
         <h2 className="text-[30px] font-regular font-heading">Our</h2>
 
@@ -20,7 +20,7 @@ const page: FC<pageProps> = function () {
           style={{ fontFamily: "Roboto, sans-serif" }}
         >
           The leadership team at Cosmos comprises senior professionals, with
-          more than 500 years of Cumulative experience in building, managing &
+          more than 500 years of cumulative experience in building, managing &
           growing large businesses across various geographies globally.
         </p>
       </div>
