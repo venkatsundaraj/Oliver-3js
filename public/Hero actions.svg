@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="80" height="80" viewBox="0 0 80 80">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="Rectangle_223" data-name="Rectangle 223" width="80" height="80" transform="translate(887 7386)" fill="#fff"/>
+    </clipPath>
+  </defs>
+  <g id="Hero_actions" data-name="Hero actions" transform="translate(-887 -7386)" opacity="0.4" clip-path="url(#clip-path)">
+    <g id="Hero_actions-2" data-name="Hero actions" transform="translate(892.714 7402)">
+      <rect id="Rectangle_218" data-name="Rectangle 218" width="7.724" height="7.724" transform="translate(0 40.804)" fill="#fff"/>
+      <rect id="Rectangle_219" data-name="Rectangle 219" width="7.724" height="7.724" transform="translate(0 20.402)" fill="#fff"/>
+      <rect id="Rectangle_220" data-name="Rectangle 220" width="7.724" height="7.724" transform="translate(0 0)" fill="#fff"/>
+      <path id="Path_224" data-name="Path 224" d="M55.378,39.607A19.356,19.356,0,1,1,41.691,6.564V25.92Z" transform="translate(-5.585 -1.642)" fill="#5cb7e3"/>
+      <path id="Path_225" data-name="Path 225" d="M48.145,6.564V25.92L61.831,39.607A19.356,19.356,0,0,0,48.145,6.564" transform="translate(-12.039 -1.642)" fill="#646464"/>
+      <path id="Path_226" data-name="Path 226" d="M76.322,36.2V33.316H61.5V27.541H76.322V24.654l7.627,5.775Z" transform="translate(-15.377 -6.165)" fill="#5cb7e3"/>
+      <path id="Path_227" data-name="Path 227" d="M56.235,28.327A12.136,12.136,0,1,0,44.1,40.464,12.136,12.136,0,0,0,56.235,28.327" transform="translate(-7.992 -4.049)" fill="#0077b9"/>
+      <path id="Path_228" data-name="Path 228" d="M10.3,57.5h9.026L25.517,51.3" transform="translate(-2.575 -12.829)" fill="none" stroke="#fff" stroke-width="1"/>
+      <line id="Line_28" data-name="Line 28" x2="9.026" transform="translate(7.724 24.263)" fill="none" stroke="#fff" stroke-width="1"/>
+      <path id="Path_229" data-name="Path 229" d="M10.3,5.15h9.026l6.211,6.211" transform="translate(-2.575 -1.288)" fill="none" stroke="#fff" stroke-width="1"/>
+    </g>
+  </g>
+</svg>

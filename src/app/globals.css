@@ -57,26 +57,13 @@
     --ring: 263.4 70% 50.4%;
   }
 }
-
-
-/* --------------------------------------------------------------------- */
-
-.ProseMirror h2 {
-  @apply text-tertiary_heading  font-heading mb-5 mt-5 text-secondary-foreground leading-tight;
+/* Hide scrollbar for Chrome, Safari, and Opera */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
 }
 
-.ProseMirror h4 {
-  @apply text-4xl  font-heading mb-4 mt-4 text-secondary-foreground leading-[1];
-}
-
-.ProseMirror p {
-  @apply text-subtitle_heading font-paragraph mb-4;
-}
-
-.ProseMirror ul{
-  @apply lining-nums text-subtitle_heading font-paragraph mb-4 text-foreground py-0 px-8 list-decimal mt-8
-}
-
-.ProseMirror ul li{
-  @apply text-subtitle_heading mb-4 font-paragraph text-foreground
+/* Hide scrollbar for IE, Edge, and Firefox */
+.scrollbar-hide {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
 }
