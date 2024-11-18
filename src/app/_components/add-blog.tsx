@@ -13,7 +13,7 @@ import { useForm, Controller } from "react-hook-form"
 import * as z from "zod"
 import axios from "axios"
 
-import { cn } from "@/lib/utils"
+import { cn, slugify } from "@/lib/utils"
 import { CalendarIcon } from "lucide-react"
 import { Button } from "@/app/_components/button"
 
@@ -94,6 +94,7 @@ const AddBlog: FC<AddBlogProps> = ({ blog }) => {
         },
         body: JSON.stringify({
           ...formData,
+          slug: slugify(formData.title),
         }),
       })
       console.log(formData, content)

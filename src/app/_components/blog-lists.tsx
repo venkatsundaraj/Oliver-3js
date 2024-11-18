@@ -13,7 +13,7 @@ import {
 } from "@/app/_components/ui/tabs"
 import Image from "next/image"
 import Link from "next/link"
-import { slugify } from "@/lib/utils"
+import { cn, slugify } from "@/lib/utils"
 import { blogTable } from "@/server/db/schema"
 import { InferModel } from "drizzle-orm"
 
@@ -37,7 +37,13 @@ const BlogLists: FC<BlogListsProps> = ({ blogs }) => {
         {blogs.length
           ? Array.from(new Set(blogs.map((item) => item.category).sort())).map(
               (item, i) => (
-                <TabsTrigger key={i} value={item}>
+                <TabsTrigger
+                  className={cn(
+                    "border inline-flex items-center justify-center mb-8"
+                  )}
+                  key={i}
+                  value={item}
+                >
                   {item}
                 </TabsTrigger>
               )

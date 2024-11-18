@@ -14,10 +14,12 @@ import {
   Pencil,
   Moon,
   ArrowLeft,
+  CircleX,
   Laptop,
+  Menu,
   UserRoundCog,
   Play,
-} from "lucide-react";
+} from "lucide-react"
 
 export const Icons = {
   User,
@@ -27,6 +29,8 @@ export const Icons = {
   ChevronLeft,
   Pencil,
   Webhook,
+  CircleX,
+  Menu,
   Loader2,
   ArrowLeft,
   Plus,
@@ -38,6 +42,6 @@ export const Icons = {
   X,
   Activity,
   Play,
-};
+}
 
-export type Icon = keyof typeof Icons;
+export type Icon = keyof typeof Icons

@@ -1,9 +1,9 @@
-import { FC } from "react";
-import Image from "next/image";
-import { valueEngineContent } from "@/config/marketing";
-import { cn } from "@/lib/utils";
-import OurBelieve from "@/app/_components/our-belief";
-import DotAnimation from "@/app/_components/dot-animation";
+import { FC } from "react"
+import Image from "next/image"
+import { valueEngineContent } from "@/config/marketing"
+import { cn } from "@/lib/utils"
+import OurBelieve from "@/app/_components/our-belief"
+import DotAnimation from "@/app/_components/dot-animation"
 
 interface pageProps {}
 
@@ -13,16 +13,16 @@ const page: FC<pageProps> = ({}) => {
       {/* Hero Section */}
       <section className="w-screen flex items-center justify-center h-screen bg-background py-5 ">
         <div className="container flex items-center justify-center">
-          <div className="container relative w-full h-full flex flex-col items-center justify-center z-[10]">
-            <h1 className="text-secondary_heading text-center font-heading text-primary-foreground mb-2 leading-tight">
+          <div className="container relative w-full h-full flex flex-col items-center justify-center ">
+            <h1 className="text-secondary_heading text-center z-[10] font-heading text-primary-foreground mb-2 leading-tight">
               Cosmos
             </h1>
-            <p className="text-foreground mb-4 leading-10 text-center text-6xl font-paragraph text-extra_paragraph_heading md:max-w-lg">
+            <p className="text-foreground mb-4 leading-10 z-[10] text-center text-6xl font-paragraph text-extra_paragraph_heading md:max-w-lg">
               /ˈkɒzmɒs/ . Noun <br />
               An order that’s fluid & dynamic held together harmoniously by
               invisible laws or universal insights
             </p>
-            <p className="text-foreground leading-10 text-center text-6xl font-paragraph text-extra_paragraph_heading md:max-w-lg">
+            <p className="text-foreground z-[10] leading-10 text-center text-6xl font-paragraph text-extra_paragraph_heading md:max-w-lg">
               An order that symbolises the hope of light in void or darkness
             </p>
             <DotAnimation />
@@ -109,7 +109,7 @@ const page: FC<pageProps> = ({}) => {
                     className={cn(
                       "inline-flex items-center justify-center px-6 py-2 bg-secondary-foreground text-foreground font-paragraph text-extra_paragraph_heading min-w-[300px] md:min-w-[400px] relative",
                       i % 2 === 0
-                        ? `before:hidden before:md:block before:md:content-[''] before:w-0 before:md:w-2/3 before:h-[1px] before:absolute before:top-[50%] before:translate-y-[-50%] before:left-[100%] before:bg-foreground`
+                        ? `before:hidden before:md:block before:md:content-[''] before:w-0 before:md:w-2/3 before:h-[2px] before:absolute before:top-[50%] before:translate-y-[-50%] before:left-[100%] before:bg-foreground`
                         : ""
                     )}
                   >
@@ -136,14 +136,12 @@ const page: FC<pageProps> = ({}) => {
             </ul>
           </div>
           <p className="text-foreground leading-10 text-center mt-4 md:mt-16 font-heading text-tertiary_heading">
-            Depth, Empathy, Holism, Practice, Collaboration, Joy
+            Transformative Outcomes
           </p>
         </div>
       </section>
     </>
-  );
-};
+  )
+}
 
-export default page;
-
-// after:content-[''] after:w-0 after:h-0  after:border-r-[20px] after:border-l-[20px] after:border-l-transparent after:border-r-transparent after:border-t-[35px] after:border-t-foreground after:absolute after:top-[50%] after:left-[100%] translate-y-[-50%]
+export default page

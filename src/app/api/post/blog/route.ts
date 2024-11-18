@@ -53,7 +53,7 @@ export async function GET(req: NextRequest, res: NextResponse) {
         title: "",
       })
       .returning({ id: blogTable.id })
-    console.log(blog)
+    // console.log(blog)
 
     return NextResponse.json({
       id: JSON.stringify(blog.id),

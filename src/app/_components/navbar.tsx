@@ -1,6 +1,6 @@
 "use client"
 
-import { FC } from "react"
+import { FC, useState } from "react"
 import Link from "next/link"
 import Image from "next/image"
 import { Icons } from "@/app/_components/icons"
@@ -21,13 +21,14 @@ interface NavbarProps {
 }
 
 const Navbar: FC<NavbarProps> = ({ items }) => {
+  const [showMobileMenu, setShowMobileMenu] = useState<boolean>(false)
   const valueChangeHanlder = function (e: string) {
     console.log(e)
   }
   return (
     <header
       className={cn(
-        "sm:flex flex-row items-center justify-between gap-8 py-4 z-20 px-10 border-b sticky top-0 backdrop-blur-sm",
+        "sm:flex flex-row items-center justify-between gap-8 py-4 z-20 px-10 border-b fixed w-screen top-0 backdrop-blur-sm",
         true && "justify-between"
       )}
     >

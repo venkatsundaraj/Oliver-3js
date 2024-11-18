@@ -1,15 +1,15 @@
-"use client";
+"use client"
 
-import React, { FC, useEffect, useState, useCallback, useRef } from "react";
-import Autoplay from "embla-carousel-autoplay";
-import useEmblaCarousel from "embla-carousel-react";
-import { useAnimation } from "framer-motion";
-import { motion } from "framer-motion";
-import { tailSectionData } from "@/config/marketing";
-import Image from "next/image";
-import { MotionCanvas } from "framer-motion-3d";
-import { cn } from "@/lib/utils";
-import { Button } from "@/app/_components/ui/button";
+import React, { FC, useEffect, useState, useCallback, useRef } from "react"
+import Autoplay from "embla-carousel-autoplay"
+import useEmblaCarousel from "embla-carousel-react"
+import { useAnimation } from "framer-motion"
+import { motion } from "framer-motion"
+import { tailSectionData } from "@/config/marketing"
+import Image from "next/image"
+import { MotionCanvas } from "framer-motion-3d"
+import { cn } from "@/lib/utils"
+import { Button } from "@/app/_components/ui/button"
 import {
   Carousel,
   CarouselContent,
@@ -17,11 +17,11 @@ import {
   CarouselNext,
   CarouselPrevious,
   type CarouselApi,
-} from "@/app/_components/ui/carousel";
-import { ourProfileContent } from "@/config/marketing";
+} from "@/app/_components/ui/carousel"
+import { ourProfileContent } from "@/config/marketing"
 
 interface OurBelieveProps {
-  className: string;
+  className: string
 }
 
 const CarouselDots = ({
@@ -29,9 +29,9 @@ const CarouselDots = ({
   currentIndex,
   onDotClick,
 }: {
-  itemCount: number;
-  currentIndex: number;
-  onDotClick: (index: number) => void;
+  itemCount: number
+  currentIndex: number
+  onDotClick: (index: number) => void
 }) => {
   return (
     <div className="flex flex-col items-center space-y-2 mt-4">
@@ -48,31 +48,31 @@ const CarouselDots = ({
         />
       ))}
     </div>
-  );
-};
+  )
+}
 
 const OurBelieve: FC<OurBelieveProps> = ({ className }) => {
-  const [currentIndex, setCurrentIndex] = React.useState(0);
-  const [api, setApi] = React.useState<any>();
+  const [currentIndex, setCurrentIndex] = React.useState(0)
+  const [api, setApi] = React.useState<any>()
 
   const onDotClick = useCallback(
     (index: number) => {
       if (api) {
-        api.scrollTo(index);
+        api.scrollTo(index)
       }
     },
     [api]
-  );
+  )
 
   React.useEffect(() => {
     if (!api) {
-      return;
+      return
     }
 
     api.on("select", () => {
-      setCurrentIndex(api.selectedScrollSnap());
-    });
-  }, [api]);
+      setCurrentIndex(api.selectedScrollSnap())
+    })
+  }, [api])
 
   return (
     <Carousel
@@ -89,7 +89,7 @@ const OurBelieve: FC<OurBelieveProps> = ({ className }) => {
         className
       )}
     >
-      <CarouselContent className="-mt-1 h-[200px]">
+      <CarouselContent className="-mt-1 h-[250px] md:h-[240px]">
         {ourProfileContent.map((item, index) => (
           <CarouselItem
             key={index}
@@ -113,7 +113,7 @@ const OurBelieve: FC<OurBelieveProps> = ({ className }) => {
         />
       </div>
     </Carousel>
-  );
-};
+  )
+}
 
-export default OurBelieve;
+export default OurBelieve

@@ -22,6 +22,7 @@ const baseBlogSchema = z.object({
   category: z.string().min(1),
   date: z.string().min(1),
   content: z.string().min(1),
+  slug: z.string().optional(),
 })
 
 export const blogAuthSchema = baseBlogSchema.extend({

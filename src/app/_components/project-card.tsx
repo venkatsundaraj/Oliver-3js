@@ -1,11 +1,11 @@
-import { slugify } from "@/lib/utils";
-import { OurProjectsType } from "@/types";
-import Link from "next/link";
-import { FC } from "react";
-import { Icons } from "./icons";
+import { slugify } from "@/lib/utils"
+import { OurProjectsType } from "@/types"
+import Link from "next/link"
+import { FC } from "react"
+import { Icons } from "./icons"
 
 interface ProjectCardProps {
-  projects: OurProjectsType;
+  projects: OurProjectsType
 }
 
 const ProjectCard: FC<ProjectCardProps> = ({ projects }) => {
@@ -14,7 +14,7 @@ const ProjectCard: FC<ProjectCardProps> = ({ projects }) => {
       {projects.map((item, i) => (
         <Link
           key={i}
-          href={slugify(item.subTitle)}
+          href={`/our-work/${slugify(item.subTitle)}`}
           className="flex flex-col group items-start bg-secondary-foreground justify-between w-full min-h-40"
         >
           <h4 className="font-paragraph p-2 text-2xl md:text-3xl text-background">
@@ -31,7 +31,7 @@ const ProjectCard: FC<ProjectCardProps> = ({ projects }) => {
         </Link>
       ))}
     </div>
-  );
-};
+  )
+}
 
-export default ProjectCard;
+export default ProjectCard

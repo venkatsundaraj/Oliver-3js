@@ -19,11 +19,13 @@ export async function PATCH(req: NextRequest, context: routerContextSchema) {
     const { params } = routerContext.parse(context)
 
     const body = await req.json()
-    const parsedHospital = extendedBlogSchema.parse(body)
+    const parsedPost = extendedBlogSchema.parse(body)
+
+    console.log(parsedPost)
 
     const blog = await db
       .update(blogTable)
-      .set(parsedHospital)
+      .set(parsedPost)
       .where(eq(blogTable.id, Number(params.blogId)))
 
     return new NextResponse(JSON.stringify(blog), { status: 200 })

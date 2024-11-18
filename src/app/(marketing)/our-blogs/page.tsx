@@ -19,7 +19,7 @@ const page = async ({}: pageProps) => {
   return (
     <>
       {/* Hero section */}
-      <section className="w-screen flex items-center justify-center h-screen bg-background py-16 ">
+      <section className="w-screen flex items-center justify-center h-screen bg-background py-16  ">
         <div className="container flex items-center justify-center">
           <h2 className="flex items-center justify-center flex-col">
             <span className="text-extra_paragraph_heading text-foreground font-heading text-center">
