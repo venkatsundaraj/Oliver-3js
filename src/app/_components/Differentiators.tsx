@@ -20,7 +20,7 @@ const topics: Topic[] = [
   {
     imgPath:
       "https://utfs.io/f/ZowmNmBHF7rVS7N3l6RkTnuUMoapyhGFmg9lwIYORcVixtW1",
-    title: "Insights centered strategy",
+    title: "Insightsaaaa centered strategy",
     icon: Lightbulb,
     content: {
       title: "Traditional, algorithmic, 'engineering' approach",
@@ -146,7 +146,7 @@ export default function Differentiators() {
                 )}
                 {/* Current Topic Icon */}
                 <div className="relative flex flex-col items-center gap-2 text-center">
-                  <div className="text-sm md:text-base flex flex-row justify-center gap-6">
+                  <div className="text-sm md:text-base flex flex-row justify-center items-center	 gap-6 ">
                     <Image
                       src={topics[currentTopicIndex].imgPath}
                       width={80}
@@ -189,30 +189,17 @@ export default function Differentiators() {
 
               {/* Right Content */}
               <div className="space-y-6">
-                {/* Content */}
                 <div>
-                  <h3 className="text-sky-400 text-xl md:text-2xl font-light">
-                    {topics[currentTopicIndex].content.title}
-                  </h3>
-                  <p className="text-gray-300 text-sm md:text-base max-w-2xl mt-4">
-                    {topics[currentTopicIndex].content.description}
+                  <p className="text-[#5CB7E3] ">
+                    From empathy to insights to hero actions to execution
                   </p>
-                </div>
-
-                {/* Flow Diagram */}
-                <div className="flex flex-col items-start gap-4 mt-4">
-                  {topics[currentTopicIndex].content.flowItems.map(
-                    (item, index) => (
-                      <div key={item}>
-                        <div className="bg-sky-500 px-4 py-2 md:px-6 md:py-3 rounded-xl text-white text-sm md:text-base font-light">
-                          {item}
-                        </div>
-                        {index <
-                          topics[currentTopicIndex].content.flowItems.length -
-                            1 && <div className="w-px h-4 bg-white ml-8" />}
-                      </div>
-                    )
-                  )}
+                  <p className="text-[#5CB7E3] ">
+                    Strategy: choice of actions - not that of intent or
+                    directions
+                  </p>
+                  <p className="text-[white] bg-[#0077B9] w-[80%] p-[3%] text-center rounded-[12px]">
+                    Insights
+                  </p>
                 </div>
               </div>
             </div>
