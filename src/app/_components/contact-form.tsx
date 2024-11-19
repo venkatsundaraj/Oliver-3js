@@ -1,19 +1,19 @@
-"use client";
+"use client"
 
-import { FC } from "react";
-import { Input } from "@/app/_components/ui/input";
-import { Textarea } from "@/app/_components/ui/text-area";
-import { Label } from "@radix-ui/react-label";
-import { Button } from "@/app/_components/ui/button";
-import { zodResolver } from "@hookform/resolvers/zod";
+import { FC } from "react"
+import { Input } from "@/app/_components/ui/input"
+import { Textarea } from "@/app/_components/ui/text-area"
+import { Label } from "@radix-ui/react-label"
+import { Button } from "@/app/_components/ui/button"
+import { zodResolver } from "@hookform/resolvers/zod"
 import {
   contactusFormSchema,
   contactusFormType,
-} from "@/lib/validation/contact-form";
-import { useForm } from "react-hook-form";
-import { z } from "zod";
-import axios, { AxiosError } from "axios";
-import { useToast } from "@/app/_components/ui/use-toast";
+} from "@/lib/validation/contact-form"
+import { useForm } from "react-hook-form"
+import { z } from "zod"
+import axios, { AxiosError } from "axios"
+import { useToast } from "@/app/_components/ui/use-toast"
 
 interface ContactFormProps {}
 
@@ -26,51 +26,51 @@ const ContactForm: FC<ContactFormProps> = ({}) => {
     formState: { errors, isSubmitting },
   } = useForm<contactusFormType>({
     resolver: zodResolver(contactusFormSchema),
-  });
-  const { toast } = useToast();
+  })
+  const { toast } = useToast()
 
   const submitHandler = async function (formData: contactusFormType) {
     try {
-      const { data } = await axios.post("/api/contact-us", formData);
-      console.log(data);
+      const { data } = await axios.post("/api/contact-us", formData)
+      console.log(data)
       if (data.status === 200) {
-        console.log(data);
+        console.log(data)
         toast({
           title: "Your data has been Submitted",
           description: "Please Check your data",
           variant: "default",
-        });
-        return reset();
+        })
+        return reset()
       }
 
       return toast({
         title: "Something Went Wrong",
         description: "Please Check your data",
         variant: "destructive",
-      });
+      })
     } catch (err) {
-      console.log(err);
+      console.log(err)
       if (err instanceof z.ZodError) {
-        setError("email", { message: err.message });
-        return;
+        setError("email", { message: err.message })
+        return
       }
       if (err instanceof AxiosError) {
-        setError("email", { message: err.response?.data });
-        return;
+        setError("email", { message: err.response?.data })
+        return
       }
 
-      setError("email", { message: "something went wrong" });
+      setError("email", { message: "something went wrong" })
     }
-  };
+  }
 
   return (
-    <div className="bg-foreground flex items-center justify-center py-14 px-4 w-full">
-      <div className="grid w-full grid-cols-1 md:grid-cols-3 gap-2 border-t border-t-background p-4">
-        <h2 className="font-paragraph text-background text-extra_paragraph_heading text-center md:text-left max-w-xs">
+    <div className="bg-background flex items-center justify-center py-14 px-4 w-full">
+      <div className="grid w-full grid-cols-1 md:grid-cols-3 gap-2 border border-foreground p-4 md:p-8">
+        <h2 className="font-paragraph text-foreground text-extra_paragraph_heading text-center md:text-left max-w-xs">
           Send us a message, and we will get back to you.
         </h2>
         <form
-          className="col-span-2 w-full flex flex-col gap-4 "
+          className="col-span-2 text-foreground w-full flex flex-col gap-4 "
           onSubmit={handleSubmit(submitHandler)}
         >
           <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-2">
@@ -226,7 +226,7 @@ const ContactForm: FC<ContactFormProps> = ({}) => {
         </form>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default ContactForm;
+export default ContactForm

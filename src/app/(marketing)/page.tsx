@@ -28,7 +28,7 @@ const page: FC<pageProps> = ({}) => {
       <Model />
 
       {/* Our Terrain Section */}
-      <section className="w-screen flex items-center justify-center bg-background py-16 md:py-24">
+      <section className="w-screen flex items-center justify-center bg-background py-16 md:py-24 z-[16] relative">
         <div className="container flex items-center justify-center">
           <div className="grid grid-cols-1 md:grid-cols-2 w-full gap-8 md:gap-0">
             <div className="flex items-start flex-col justify-center gap-4">
@@ -69,7 +69,7 @@ const page: FC<pageProps> = ({}) => {
       </section>
 
       {/* Our Practices Section */}
-      <section className="w-screen flex items-center justify-center  bg-background py-16 md:py-24">
+      <section className="w-screen flex items-center justify-center  bg-background py-16 md:py-24 z-[16] relative">
         <div className="container flex items-center justify-center">
           <div className="grid grid-cols-1  w-full">
             <div className="flex items-start flex-col justify-center gap-4">
@@ -110,7 +110,7 @@ const page: FC<pageProps> = ({}) => {
                   href={"/know-more"}
                   className={cn(
                     buttonVariants({ variant: "outline" }),
-                    "bg-background absolute top-0 translate-y-[-50%] right-0 text-foreground rounded-none uppercase"
+                    "bg-background absolute top-0 translate-y-[-50%] right-0 text-foreground rounded-none"
                   )}
                 >
                   Know More
@@ -122,7 +122,7 @@ const page: FC<pageProps> = ({}) => {
       </section>
 
       {/* Our Differentiator Section */}
-      <section className="w-screen flex items-center justify-center min-h-screen bg-background py-5">
+      <section className="w-screen flex items-center justify-center min-h-screen bg-background py-5 z-[16] relative">
         <div className="container flex flex-col items-start justify-center gap-8">
           <h2 className="flex items-start justify-start flex-col">
             <span className="text-extra_paragraph_heading text-foreground font-heading">
@@ -154,7 +154,7 @@ const page: FC<pageProps> = ({}) => {
       </section>
 
       {/* Client Domains */}
-      <section className="w-screen flex flex-col items-center justify-center bg-background relative py-5">
+      <section className="w-screen flex flex-col items-center justify-center bg-background relative py-5 z-[16]">
         <div className="container flex flex-col items-center justify-center md:absolute md:top-[50%] md:z-10 md:left-[50%] md:translate-x-[-50%] md:translate-y-[-50%]">
           <h2 className="flex justify-start flex-col text-center">
             <span className="text-extra_paragraph_heading text-foreground font-heading">
@@ -179,7 +179,7 @@ const page: FC<pageProps> = ({}) => {
       </section>
 
       {/* People Section */}
-      <section className="w-screen flex items-center justify-center bg-background py-16 md:py-32">
+      <section className="w-screen flex items-center justify-center bg-background py-16 md:py-16 z-[16] relative">
         <div className="container flex items-center justify-center">
           <div className="grid grid-cols-1 md:grid-cols-2 w-full gap-8 md:gap-0">
             <div className="flex items-start flex-col justify-center gap-4">
@@ -221,7 +221,7 @@ const page: FC<pageProps> = ({}) => {
       </section>
 
       {/* Projectjs Section */}
-      <section className="w-screen flex items-center justify-center bg-background py-16 md:py-32">
+      <section className="w-screen flex items-center justify-center bg-background py-16 md:py-16 z-[16] relative">
         <div className="container flex items-center justify-center">
           <div className="grid grid-cols-1  w-full">
             <div className="flex items-start flex-col justify-center gap-4">

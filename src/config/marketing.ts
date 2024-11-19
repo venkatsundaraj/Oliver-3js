@@ -564,7 +564,7 @@ export const ourProjects: OurProjectsType = [
 export const workType: string[] = [
   "Insight for future readiness",
   "Insight centered strategy",
-  "Insight centered programmes",
+  "Insight centered programs",
 ]
 export const workSubType: string[] = [
   "Cultural Fore-sighting with business implications",

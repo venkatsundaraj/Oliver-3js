@@ -15,7 +15,7 @@ const Footer: FC<FooterProps> = ({}) => {
             <h3 className="text-foreground font-heading text-our_text_heading">
               Our Offices
             </h3>
-            <ul className="flex flex-wrap items-start justify-start gap-4 md:gap-0 md:min-w-[300px]">
+            <ul className="flex items-start justify-start gap-4  flex-wrap md:flex-nowrap md:gap-10 md:max-w-lg">
               {locationContents.map((item, i) => (
                 <li
                   key={i}

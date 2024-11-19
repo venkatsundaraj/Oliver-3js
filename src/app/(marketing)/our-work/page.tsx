@@ -8,6 +8,8 @@ import {
 } from "@/config/marketing"
 import { cn } from "@/lib/utils"
 import { FC } from "react"
+import { db } from "@/server/db"
+import { workTable } from "@/server/db/schema"
 
 interface pageProps {}
 
@@ -20,12 +22,21 @@ const colors: string[] = [
   "#BF4B8A",
 ]
 
+export const revalidate = 0 // This forces the page to be dynamic
+
+async function getData() {
+  const data = await db.select().from(workTable)
+  return data
+}
+
 const chooseColor = function () {
   const value = Math.floor(Math.random() * 5)
   return colors[value]
 }
 
-const page: FC<pageProps> = ({}) => {
+const page = async ({}: pageProps) => {
+  const data = await getData()
+
   return (
     <>
       {/* // Hero section */}
@@ -95,13 +106,35 @@ const page: FC<pageProps> = ({}) => {
         </div>
       </section>
 
-      <section className="w-screen flex items-center justify-center min-h-screen bg-background py-8 md:py-16">
+      <section className="w-screen flex items-center justify-center  bg-background py-8 md:py-16">
         <div className="container flex flex-col items-start justify-center">
-          <div className="py-10 flex flex-col gap-10">
+          <div className="py-10 w-full flex flex-col gap-10">
             <h3 className="font-heading text-tertiary_heading text-foreground">
-              Insights for future readiness
+              Insight for future readiness
             </h3>
-            <ProjectCard projects={ourProjects} />
+            <ProjectCard projects={data} type="Insight for future readiness" />
+          </div>
+        </div>
+      </section>
+
+      <section className="w-screen flex items-center justify-center  bg-background py-8 md:py-16">
+        <div className="container flex flex-col items-start justify-center">
+          <div className="py-10 w-full flex flex-col gap-10">
+            <h3 className="font-heading text-tertiary_heading text-foreground">
+              Insight centered strategy
+            </h3>
+            <ProjectCard projects={data} type="Insight centered strategy" />
+          </div>
+        </div>
+      </section>
+
+      <section className="w-screen flex items-center justify-center  bg-background py-8 md:py-16">
+        <div className="container flex flex-col items-start justify-center">
+          <div className="py-10 flex w-full flex-col gap-10">
+            <h3 className="font-heading text-tertiary_heading text-foreground">
+              Insight centered programs
+            </h3>
+            <ProjectCard projects={data} type="Insight centered programs" />
           </div>
         </div>
       </section>
