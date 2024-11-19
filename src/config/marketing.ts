@@ -50,6 +50,11 @@ export const marketingConfig: MainNavItems = [
     href: "/our-blogs",
     subItems: [],
   },
+  {
+    title: "Contact Us",
+    href: "/contact-us",
+    subItems: [],
+  },
 ]
 
 // Footer contents
