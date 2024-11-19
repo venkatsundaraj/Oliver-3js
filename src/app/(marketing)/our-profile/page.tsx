@@ -31,7 +31,7 @@ const page: FC<pageProps> = ({}) => {
       </section>
 
       {/* Who are we Section */}
-      <section className="w-screen flex items-center justify-center bg-background py-6 md:py-32">
+      <section className="w-screen flex items-center justify-center bg-background py-16 md:py-24">
         <div className="container flex items-center justify-center relative">
           <div className="grid grid-cols-1 md:grid-cols-2 w-full gap-8 md:gap-0">
             <div className="flex items-start flex-col justify-center gap-4">
@@ -60,7 +60,7 @@ const page: FC<pageProps> = ({}) => {
       </section>
 
       {/* Our Believe Section */}
-      <section className="w-screen flex items-center justify-center bg-background py-6 md:py-32">
+      <section className="w-screen flex items-center justify-center bg-background py-16 md:py-24">
         <div className="container flex items-center justify-center">
           <div className="grid grid-cols-1 md:grid-cols-3 w-full gap-8 md:gap-0">
             <h2 className="flex items-start justify-start flex-col">
@@ -77,7 +77,7 @@ const page: FC<pageProps> = ({}) => {
       </section>
 
       {/* Our Values Engine Section */}
-      <section className="w-screen flex items-center justify-center min-h-screen bg-background py-6 md:py-32 flex-col">
+      <section className="w-screen flex items-center justify-center min-h-screen bg-background py-16 md:py-24 flex-col">
         <div className="container flex items-center justify-center mb-16">
           <div className="container w-full h-full flex flex-col items-center justify-center ">
             <h2 className="flex items-center justify-center flex-col">

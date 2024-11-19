@@ -19,7 +19,7 @@ export const marketingConfig: MainNavItems = [
   },
   {
     title: "Our Essence",
-    href: "/our-essence",
+    href: "/our-profile",
     subItems: [
       { title: "Our Terrain", href: "/our-terrain" },
       { title: "Our Differentiators", href: "/our-differentiators" },
@@ -50,28 +50,29 @@ export const marketingConfig: MainNavItems = [
     href: "/our-blogs",
     subItems: [],
   },
+  {
+    title: "Contact Us",
+    href: "/contact-us",
+    subItems: [],
+  },
 ]
 
 // Footer contents
 export const locationContents: locationItem[] = [
   {
-    locationCount: "Location 1",
+    locationCount: "India",
     location: "Address Line 1, Address Line 2, Address Line 3, City - Pincode.",
   },
   {
-    locationCount: "Location 2",
+    locationCount: "Singapore",
     location: "Address Line 1, Address Line 2, Address Line 3, City - Pincode.",
   },
   {
-    locationCount: "Location 3",
+    locationCount: "UK",
     location: "Address Line 1, Address Line 2, Address Line 3, City - Pincode.",
   },
   {
-    locationCount: "Location 4",
-    location: "Address Line 1, Address Line 2, Address Line 3, City - Pincode.",
-  },
-  {
-    locationCount: "Location 5",
+    locationCount: "Kenya",
     location: "Address Line 1, Address Line 2, Address Line 3, City - Pincode.",
   },
 ]
@@ -558,4 +559,18 @@ export const ourProjects: OurProjectsType = [
     subTitle: "Cultural Fore-sighting with business implications Six",
     location: "Chennai",
   },
+]
+
+export const workType: string[] = [
+  "Insight for future readiness",
+  "Insight centered strategy",
+  "Insight centered programmes",
+]
+export const workSubType: string[] = [
+  "Cultural Fore-sighting with business implications",
+  "Business strategy and organisation design",
+  "Brand and Innovation",
+  "New business strategy",
+  "Corporate brand and business",
+  "Value chain redesign",
 ]

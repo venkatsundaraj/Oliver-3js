@@ -1,44 +1,49 @@
-import { cn } from "@/lib/utils";
-import { type BlogAuthSchema } from "@/lib/validation/auth";
-import React, { FC } from "react";
-import { UseFormRegister } from "react-hook-form";
-import { Label } from "@/app/_components/ui/label";
+import { cn } from "@/lib/utils"
+import React from "react"
+import { UseFormRegister, Path } from "react-hook-form"
+import { Label } from "@/app/_components/ui/label"
 
-interface selectProps extends React.SelectHTMLAttributes<HTMLSelectElement> {
-  category: string[];
-  label: string;
+interface SelectProps<T extends Record<string, any>>
+  extends React.SelectHTMLAttributes<HTMLSelectElement> {
+  category: string[]
+  label: string
+  register: UseFormRegister<T>
+  name: Path<T>
 }
 
-const SelectCategory = React.forwardRef<
-  HTMLSelectElement,
-  selectProps & ReturnType<UseFormRegister<BlogAuthSchema>>
->(({ category, className, onChange, onBlur, name, label, ...props }, ref) => {
+const SelectCategory = <T extends Record<string, any>>({
+  category,
+  className,
+  label,
+  register,
+  name,
+  ...props
+}: SelectProps<T>) => {
   return (
-    <>
-      <Label className="mb-2 block text-foreground">{label}</Label>
+    <div className="space-y-2 w-full">
+      <Label
+        htmlFor={name.toString()}
+        className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+      >
+        {label}
+      </Label>
       <select
-        {...props}
-        ref={ref}
-        onChange={onChange}
-        name={name}
-        onBlur={onBlur}
+        {...register(name)}
+        id={name.toString()}
         className={cn(
-          "bg-transparent p-4 border border-border text-foreground focus:outline-none",
+          "flex h-10 w-full items-center justify-between rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50",
           className
         )}
+        {...props}
       >
-        {category.length
-          ? category.map((item, index) => (
-              <option value={item} key={index}>
-                {item}
-              </option>
-            ))
-          : null}
+        {category.map((item, index) => (
+          <option value={item} key={index}>
+            {item}
+          </option>
+        ))}
       </select>
-    </>
-  );
-});
+    </div>
+  )
+}
 
-SelectCategory.displayName = "Select";
-
-export default SelectCategory;
+export default SelectCategory

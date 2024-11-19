@@ -15,30 +15,36 @@ import {
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
 } from "@/app/_components/ui/navigation-menu"
+import MobileNav from "@/app/_components/mobile-nav"
+import { useSelectedLayoutSegment } from "next/navigation"
 
 interface NavbarProps {
   items: MainNavItems
+  children?: React.ReactNode
 }
 
-const Navbar: FC<NavbarProps> = ({ items }) => {
+const Navbar: FC<NavbarProps> = ({ items, children }) => {
   const [showMobileMenu, setShowMobileMenu] = useState<boolean>(false)
+  const segment = useSelectedLayoutSegment()
+
   const valueChangeHanlder = function (e: string) {
     console.log(e)
   }
   return (
     <header
       className={cn(
-        "sm:flex flex-row items-center justify-between gap-8 py-4 z-20 px-10 border-b fixed w-screen top-0 backdrop-blur-sm",
+        "flex flex-row items-center justify-between gap-8 py-4 z-20 px-10 border-b fixed w-screen top-0 backdrop-blur-sm",
         true && "justify-between"
       )}
     >
       <Link
         href="/"
-        className="flex z-40 font-semibold items-center justify-center flex-nowrap gap-2"
+        className="inline-flex z-40 font-semibold items-center justify-center flex-nowrap gap-2"
       >
         <Image
           height={100}
           width={200}
+          className="w-[100px] md:w-[200px]"
           src={
             "https://utfs.io/f/ZowmNmBHF7rVyt3CMIEiorYCB6GnRhmpVzbsTv5EZJ1LQ7Xc"
           }
@@ -69,7 +75,10 @@ const Navbar: FC<NavbarProps> = ({ items }) => {
                         {
                           "cursor-not-allowed text-foreground/50":
                             item.disabled,
-                        }
+                        },
+                        item.href.startsWith(`/${segment}`)
+                          ? "text-secondary-foreground"
+                          : "text-foreground"
                       )}
                     >
                       {item.title}
@@ -110,6 +119,20 @@ const Navbar: FC<NavbarProps> = ({ items }) => {
           </NavigationMenu>
         </nav>
       ) : null}
+      <button
+        className="flex items-center space-x-2 md:hidden"
+        onClick={() => setShowMobileMenu(!showMobileMenu)}
+      >
+        {showMobileMenu ? (
+          <Icons.CircleX className="text-foreground" />
+        ) : (
+          <Icons.Menu className="text-foreground" />
+        )}
+        <span className="font-bold hidden">Menu</span>
+      </button>
+      {showMobileMenu && items && (
+        <MobileNav items={items}>{children}</MobileNav>
+      )}
     </header>
   )
 }

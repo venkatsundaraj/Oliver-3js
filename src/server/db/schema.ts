@@ -44,6 +44,19 @@ export const blogTable = createTable("blog", {
     .$onUpdate(() => new Date()),
 })
 
+export const workTable = createTable("work", {
+  id: serial("id").primaryKey(),
+  type: varchar("type", { length: 255 }).notNull(),
+  subType: varchar("subType", { length: 255 }).notNull(),
+  location: text("location").notNull(),
+  category: text("category").notNull(),
+  content: text("content").notNull(),
+  createdAt: timestamp("created_at").notNull().defaultNow(),
+  updatedAt: timestamp("updated_at")
+    .notNull()
+    .$onUpdate(() => new Date()),
+})
+
 // --------------------------------------------------------------
 
 export const users = pgTable("user", {

@@ -1,3 +1,4 @@
+import { workSubType, workType } from "@/config/marketing"
 import { z } from "zod"
 
 export const userAuthSchema = z.object({
@@ -71,3 +72,19 @@ export const extendedBlogSchema = baseBlogSchema.extend({
 })
 
 export type ExtendedBlogSchema = z.infer<typeof extendedBlogSchema>
+
+// ----------------------------------------------------------------------
+
+export const workAuthSchema = z.object({
+  type: z.string().refine((value) => workType.includes(value), {
+    message: "Invalid option selected",
+  }),
+  subType: z.string().refine((value) => workSubType.includes(value), {
+    message: "Invalid option selected",
+  }),
+  location: z.string().min(1),
+  category: z.string().min(1),
+  content: z.string().min(1),
+})
+
+export type workAuthSchemaType = z.infer<typeof workAuthSchema>

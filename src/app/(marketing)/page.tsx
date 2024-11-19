@@ -28,7 +28,7 @@ const page: FC<pageProps> = ({}) => {
       <Model />
 
       {/* Our Terrain Section */}
-      <section className="w-screen flex items-center justify-center h-screen bg-background py-5 ">
+      <section className="w-screen flex items-center justify-center bg-background py-16 md:py-24">
         <div className="container flex items-center justify-center">
           <div className="grid grid-cols-1 md:grid-cols-2 w-full gap-8 md:gap-0">
             <div className="flex items-start flex-col justify-center gap-4">
@@ -69,7 +69,7 @@ const page: FC<pageProps> = ({}) => {
       </section>
 
       {/* Our Practices Section */}
-      <section className="w-screen flex items-center justify-center  bg-background py-16 md:py-32">
+      <section className="w-screen flex items-center justify-center  bg-background py-16 md:py-24">
         <div className="container flex items-center justify-center">
           <div className="grid grid-cols-1  w-full">
             <div className="flex items-start flex-col justify-center gap-4">
@@ -229,7 +229,7 @@ const page: FC<pageProps> = ({}) => {
                 <span className="text-extra_paragraph_heading text-foreground font-heading">
                   Our
                 </span>
-                <span className="text-primary-foreground text-secondary_heading font-normal">
+                <span className="text-primary-foreground text-secondary_heading font-normal font-heading">
                   Engagements
                 </span>
               </h2>
