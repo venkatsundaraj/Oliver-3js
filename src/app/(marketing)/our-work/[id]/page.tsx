@@ -1,20 +1,21 @@
-import { notFound } from "next/navigation"
-import { FC } from "react"
-import Link from "next/link"
-import Image from "next/image"
-import FeaturedBlogs from "@/app/_components/featured-blogs"
+import WorkFilter from "@/app/_components/work-filter"
+import { workTable } from "@/server/db/schema"
 import { db } from "@/server/db"
-
-import { blogTable } from "@/server/db/schema"
-import { eq } from "drizzle-orm"
-import { slugify } from "@/lib/utils"
 
 interface pageProps {
   params: { workId: string }
 }
 
+export const revalidate = 0 // This forces the page to be dynamic
+
+async function getData() {
+  const data = await db.select().from(workTable)
+  return data
+}
+
 const page = async ({ params }: pageProps) => {
-  console.log(params)
+  const data = await getData()
+  // console.log(data)
   return (
     <>
       <section className="w-screen  items-center justify-center bg-background py-10 md:pt-64 md:pb-16 flex ">
@@ -40,27 +41,7 @@ const page = async ({ params }: pageProps) => {
         </div>
       </section>
 
-      <section className="w-screen  items-center justify-center min-h-screen bg-background py-5 flex">
-        <div className="container flex items-start justify-center flex-col">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            {new Array(6).fill(null).map((item, i) => (
-              <div className="flex bg-secondary-foreground p-4 items-start justify-center flex-col min-h-[240px] gap-4">
-                <span className="font-paragraph text-subtitle_heading text-background">
-                  India
-                </span>
-                <h4 className="font-heading text-2xl text-background">
-                  Rural Consumners
-                </h4>
-                <h4 className="font-paragraph text-subtitle_heading text-background">
-                  How can one use what Indian rural farmers think about & value,
-                  distinct from urban India, for becoming more farmer centric in
-                  business?
-                </h4>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <WorkFilter params={params} work={data} />
     </>
   )
 }
