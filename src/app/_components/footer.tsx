@@ -8,7 +8,7 @@ interface FooterProps {}
 
 const Footer: FC<FooterProps> = ({}) => {
   return (
-    <footer className="flex items-center justify-center">
+    <footer className="flex items-center justify-center z-[16] relative">
       <div className="grid  w-full grid-cols-1 md:grid-cols-2 border-t border-t-foreground">
         <div className="flex items-start justify-between flex-col gap-4 p-2 md:p-4 ps-4 md:ps-10 pt-4 md:pt-10">
           <div className="flex items-start justify-between flex-col gap-4 ">

@@ -198,7 +198,7 @@ const page: FC<pageProps> = ({}) => {
                 globally.
               </p>
               <Link
-                href={"/know-more"}
+                href={"/our-people"}
                 className={cn(
                   buttonVariants({ variant: "outline", size: "lg" }),
                   "text-foreground rounded-none mt-2"

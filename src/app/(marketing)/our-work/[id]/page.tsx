@@ -18,7 +18,7 @@ const page = async ({ params }: pageProps) => {
   // console.log(data)
   return (
     <>
-      <section className="w-screen  items-center justify-center bg-background py-10 md:pt-64 md:pb-16 flex ">
+      <section className="w-screen  items-center justify-center bg-background py-10 md:pt-40 md:pb-16 flex ">
         <div className="container flex items-start justify-center flex-col">
           <div className="grid grid-cols-1 md:grid-cols-2 w-full gap-8 md:gap-0">
             <div className="flex items-start flex-col justify-center gap-4">
@@ -27,16 +27,6 @@ const page = async ({ params }: pageProps) => {
               </h2>
             </div>
             <div className="hidden items-center justify-center"></div>
-          </div>
-          <div className="hidden items-center justify-between">
-            <div className="flex items-center justify-center gap-4 md:gap-8">
-              <span className="uppercase text-foreground font-paragraph bg-transparent border border-foreground px-6 py-3">
-                Category 1
-              </span>
-              <span className="uppercase text-foreground font-paragraph bg-transparent">
-                01/02/2024
-              </span>
-            </div>
           </div>
         </div>
       </section>

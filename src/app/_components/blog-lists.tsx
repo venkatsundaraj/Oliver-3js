@@ -15,6 +15,7 @@ import Image from "next/image"
 import Link from "next/link"
 import { cn, slugify } from "@/lib/utils"
 import { blogTable } from "@/server/db/schema"
+
 import { InferModel } from "drizzle-orm"
 
 type Blog = InferModel<typeof blogTable>

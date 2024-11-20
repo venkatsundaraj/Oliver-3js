@@ -1,15 +1,15 @@
 interface DetailedInfo {
-  imageUrltwo: string;
-  para: string;
-  paratwo: string;
+  imageUrltwo: string
+  para: string
+  paratwo: string
 }
 
 interface TeamMember {
-  name: string;
-  slug: string;
-  role: string;
-  imageUrl: string;
-  detailedinfo: DetailedInfo;
+  name: string
+  slug: string
+  role: string
+  imageUrl: string
+  detailedinfo: DetailedInfo
 }
 
 const teamMembers: TeamMember[] = [
@@ -17,9 +17,11 @@ const teamMembers: TeamMember[] = [
     name: "Ashutosh Tiwari",
     slug: "ashutosh-tiwari",
     role: "Founding Partner | Director",
-    imageUrl: "https://via.placeholder.com/150",
+    imageUrl:
+      "https://utfs.io/f/ZowmNmBHF7rV0fFHBluZYsC0gS4fkMWLErF3JizKydUD8Gob",
     detailedinfo: {
-      imageUrltwo: "https://via.placeholder.com/150",
+      imageUrltwo:
+        "https://utfs.io/f/ZowmNmBHF7rV0fFHBluZYsC0gS4fkMWLErF3JizKydUD8Gob",
       para: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
       paratwo:
         " next Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
@@ -29,9 +31,11 @@ const teamMembers: TeamMember[] = [
     name: "Jeremy Holmes",
     slug: "jeremy-holmes",
     role: "Founder | Director",
-    imageUrl: "https://via.placeholder.com/150",
+    imageUrl:
+      "https://utfs.io/f/ZowmNmBHF7rVREe68Wy3gtZBquPl7NxMiLpXGhQTs0e56Ujf",
     detailedinfo: {
-      imageUrltwo: "https://via.placeholder.com/150",
+      imageUrltwo:
+        "https://utfs.io/f/ZowmNmBHF7rVREe68Wy3gtZBquPl7NxMiLpXGhQTs0e56Ujf",
       para: "+1234567890",
       paratwo: "+1234567890",
     },
@@ -84,9 +88,11 @@ const teamMembers: TeamMember[] = [
     name: "Nishith Sharan",
     slug: "nishith-sharan",
     role: "Partner",
-    imageUrl: "https://via.placeholder.com/150",
+    imageUrl:
+      "https://utfs.io/f/ZowmNmBHF7rVyKt3WUiorYCB6GnRhmpVzbsTv5EZJ1LQ7Xc0",
     detailedinfo: {
-      imageUrltwo: "https://via.placeholder.com/150",
+      imageUrltwo:
+        "https://utfs.io/f/ZowmNmBHF7rVyKt3WUiorYCB6GnRhmpVzbsTv5EZJ1LQ7Xc0",
       para: "+1234567890",
       paratwo: "+1234567890",
     },
@@ -162,9 +168,11 @@ const teamMembers: TeamMember[] = [
     name: "Kanika Singal",
     slug: "kanika-singal",
     role: "Founding Partner",
-    imageUrl: "https://via.placeholder.com/150",
+    imageUrl:
+      "https://utfs.io/f/ZowmNmBHF7rVZE6m3kBHF7rVAK6CWauMPjmJlROdkngGeUw2",
     detailedinfo: {
-      imageUrltwo: "https://via.placeholder.com/150",
+      imageUrltwo:
+        "https://utfs.io/f/ZowmNmBHF7rVZE6m3kBHF7rVAK6CWauMPjmJlROdkngGeUw2",
       para: "+1234567890",
       paratwo: "+1234567890",
     },
@@ -173,9 +181,11 @@ const teamMembers: TeamMember[] = [
     name: "Rajeev Garg",
     slug: "rajeev-garg",
     role: "Founding Partner",
-    imageUrl: "https://via.placeholder.com/150",
+    imageUrl:
+      "https://utfs.io/f/ZowmNmBHF7rVgq9xdpGZmO7D95FyjUwVrPNpCBfxz4KHMWX3",
     detailedinfo: {
-      imageUrltwo: "https://via.placeholder.com/150",
+      imageUrltwo:
+        "https://utfs.io/f/ZowmNmBHF7rVgq9xdpGZmO7D95FyjUwVrPNpCBfxz4KHMWX3",
       para: "+1234567890",
       paratwo: "+1234567890",
     },
@@ -184,9 +194,11 @@ const teamMembers: TeamMember[] = [
     name: "Hitesh Sethi",
     slug: "hitesh-sethi",
     role: "Partner",
-    imageUrl: "https://via.placeholder.com/150",
+    imageUrl:
+      "https://utfs.io/f/ZowmNmBHF7rVIPfieR68J3F67djWLVkcNPZneu0vAlKHYBCt",
     detailedinfo: {
-      imageUrltwo: "https://via.placeholder.com/150",
+      imageUrltwo:
+        "https://utfs.io/f/ZowmNmBHF7rVIPfieR68J3F67djWLVkcNPZneu0vAlKHYBCt",
       para: "+1234567890",
       paratwo: "+1234567890",
     },
@@ -206,9 +218,11 @@ const teamMembers: TeamMember[] = [
     name: "Krishna Thothadri",
     slug: "krishna-thothadri",
     role: "Founder | Director",
-    imageUrl: "https://via.placeholder.com/150",
+    imageUrl:
+      "https://utfs.io/f/ZowmNmBHF7rVUwoZD4oY7SB9WamizGsyEwM4ZK2vHxtIn0kh",
     detailedinfo: {
-      imageUrltwo: "https://via.placeholder.com/150",
+      imageUrltwo:
+        "https://utfs.io/f/ZowmNmBHF7rVUwoZD4oY7SB9WamizGsyEwM4ZK2vHxtIn0kh",
       para: "+1234567890",
       paratwo: "+1234567890",
     },
@@ -224,6 +238,6 @@ const teamMembers: TeamMember[] = [
       paratwo: "+1234567890",
     },
   },
-];
+]
 
-export default teamMembers;
+export default teamMembers
