@@ -2,210 +2,242 @@
 
 import { ChevronUp, ChevronDown, Lightbulb, Zap, Target } from "lucide-react";
 import { useState, useRef, useEffect } from "react";
-import { ourDifferentiatorContent } from "@/config/marketing";
 import Image from "next/image";
+import rightcirclespir from "../../../public/rightcirclespir.svg";
 
 type Topic = {
   title: string;
   imgPath: string;
   icon: React.ElementType;
-  content: {
-    title: string;
-    description: string;
-    flowItems: string[];
-  };
 };
 
 const topics: Topic[] = [
   {
     imgPath:
       "https://utfs.io/f/ZowmNmBHF7rVS7N3l6RkTnuUMoapyhGFmg9lwIYORcVixtW1",
-    title: "Insightsaaaa centered strategy",
+    title: "Insights-centered strategy",
     icon: Lightbulb,
-    content: {
-      title: "Traditional, algorithmic, 'engineering' approach",
-      description:
-        "Top-down break up of problem > bottom-up synthesis of solution parts Interpreting organization as sum of parts",
-      flowItems: ["Value Chain", "Business"],
-    },
   },
   {
     imgPath:
       "https://utfs.io/f/ZowmNmBHF7rVbWDCKXkH2jDYzO9VfQms1UPwlxZdI8GBNqX7",
     title: "Data-driven decisions",
     icon: Zap,
-    content: {
-      title: "Leveraging big data and analytics",
-      description:
-        "Utilizing advanced analytics to derive actionable insights and drive strategic decision-making processes",
-      flowItems: ["Data Collection", "Analysis", "Decision"],
-    },
   },
   {
     imgPath:
       "https://utfs.io/f/ZowmNmBHF7rVerDO2THzKF8PVfhHaR7CmudUQywI1cWtxBk2",
     title: "Customer-centric focus",
     icon: Target,
-    content: {
-      title: "Prioritizing customer experience",
-      description:
-        "Aligning all aspects of the business to meet and exceed customer expectations, fostering loyalty and growth",
-      flowItems: ["Customer Needs", "Product Development", "Service Delivery"],
-    },
+  },
+  {
+    imgPath:
+      "https://utfs.io/f/ZowmNmBHF7rVerDO2THzKF8PVfhHaR7CmudUQywI1cWtxBk2",
+    title: "Customer-centric focus",
+    icon: Target,
+  },
+  {
+    imgPath:
+      "https://utfs.io/f/ZowmNmBHF7rVerDO2THzKF8PVfhHaR7CmudUQywI1cWtxBk2",
+    title: "Customer-centric focus",
+    icon: Target,
   },
 ];
 
-export default function Differentiators() {
-  const sectionRef = useRef<HTMLDivElement>(null);
-  const [currentTopicIndex, setCurrentTopicIndex] = useState(0);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const section = sectionRef.current;
-      if (!section) return;
-
-      const sectionTop = section.offsetTop;
-      const scrollPosition = window.scrollY + window.innerHeight / 2;
-
-      const newIndex = Math.min(
-        Math.max(
-          Math.floor((scrollPosition - sectionTop) / window.innerHeight),
-          0
-        ),
-        topics.length - 1
-      );
-
-      setCurrentTopicIndex(newIndex);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  const navigateTopic = (direction: "prev" | "next") => {
-    const newIndex =
-      direction === "prev"
-        ? Math.max(0, currentTopicIndex - 1)
-        : Math.min(topics.length - 1, currentTopicIndex + 1);
-
-    setCurrentTopicIndex(newIndex); // Update the content immediately
-
-    const targetOffset = sectionRef.current?.offsetTop ?? 0;
-    window.scrollTo({
-      top: targetOffset + newIndex * window.innerHeight,
-      behavior: "smooth",
-    });
-  };
-
-  const prevTopic = topics[currentTopicIndex - 1];
-  const nextTopic = topics[currentTopicIndex + 1];
-
+export default function Component() {
   return (
-    <div ref={sectionRef} className="relative">
-      {/* Scrollable Container */}
-      <div className="h-[400vh] bg-zinc-900 text-white">
-        <div className="sticky top-0 h-screen flex flex-col">
-          {/* Header */}
-          <div className="flex-shrink-0 p-8">
-            <h2 className="text-gray-300 text-xl font-light">Our</h2>
-            <h1 className="text-sky-400 text-5xl md:text-7xl font-light tracking-wider">
-              Differentiators
-            </h1>
-          </div>
-
-          {/* Main Content */}
-          <div className="flex-grow flex items-center justify-center">
-            <div className="grid grid-cols-1 md:grid-cols-[auto,1px,1fr] gap-8 items-center px-8">
-              {/* Left Navigation */}
-              <div className="flex flex-col items-center gap-4">
-                {/* Previous Topic */}
-
-                <button
-                  onClick={() => navigateTopic("prev")} // Navigate to the previous topic
-                  className="p-2 hover:bg-zinc-800 rounded-full transition-colors"
-                  aria-label="Go to previous topic"
-                  disabled={currentTopicIndex === 0}
-                >
-                  <ChevronUp
-                    className={`w-6 h-6 ${
-                      currentTopicIndex === 0
-                        ? "text-gray-600"
-                        : "text-gray-400"
-                    }`}
-                  />
-                </button>
-                {prevTopic && (
-                  <div className="text-center text-sm md:text-base text-gray-500 opacity-50">
-                    <Image
-                      src={prevTopic.imgPath}
-                      width={70}
-                      height={70}
-                      alt="image"
-                    />
-                  </div>
-                )}
-                {/* Current Topic Icon */}
-                <div className="relative flex flex-col items-center gap-2 text-center">
-                  <div className="text-sm md:text-base flex flex-row justify-center items-center	 gap-6 ">
-                    <Image
-                      src={topics[currentTopicIndex].imgPath}
-                      width={80}
-                      height={80}
-                      alt="image"
-                    />
-                    <p>{topics[currentTopicIndex].title}</p>
+    <>
+      <section className="sec-scroll-sec text-white min-h-screen flex items-center justify-center overflow-hidden">
+        <div className="container mx-auto flex flex-col md:flex-row items-center justify-center px-4 md:px-8 lg:px-16 max-w-[100vw]">
+          <div className="over-sec grid grid-cols-1 md:grid-cols-12 gap-4 bg-white ">
+            {/* left icons */}
+            <div className="over-sec-top bg-red-900 col-span-1">
+              <div className="le-over-sec flex flex-col items-center justify-center gap-6 h-[100%]">
+                <ChevronUp />
+                <div className="flex flex-col gap-6 overflow-hidden h-[45%]">
+                  {topics.map((topic, index) => (
+                    <div
+                      key={index}
+                      className={` ${
+                        index === 0 || index === 2
+                          ? "opacity-50"
+                          : "opacity-100"
+                      }`}
+                    >
+                      <Image
+                        src={topic.imgPath}
+                        alt={topic.title}
+                        className=""
+                        width={60}
+                        height={60}
+                      />
+                    </div>
+                  ))}
+                </div>
+                <ChevronDown />
+              </div>
+            </div>
+            {/* left text */}
+            <div className="col-span-2  flex justify-center items-center bg-red-900">
+              <p>asddsa</p>
+            </div>
+            {/* right text */}
+            <div className="ri-over-sec col-span-9 bg-red-500 h-[492px] px-8 py-12 overflow-y-auto">
+              <div className="sect-one grid grid-cols-1 md:grid-cols-2 gap-8  mb-8  items-center">
+                <div className="">
+                  <p className="text-[#5CB7E3]">
+                    Traditional, algorithmic, 'engineering' approach
+                  </p>
+                  <p>
+                    Top-down break up of problem bottom-up synthesis of solution
+                    parts Interpreting organization as sum of parts
+                  </p>
+                </div>
+                <div className="flex justify-center">
+                  <div className="w-fit">
+                    <p className="text-center bg-[#0077B9] px-12 py-4 rounded-[12px]">
+                      Value Chain
+                    </p>
+                    <p className="text-center bg-[#0077B9] px-12 py-4 mt-8 rounded-[12px]">
+                      Business
+                    </p>
                   </div>
                 </div>
-                {nextTopic && (
-                  <div className="text-center text-sm md:text-base text-gray-500 opacity-50">
+              </div>
+              <p>Vs</p>
+              <div className="sect-two grid grid-cols-1 md:grid-cols-2 gap-8  mt-8">
+                <div className="">
+                  <p className="text-[#5CB7E3]">
+                    Modern, insights centered, 'doctor' approach
+                  </p>
+                  <p>
+                    Core insights about problem Reimagine organization +
+                    enterprise around insights concentrically Interpreting
+                    Organization as an engine fueled by differentiated insights
+                  </p>
+                  <p>
+                    Insights at the center of P L and organization vs Insights
+                    at the center of marketing, innovation, design etc.
+                  </p>
+                </div>
+                <div className="flex justify-center">
+                  <div className="w-fit">
+                    <p className="text-center bg-[#0077B9] px-12 py-4 rounded-[12px]">
+                      Value Chain
+                    </p>
+                    <p className="text-center bg-[#0077B9] px-12 py-4 mt-8 rounded-[12px]">
+                      Business
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div className="sect-three grid grid-cols-1 md:grid-cols-2 gap-8  mt-8 items-center">
+                <div className="">
+                  <p className="text-[#5CB7E3]">
+                    Modern, insights centered, 'doctor' approach
+                  </p>
+                  <p>
+                    Core insights about problem Reimagine organization +
+                    enterprise around insights concentrically Interpreting
+                    Organization as an engine fueled by differentiated insights
+                  </p>
+                  <p>
+                    Insights at the center of P L and organization vs Insights
+                    at the center of marketing, innovation, design etc.
+                  </p>
+                </div>
+                <div className="flex justify-center">
+                  <div className="w-fit flex justify-center items-center">
                     <Image
-                      src={nextTopic.imgPath}
-                      width={70}
-                      height={70}
-                      alt="image"
+                      src={rightcirclespir}
+                      alt="Entry Icon"
+                      className="w-[60%] "
                     />
                   </div>
-                )}
-                <button
-                  onClick={() => navigateTopic("next")} // Navigate to the next topic
-                  className="p-2 hover:bg-zinc-800 rounded-full transition-colors"
-                  aria-label="Go to next topic"
-                  disabled={currentTopicIndex === topics.length - 1}
-                >
-                  <ChevronDown
-                    className={`w-6 h-6 ${
-                      currentTopicIndex === topics.length - 1
-                        ? "text-gray-600"
-                        : "text-gray-400"
-                    }`}
-                  />
-                </button>
-
-                {/* Next Topic */}
+                </div>
               </div>
-
-              {/* Divider */}
-              <div className="hidden md:block w-px bg-gray-700" />
-
-              {/* Right Content */}
-              <div className="space-y-6">
-                <div>
-                  <p className="text-[#5CB7E3] ">
+              <div className="sect-four grid grid-cols-1 md:grid-cols-1 gap-8  mt-8 items-center">
+                <div className="w-[50%]">
+                  <p className="text-[#5CB7E3]">
                     From empathy to insights to hero actions to execution
                   </p>
-                  <p className="text-[#5CB7E3] ">
+                  <p className="text-[#5CB7E3]">
                     Strategy: choice of actions - not that of intent or
                     directions
                   </p>
-                  <p className="text-[white] bg-[#0077B9] w-[80%] p-[3%] text-center rounded-[12px]">
+                  <p className="bg-[#0077B9] px-12 py-4 rounded-[12px] mt-6">
                     Insights
+                  </p>
+                  <p className="bg-[#0077B9] px-12 py-4 rounded-[12px] mt-6">
+                    Imperatives
+                  </p>
+                  <p className="bg-[#0077B9] px-12 py-4 rounded-[12px] mt-6">
+                    Strategy: Hero Actions - Front Back
+                  </p>
+                  <p className="bg-[#0077B9] px-12 py-4 rounded-[12px] mt-6">
+                    Obj. | Goals | Metrics
+                  </p>
+                  <p className="bg-[#0077B9] px-12 py-4 rounded-[12px] mt-6">
+                    Mission | Purpose | Vision | Definition
+                  </p>
+                  <p className="bg-[#0077B9] px-12 py-4 rounded-[12px] mt-6">
+                    Star Shifts: Start | Stop | Continue
+                  </p>
+                  <p className="bg-[#0077B9] px-12 py-4 rounded-[12px] mt-6">
+                    PoC & Execution Oversight
+                  </p>
+                  <p className="bg-[#0077B9] px-12 py-4 rounded-[12px] mt-6">
+                    Assured Success
+                  </p>
+                </div>
+              </div>
+              <div className="sect-five grid grid-cols-1 md:grid-cols-1 gap-8  mt-8 items-center">
+                <div className="">
+                  <p className="text-[#5CB7E3] font-bold">
+                    Intensive 360 degree solution co-creation & collaboration
+                    workshops
+                  </p>
+                  <p className="text-gray-300">
+                    With organization employees, customers, stakeholders
+                  </p>
+
+                  <p className="text-[#5CB7E3] font-bold mt-4">
+                    Only senior industry leaders as collaborative consultants
+                    working across all levels
+                  </p>
+
+                  <p className="text-[#5CB7E3] font-bold mt-4">
+                    500+ years of experience: 70% client side, practitioner
+                    experience
+                  </p>
+                  <p className="text-[#5CB7E3] font-bold">
+                    Tremendous diversity of experience
+                  </p>
+                  <p className="text-gray-300">
+                    Across 60+ b2c, b2b, b2p industries
+                  </p>
+                  <p className="text-gray-300">
+                    Across all inhabited continents
+                  </p>
+                  <p className="text-gray-300">
+                    Across diverse scales & management types
+                  </p>
+                  <p className="text-gray-500">
+                    Multinational, Regional or local giants, MSME's, start ups,
+                    NFPs
+                  </p>
+                  <p className="text-gray-300">Across all functions</p>
+
+                  <p className="text-[#5CB7E3] font-bold mt-4">
+                    Strategy + Plan + Execution Oversight + On Job Capability
+                    Building
                   </p>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-    </div>
+      </section>
+    </>
   );
 }
