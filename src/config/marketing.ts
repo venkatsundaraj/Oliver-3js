@@ -351,6 +351,26 @@ export const ourProfileContentForStickySlider: { title: string; icon: Icon }[] =
         " To give customised advice on making this happen requires intense collaboration, shared accountability, personal involvement by a sound blend of global practitioner + consulting experience at the core with a network of best in class program experts.",
       icon: "X",
     },
+    {
+      title:
+        "Uncovering the right insight & having the entire business strategy and model revolve around it is the beginning of sustained growth advantage. This advantage often leads to new ways of expanding business & portfolio.",
+      icon: "Laptop",
+    },
+    {
+      title:
+        "Realising the advantage lies in the design of precise programs at the front-end on brand, innovation, customer engagement helped by a specific, enabling people & operations perspective.",
+      icon: "MapPin",
+    },
+    {
+      title:
+        " To give customised advice on making this happen requires intense collaboration, shared accountability, personal involvement by a sound blend of global practitioner + consulting experience at the core with a network of best in class program experts.",
+      icon: "Play",
+    },
+    {
+      title:
+        " To give customised advice on making this happen requires intense collaboration, shared accountability, personal involvement by a sound blend of global practitioner + consulting experience at the core with a network of best in class program experts.",
+      icon: "Plus",
+    },
   ];
 
 export const ourProfileContentIcon = [
