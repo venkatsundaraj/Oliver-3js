@@ -4,12 +4,14 @@ import { valueEngineContent } from "@/config/marketing";
 import { cn } from "@/lib/utils";
 import OurBelieve from "@/app/_components/our-belief";
 import DotAnimation from "@/app/_components/dot-animation";
+import { ScrollToHash } from "@/app/_components/scroll-to-hash";
 
 interface pageProps {}
 
 const page: FC<pageProps> = ({}) => {
   return (
     <>
+      <ScrollToHash />
       {/* Hero Section */}
       <section className="w-screen flex items-center justify-center h-screen bg-background py-5 ">
         <div className="container flex items-center justify-center">
@@ -31,7 +33,10 @@ const page: FC<pageProps> = ({}) => {
       </section>
 
       {/* Who are we Section */}
-      <section className="w-screen flex items-center justify-center bg-background py-16 md:py-16">
+      <section
+        id="who-are-we"
+        className="w-screen flex items-center justify-center bg-background py-16 md:py-16"
+      >
         <div className="container flex items-center justify-center relative">
           <div className="grid grid-cols-1 md:grid-cols-2 w-full gap-8 md:gap-0">
             <div className="flex items-start flex-col justify-center gap-4">
@@ -60,7 +65,10 @@ const page: FC<pageProps> = ({}) => {
       </section>
 
       {/* Our Believe Section */}
-      <section className="w-screen flex items-center justify-center bg-background py-16 md:py-16">
+      <section
+        id="our-beliefs"
+        className="w-screen flex items-center justify-center bg-background py-16 md:py-16"
+      >
         <div className="container flex items-center justify-center">
           <div className="grid grid-cols-1 md:grid-cols-3 w-full gap-8 md:gap-0">
             <h2 className="flex items-start justify-start flex-col leading-[1.1]">
@@ -77,7 +85,10 @@ const page: FC<pageProps> = ({}) => {
       </section>
 
       {/* Our Values Engine Section */}
-      <section className="w-screen flex items-center justify-center min-h-screen bg-background py-16 md:py-16 flex-col">
+      <section
+        id="our-value-engine"
+        className="w-screen flex items-center justify-center min-h-screen bg-background py-16 md:py-16 flex-col"
+      >
         <div className="container flex items-center justify-center mb-16">
           <div className="container w-full h-full flex flex-col items-center justify-center ">
             <h2 className="flex items-center justify-center flex-col leading-[1.1]">

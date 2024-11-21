@@ -1,11 +1,11 @@
-"use client"
+"use client";
 
-import { FC, useState } from "react"
-import Link from "next/link"
-import Image from "next/image"
-import { Icons } from "@/app/_components/icons"
-import { MainNavItems } from "@/types"
-import { cn } from "@/lib/utils"
+import { FC, useState } from "react";
+import Link from "next/link";
+import Image from "next/image";
+import { Icons } from "@/app/_components/icons";
+import { MainNavItems } from "@/types";
+import { cn } from "@/lib/utils";
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -14,22 +14,22 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
-} from "@/app/_components/ui/navigation-menu"
-import MobileNav from "@/app/_components/mobile-nav"
-import { useSelectedLayoutSegment } from "next/navigation"
+} from "@/app/_components/ui/navigation-menu";
+import MobileNav from "@/app/_components/mobile-nav";
+import { useSelectedLayoutSegment } from "next/navigation";
 
 interface NavbarProps {
-  items: MainNavItems
-  children?: React.ReactNode
+  items: MainNavItems;
+  children?: React.ReactNode;
 }
 
 const Navbar: FC<NavbarProps> = ({ items, children }) => {
-  const [showMobileMenu, setShowMobileMenu] = useState<boolean>(false)
-  const segment = useSelectedLayoutSegment()
+  const [showMobileMenu, setShowMobileMenu] = useState<boolean>(false);
+  const segment = useSelectedLayoutSegment();
 
   const valueChangeHanlder = function (e: string) {
-    console.log(e)
-  }
+    console.log(e);
+  };
   return (
     <header
       className={cn(
@@ -134,7 +134,7 @@ const Navbar: FC<NavbarProps> = ({ items, children }) => {
         <MobileNav items={items}>{children}</MobileNav>
       )}
     </header>
-  )
-}
+  );
+};
 
-export default Navbar
+export default Navbar;

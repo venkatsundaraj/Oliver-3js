@@ -1,41 +1,41 @@
-import ProjectCard from "@/app/_components/project-card"
+import ProjectCard from "@/app/_components/project-card";
 import {
   domainsData,
   tailSectionData,
   clientDomains,
   clientData,
   ourProjects,
-} from "@/config/marketing"
-import { cn } from "@/lib/utils"
-import { FC } from "react"
-import { db } from "@/server/db"
-import { workTable } from "@/server/db/schema"
+} from "@/config/marketing";
+import { cn } from "@/lib/utils";
+import { FC } from "react";
+import { db } from "@/server/db";
+import { workTable } from "@/server/db/schema";
 
 interface pageProps {}
 
 const colors: string[] = [
-  "#3799CF4D",
-  "#9E6A03",
-  "#DA3633",
-  "#2EA043",
-  "#388BFD",
-  "#BF4B8A",
-]
+  "rgba(218, 54, 51, 0.5)",
+  "rgba(158, 106, 3, 0.5)",
+  "rgba(46, 160, 67, 0.5)",
+  "rgba(56, 139, 253, 0.5)",
+  "rgba(191, 75, 138, 0.5)",
+  "rgba(55, 153, 207, 0.5)",
+];
 
-export const revalidate = 0 // This forces the page to be dynamic
+export const revalidate = 0; // This forces the page to be dynamic
 
 async function getData() {
-  const data = await db.select().from(workTable)
-  return data
+  const data = await db.select().from(workTable);
+  return data;
 }
 
 const chooseColor = function () {
-  const value = Math.floor(Math.random() * 5)
-  return colors[value]
-}
+  const value = Math.floor(Math.random() * 5);
+  return colors[value];
+};
 
 const page = async ({}: pageProps) => {
-  const data = await getData()
+  const data = await getData();
 
   return (
     <>
@@ -139,7 +139,7 @@ const page = async ({}: pageProps) => {
         </div>
       </section>
     </>
-  )
-}
+  );
+};
 
-export default page
+export default page;

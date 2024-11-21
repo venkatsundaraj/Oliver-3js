@@ -2,6 +2,7 @@
 
 import { Button, buttonVariants } from "@/app/_components/button";
 import { cn } from "@/lib/utils";
+import { ScrollToHash } from "@/app/_components/scroll-to-hash";
 import { Canvas } from "@react-three/fiber";
 import dynamic from "next/dynamic";
 import Image from "next/image";
@@ -26,9 +27,12 @@ const page: FC<pageProps> = ({}) => {
   return (
     <>
       <Model />
-
+      <ScrollToHash />
       {/* Our Terrain Section */}
-      <section className="w-screen flex items-center justify-center bg-background py-16 md:py-24 z-[16] relative">
+      <section
+        id="our-terrain"
+        className="w-screen flex items-center justify-center bg-background py-16 md:py-24 z-[16] relative"
+      >
         <div className="container flex items-center justify-center">
           <div className="grid grid-cols-1 md:grid-cols-2 w-full gap-8 md:gap-0">
             <div className="flex items-start flex-col justify-center gap-4">
@@ -125,7 +129,10 @@ const page: FC<pageProps> = ({}) => {
       </section>
 
       {/* Our Differentiator Section */}
-      <section className="w-screen flex items-center justify-center min-h-screen bg-background py-5 z-[16] relative">
+      <section
+        id="our-differentiators"
+        className="w-screen flex items-center justify-center min-h-screen bg-background py-5 z-[16] relative"
+      >
         <div className="container flex flex-col items-start justify-center gap-8">
           <h2 className="flex items-start justify-start flex-col leading-[1.1]">
             <span className="text-extra_paragraph_heading text-foreground font-heading">

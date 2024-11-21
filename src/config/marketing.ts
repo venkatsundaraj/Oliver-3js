@@ -13,17 +13,17 @@ export const marketingConfig: MainNavItems = [
     title: "Home",
     href: "/",
     subItems: [
-      { title: "Our Terrain", href: "/our-terrain" },
-      { title: "Our Differentiators", href: "/our-differentiators" },
+      { title: "Our Terrain", href: "/#our-terrain" },
+      { title: "Our Differentiators", href: "/#our-differentiators" },
     ],
   },
   {
     title: "Our Essence",
     href: "/our-profile",
     subItems: [
-      { title: "Our Terrain", href: "/our-terrain" },
-      { title: "Our Differentiators", href: "/our-differentiators" },
-      { title: "Our Practices", href: "/our-practices" },
+      { title: "Who We Are", href: "/our-profile#who-are-we" },
+      { title: "Our Beliefs", href: "/our-profile#our-beliefs" },
+      { title: "Our Value Engine", href: "/our-profile#our-value-engine" },
     ],
   },
   {
