@@ -35,14 +35,18 @@ const FunctionalSpirals = () => {
     { title: "Digital", titletwo: "-Spiral", description: "Design" },
   ];
   return (
-    <section className="bg-black-900 text-white min-h-screen flex items-center justify-center">
+    <section className="bg-background text-white py-16 md:py-24 flex items-center justify-center bg-[url('https://utfs.io/f/ZowmNmBHF7rV60Iee5hbQOfRazMg3kr4BxVuqK1noU7SLJGE')] bg-center bg-no-repeat bg-contain">
       <div className="container mx-auto  px-4 md:px-8 lg:px-16">
         {/* Title */}
         <div className="text-start mb-12">
-          <h2 className="text-lg font-light">Our</h2>
-          <h1 className="text-5xl font-bold text-blue-500">
-            Functional Spirals
-          </h1>
+          <h2 className="flex items-start justify-start flex-col leading-[1.1]">
+            <span className="text-extra_paragraph_heading text-foreground font-heading">
+              Our
+            </span>
+            <span className="text-primary-foreground text-secondary_heading font-heading font-normal">
+              Functional Spirals
+            </span>
+          </h2>
         </div>
         {spirals.map((spiral, index) => (
           <div className="flex flex-row mb-4">

@@ -32,12 +32,18 @@ const SolutionLevels = () => {
   };
 
   return (
-    <section className="bg-black-900 text-white min-h-screen flex items-center justify-center">
+    <section className="bg-black-900 text-white py-16 md:py-24 flex items-center justify-center">
       <div className="container mx-auto  px-4 md:px-8 lg:px-16">
         {/* Title */}
         <div className="text-start mb-12">
-          <h2 className="text-lg font-light">Our</h2>
-          <h1 className="text-5xl font-bold text-blue-500">Solution Levels</h1>
+          <h2 className="flex items-start justify-start flex-col leading-[1.1]">
+            <span className="text-extra_paragraph_heading text-foreground font-heading">
+              Our
+            </span>
+            <span className="text-primary-foreground text-secondary_heading font-heading font-normal">
+              Solution Levels
+            </span>
+          </h2>
         </div>
 
         {/* Scrollable Container with Events */}
@@ -85,15 +91,17 @@ const SolutionLevels = () => {
           ].map((card, index) => (
             <div
               key={index}
-              className="bg-white text-black p-6  shadow-md min-w-[350px] cursor-pointer h-[350px]"
+              className="bg-white text-foreground p-6  shadow-md min-w-[350px] cursor-pointer h-[350px]"
             >
-              <h3 className="text-xs font-semibold text-gray-600 mb-2">
+              <h3 className="text-xs font-semibold text-background mb-2">
                 COSMOS STRATEGY
               </h3>
-              <h2 className="text-xl font-bold text-blue-500 mb-4">
+              <h2 className="text-extra_paragraph_heading font-bold text-secondary-foreground mb-4 font-heading">
                 {card.title}
               </h2>
-              <p>{card.description}</p>
+              <p className="text-extra_paragraph_heading font-normal text-background mb-2">
+                {card.description}
+              </p>
             </div>
           ))}
         </div>

@@ -47,7 +47,7 @@ const topics: Topic[] = [
 export default function Component() {
   return (
     <>
-      <section className="sec-scroll-sec text-white min-h-screen flex items-center justify-center overflow-hidden">
+      <section className="sec-scroll-sec text-white min-h-screen hidden items-center justify-center overflow-hidden">
         <div className="container mx-auto flex flex-col md:flex-row items-center justify-center px-4 md:px-8 lg:px-16 max-w-[100vw]">
           <div className="over-sec grid grid-cols-1 md:grid-cols-12 gap-4 bg-white ">
             {/* left icons */}

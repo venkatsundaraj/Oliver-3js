@@ -7,6 +7,7 @@ import {
   functionalSpiralItem,
   OurProjectsType,
 } from "@/types";
+import { Icon, Icons } from "@/app/_components/icons";
 import { title } from "process";
 export const marketingConfig: MainNavItems = [
   {
@@ -57,6 +58,16 @@ export const marketingConfig: MainNavItems = [
   },
 ];
 
+export const insightCenteredContent: string[] = [
+  "Insights",
+  "Imperatives",
+  "Strategy: Hero actions - Font Back",
+  "Obj. | Goals | Metrics",
+  "Mission | Purpose | Vision | Definition",
+  "Star Shifts : Start | Stop | Continue",
+  "PoC & Execution Oversight",
+  "Assured Success",
+];
 // Footer contents
 export const locationContents: locationItem[] = [
   {
@@ -316,6 +327,37 @@ export const ourProfileContent: string[] = [
   "Uncovering the right insight & having the entire business strategy and model revolve around it is the beginning of sustained growth advantage. This advantage often leads to new ways of expanding business & portfolio.",
   "Realising the advantage lies in the design of precise programs at the front-end on brand, innovation, customer engagement helped by a specific, enabling people & operations perspective.",
   " To give customised advice on making this happen requires intense collaboration, shared accountability, personal involvement by a sound blend of global practitioner + consulting experience at the core with a network of best in class program experts.",
+];
+
+export const ourProfileContentForStickySlider: { title: string; icon: Icon }[] =
+  [
+    {
+      title:
+        "Businesses exist for growth and they often require help in unlocking it especially when the markets are complex. At the heart of all such problems & opportunities lies a core business insight, a market value driver, around which spirals a specific growth construct.",
+      icon: "Snail",
+    },
+    {
+      title:
+        "Uncovering the right insight & having the entire business strategy and model revolve around it is the beginning of sustained growth advantage. This advantage often leads to new ways of expanding business & portfolio.",
+      icon: "Pencil",
+    },
+    {
+      title:
+        "Realising the advantage lies in the design of precise programs at the front-end on brand, innovation, customer engagement helped by a specific, enabling people & operations perspective.",
+      icon: "Moon",
+    },
+    {
+      title:
+        " To give customised advice on making this happen requires intense collaboration, shared accountability, personal involvement by a sound blend of global practitioner + consulting experience at the core with a network of best in class program experts.",
+      icon: "X",
+    },
+  ];
+
+export const ourProfileContentIcon = [
+  Icons.Snail,
+  Icons.Pencil,
+  Icons.Laptop,
+  Icons.Moon,
 ];
 
 export const addressData: { location: string; description: string }[] = [

@@ -1,16 +1,17 @@
 "use client";
 
 import { motion } from "framer-motion";
-import OfferTerrain from "../../_components/offer-terrain";
-import OurPractices from "../../_components/ourpratices";
-import SolutionLevels from "../../_components/SolutionLevels";
-import FunctionalSpirals from "../../_components/FunctionalSpirals";
-import Differentiators from "../../_components/Differentiators";
+import OfferTerrain from "@/app/_components/offer-terrain";
+import OurPractices from "@/app/_components/ourpratices";
+import SolutionLevels from "@/app/_components/SolutionLevels";
+import FunctionalSpirals from "@/app/_components/FunctionalSpirals";
+import Differentiators from "@/app/_components/Differentiators";
+import StickySlider from "@/app/_components/sticky-slider";
 
 export default function Component() {
   return (
     <>
-      <div className="relative min-h-screen bg-zinc-900 flex items-center justify-center p-4 overflow-hidden">
+      <div className="relative min-h-screen bg-background flex items-center justify-center p-4 overflow-hidden">
         <div className="relative bottom-[50px] w-[80vw] max-w-[600px] h-[80vw] max-h-[600px] flex items-center justify-center">
           {/* Static Circle */}
           <div className="absolute w-[80%] h-[80%] rounded-full border-2 border-white"></div>
@@ -48,7 +49,7 @@ export default function Component() {
             <h1 className="text-sky-400 text-5xl font-light tracking-wide mb-6 font-heading">
               Proposition
             </h1>
-            <p className="text-white text-2xl font-light leading-relaxed mb-4 font-[600]">
+            <p className="text-white text-2xl leading-relaxed mb-4 font-[600]">
               Insight-centered business strategy & organization design
             </p>
             <p className="text-white/90 text-xl font-light">
@@ -59,6 +60,7 @@ export default function Component() {
       </div>
       <OfferTerrain />
       <OurPractices />
+      <StickySlider />
       <SolutionLevels />
       <FunctionalSpirals />
       <Differentiators />

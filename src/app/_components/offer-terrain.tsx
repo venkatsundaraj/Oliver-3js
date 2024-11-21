@@ -41,13 +41,19 @@ const offerterrain = () => {
     },
   ];
   return (
-    <section className="bg-black-900 text-white min-h-screen flex items-center justify-center overflow-hidden">
+    <section className="bg-black-900 text-white py-16 md:py-24  flex items-center justify-center overflow-hidden">
       <div className="container mx-auto flex flex-col md:flex-row items-center justify-center px-4 md:px-8 lg:px-16 max-w-[100vw]">
-        <div className="flex flex-col md:flex-row min-h-screen items-center justify-center bg-black-900 text-white">
+        <div className="flex flex-col md:flex-row  items-center justify-center bg-black-900 text-white">
           {/* Left Text Section */}
           <div className="flex-1 p-8">
-            <h2 className="text-lg font-light">Our</h2>
-            <h1 className="text-5xl font-bold text-blue-500">Terrain</h1>
+            <h2 className="flex items-start justify-start flex-col leading-[1.1]">
+              <span className="text-extra_paragraph_heading text-foreground font-heading">
+                Our
+              </span>
+              <span className="text-primary-foreground text-secondary_heading font-heading font-normal">
+                Terrain
+              </span>
+            </h2>
             <div>
               {contentData.map(
                 (content, index) =>

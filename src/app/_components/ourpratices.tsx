@@ -4,15 +4,19 @@ import Image from "next/image";
 
 const ourpractices = () => {
   return (
-    <section className="bg-black-900 text-white min-h-screen flex items-center justify-center">
+    <section className="bg-black-900 text-white flex items-center justify-center py-16 md:py-24 ">
       <div className="container mx-auto flex flex-col md:flex-col items-center justify-center px-4 md:px-8 lg:px-16">
         <div className="flex flex-col md:flex-col items-start justify-center ">
           {/* Title Section */}
           <div className="text-left mb-8">
-            <h2 className="text-lg font-light">Our</h2>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-blue-500">
-              practices
-            </h1>
+            <h2 className="flex items-start justify-start flex-col leading-[1.1]">
+              <span className="text-extra_paragraph_heading text-foreground font-heading">
+                Our
+              </span>
+              <span className="text-primary-foreground text-secondary_heading font-heading font-normal">
+                Practices
+              </span>
+            </h2>
           </div>
 
           {/* Practice Circles with Lines */}
@@ -20,29 +24,38 @@ const ourpractices = () => {
             <Image src={practicedot} alt="Entry Icon" className="" />
             <div className="flex  items-center justify-between space-x-8 lg:space-x-16  w-full max-w-4xl">
               <div className="flex flex-col items-left">
-                <span className="mt-4 text-lg font-semibold text-blue-500">
+                <span className="mt-4 font-heading font-semibold text-secondary-foreground text-tertiary_heading">
                   Nu.
                 </span>
-                <span className="text-sm">
-                  Transformation <span className="text-blue-500">Practice</span>
+                <span className="text-extra_paragraph_heading">
+                  Transformation{" "}
+                  <span className="text-secondary-foreground text-extra_paragraph_heading">
+                    Practice
+                  </span>
                 </span>
               </div>
 
               <div className="flex flex-col items-left">
-                <span className="mt-4 text-lg font-semibold text-blue-500">
+                <span className="mt-4 font-heading font-semibold text-secondary-foreground text-tertiary_heading">
                   Qst.
                 </span>
-                <span className="text-sm">
-                  Business Entry <span className="text-blue-500">Practice</span>
+                <span className="text-extra_paragraph_heading">
+                  Business Entry{" "}
+                  <span className="text-secondary-foreground text-extra_paragraph_heading">
+                    Practice
+                  </span>
                 </span>
               </div>
 
               <div className="flex flex-col items-left">
-                <span className="mt-4 text-lg font-semibold text-blue-500">
+                <span className="mt-4 font-heading font-semibold text-secondary-foreground text-tertiary_heading">
                   Flr.
                 </span>
-                <span className="text-sm">
-                  Capability <span className="text-blue-500">Practice</span>
+                <span className="text-extra_paragraph_heading">
+                  Capability{" "}
+                  <span className="text-secondary-foreground text-extra_paragraph_heading">
+                    Practice
+                  </span>
                 </span>
               </div>
             </div>
@@ -53,43 +66,92 @@ const ourpractices = () => {
             {/* Column 1 */}
             <div className="flex flex-col items-start space-y-4">
               <div>
-                <h3 className="text-blue-500 font-semibold">Nu.Turnaround</h3>
-                <p className="text-sm">Turnaround</p>
+                <h3 className="text-foreground text-extra_paragraph_heading font-semibold">
+                  <span className="font-heading text-secondary-foreground inline-block">
+                    Nu.
+                  </span>
+                  Turnaround
+                </h3>
+                <p className="text-extra_paragraph_heading text-secondary-foreground">
+                  Turnaround
+                </p>
               </div>
               <div>
-                <h3 className="text-blue-500 font-semibold">Nu.Scale</h3>
-                <p className="text-sm">Scale Up</p>
+                <h3 className="text-foreground text-extra_paragraph_heading font-semibold">
+                  <span className="font-heading text-secondary-foreground inline-block">
+                    Nu.
+                  </span>
+                  Scale
+                </h3>
+                <p className="text-extra_paragraph_heading text-secondary-foreground">
+                  Scale Up
+                </p>
               </div>
             </div>
 
             {/* Column 2 */}
             <div className="flex flex-col items-start space-y-4">
               <div>
-                <h3 className="text-blue-500 font-semibold">Qst.Geography</h3>
-                <p className="text-sm">Geographic Entry</p>
+                <h3 className="text-foreground text-extra_paragraph_heading font-semibold">
+                  <span className="font-heading text-secondary-foreground inline-block ">
+                    Qst.
+                  </span>
+                  Geography
+                </h3>
+                <p className="text-extra_paragraph_heading text-secondary-foreground">
+                  Geographic Entry
+                </p>
               </div>
               <div>
-                <h3 className="text-blue-500 font-semibold">Qst.Category</h3>
-                <p className="text-sm">Category or Industry Entry</p>
+                <h3 className="text-foreground text-extra_paragraph_heading font-semibold">
+                  <span className="font-heading text-secondary-foreground inline-block">
+                    Qst.
+                  </span>
+                  Category
+                </h3>
+                <p className="text-extra_paragraph_heading text-secondary-foreground">
+                  Category or Industry Entry
+                </p>
               </div>
             </div>
 
             {/* Column 3 */}
             <div className="flex flex-col items-start space-y-4">
               <div>
-                <h3 className="text-blue-500 font-semibold">Flr.Innate</h3>
-                <p className="text-sm">Potential Solutions</p>
+                <h3 className="text-foreground text-extra_paragraph_heading font-semibold">
+                  <span className="font-heading text-secondary-foreground inline-block">
+                    Flr.
+                  </span>
+                  Innate
+                </h3>
+                <p className="text-extra_paragraph_heading text-secondary-foreground">
+                  Potential Solutions
+                </p>
               </div>
               <div>
-                <h3 className="text-blue-500 font-semibold">Flr.Manifest</h3>
-                <p className="text-sm">Skill Solutions</p>
+                <h3 className="text-foreground text-extra_paragraph_heading font-semibold">
+                  <span className="font-heading text-secondary-foreground inline-block">
+                    Flr.
+                  </span>
+                  Manifest
+                </h3>
+                <p className="text-extra_paragraph_heading text-secondary-foreground">
+                  Skill Solutions
+                </p>
               </div>
             </div>
 
             <div className="flex flex-col items-start space-y-4">
               <div>
-                <h3 className="text-blue-500 font-semibold">Flr.Manifest</h3>
-                <p className="text-sm">Skill Solutions</p>
+                <h3 className="text-foreground text-extra_paragraph_heading font-semibold">
+                  <span className="font-heading text-secondary-foreground inline-block">
+                    Flr.
+                  </span>
+                  Manifest
+                </h3>
+                <p className="text-extra_paragraph_heading text-secondary-foreground">
+                  Skill Solutions
+                </p>
               </div>
             </div>
           </div>
