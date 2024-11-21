@@ -1,79 +1,87 @@
-"use client"
+"use client";
 
-import { useState, useEffect, useRef, FC } from "react"
+import { useState, useEffect, useRef, FC } from "react";
 
 interface DotAnimationProps {}
 
 interface Dot {
-  id: number
-  x: number
-  y: number
-  dx: number
-  dy: number
+  id: number;
+  x: number;
+  y: number;
+  dx: number;
+  dy: number;
+  baseX: number;
+  baseY: number;
 }
 
 interface Connection {
-  from: number
-  to: number
+  from: number;
+  to: number;
 }
 
-const DotAnimation: FC<DotAnimationProps> = function () {
-  const [, setFrame] = useState(0)
-  const dotsRef = useRef<Dot[]>([])
-  const connectionsRef = useRef<Connection[]>([])
-  const animationRef = useRef<number>()
+const DotAnimation: FC<DotAnimationProps> = () => {
+  const [, setFrame] = useState(0);
+  const dotsRef = useRef<Dot[]>([]);
+  const connectionsRef = useRef<Connection[]>([]);
+  const animationRef = useRef<number>();
 
   useEffect(() => {
-    // Initialize dots
-    dotsRef.current = Array(5)
-      .fill(null)
-      .map((_, index) => ({
-        id: index,
-        x: Math.random() * 100,
-        y: Math.random() * 100,
-        dx: (Math.random() - 0.5) * 0.5,
-        dy: (Math.random() - 0.5) * 0.5,
-      }))
+    // Initialize dots with fixed positions
+    dotsRef.current = [
+      { id: 0, x: 50, y: 10, dx: 0.05, dy: 0.05, baseX: 50, baseY: 10 }, // Top
+      { id: 1, x: 85, y: 35, dx: 0.05, dy: 0.05, baseX: 85, baseY: 35 }, // Top right
+      { id: 2, x: 75, y: 80, dx: 0.05, dy: 0.05, baseX: 75, baseY: 80 }, // Bottom right
+      { id: 3, x: 25, y: 80, dx: 0.05, dy: 0.05, baseX: 25, baseY: 80 }, // Bottom left
+      { id: 4, x: 15, y: 35, dx: 0.05, dy: 0.05, baseX: 15, baseY: 35 }, // Top left
+    ];
 
-    // Create connections (each dot connected to two others)
-    connectionsRef.current = dotsRef.current
-      .map((dot, index) => [
-        { from: dot.id, to: dotsRef.current[(index + 1) % 5].id },
-        { from: dot.id, to: dotsRef.current[(index + 2) % 5].id },
-      ])
-      .flat()
+    // Create connections (including inter-cross section lines)
+    connectionsRef.current = [
+      { from: 0, to: 1 },
+      { from: 1, to: 2 },
+      { from: 2, to: 3 },
+      { from: 3, to: 4 },
+      { from: 4, to: 0 },
+      { from: 0, to: 2 },
+      { from: 0, to: 3 },
+      { from: 1, to: 3 },
+      { from: 1, to: 4 },
+      { from: 2, to: 4 },
+    ];
 
     const animate = () => {
       dotsRef.current = dotsRef.current.map((dot) => {
-        let { x, y, dx, dy } = dot
+        let { x, y, dx, dy, baseX, baseY } = dot;
 
-        // Update position
-        x += dx
-        y += dy
+        // Update position within 5mm range (assuming 1% = 1mm for simplicity)
+        x += dx;
+        y += dy;
 
-        // Bounce off edges
-        if (x < 0 || x > 100) dx = -dx
-        if (y < 0 || y > 100) dy = -dy
+        // Reverse direction if reached the edge of 5mm range
+        if (Math.abs(x - baseX) > 2.5) {
+          dx = -dx;
+          x = x > baseX ? baseX + 2.5 : baseX - 2.5;
+        }
+        if (Math.abs(y - baseY) > 2.5) {
+          dy = -dy;
+          y = y > baseY ? baseY + 2.5 : baseY - 2.5;
+        }
 
-        // Ensure dot stays within bounds
-        x = Math.max(0, Math.min(100, x))
-        y = Math.max(0, Math.min(100, y))
+        return { ...dot, x, y, dx, dy };
+      });
 
-        return { ...dot, x, y, dx, dy }
-      })
+      setFrame((prev) => prev + 1); // Trigger re-render
+      animationRef.current = requestAnimationFrame(animate);
+    };
 
-      setFrame((prev) => prev + 1) // Trigger re-render
-      animationRef.current = requestAnimationFrame(animate)
-    }
-
-    animate()
+    animate();
 
     return () => {
       if (animationRef.current) {
-        cancelAnimationFrame(animationRef.current)
+        cancelAnimationFrame(animationRef.current);
       }
-    }
-  }, [])
+    };
+  }, []);
 
   return (
     <div className="w-full md:max-w-2xl h-[100vh] md:h-[600px] top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] overflow-hidden absolute z-[1]">
@@ -81,13 +89,12 @@ const DotAnimation: FC<DotAnimationProps> = function () {
         {connectionsRef.current.map((connection, index) => {
           const fromDot = dotsRef.current.find(
             (dot) => dot.id === connection.from
-          )
-          const toDot = dotsRef.current.find((dot) => dot.id === connection.to)
-          if (!fromDot || !toDot) return null
+          );
+          const toDot = dotsRef.current.find((dot) => dot.id === connection.to);
+          if (!fromDot || !toDot) return null;
           return (
-            <>
+            <g key={index}>
               <line
-                key={index}
                 x1={`${fromDot.x}%`}
                 y1={`${fromDot.y}%`}
                 x2={`${toDot.x}%`}
@@ -96,7 +103,6 @@ const DotAnimation: FC<DotAnimationProps> = function () {
                 strokeWidth="1"
               />
               <line
-                key={`${index}-outer`}
                 x1={`${fromDot.x}%`}
                 y1={`${fromDot.y}%`}
                 x2={`${toDot.x}%`}
@@ -105,14 +111,14 @@ const DotAnimation: FC<DotAnimationProps> = function () {
                 strokeWidth="1"
                 strokeOpacity="0.8"
               />
-            </>
-          )
+            </g>
+          );
         })}
       </svg>
       {dotsRef.current.map((dot) => (
         <div
           key={dot.id}
-          className="absolute w-8 h-8 bg-white/40 rounded-full border-2 border-[#0077B9]"
+          className="absolute w-6 h-6 bg-white/40 rounded-full border-2 border-[#0077B9]"
           style={{
             left: `${dot.x}%`,
             top: `${dot.y}%`,
@@ -121,6 +127,7 @@ const DotAnimation: FC<DotAnimationProps> = function () {
         />
       ))}
     </div>
-  )
-}
-export default DotAnimation
+  );
+};
+
+export default DotAnimation;

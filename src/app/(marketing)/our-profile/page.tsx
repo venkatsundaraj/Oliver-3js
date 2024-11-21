@@ -1,9 +1,9 @@
-import { FC } from "react"
-import Image from "next/image"
-import { valueEngineContent } from "@/config/marketing"
-import { cn } from "@/lib/utils"
-import OurBelieve from "@/app/_components/our-belief"
-import DotAnimation from "@/app/_components/dot-animation"
+import { FC } from "react";
+import Image from "next/image";
+import { valueEngineContent } from "@/config/marketing";
+import { cn } from "@/lib/utils";
+import OurBelieve from "@/app/_components/our-belief";
+import DotAnimation from "@/app/_components/dot-animation";
 
 interface pageProps {}
 
@@ -63,7 +63,7 @@ const page: FC<pageProps> = ({}) => {
       <section className="w-screen flex items-center justify-center bg-background py-16 md:py-16">
         <div className="container flex items-center justify-center">
           <div className="grid grid-cols-1 md:grid-cols-3 w-full gap-8 md:gap-0">
-            <h2 className="flex items-start justify-start flex-col">
+            <h2 className="flex items-start justify-start flex-col leading-[1.1]">
               <span className="text-extra_paragraph_heading text-foreground font-heading text-center">
                 Our
               </span>
@@ -80,7 +80,7 @@ const page: FC<pageProps> = ({}) => {
       <section className="w-screen flex items-center justify-center min-h-screen bg-background py-16 md:py-16 flex-col">
         <div className="container flex items-center justify-center mb-16">
           <div className="container w-full h-full flex flex-col items-center justify-center ">
-            <h2 className="flex items-center justify-center flex-col">
+            <h2 className="flex items-center justify-center flex-col leading-[1.1]">
               <span className="text-extra_paragraph_heading text-foreground font-heading text-center">
                 Our
               </span>
@@ -141,7 +141,7 @@ const page: FC<pageProps> = ({}) => {
         </div>
       </section>
     </>
-  )
-}
+  );
+};
 
-export default page
+export default page;

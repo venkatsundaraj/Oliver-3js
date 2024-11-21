@@ -1,26 +1,26 @@
-"use client"
+"use client";
 
-import { Button, buttonVariants } from "@/app/_components/button"
-import { cn } from "@/lib/utils"
-import { Canvas } from "@react-three/fiber"
-import dynamic from "next/dynamic"
-import Image from "next/image"
-import Link from "next/link"
-import { FC } from "react"
+import { Button, buttonVariants } from "@/app/_components/button";
+import { cn } from "@/lib/utils";
+import { Canvas } from "@react-three/fiber";
+import dynamic from "next/dynamic";
+import Image from "next/image";
+import Link from "next/link";
+import { FC } from "react";
 import {
   functionalSpiralContent,
   domainsData,
   differentiatorData,
   ourDifferentiatorContent,
-} from "@/config/marketing"
-import InfiniteMap from "@/app/_components/infinite-map"
+} from "@/config/marketing";
+import InfiniteMap from "@/app/_components/infinite-map";
 
 interface pageProps {}
 
 const Model = dynamic(() => import("@/app/_components/model"), {
   loading: () => <p>Loading</p>,
   ssr: false,
-})
+});
 
 const page: FC<pageProps> = ({}) => {
   return (
@@ -32,7 +32,7 @@ const page: FC<pageProps> = ({}) => {
         <div className="container flex items-center justify-center">
           <div className="grid grid-cols-1 md:grid-cols-2 w-full gap-8 md:gap-0">
             <div className="flex items-start flex-col justify-center gap-4">
-              <h2 className="flex items-start justify-start flex-col">
+              <h2 className="flex items-start justify-start flex-col leading-[1.1]">
                 <span className="text-extra_paragraph_heading text-foreground font-heading">
                   Our
                 </span>
@@ -42,14 +42,17 @@ const page: FC<pageProps> = ({}) => {
               </h2>
               <p className="max-w-md text-extra_paragraph_heading font-paragraph leading-loose text-foreground">
                 Operating contexts that are complex, or represent
-                discontinuities, or have a history of failure. Across
-                industries, & geographies categories, & domains.
+                discontinuities, or have a history of failure.
+              </p>
+              <p className="max-w-md text-extra_paragraph_heading font-paragraph leading-loose text-foreground">
+                {" "}
+                Across industries, & geographies categories, & domains.
               </p>
               <Link
-                href={"/know-more"}
+                href={"/our-offer#our-terrain"}
                 className={cn(
                   buttonVariants({ variant: "outline", size: "lg" }),
-                  "text-foreground rounded-none mt-2"
+                  "text-foreground rounded-none mt-2 uppercase"
                 )}
               >
                 Know More
@@ -73,7 +76,7 @@ const page: FC<pageProps> = ({}) => {
         <div className="container flex items-center justify-center">
           <div className="grid grid-cols-1  w-full">
             <div className="flex items-start flex-col justify-center gap-4">
-              <h2 className="flex items-start justify-start flex-col">
+              <h2 className="flex items-start justify-start flex-col leading-[1.1]">
                 <span className="text-extra_paragraph_heading text-foreground font-heading">
                   Our
                 </span>
@@ -107,10 +110,10 @@ const page: FC<pageProps> = ({}) => {
                   </p>
                 </div>
                 <Link
-                  href={"/know-more"}
+                  href={"/our-offer#our-terrain"}
                   className={cn(
                     buttonVariants({ variant: "outline" }),
-                    "bg-background absolute top-0 translate-y-[-50%] right-0 text-foreground rounded-none"
+                    "bg-background uppercase absolute top-0 translate-y-[-50%] right-0 text-foreground rounded-none"
                   )}
                 >
                   Know More
@@ -124,7 +127,7 @@ const page: FC<pageProps> = ({}) => {
       {/* Our Differentiator Section */}
       <section className="w-screen flex items-center justify-center min-h-screen bg-background py-5 z-[16] relative">
         <div className="container flex flex-col items-start justify-center gap-8">
-          <h2 className="flex items-start justify-start flex-col">
+          <h2 className="flex items-start justify-start flex-col leading-[1.1]">
             <span className="text-extra_paragraph_heading text-foreground font-heading">
               Our
             </span>
@@ -156,7 +159,7 @@ const page: FC<pageProps> = ({}) => {
       {/* Client Domains */}
       <section className="w-screen flex flex-col items-center justify-center bg-background relative py-5 z-[16]">
         <div className="container flex flex-col items-center justify-center md:absolute md:top-[50%] md:z-10 md:left-[50%] md:translate-x-[-50%] md:translate-y-[-50%]">
-          <h2 className="flex justify-start flex-col text-center">
+          <h2 className="flex justify-start flex-col text-center leading-[1.1]">
             <span className="text-extra_paragraph_heading text-foreground font-heading">
               Our
             </span>
@@ -165,15 +168,34 @@ const page: FC<pageProps> = ({}) => {
             </span>
           </h2>
           <ul className="flex flex-wrap gap-4 w-full items-center justify-center mt-8">
+            <li className="px-8 min-w-[24rem] max-w-md py-4 border border-secondary-foreground inline-flex rounded-2xl items-center justify-center text-foreground bg-background font-paragraph text-extra_paragraph_heading">
+              Fortune 500
+            </li>
+            <li className="px-8 min-w-[24rem] max-w-md py-4 border border-secondary-foreground inline-flex rounded-2xl items-center justify-center text-foreground bg-background font-paragraph text-extra_paragraph_heading">
+              MNC's
+            </li>
+          </ul>
+          <ul className="flex flex-wrap gap-4 w-full items-center justify-center mt-8">
             {domainsData.map((item, i) => (
-              <li
-                className="px-8 min-w-[24rem] max-w-md py-4 border border-secondary-foreground inline-flex rounded-2xl items-center justify-center text-foreground bg-background font-paragraph text-extra_paragraph_heading"
-                key={i}
-              >
-                {item}
-              </li>
+              <>
+                <li
+                  className="px-8 min-w-[24rem] max-w-md py-4 border border-secondary-foreground inline-flex rounded-2xl items-center justify-center text-foreground bg-background font-paragraph text-extra_paragraph_heading"
+                  key={i}
+                >
+                  {item}
+                </li>
+              </>
             ))}
           </ul>
+          <Link
+            href={"/our-work"}
+            className={cn(
+              buttonVariants({ variant: "outline", size: "lg" }),
+              "text-foreground rounded-none mt-8 uppercase "
+            )}
+          >
+            Know More
+          </Link>
         </div>
         <InfiniteMap />
       </section>
@@ -183,7 +205,7 @@ const page: FC<pageProps> = ({}) => {
         <div className="container flex items-center justify-center">
           <div className="grid grid-cols-1 md:grid-cols-2 w-full gap-8 md:gap-0">
             <div className="flex items-start flex-col justify-center gap-4">
-              <h2 className="flex items-start justify-start flex-col">
+              <h2 className="flex items-start justify-start flex-col leading-[1.1]">
                 <span className="text-extra_paragraph_heading text-foreground font-heading">
                   Some of our
                 </span>
@@ -198,7 +220,7 @@ const page: FC<pageProps> = ({}) => {
                 globally.
               </p>
               <Link
-                href={"/our-people"}
+                href={"/our-people#team"}
                 className={cn(
                   buttonVariants({ variant: "outline", size: "lg" }),
                   "text-foreground rounded-none mt-2"
@@ -225,7 +247,7 @@ const page: FC<pageProps> = ({}) => {
         <div className="container flex items-center justify-center">
           <div className="grid grid-cols-1  w-full">
             <div className="flex items-start flex-col justify-center gap-4">
-              <h2 className="flex items-start justify-start flex-col">
+              <h2 className="flex items-start justify-start flex-col leading-[1.1]">
                 <span className="text-extra_paragraph_heading text-foreground font-heading">
                   Our
                 </span>
@@ -243,7 +265,7 @@ const page: FC<pageProps> = ({}) => {
                 relationship with youth through digital natives?
               </p>
               <Link
-                href={"/know-more"}
+                href={"/our-work"}
                 className={cn(
                   buttonVariants({ variant: "outline", size: "lg" }),
                   "text-foreground rounded-none mt-2"
@@ -256,7 +278,7 @@ const page: FC<pageProps> = ({}) => {
         </div>
       </section>
     </>
-  )
-}
+  );
+};
 
-export default page
+export default page;

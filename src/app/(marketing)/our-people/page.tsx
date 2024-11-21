@@ -7,7 +7,9 @@ const page: FC<pageProps> = function () {
     <>
       <div className="bg-black text-white text-center py-16 md:pt-64 md:pb-16">
         {/* OUR text */}
-        <h2 className="text-[30px] font-regular font-heading">Our</h2>
+        <h2 className="text-[30px] font-regular font-heading leading-[1.1]">
+          Our
+        </h2>
 
         {/* PEOPLE text */}
         <h1 className="text-[50px] font-bold text-[#00aeef] font-heading">

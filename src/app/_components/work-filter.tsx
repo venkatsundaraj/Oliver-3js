@@ -1,6 +1,6 @@
-"use client"
+"use client";
 
-import { useState, useEffect } from "react"
+import { useState, useEffect } from "react";
 
 import {
   Select,
@@ -8,38 +8,38 @@ import {
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@/app/_components/ui/select"
+} from "@/app/_components/ui/select";
 
-import { FC } from "react"
-import { workTable } from "@/server/db/schema"
-import { InferModel } from "drizzle-orm"
-import { splitArray } from "@/lib/utils"
+import { FC } from "react";
+import { workTable } from "@/server/db/schema";
+import { InferModel } from "drizzle-orm";
+import { splitArray } from "@/lib/utils";
 
-type Work = InferModel<typeof workTable>
+type Work = InferModel<typeof workTable>;
 
 interface WorkFilterProps {
-  params: { workId: string }
-  work: Work[]
+  params: { workId: string };
+  work: Work[];
 }
 
 const WorkFilter: FC<WorkFilterProps> = ({ params, work }) => {
-  const [projectType, setProjectType] = useState("all")
-  const [subType, setSubType] = useState("all")
-  const [location, setLocation] = useState("all")
-  const [filteredData, setFilteredData] = useState<Work[]>([])
+  const [projectType, setProjectType] = useState("all");
+  const [subType, setSubType] = useState("all");
+  const [location, setLocation] = useState("all");
+  const [filteredData, setFilteredData] = useState<Work[]>([]);
 
-  const [typeArray, subTypeArray, locationArray] = splitArray(work)
-
+  const [typeArray, subTypeArray, locationArray] = splitArray(work);
+  console.log(splitArray(work));
   useEffect(() => {
     const newFilteredData = work.filter(
       (item) =>
         (projectType === "all" || item.type === projectType) &&
         (subType === "all" || item.subType === subType) &&
         (location === "all" || item.location === location)
-    )
-    setFilteredData(newFilteredData)
-    console.log(newFilteredData)
-  }, [projectType, subType, location])
+    );
+    setFilteredData(newFilteredData);
+    console.log(newFilteredData);
+  }, [projectType, subType, location]);
   return (
     <>
       <section className="w-screen  items-center justify-center bg-background py-10 md:pt-16 md:pb-16 flex ">
@@ -51,9 +51,11 @@ const WorkFilter: FC<WorkFilterProps> = ({ params, work }) => {
               </SelectTrigger>
               <SelectContent className="bg-background text-foreground border-gray-800">
                 <SelectItem value="all">All</SelectItem>
-                {Array.from(typeArray).map((item, i) => (
-                  <SelectItem value={item}>{item}</SelectItem>
-                ))}
+                {Array.from(typeArray)
+                  .filter((item) => item)
+                  .map((item, i) => (
+                    <SelectItem value={item}>{item}</SelectItem>
+                  ))}
               </SelectContent>
             </Select>
             <Select value={subType} onValueChange={setSubType}>
@@ -62,9 +64,11 @@ const WorkFilter: FC<WorkFilterProps> = ({ params, work }) => {
               </SelectTrigger>
               <SelectContent className="bg-black text-white border-gray-800">
                 <SelectItem value="all">All</SelectItem>
-                {Array.from(subTypeArray).map((item, i) => (
-                  <SelectItem value={item}>{item}</SelectItem>
-                ))}
+                {Array.from(subTypeArray)
+                  .filter((item) => item)
+                  .map((item, i) => (
+                    <SelectItem value={item}>{item}</SelectItem>
+                  ))}
               </SelectContent>
             </Select>
             <Select value={location} onValueChange={setLocation}>
@@ -73,9 +77,11 @@ const WorkFilter: FC<WorkFilterProps> = ({ params, work }) => {
               </SelectTrigger>
               <SelectContent className="bg-black text-white border-gray-800">
                 <SelectItem value="all">All</SelectItem>
-                {Array.from(locationArray).map((item, i) => (
-                  <SelectItem value={item}>{item}</SelectItem>
-                ))}
+                {Array.from(locationArray)
+                  .filter((item) => item)
+                  .map((item, i) => (
+                    <SelectItem value={item}>{item}</SelectItem>
+                  ))}
               </SelectContent>
             </Select>
           </div>
@@ -104,7 +110,7 @@ const WorkFilter: FC<WorkFilterProps> = ({ params, work }) => {
         </div>
       </section>
     </>
-  )
-}
+  );
+};
 
-export default WorkFilter
+export default WorkFilter;

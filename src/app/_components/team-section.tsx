@@ -16,7 +16,10 @@ const TeamSection = () => {
     router.push(`/our-people/${encodeURIComponent(slug)}`);
   };
   return (
-    <section className="bg-black text-white text-center py-12 w-screen">
+    <section
+      id="#team"
+      className="bg-black text-white text-center py-12 w-screen"
+    >
       <div className="container max-w-screen-lg">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
           {teamMembers.map((member, index) => (
