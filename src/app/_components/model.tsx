@@ -86,7 +86,7 @@ const Model: FC<ModelProps> = ({}) => {
             <span className="text-foreground text-center text-6xl font-heading text-our_text_heading">
               to unlock
             </span>
-            <h1 className="text-secondary_heading text-left font-heading text-primary-foreground leading-tight">
+            <h1 className="text-secondary_heading text-left font-heading text-primary-foreground leading-[1]">
               Higher <br />
               Profits
             </h1>
@@ -132,7 +132,7 @@ const Model: FC<ModelProps> = ({}) => {
             : "opacity-0 z-[-1]"
         )}
       >
-        <div className="container w-full h-full flex flex-col items-center justify-center ">
+        <div className="container w-full h-full flex flex-col items-center justify-center leading-[1]">
           <span className="text-foreground text-center text-6xl font-heading text-our_text_heading">
             Our
           </span>

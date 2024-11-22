@@ -5,6 +5,7 @@ import { cn } from "@/lib/utils";
 import OurBelieve from "@/app/_components/our-belief";
 import DotAnimation from "@/app/_components/dot-animation";
 import { ScrollToHash } from "@/app/_components/scroll-to-hash";
+import CosmicSvgAnimation from "@/app/_components/cosmic-svg-animation";
 
 interface pageProps {}
 
@@ -59,6 +60,7 @@ const page: FC<pageProps> = ({}) => {
                 width={600}
                 height={600}
               />
+              {/* <CosmicSvgAnimation /> */}
             </div>
           </div>
         </div>

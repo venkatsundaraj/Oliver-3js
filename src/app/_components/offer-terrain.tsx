@@ -59,10 +59,10 @@ const offerterrain = () => {
                 (content, index) =>
                   activeDot === index && (
                     <div key={index}>
-                      <h2 className="mt-4 text-2xl font-semibold h-[40px]">
+                      <h2 className="mt-4 text-2xl font-semibold h-[40px] hidden">
                         {content.title}
                       </h2>
-                      <p className="mt-2 text-lg leading-relaxed w-[520px] h-[90px]">
+                      <p className="mt-2 text-lg leading-relaxed mb-4 md:mb-0 md:w-[520px] h-[90px]">
                         {content.description}
                       </p>
                     </div>

@@ -5,7 +5,11 @@ import Autoplay from "embla-carousel-autoplay";
 import useEmblaCarousel from "embla-carousel-react";
 import { useAnimation } from "framer-motion";
 import { motion } from "framer-motion";
-import { insightCenteredContent, tailSectionData } from "@/config/marketing";
+import {
+  insightCenteredContent,
+  ourDifferentiatorContent,
+  tailSectionData,
+} from "@/config/marketing";
 import Image from "next/image";
 import { MotionCanvas } from "framer-motion-3d";
 import { cn } from "@/lib/utils";
@@ -109,7 +113,7 @@ const StickySlider: FC<OurBelieveProps> = ({ className }) => {
   return (
     <section
       ref={sectionRef}
-      className="w-screen flex items-start relative justify-start min-h-[600vh] bg-background py-16 md:py-16 flex-col"
+      className="w-screen hidden md:flex items-start relative justify-start min-h-[600vh] bg-background py-16 md:py-16 flex-col"
     >
       <div className="flex items-center justify-center w-full h-svh top-0 left-0 sticky">
         <div className="container h-full flex items-center justify-center">
@@ -117,7 +121,7 @@ const StickySlider: FC<OurBelieveProps> = ({ className }) => {
             setApi={setApi}
             opts={{
               align: "start",
-              loop: true,
+              //   loop: true,
               active: true,
             }}
             plugins={[]}
@@ -127,15 +131,14 @@ const StickySlider: FC<OurBelieveProps> = ({ className }) => {
               className
             )}
           >
-            <div className="col-start-1 col-end-2">
+            <div className="col-start-1 col-end-2 flex items-start justify-center flex-col gap-12">
               <CarouselPrevious className="z-10 static" />
               <motion.div
-                className="flex flex-col items-center space-y-8 h-14"
+                className="flex flex-col items-center  h-16 space-y-8 translate-x-0 "
                 animate={{ y: -currentIndex * iconSpacing }}
                 transition={{ type: "spring", stiffness: 300, damping: 30 }}
               >
-                {ourProfileContentForStickySlider.map((item, index) => {
-                  const Icon = Icons[item.icon];
+                {ourDifferentiatorContent.map((item, index) => {
                   return (
                     <motion.div
                       key={index}
@@ -146,7 +149,13 @@ const StickySlider: FC<OurBelieveProps> = ({ className }) => {
                       }}
                       transition={{ duration: 0.3 }}
                     >
-                      <Icon className="w-8 h-8 text-blue-400" />
+                      <Image
+                        alt="Our Trrain"
+                        className="scale-[2]"
+                        src={item.imgPath}
+                        width={32}
+                        height={32}
+                      />
                       <p className="text-foreground">
                         Insights centered strategy
                       </p>

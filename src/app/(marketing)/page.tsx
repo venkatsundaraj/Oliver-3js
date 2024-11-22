@@ -34,7 +34,7 @@ const page: FC<pageProps> = ({}) => {
         className="w-screen flex items-center justify-center bg-background py-16 md:py-24 z-[16] relative"
       >
         <div className="container flex items-center justify-center">
-          <div className="grid grid-cols-1 md:grid-cols-2 w-full gap-8 md:gap-0">
+          <div className="grid grid-cols-1 md:grid-cols-2 w-full gap-12 md:gap-0">
             <div className="flex items-start flex-col justify-center gap-4">
               <h2 className="flex items-start justify-start flex-col leading-[1.1]">
                 <span className="text-extra_paragraph_heading text-foreground font-heading">
@@ -56,7 +56,7 @@ const page: FC<pageProps> = ({}) => {
                 href={"/our-offer#our-terrain"}
                 className={cn(
                   buttonVariants({ variant: "outline", size: "lg" }),
-                  "text-foreground rounded-none mt-2 uppercase"
+                  "text-foreground rounded-none mt-4 uppercase"
                 )}
               >
                 Know More
@@ -88,7 +88,7 @@ const page: FC<pageProps> = ({}) => {
                   Practices
                 </span>
               </h2>
-              <div className="grid grid-cols-1 w-full md:grid-cols-3 border-t border-foreground relative mt-8">
+              <div className="grid grid-cols-2 w-full md:grid-cols-3 md:border-t border-foreground relative mt-8">
                 <div className="flex items-start flex-col justify-center py-8 relative before:content-[''] before:absolute before:top-0 before:left-0 before:w-8 before:h-8 before:rounded-full before:bg-background before:translate-y-[-50%] before:border before:border-foreground">
                   <h4 className="text-secondary-foreground font-heading text-extra_paragraph_heading ">
                     Nu.
@@ -117,7 +117,7 @@ const page: FC<pageProps> = ({}) => {
                   href={"/our-offer#our-terrain"}
                   className={cn(
                     buttonVariants({ variant: "outline" }),
-                    "bg-background uppercase absolute top-0 translate-y-[-50%] right-0 text-foreground rounded-none"
+                    "bg-background w-[180px] md:w-auto uppercase mt-4 md:mt-0 md:absolute top-0 md:translate-y-[-50%] right-0 text-foreground rounded-none"
                   )}
                 >
                   Know More
@@ -153,8 +153,9 @@ const page: FC<pageProps> = ({}) => {
                   width={100}
                   height={100}
                   alt={item.title}
+                  className="w-[60px] md:w-[100px]"
                 />
-                <span className="font-paragraph text-extra_paragraph_heading text-foreground">
+                <span className="font-paragraph text-extra_subtitle_heading text-foreground">
                   {item.title}
                 </span>
               </li>
@@ -165,7 +166,7 @@ const page: FC<pageProps> = ({}) => {
 
       {/* Client Domains */}
       <section className="w-screen flex flex-col items-center justify-center bg-background relative py-5 z-[16]">
-        <div className="container flex flex-col items-center justify-center md:absolute md:top-[50%] md:z-10 md:left-[50%] md:translate-x-[-50%] md:translate-y-[-50%]">
+        <div className="container flex flex-col items-center justify-center absolute py-8 md:py-0 md:top-[50%] z-10 md:left-[50%] md:translate-x-[-50%] md:translate-y-[-50%]">
           <h2 className="flex justify-start flex-col text-center leading-[1.1]">
             <span className="text-extra_paragraph_heading text-foreground font-heading">
               Our
@@ -230,7 +231,7 @@ const page: FC<pageProps> = ({}) => {
                 href={"/our-people#team"}
                 className={cn(
                   buttonVariants({ variant: "outline", size: "lg" }),
-                  "text-foreground rounded-none mt-2"
+                  "text-foreground uppercase rounded-none mt-4"
                 )}
               >
                 Know More
@@ -275,7 +276,7 @@ const page: FC<pageProps> = ({}) => {
                 href={"/our-work"}
                 className={cn(
                   buttonVariants({ variant: "outline", size: "lg" }),
-                  "text-foreground rounded-none mt-2"
+                  "text-foreground uppercase rounded-none mt-4"
                 )}
               >
                 Know More

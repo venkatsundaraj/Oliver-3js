@@ -398,10 +398,6 @@ export const addressData: { location: string; description: string }[] = [
     description:
       "Level 3, Royal Offices, Mogotio Road, Nairobi, PO 6578-00200, Kenya.",
   },
-  {
-    location: "location",
-    description: "Address Line 1 Address line 2 Pincode - 123456, City.",
-  },
 ];
 
 export const blogCategoryTitle: { title: string; value: string }[] = [

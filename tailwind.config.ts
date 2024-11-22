@@ -69,7 +69,7 @@ const config: Config = {
       fontSize: {
         extra_paragraph_heading: "clamp(20px,2.2vw,24px)",
         our_text_heading: "clamp(28px,2.4vw,36px)",
-        secondary_heading: "clamp(48px,7vw, 68px)",
+        secondary_heading: "clamp(48px,7.2vw, 74px)",
         tertiary_heading: "clamp(28px, 5.2vw, 58px)",
         subtitle_heading: "clamp(16px,1.8vw,20px)",
         extra_subtitle_heading: "clamp(14px,1.6vw,18px)",

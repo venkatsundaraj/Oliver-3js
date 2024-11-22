@@ -12,7 +12,7 @@ const page: FC<pageProps> = function () {
         </h2>
 
         {/* PEOPLE text */}
-        <h1 className="text-[50px] font-bold text-[#00aeef] font-heading">
+        <h1 className="text-secondary_heading leading-[1.1] font-bold text-[#00aeef] font-heading">
           People
         </h1>
 

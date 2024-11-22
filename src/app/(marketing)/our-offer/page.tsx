@@ -7,6 +7,7 @@ import SolutionLevels from "@/app/_components/SolutionLevels";
 import FunctionalSpirals from "@/app/_components/FunctionalSpirals";
 import Differentiators from "@/app/_components/Differentiators";
 import StickySlider from "@/app/_components/sticky-slider";
+import MobStickySlider from "@/app/_components/mob-sticky-slider";
 
 export default function Component() {
   return (
@@ -46,13 +47,13 @@ export default function Component() {
           {/* Content container */}
           <div className="relative z-10 text-center max-w-md">
             <p className="text-gray-200 text-[30px] mb-2 font-heading">Our</p>
-            <h1 className="text-sky-400 text-5xl font-light tracking-wide mb-6 font-heading">
+            <h1 className="text-sky-400 leading-[1.1] text-secondary_heading font-light tracking-wide mb-6 font-heading">
               Proposition
             </h1>
-            <p className="text-white text-2xl leading-relaxed mb-4 font-[600]">
+            <p className="text-white text-extra_paragraph_heading leading-relaxed mb-4 font-[600]">
               Insight-centered business strategy & organization design
             </p>
-            <p className="text-white/90 text-xl font-light">
+            <p className="text-white/90 text-extra_paragraph_heading font-light">
               with collaboration & accountability
             </p>
           </div>
@@ -63,6 +64,7 @@ export default function Component() {
       <StickySlider />
       <SolutionLevels />
       <FunctionalSpirals />
+      <MobStickySlider />
       <Differentiators />
     </>
   );
