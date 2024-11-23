@@ -4,7 +4,10 @@ import Image from "next/image";
 
 const ourpractices = () => {
   return (
-    <section className="bg-black-900 text-white flex items-center justify-center py-16 md:py-24 ">
+    <section
+      id="our-practices"
+      className="bg-black-900 text-white flex items-center justify-center py-16 md:py-24 "
+    >
       <div className="container mx-auto flex flex-col md:flex-col items-center justify-center px-4 md:px-8 lg:px-16">
         <div className="flex flex-col md:flex-col items-start justify-center ">
           {/* Title Section */}

@@ -41,7 +41,10 @@ const offerterrain = () => {
     },
   ];
   return (
-    <section className="bg-black-900 text-white py-16 md:py-24  flex items-center justify-center overflow-hidden">
+    <section
+      id="our-terrain"
+      className="bg-black-900 text-white py-16 md:py-24  flex items-center justify-center overflow-hidden"
+    >
       <div className="container mx-auto flex flex-col md:flex-row items-center justify-center px-4 md:px-8 lg:px-16 max-w-[100vw]">
         <div className="flex flex-col md:flex-row  items-center justify-center bg-black-900 text-white">
           {/* Left Text Section */}
