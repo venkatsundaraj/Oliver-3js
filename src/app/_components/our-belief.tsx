@@ -42,7 +42,7 @@ const CarouselDots = ({
           size="sm"
           className={cn(
             "w-[10px] h-[10px] rounded-full p-0",
-            currentIndex === index ? "bg-foreground" : "bg-primary"
+            currentIndex === index ? "bg-foreground" : "bg-foreground/45"
           )}
           onClick={() => onDotClick(index)}
         />

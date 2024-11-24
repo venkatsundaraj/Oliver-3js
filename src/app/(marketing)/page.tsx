@@ -114,7 +114,7 @@ const page: FC<pageProps> = ({}) => {
                   </p>
                 </div>
                 <Link
-                  href={"/our-offer#our-terrain"}
+                  href={"/our-offer#our-practices"}
                   className={cn(
                     buttonVariants({ variant: "outline" }),
                     "bg-background w-[180px] md:w-auto uppercase mt-4 md:mt-0 md:absolute top-0 md:translate-y-[-50%] right-0 text-foreground rounded-none"
