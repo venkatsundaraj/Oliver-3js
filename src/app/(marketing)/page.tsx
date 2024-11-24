@@ -241,7 +241,7 @@ const page: FC<pageProps> = ({}) => {
               <Image
                 alt="Our Trrain"
                 className="w-3/4 md:w-96"
-                src="https://utfs.io/f/ZowmNmBHF7rVKZnxLUILRN7EY2f498lBm1DhqtyXeHvZVid5"
+                src="https://utfs.io/f/ZowmNmBHF7rVZpsputBHF7rVAK6CWauMPjmJlROdkngGeUw2"
                 width={400}
                 height={400}
               />
