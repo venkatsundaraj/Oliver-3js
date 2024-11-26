@@ -127,7 +127,7 @@ const Model: FC<ModelProps> = ({}) => {
       <section
         className={cn(
           "flex items-center justify-start fixed left-0 top-0 w-screen h-screen duration-500 transition-opacity overflow-hidden",
-          frameValue > 0.7 && frameValue < 1
+          frameValue > 0.85 && frameValue < 1
             ? "opacity-1 z-10"
             : "opacity-0 z-[-1]"
         )}

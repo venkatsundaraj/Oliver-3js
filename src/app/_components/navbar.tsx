@@ -17,6 +17,7 @@ import {
 } from "@/app/_components/ui/navigation-menu";
 import MobileNav from "@/app/_components/mobile-nav";
 import { useSelectedLayoutSegment } from "next/navigation";
+import { ourSnapshotContent } from "@/config/marketing";
 
 interface NavbarProps {
   items: MainNavItems;
@@ -54,7 +55,7 @@ const Navbar: FC<NavbarProps> = ({ items, children }) => {
       {items?.length ? (
         <nav
           className={cn(
-            "hidden md:flex items-center justify-center gap-8 flex-row ",
+            "hidden xl:flex items-center justify-center gap-8 flex-row ",
             {}
           )}
         >
@@ -64,6 +65,35 @@ const Navbar: FC<NavbarProps> = ({ items, children }) => {
             onValueChange={(e) => valueChangeHanlder(e)}
           >
             <NavigationMenuList>
+              <NavigationMenuItem>
+                <NavigationMenuTrigger>
+                  <Link
+                    href={"#"}
+                    className={cn(
+                      "inline-flex bg-transparent items-center text-foreground flex-row justify-center hover:text-primary-foreground text-sm font-medium font-paragraph"
+                    )}
+                  >
+                    {ourSnapshotContent.title}
+                  </Link>
+                </NavigationMenuTrigger>
+                <NavigationMenuContent
+                  asChild={false}
+                  className={cn("border-none bg-background w-screen")}
+                >
+                  <ul className="flex  items-center justify-start w-screen gap-8 px-8 py-12 flex-col max-h-[360px] md:max-h-[460px] overflow-y-scroll">
+                    {ourSnapshotContent.subItems.length
+                      ? ourSnapshotContent.subItems.map((item, i) => (
+                          <li
+                            key={i}
+                            className="text-foreground container text-extra_subtitle_heading font-paragraph list-none"
+                          >
+                            {item}
+                          </li>
+                        ))
+                      : null}
+                  </ul>
+                </NavigationMenuContent>
+              </NavigationMenuItem>
               {items.map((item, index) => (
                 <NavigationMenuItem className="" key={index}>
                   <NavigationMenuTrigger className="static">
@@ -120,7 +150,7 @@ const Navbar: FC<NavbarProps> = ({ items, children }) => {
         </nav>
       ) : null}
       <button
-        className="flex items-center space-x-2 md:hidden"
+        className="flex items-center space-x-2 xl:hidden"
         onClick={() => setShowMobileMenu(!showMobileMenu)}
       >
         {showMobileMenu ? (
@@ -131,7 +161,12 @@ const Navbar: FC<NavbarProps> = ({ items, children }) => {
         <span className="font-bold hidden">Menu</span>
       </button>
       {showMobileMenu && items && (
-        <MobileNav items={items}>{children}</MobileNav>
+        <MobileNav
+          removeHandler={() => setShowMobileMenu(!showMobileMenu)}
+          items={items}
+        >
+          {children}
+        </MobileNav>
       )}
     </header>
   );

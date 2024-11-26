@@ -1,8 +1,8 @@
-import { FC } from "react"
-import { addressData, contactUsBody } from "@/config/marketing"
-import Image from "next/image"
-import Link from "next/link"
-import ContactForm from "@/app/_components/contact-form"
+import { FC } from "react";
+import { addressData, contactUsBody } from "@/config/marketing";
+import Image from "next/image";
+import Link from "next/link";
+import ContactForm from "@/app/_components/contact-form";
 
 interface pageProps {}
 
@@ -10,9 +10,9 @@ const page: FC<pageProps> = ({}) => {
   return (
     <>
       {/* {Form Section} */}
-      <section className="w-screen flex items-center justify-center bg-background py-16 md:pt-32 md:pb-16">
+      <section className="w-screen flex items-center justify-center bg-background py-16 md:pt-44 md:pb-16">
         <div className="container flex items-start justify-center flex-col">
-          <h2 className="flex items-start justify-start flex-col">
+          <h2 className="flex items-start justify-start flex-col leading-[1.1]">
             <span className="text-extra_paragraph_heading text-foreground font-heading text-center">
               Contact Us
             </span>
@@ -46,7 +46,7 @@ const page: FC<pageProps> = ({}) => {
       {/* {Our offices Section} */}
       <section className="w-screen flex items-center justify-center bg-background py-16 md:pt-16 md:pb-16">
         <div className="container flex items-start justify-center flex-col">
-          <h2 className="flex items-start justify-start flex-col">
+          <h2 className="flex items-start justify-start flex-col leading-[1.1]">
             <span className="text-extra_paragraph_heading text-foreground font-heading text-center">
               Our
             </span>
@@ -72,7 +72,7 @@ const page: FC<pageProps> = ({}) => {
         </div>
       </section>
     </>
-  )
-}
+  );
+};
 
-export default page
+export default page;

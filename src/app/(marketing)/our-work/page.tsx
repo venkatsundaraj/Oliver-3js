@@ -106,7 +106,7 @@ const page = async ({}: pageProps) => {
         </div>
       </section>
 
-      <section className="w-screen flex items-center justify-center  bg-background py-8 md:py-16">
+      <section className="w-screen flex items-center justify-center  bg-background py-8 md:py-2">
         <div className="container flex flex-col items-start justify-center">
           <div className="py-10 w-full flex flex-col gap-10">
             <h3 className="font-heading text-tertiary_heading text-foreground">
@@ -117,7 +117,7 @@ const page = async ({}: pageProps) => {
         </div>
       </section>
 
-      <section className="w-screen flex items-center justify-center  bg-background py-8 md:py-16">
+      <section className="w-screen flex items-center justify-center  bg-background py-8 md:py-2">
         <div className="container flex flex-col items-start justify-center">
           <div className="py-10 w-full flex flex-col gap-10">
             <h3 className="font-heading text-tertiary_heading text-foreground">
@@ -128,7 +128,7 @@ const page = async ({}: pageProps) => {
         </div>
       </section>
 
-      <section className="w-screen flex items-center justify-center  bg-background py-8 md:py-16">
+      <section className="w-screen flex items-center justify-center  bg-background py-8 md:py-2">
         <div className="container flex flex-col items-start justify-center">
           <div className="py-10 flex w-full flex-col gap-10">
             <h3 className="font-heading text-tertiary_heading text-foreground">

@@ -4,6 +4,7 @@ import {
   Plus,
   MapPin,
   ChevronLeft,
+  ChevronRight,
   Webhook,
   Loader2,
   Sliders,
@@ -19,11 +20,12 @@ import {
   Menu,
   UserRoundCog,
   Play,
-} from "lucide-react"
+} from "lucide-react";
 
 export const Icons = {
   User,
   Snail,
+  ChevronRight,
   UserRoundCog,
   Sliders,
   ChevronLeft,
@@ -42,6 +44,6 @@ export const Icons = {
   X,
   Activity,
   Play,
-}
+};
 
-export type Icon = keyof typeof Icons
+export type Icon = keyof typeof Icons;

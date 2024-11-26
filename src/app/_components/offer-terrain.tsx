@@ -7,6 +7,7 @@ import Cosmosspiralth from "../../../public/Capability icon.svg";
 import Cosmosspiralo from "../../../public/Entry Icon.svg";
 import circleline from "../../../public/Circle line.svg";
 import rightarrow from "../../../public/right arrow.svg";
+import { Icons } from "./icons";
 
 const offerterrain = () => {
   const [activeDot, setActiveDot] = useState(0);
@@ -43,10 +44,10 @@ const offerterrain = () => {
   return (
     <section
       id="our-terrain"
-      className="bg-black-900 text-white py-16 md:py-24  flex items-center justify-center overflow-hidden"
+      className="bg-background text-white py-16 md:py-24  flex items-center justify-center overflow-hidden"
     >
       <div className="container mx-auto flex flex-col md:flex-row items-center justify-center px-4 md:px-8 lg:px-16 max-w-[100vw]">
-        <div className="flex flex-col md:flex-row  items-center justify-center bg-black-900 text-white">
+        <div className="flex flex-col md:flex-row  items-center justify-center bg-background text-white">
           {/* Left Text Section */}
           <div className="flex-1 p-8">
             <h2 className="flex items-start justify-start flex-col leading-[1.1]">
@@ -65,7 +66,7 @@ const offerterrain = () => {
                       <h2 className="mt-4 text-2xl font-semibold h-[40px] hidden">
                         {content.title}
                       </h2>
-                      <p className="mt-2 text-lg leading-relaxed mb-4 md:mb-0 md:w-[520px] h-[90px]">
+                      <p className="mt-2 text-lg leading-relaxed font-paragraph mb-4 md:mb-0 md:w-[520px] h-[90px]">
                         {content.description}
                       </p>
                     </div>
@@ -73,22 +74,24 @@ const offerterrain = () => {
               )}
             </div>
             {/* Pagination Dots */}
-            <div className="flex items-center mt-8 space-x-2">
+            <div className="flex items-center mt-12 md:mt-8 space-x-2">
               {[0, 1, 2, 3].map((index) => (
                 <button
                   key={index}
                   onClick={() => handleDotClick(index)}
-                  className={`w-4 h-4 rounded-full ${
-                    activeDot === index ? "bg-blue-500" : "bg-gray-600"
+                  className={`w-5 h-5 md:w-6 md:h-6 rounded-full ${
+                    activeDot === index
+                      ? "bg-secondary-foreground"
+                      : "bg-gray-600"
                   }`}
                 />
               ))}
               {/* Arrow button to reset to default */}
               <button
                 onClick={handleArrowClick}
-                className="ml-4 text-blue-500 text-lg"
+                className="text-secondary-foreground !ml-10 border border-secondary-foreground p-2 rounded-full flex items-center justify-center hover:bg-secondary-foreground/30"
               >
-                <Image src={rightarrow} alt="Entry Icon" className="w-[60%] " />
+                <Icons.ChevronRight className="w-5 h-5" />
               </button>
             </div>
           </div>
@@ -102,7 +105,7 @@ const offerterrain = () => {
               className="relative w-96 h-96"
             >
               {/* Center Icon/Image */}
-              <div className="absolute top-[55%] left-1/2 transform -translate-x-1/2 -translate-y-1/2  rounded-full  flex items-center justify-center z-40">
+              <div className="absolute top-[55%] left-1/2 transform -translate-x-1/2 -translate-y-1/2  rounded-full  flex items-center justify-center z-10">
                 <Image
                   src={Cosmosspiral}
                   alt="Entry Icon"
@@ -148,10 +151,10 @@ const offerterrain = () => {
                       : "0%",
                 }}
                 transition={{ duration: 0.5 }}
-                className="absolute w-16 h-16flex items-center justify-center z-40"
+                className="absolute w-16 h-16flex items-center justify-center z-10"
                 onClick={() => setActiveDot(1)}
               >
-                <div className="bg-[#0077B9] rounded-full border-2  border-[#5CB7E3] p-4 z-40">
+                <div className="bg-[#0077B9] rounded-full border-2  border-[#5CB7E3] p-4 z-10">
                   <Image
                     src={Cosmosspiralt}
                     alt="Entry Icon"
@@ -193,11 +196,11 @@ const offerterrain = () => {
                     activeDot === 2 ? "-100%" : activeDot === 3 ? "0%" : "0%",
                 }}
                 transition={{ duration: 0.5 }}
-                className="absolute w-16 h-16  flex items-center justify-center z-40"
+                className="absolute w-16 h-16  flex items-center justify-center z-10 cursor-pointer"
                 onClick={() => setActiveDot(3)}
               >
                 <div
-                  className="bg-[#0077B9] rounded-full border-2  border-[#5CB7E3] p-4 z-40"
+                  className="bg-[#0077B9] rounded-full border-2  border-primary-foreground  p-4 z-10 relative cursor-pointer "
                   onClick={() => setActiveDot(3)}
                 >
                   <Image
@@ -241,10 +244,10 @@ const offerterrain = () => {
                     activeDot === 2 ? "-100%" : activeDot === 3 ? "-50%" : "0%",
                 }}
                 transition={{ duration: 0.5 }}
-                className="absolute w-16 h-16  flex items-center justify-center z-40"
+                className="absolute w-16 h-16  flex items-center justify-center z-10 cursor-pointer"
                 onClick={() => setActiveDot(2)}
               >
-                <div className="bg-[#0077B9] rounded-full border-2  border-[#5CB7E3] p-4 z-40">
+                <div className="bg-[#0077B9] rounded-full border-2  border-[#5CB7E3] p-4 z-10 cursor-pointer">
                   <Image
                     src={Cosmosspiralo}
                     alt="Entry Icon"

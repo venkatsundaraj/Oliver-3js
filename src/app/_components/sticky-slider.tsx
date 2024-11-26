@@ -10,7 +10,7 @@ import {
   ourDifferentiatorContent,
   tailSectionData,
 } from "@/config/marketing";
-import Image from "next/image";
+
 import { MotionCanvas } from "framer-motion-3d";
 import { cn } from "@/lib/utils";
 import { Button } from "@/app/_components/ui/button";
@@ -26,6 +26,7 @@ import {
   ourProfileContent,
   ourProfileContentForStickySlider,
 } from "@/config/marketing";
+import Image from "next/image";
 import { useMotionValueEvent, useScroll } from "framer-motion";
 import { Icons } from "@/app/_components/icons";
 
@@ -113,10 +114,11 @@ const StickySlider: FC<OurBelieveProps> = ({ className }) => {
   return (
     <section
       ref={sectionRef}
+      id="our-differentiators"
       className="w-screen hidden md:flex items-start relative justify-start min-h-[600vh] bg-background py-16 md:py-16 flex-col"
     >
       <div className="flex items-center justify-center w-full h-svh top-0 left-0 sticky">
-        <div className="container h-full flex items-center justify-center">
+        <div className="container h-full flex flex-col items-center justify-center">
           <Carousel
             setApi={setApi}
             opts={{
@@ -131,10 +133,18 @@ const StickySlider: FC<OurBelieveProps> = ({ className }) => {
               className
             )}
           >
+            <h2 className="flex self-start items-start justify-start flex-col leading-[1.1] absolute left-0 top-[125px]">
+              <span className="text-extra_paragraph_heading text-foreground font-heading">
+                Our
+              </span>
+              <span className="text-primary-foreground text-secondary_heading font-heading font-normal">
+                Differentiators
+              </span>
+            </h2>
             <div className="col-start-1 col-end-2 flex items-start justify-center flex-col gap-12">
-              <CarouselPrevious className="z-10 static" />
+              <CarouselPrevious className="z-10 static translate-x-0 translate-y-0" />
               <motion.div
-                className="flex flex-col items-center  h-16 space-y-8 translate-x-0 "
+                className="flex flex-col items-center  h-[60px] translate-x-0 w-full"
                 animate={{ y: -currentIndex * iconSpacing }}
                 transition={{ type: "spring", stiffness: 300, damping: 30 }}
               >
@@ -142,19 +152,19 @@ const StickySlider: FC<OurBelieveProps> = ({ className }) => {
                   return (
                     <motion.div
                       key={index}
-                      className="flex flex-row items-center justify-center gap-6"
+                      className="flex flex-row items-center justify-start gap-6 h-[60px] w-full"
                       animate={{
-                        scale: currentIndex === index ? 1.2 : 1,
+                        scale: currentIndex === index ? 1 : 1,
                         opacity: currentIndex === index ? 1 : 0,
                       }}
                       transition={{ duration: 0.3 }}
                     >
                       <Image
                         alt="Our Trrain"
-                        className="scale-[2]"
+                        className="h-[60px] object-contain"
                         src={item.imgPath}
-                        width={32}
-                        height={32}
+                        width={38}
+                        height={38}
                       />
                       <p className="text-foreground">
                         Insights centered strategy
@@ -164,89 +174,105 @@ const StickySlider: FC<OurBelieveProps> = ({ className }) => {
                 })}
               </motion.div>
 
-              <CarouselNext className="z-10 static" />
+              <CarouselNext className="z-10 static translate-x-0 translate-y-0" />
             </div>
             <div className="col-start-2 col-end-6">
               <CarouselContent className="-mt-1 h-[100vh]">
                 <CarouselItem className="flex items-center justify-center px-16 md:px-20 flex-col gap-6">
-                  <div className="grid grid-cols-1 md:grid-cols-2 px-0 md:px-16">
-                    <div className="flex items-start justify-center flex-col gap-4 text-foreground">
-                      <h4 className="font-paragraph text-3xl text-primary-foreground">
-                        Traditional, algorithmic, 'engineering' approach
-                      </h4>
-                      <p className="text-extra_paragraph_heading font-paragraph text-foreground">
-                        Top-down break up of problem &gt; bottom-up synthesis of
-                        solution parts Interpreting organization as sum of parts
-                      </p>
-                      <p className="font-heading text-foreground text-extra_paragraph_heading leading-[1.1]">
-                        Vs.
-                      </p>
+                  <div className="flex items-start justify-top flex-col max-h-[500px] overflow-y-scroll scrollbar-hide">
+                    <div className="grid grid-cols-1 md:grid-cols-2 px-0 md:px-16 ">
+                      <div className="flex items-start justify-center flex-col gap-4 text-foreground">
+                        <h4 className="font-paragraph text-extra_paragraph_heading text-primary-foreground">
+                          Traditional, algorithmic, 'engineering' approach
+                        </h4>
+                        <p className="text-extra_subtitle_heading font-paragraph text-foreground">
+                          Top-down break up of problem &gt; bottom-up synthesis
+                          of solution parts Interpreting organization as sum of
+                          parts
+                        </p>
+                        <p className="font-heading text-foreground text-extra_paragraph_heading leading-[1.1]">
+                          Vs.
+                        </p>
+                      </div>
+                      <div className="flex items-center justify-center flex-col gap-8">
+                        <Button
+                          className="rounded-xl min-w-52 font-paragraph"
+                          size={"lg"}
+                          variant={"default"}
+                        >
+                          Value Chain
+                        </Button>
+                        <Button
+                          className="rounded-xl min-w-52 font-paragraph"
+                          size={"lg"}
+                          variant={"default"}
+                        >
+                          Business
+                        </Button>
+                      </div>
                     </div>
-                    <div className="flex items-center justify-center flex-col gap-8">
-                      <Button
-                        className="rounded-xl min-w-52 font-paragraph"
-                        size={"lg"}
-                        variant={"default"}
-                      >
-                        Value Chain
-                      </Button>
-                      <Button
-                        className="rounded-xl min-w-52 font-paragraph"
-                        size={"lg"}
-                        variant={"default"}
-                      >
-                        Business
-                      </Button>
+                    <div className="grid grid-cols-1 md:grid-cols-2 px-0 md:px-16">
+                      <div className="flex items-start justify-center flex-col gap-4 text-foreground">
+                        <h4 className="font-paragraph text-extra_paragraph_heading text-primary-foreground">
+                          Modern, Insights centered, 'doctor' approach
+                        </h4>
+                        <p className="text-extra_subtitle_heading font-paragraph text-foreground">
+                          Core insights about problem ;gt Reimagine Organisation
+                          + enterprise around insight concentrically
+                          interpreting Organisation as an engine fuelled by
+                          differentiated insights
+                        </p>
+                        <p className="font-paragraph font-bold text-foreground text-extra_subtitle_heading">
+                          Insights at the center of P&L and organisation vs
+                          insights at the center of marketing, innovation,
+                          design, etc.
+                        </p>
+                      </div>
+                      <div className="flex  items-center justify-center">
+                        <Image
+                          alt="Our Trrain"
+                          className="w-3/4 md:w-72"
+                          src="https://utfs.io/f/ZowmNmBHF7rVHVpLcCdWuQopKOivRcLqJD7x46CXtZGlw0Sh"
+                          width={300}
+                          height={300}
+                        />
+                      </div>
                     </div>
                   </div>
-                  <div className="grid grid-cols-1 md:grid-cols-2 px-0 md:px-16">
-                    <div className="flex items-start justify-center flex-col gap-4 text-foreground">
-                      <h4 className="font-paragraph text-3xl text-primary-foreground">
-                        Modern, Insights centered, 'doctor' approach
-                      </h4>
-                      <p className="text-extra_paragraph_heading font-paragraph text-foreground">
-                        Core insights about problem ;gt Reimagine Organisation +
-                        enterprise around insight concentrically interpreting
-                        Organisation as an engine fuelled by differentiated
-                        insights
-                      </p>
-                      <p className="font-paragraph font-bold text-foreground text-extra_paragraph_heading leading-[1.1]">
-                        Insights at the center of P&L and organisation vs
-                        insights at the center of marketing, innovation, design,
-                        etc.
-                      </p>
-                    </div>
-                    <div className="flex  items-center justify-center">
+                </CarouselItem>
+
+                <CarouselItem className="flex items-start justify-center px-16 md:px-20 flex-col gap-6">
+                  <div className="flex items-start justify-top flex-col max-h-[500px] overflow-y-scroll scrollbar-hide">
+                    <h4 className="font-paragraph text-subtitle_heading text-primary-foreground mb-4">
+                      From empathy to insights to hero actions to execution
+                      Strategy : choice of actions - not that of intent or
+                      directions
+                    </h4>
+                    <div className="flex items-center justify-start gap-4 flex-col relative py-8">
+                      {insightCenteredContent.map((item) => (
+                        <Button
+                          className="rounded-xl min-w-52 md:min-w-80 font-paragraph static z-[1]"
+                          size={"lg"}
+                          variant={"default"}
+                        >
+                          {item}
+                        </Button>
+                      ))}
                       <Image
-                        alt="Our Trrain"
-                        className="w-3/4 md:w-72"
-                        src="https://utfs.io/f/ZowmNmBHF7rVHVpLcCdWuQopKOivRcLqJD7x46CXtZGlw0Sh"
-                        width={300}
-                        height={300}
+                        className="w-full object-contain z-0 h-full absolute left-0 top-0"
+                        src={
+                          "https://utfs.io/f/ZowmNmBHF7rVi72fZMu12L9SrhBkonyJq4Z8l0ANjKH7a5eu"
+                        }
+                        alt="Arrow"
+                        width={200}
+                        height={200}
                       />
                     </div>
                   </div>
                 </CarouselItem>
 
                 <CarouselItem className="flex items-start justify-center px-16 md:px-20 flex-col gap-6">
-                  <h4 className="font-paragraph text-3xl text-primary-foreground">
-                    From empathy to insights to hero actions to execution
-                    Strategy : choice of actions - not that of intent or
-                    directions
-                  </h4>
-                  {insightCenteredContent.map((item) => (
-                    <Button
-                      className="rounded-xl min-w-52 md:min-w-80 font-paragraph"
-                      size={"lg"}
-                      variant={"default"}
-                    >
-                      {item}
-                    </Button>
-                  ))}
-                </CarouselItem>
-
-                <CarouselItem className="flex items-start justify-center px-16 md:px-20 flex-col gap-6">
-                  <h4 className="font-paragraph text-3xl text-primary-foreground">
+                  <h4 className="font-paragraph text-extra_paragraph_heading text-primary-foreground">
                     Intensive 360 degree solution co-creation & collaboration
                     workshops
                   </h4>
@@ -256,28 +282,27 @@ const StickySlider: FC<OurBelieveProps> = ({ className }) => {
                 </CarouselItem>
 
                 <CarouselItem className="flex items-start justify-center px-16 md:px-20 flex-col gap-6">
-                  <h4 className="font-paragraph text-3xl text-primary-foreground">
+                  <h4 className="font-paragraph text-extra_paragraph_heading text-primary-foreground">
                     Only senior industry leaders as collaborative consultants
                     working across all levels
                   </h4>
                 </CarouselItem>
 
                 <CarouselItem className="flex items-start justify-center px-16 md:px-20 flex-col gap-6">
-                  <h4 className="font-paragraph text-3xl text-primary-foreground">
+                  <h4 className="font-paragraph text-extra_paragraph_heading text-primary-foreground">
                     500+ years of experience : 70% client side, practitioner
                     experience
                   </h4>
                 </CarouselItem>
                 <CarouselItem className="flex items-start justify-center px-16 md:px-20 flex-col gap-6">
-                  <h4 className="font-paragraph text-3xl text-primary-foreground">
+                  <h4 className="font-paragraph text-extra_paragraph_heading text-primary-foreground">
                     Tremendous diversity of experience
                   </h4>
-                  <ul className="text-foreground font-paragraph text-extra_paragraph_heading flex flex-col items-start gap-4 list-none">
-                    <li>
-                      Across 60+ b2c, b2b, b2p industries Across all inhabited
-                    </li>
-                    <li>continents Across diverse scales & management types</li>
-                    <li>
+                  <ul className="text-foreground font-paragraph text-extra_paragraph_heading flex flex-col items-start gap-2 list-none">
+                    <li>Across 60+ b2c, b2b, b2p industries</li>
+                    <li>Across all inhabited continents </li>
+                    <li>Across diverse scales & management types</li>
+                    <li className="text-foreground/30">
                       Multinational, Regional or local giants, MSME's, start
                       ups,
                     </li>
@@ -285,13 +310,13 @@ const StickySlider: FC<OurBelieveProps> = ({ className }) => {
                   </ul>
                 </CarouselItem>
                 <CarouselItem className="flex items-start justify-center px-16 md:px-20 flex-col gap-6">
-                  <h4 className="font-paragraph text-3xl text-primary-foreground">
+                  <h4 className="font-paragraph text-extra_paragraph_heading text-primary-foreground">
                     Strategy + Plan + Execution Oversight + On Job Capability
                     Building
                   </h4>
                 </CarouselItem>
                 <CarouselItem className="flex items-start justify-center px-16 md:px-20 flex-col gap-6">
-                  <h4 className="font-paragraph text-3xl text-primary-foreground">
+                  <h4 className="font-paragraph text-extra_paragraph_heading text-primary-foreground">
                     Customized Renumeration
                   </h4>
                 </CarouselItem>

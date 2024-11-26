@@ -91,7 +91,7 @@ const SolutionLevels = () => {
           ].map((card, index) => (
             <div
               key={index}
-              className="bg-white text-foreground p-6  shadow-md min-w-[350px] cursor-pointer h-[350px]"
+              className="bg-white text-foreground p-3 md:p-6  shadow-md min-w-[250px] md:min-w-[350px] cursor-pointer min-h-[250px] md:h-[350px]"
             >
               <h3 className="text-xs font-semibold text-background mb-2">
                 COSMOS STRATEGY
