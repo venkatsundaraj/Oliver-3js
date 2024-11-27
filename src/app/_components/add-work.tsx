@@ -1,62 +1,39 @@
-"use client"
+"use client";
 
-import { FC, useState } from "react"
-import * as React from "react"
-import { useSearchParams } from "next/navigation"
-import { zodResolver } from "@hookform/resolvers/zod"
-import {
-  extendedBlogSchema,
-  userAuthSchema,
-  ExtendedBlogSchema,
-} from "@/lib/validation/auth"
-import { useForm, Controller } from "react-hook-form"
-import * as z from "zod"
-import axios from "axios"
+import { zodResolver } from "@hookform/resolvers/zod";
+import { FC } from "react";
+import { useForm } from "react-hook-form";
+import * as z from "zod";
 
-import { cn, slugify } from "@/lib/utils"
-import { CalendarIcon } from "lucide-react"
-import { Button } from "@/app/_components/button"
+import { Button } from "@/app/_components/button";
+import { cn, slugify } from "@/lib/utils";
 
-import { buttonVariants } from "@/app/_components/ui/button"
-import { Input } from "@/app/_components/ui/input"
-import { Label } from "@/app/_components/ui/label"
-import { Icons } from "@/app/_components/icons"
-import { AxiosError } from "axios"
-import { toast } from "@/app/_components/ui/use-toast"
+import { Input } from "@/app/_components/ui/input";
+import { Label } from "@/app/_components/ui/label";
+import { toast } from "@/app/_components/ui/use-toast";
+import { AxiosError } from "axios";
 
-import { workAuthSchema, workAuthSchemaType } from "@/lib/validation/auth"
-import SelectCategory from "@/app/_components/select-category"
-import {
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
-} from "@/app/_components/ui/popover"
-import { format } from "date-fns"
-import { Calendar } from "@/app/_components/ui/calendar"
-import { DatePicker } from "./ui/date-picker"
-import RichTextEditor from "@/app/_components/rich-text-editor"
-import { useUploadThing } from "@/lib/uploadthing"
-import { blogTable } from "@/server/db/schema"
-import { useRouter } from "next/navigation"
-import { InferModel } from "drizzle-orm"
-import { workTable } from "@/server/db/schema"
+import SelectCategory from "@/app/_components/select-category";
+import { workAuthSchema } from "@/lib/validation/auth";
+import { workTable } from "@/server/db/schema";
+import { InferModel } from "drizzle-orm";
+import { useRouter } from "next/navigation";
 
-import { UploadButton } from "@/lib/uploadthing"
-import { workSubType, workType } from "@/config/marketing"
+import { workSubType, workType } from "@/config/marketing";
 
-type Work = InferModel<typeof workTable>
+type Work = InferModel<typeof workTable>;
 
 interface AddWorkProps {
-  work: Work
+  work: Work;
 }
 
-type FormData = z.infer<typeof workAuthSchema>
+type FormData = z.infer<typeof workAuthSchema>;
 
-const category: string[] = ["Category 1", "Category 2", "Category 3"]
+const category: string[] = ["Category 1", "Category 2", "Category 3"];
 
 const AddWork: FC<AddWorkProps> = ({ work }) => {
   // const searchParams = useSearchParams();
-  const router = useRouter()
+  const router = useRouter();
 
   const {
     register,
@@ -68,7 +45,7 @@ const AddWork: FC<AddWorkProps> = ({ work }) => {
     formState: { errors, isSubmitting },
   } = useForm<FormData>({
     resolver: zodResolver(workAuthSchema),
-  })
+  });
 
   //Utility Function
 
@@ -82,36 +59,37 @@ const AddWork: FC<AddWorkProps> = ({ work }) => {
         },
         body: JSON.stringify({
           ...formData,
+          slug: slugify(formData.type),
         }),
-      })
+      });
 
       if (data.status === 200) {
-        console.log(data)
+        console.log(data);
         toast({
           title: "Your data has been Submitted",
           description: "Please Check your data",
           variant: "default",
-        })
+        });
 
-        return router.push("/dashboard/work")
+        return router.push("/dashboard/work");
       }
 
       return toast({
         title: "Something Went Wrong",
         description: "Please Check your data",
         variant: "destructive",
-      })
+      });
     } catch (err) {
-      console.log(err)
+      console.log(err);
       if (err instanceof AxiosError) {
-        return setError("root", { message: err.message })
+        return setError("root", { message: err.message });
       }
       if (err instanceof z.ZodError) {
-        return setError("root", { message: err.message })
+        return setError("root", { message: err.message });
       }
-      return setError("root", { message: "Something went wrong" })
+      return setError("root", { message: "Something went wrong" });
     }
-  }
+  };
 
   return (
     <div className={cn("grid gap-6 w-full h-full px-4 md:px-8 py-4 md:py-8")}>
@@ -240,7 +218,7 @@ const AddWork: FC<AddWorkProps> = ({ work }) => {
         </Button>
       </form>
     </div>
-  )
-}
+  );
+};
 
-export default AddWork
+export default AddWork;

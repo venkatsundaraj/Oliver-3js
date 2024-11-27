@@ -46,10 +46,10 @@ const offerterrain = () => {
       id="our-terrain"
       className="bg-background text-white py-16 md:py-24  flex items-center justify-center overflow-hidden"
     >
-      <div className="container mx-auto flex flex-col md:flex-row items-center justify-center px-4 md:px-8 lg:px-16 max-w-[100vw]">
-        <div className="flex flex-col md:flex-row  items-center justify-center bg-background text-white">
+      <div className="container  flex flex-col md:flex-row items-center justify-center ">
+        <div className="flex flex-col md:flex-row  items-center justify-center bg-background text-white w-full">
           {/* Left Text Section */}
-          <div className="flex-1 p-8">
+          <div className="flex-1 py-8">
             <h2 className="flex items-start justify-start flex-col leading-[1.1]">
               <span className="text-extra_paragraph_heading text-foreground font-heading">
                 Our

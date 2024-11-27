@@ -17,7 +17,7 @@ const layout = async ({ children }: layoutProps) => {
   if (!user || !user.email) notFound();
 
   return (
-    <main className="min-h-screen w-screen bg-background flex flex-col md:flex-row">
+    <main className="min-h-screen w-screen bg-background flex flex-col md:flex-row relative">
       <Sidebar />
       {children}
       <Toaster />

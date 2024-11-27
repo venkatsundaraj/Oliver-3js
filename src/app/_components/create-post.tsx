@@ -1,24 +1,24 @@
-"use client"
-import { FC, useState } from "react"
-import { Button } from "@/app/_components/ui/button"
-import { NavItem, SubNavItem } from "@/types"
-import { cn, slugify } from "@/lib/utils"
-import axios from "axios"
-import { toast } from "@/app/_components/ui/use-toast"
-import { useRouter } from "next/navigation"
+"use client";
+import { FC, useState } from "react";
+import { Button } from "@/app/_components/ui/button";
+import { NavItem, SubNavItem } from "@/types";
+import { cn, slugify } from "@/lib/utils";
+import axios from "axios";
+import { toast } from "@/app/_components/ui/use-toast";
+import { useRouter } from "next/navigation";
 
 interface CreatePostProps {
-  subItem: SubNavItem
+  subItem: SubNavItem;
 }
 
 const CreatePost: FC<CreatePostProps> = ({ subItem }) => {
-  const [isLoading, setIsLoading] = useState<boolean>(false)
-  const router = useRouter()
+  const [isLoading, setIsLoading] = useState<boolean>(false);
+  const router = useRouter();
 
   const addBlogHandler = async function () {
     try {
-      setIsLoading(true)
-      const response = await fetch("/api/post/blog", { method: "GET" })
+      setIsLoading(true);
+      const response = await fetch("/api/post/blog", { method: "GET" });
 
       if (response.statusText !== "OK") {
         if (response.status !== 200) {
@@ -26,67 +26,67 @@ const CreatePost: FC<CreatePostProps> = ({ subItem }) => {
             title: "Something Went Wrong",
             description: "Try afte some time Please",
             variant: "destructive",
-          })
+          });
         }
       }
-      const data = await response.json()
+      const data = await response.json();
 
       toast({
         title: "New Blog is created",
         description: "Please enter your data",
         variant: "default",
-      })
-      router.refresh()
-      return router.push(`/dashboard/blog/${data.id}`)
+      });
+      router.refresh();
+      return router.push(`/dashboard/blog/${data.id}`);
     } catch (err) {
-      console.log(err)
+      console.log(err);
     } finally {
-      setIsLoading(false)
+      setIsLoading(false);
     }
-  }
+  };
   const addWorkHandler = async function () {
     try {
-      setIsLoading(true)
-      const response = await fetch("/api/post/work", { method: "GET" })
-      console.log(response)
+      setIsLoading(true);
+      const response = await fetch("/api/post/work", { method: "GET" });
+
       if (response.statusText !== "OK") {
         if (response.status !== 200) {
           toast({
             title: "Something Went Wrong",
             description: "Try afte some time Please",
             variant: "destructive",
-          })
+          });
         }
       }
-      const data = await response.json()
+      const data = await response.json();
 
       toast({
         title: "New Blog is created",
         description: "Please enter your data",
         variant: "default",
-      })
-      router.refresh()
-      return router.push(`/dashboard/work/${data.id}`)
+      });
+      router.refresh();
+      return router.push(`/dashboard/work/${data.id}`);
     } catch (err) {
-      console.log(err)
+      console.log(err);
     } finally {
-      setIsLoading(false)
+      setIsLoading(false);
     }
-  }
-  const addPeopleHandler = function () {}
+  };
+  const addPeopleHandler = function () {};
   const postCreateHandler = function (e: React.MouseEvent<HTMLButtonElement>) {
-    const target = e.target as HTMLButtonElement
+    const target = e.target as HTMLButtonElement;
 
     if (target.value === "add-blog") {
-      addBlogHandler()
+      addBlogHandler();
     }
     if (target.value === "add-work") {
-      addWorkHandler()
+      addWorkHandler();
     }
     if (target.value === "add-people") {
-      addPeopleHandler()
+      addPeopleHandler();
     }
-  }
+  };
 
   return (
     <Button
@@ -102,7 +102,7 @@ const CreatePost: FC<CreatePostProps> = ({ subItem }) => {
     >
       {subItem.title}
     </Button>
-  )
-}
+  );
+};
 
-export default CreatePost
+export default CreatePost;

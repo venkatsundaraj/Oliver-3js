@@ -1,5 +1,5 @@
-import { workSubType, workType } from "@/config/marketing"
-import { z } from "zod"
+import { workSubType, workType } from "@/config/marketing";
+import { z } from "zod";
 
 export const userAuthSchema = z.object({
   email: z
@@ -8,13 +8,13 @@ export const userAuthSchema = z.object({
     .refine((val) => val === "venkatesh@firebrandlabs.in", {
       message: "Please enter correct email",
     }),
-})
+});
 
-export type UserAuthSchema = z.infer<typeof userAuthSchema>
+export type UserAuthSchema = z.infer<typeof userAuthSchema>;
 
 export const emailSchema = z.object({
   userEmail: z.string().email(),
-})
+});
 
 // ---------------------------------------------------------------------------------------
 
@@ -24,17 +24,17 @@ const baseBlogSchema = z.object({
   date: z.string().min(1),
   content: z.string().min(1),
   slug: z.string().optional(),
-})
+});
 
 export const blogAuthSchema = baseBlogSchema.extend({
   file: z.custom<File[]>().superRefine((files, ctx) => {
-    console.log(files[0], this)
+    console.log(files[0], this);
     if (files.length === 0) {
       ctx.addIssue({
         code: z.ZodIssueCode.custom,
         message: "File must be provided",
-      })
-      return false
+      });
+      return false;
     }
 
     if (
@@ -49,29 +49,29 @@ export const blogAuthSchema = baseBlogSchema.extend({
       ctx.addIssue({
         code: z.ZodIssueCode.custom,
         message: "File must be a valid image type",
-      })
-      return false
+      });
+      return false;
     }
 
     if (files[0].size > 1024 * 1024 * 5) {
       ctx.addIssue({
         code: z.ZodIssueCode.custom,
         message: "File must be less than 5MB",
-      })
-      return false
+      });
+      return false;
     }
 
-    return true
+    return true;
   }),
-})
+});
 
-export type BlogAuthSchema = z.infer<typeof blogAuthSchema>
+export type BlogAuthSchema = z.infer<typeof blogAuthSchema>;
 
 export const extendedBlogSchema = baseBlogSchema.extend({
   fileUrl: z.string().url("Invalid URL format"), // Optional URL field with validation
-})
+});
 
-export type ExtendedBlogSchema = z.infer<typeof extendedBlogSchema>
+export type ExtendedBlogSchema = z.infer<typeof extendedBlogSchema>;
 
 // ----------------------------------------------------------------------
 
@@ -85,6 +85,7 @@ export const workAuthSchema = z.object({
   location: z.string().min(1),
   category: z.string().min(1),
   content: z.string().min(1),
-})
+  slug: z.string().optional(),
+});
 
-export type workAuthSchemaType = z.infer<typeof workAuthSchema>
+export type workAuthSchemaType = z.infer<typeof workAuthSchema>;

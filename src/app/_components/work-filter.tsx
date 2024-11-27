@@ -13,17 +13,17 @@ import {
 import { FC } from "react";
 import { workTable } from "@/server/db/schema";
 import { InferModel } from "drizzle-orm";
-import { splitArray } from "@/lib/utils";
+import { slugify, splitArray } from "@/lib/utils";
 
 type Work = InferModel<typeof workTable>;
 
 interface WorkFilterProps {
-  params: { workId: string };
+  filteredWork: Work;
   work: Work[];
 }
 
-const WorkFilter: FC<WorkFilterProps> = ({ params, work }) => {
-  const [projectType, setProjectType] = useState("all");
+const WorkFilter: FC<WorkFilterProps> = ({ filteredWork, work }) => {
+  const [projectType, setProjectType] = useState(filteredWork.type);
   const [subType, setSubType] = useState("all");
   const [location, setLocation] = useState("all");
   const [filteredData, setFilteredData] = useState<Work[]>([]);

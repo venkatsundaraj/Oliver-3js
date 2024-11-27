@@ -1,21 +1,28 @@
-import WorkFilter from "@/app/_components/work-filter"
-import { workTable } from "@/server/db/schema"
-import { db } from "@/server/db"
+import WorkFilter from "@/app/_components/work-filter";
+import { workTable } from "@/server/db/schema";
+import { db } from "@/server/db";
+import { eq } from "drizzle-orm";
+import { slugify } from "@/lib/utils";
 
 interface pageProps {
-  params: { workId: string }
+  params: { workId: string };
 }
 
-export const revalidate = 0 // This forces the page to be dynamic
+export const revalidate = 0; // This forces the page to be dynamic
 
 async function getData() {
-  const data = await db.select().from(workTable)
-  return data
+  const data = await db.select().from(workTable);
+  return data;
 }
 
 const page = async ({ params }: pageProps) => {
-  const data = await getData()
-  // console.log(data)
+  const data = await getData();
+
+  const [work] = await db
+    .select()
+    .from(workTable)
+    .where(eq(workTable.slug, params.workId))
+    .limit(1);
   return (
     <>
       <section className="w-screen  items-center justify-center bg-background py-10 md:pt-40 md:pb-16 flex ">
@@ -31,9 +38,9 @@ const page = async ({ params }: pageProps) => {
         </div>
       </section>
 
-      <WorkFilter params={params} work={data} />
+      <WorkFilter filteredWork={work} work={data} />
     </>
-  )
-}
+  );
+};
 
-export default page
+export default page;

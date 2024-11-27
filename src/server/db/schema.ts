@@ -9,11 +9,11 @@ import {
   date,
   timestamp,
   pgTableCreator,
-} from "drizzle-orm/pg-core"
-import { sql } from "drizzle-orm"
-import { type AdapterAccount } from "next-auth/adapters"
+} from "drizzle-orm/pg-core";
+import { sql } from "drizzle-orm";
+import { type AdapterAccount } from "next-auth/adapters";
 
-export const createTable = pgTableCreator((name) => `cosmos_strategy_${name}`)
+export const createTable = pgTableCreator((name) => `cosmos_strategy_${name}`);
 
 export const contactFormTable = createTable("contact_form", {
   id: serial("id").primaryKey(),
@@ -28,7 +28,7 @@ export const contactFormTable = createTable("contact_form", {
   updatedAt: timestamp("updated_at")
     .notNull()
     .$onUpdate(() => new Date()),
-})
+});
 
 export const blogTable = createTable("blog", {
   id: serial("id").primaryKey(),
@@ -42,12 +42,13 @@ export const blogTable = createTable("blog", {
   updatedAt: timestamp("updated_at")
     .notNull()
     .$onUpdate(() => new Date()),
-})
+});
 
 export const workTable = createTable("work", {
   id: serial("id").primaryKey(),
   type: varchar("type", { length: 255 }).notNull(),
   subType: varchar("subType", { length: 255 }).notNull(),
+  slug: varchar("slug", { length: 255 }).notNull(),
   location: text("location").notNull(),
   category: text("category").notNull(),
   content: text("content").notNull(),
@@ -55,7 +56,7 @@ export const workTable = createTable("work", {
   updatedAt: timestamp("updated_at")
     .notNull()
     .$onUpdate(() => new Date()),
-})
+});
 
 // --------------------------------------------------------------
 
@@ -67,7 +68,7 @@ export const users = pgTable("user", {
   email: text("email").unique(),
   emailVerified: timestamp("emailVerified", { mode: "date" }),
   image: text("image"),
-})
+});
 
 export const accounts = pgTable(
   "account",
@@ -91,7 +92,7 @@ export const accounts = pgTable(
       columns: [account.provider, account.providerAccountId],
     }),
   })
-)
+);
 
 export const sessions = pgTable("session", {
   sessionToken: text("sessionToken").primaryKey(),
@@ -99,7 +100,7 @@ export const sessions = pgTable("session", {
     .notNull()
     .references(() => users.id, { onDelete: "cascade" }),
   expires: timestamp("expires", { mode: "date" }).notNull(),
-})
+});
 
 export const verificationTokens = pgTable(
   "verificationToken",
@@ -113,7 +114,7 @@ export const verificationTokens = pgTable(
       columns: [verificationToken.identifier, verificationToken.token],
     }),
   })
-)
+);
 
 export const authenticators = pgTable(
   "authenticator",
@@ -134,4 +135,4 @@ export const authenticators = pgTable(
       columns: [authenticator.userId, authenticator.credentialID],
     }),
   })
-)
+);
