@@ -10,6 +10,7 @@ import { cn } from "@/lib/utils";
 import { FC } from "react";
 import { db } from "@/server/db";
 import { workTable } from "@/server/db/schema";
+import Image from "next/image";
 
 interface pageProps {}
 
@@ -59,7 +60,7 @@ const page = async ({}: pageProps) => {
       </section>
 
       {/* // Map section */}
-      <section className="flex flex-col gap-32 items-center justify-center w-screen overflow-x-hidden min-h-screen py-8 md:py-16 bg-[url('https://utfs.io/f/ZowmNmBHF7rVnFERspbEDNIHoOZs906z1pPhXFwkyAuiWTxR')] bg-no-repeat bg-fixed bg-cover bg-center md:bg-contain">
+      <section className="flex flex-col relative gap-32 items-center justify-center w-screen overflow-x-hidden min-h-screen py-8 md:py-16 bg-[url('https://utfs.io/f/ZowmNmBHF7rVnFERspbEDNIHoOZs906z1pPhXFwkyAuiWTxR')] bg-no-repeat bg-fixed bg-cover bg-center md:bg-contain">
         <div className="container flex flex-col w-full">
           <h2 className="flex items-center justify-center flex-col">
             <span className="text-extra_paragraph_heading text-foreground font-heading text-center">

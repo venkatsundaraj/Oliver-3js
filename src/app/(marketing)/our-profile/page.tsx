@@ -69,7 +69,7 @@ const page: FC<pageProps> = ({}) => {
       {/* Our Believe Section */}
       <section
         id="our-beliefs"
-        className="w-screen flex items-center justify-center bg-background py-16 md:py-16"
+        className="w-screen flex items-center justify-center bg-background py-16 md:py-36"
       >
         <div className="container flex items-center justify-center">
           <div className="grid grid-cols-1 md:grid-cols-3 w-full gap-8 md:gap-0">

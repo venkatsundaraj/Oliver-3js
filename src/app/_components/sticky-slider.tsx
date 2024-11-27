@@ -137,7 +137,7 @@ const StickySlider: FC<OurBelieveProps> = ({ className }) => {
               <span className="text-extra_paragraph_heading text-foreground font-heading">
                 Our
               </span>
-              <span className="text-primary-foreground text-secondary_heading font-heading font-normal">
+              <span className="text-primary-foreground text-tertiary_heading font-heading font-normal">
                 Differentiators
               </span>
             </h2>

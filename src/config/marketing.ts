@@ -388,20 +388,20 @@ export const ourProfileContentIcon = [
 export const addressData: { location: string; description: string }[] = [
   {
     location: "India",
-    description: "Level 9, Platina, BKC, Mumbai - 400051. Maharashtra, India.",
+    description: "Level 9, Platina, BKC, Mumbai - 400051. Maharashtra, India",
   },
   {
     location: "Singapore",
-    description: "Level 19 & 20, Tower 2, 1 Raffles Place 048616, Singapore.",
+    description: "Level 19 & 20, Tower 2, 1 Raffles Place 048616, Singapore",
   },
   {
     location: "UK",
-    description: "Level 5,167 - 169 Great Portland St., London W1W 5PF, UK.",
+    description: "Level 5,167 - 169 Great Portland St., London W1W 5PF, UK",
   },
   {
     location: "Kenya",
     description:
-      "Level 3, Royal Offices, Mogotio Road, Nairobi, PO 6578-00200, Kenya.",
+      "Level 3, Royal Offices, Mogotio Road, Nairobi, PO 6578-00200, Kenya",
   },
 ];
 

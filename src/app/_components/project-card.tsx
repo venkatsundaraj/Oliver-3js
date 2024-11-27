@@ -34,11 +34,11 @@ const ProjectCard: FC<ProjectCardProps> = ({ projects, type }) => {
               href={`/our-work/${slugify(item.type)}`}
               className="flex flex-col group items-start bg-secondary-foreground justify-between w-full min-h-40"
             >
-              <h4 className="font-paragraph p-2 text-2xl md:text-3xl text-background">
+              <h4 className="font-paragraph p-2 text-extra_paragraph_heading text-foreground">
                 {item.subType}
               </h4>
               <div className=" flex gap-4 items-center justify-center self-end">
-                <p className="uppercase font-heading text-extra_paragraph_heading text-background">
+                <p className="uppercase font-heading text-extra_paragraph_heading text-foreground">
                   View Projects
                 </p>
                 <span className="bg-background w-10 h-10">

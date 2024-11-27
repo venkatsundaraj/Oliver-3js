@@ -1,12 +1,12 @@
-"use client"
+"use client";
 
-import { useEditor, EditorContent } from "@tiptap/react"
-import StarterKit from "@tiptap/starter-kit"
-import Link from "@tiptap/extension-link"
-import { FC, useEffect } from "react"
-import Toolbar from "@/app/_components/toolbar"
-import Underline from "@tiptap/extension-underline"
-import Heading from "@tiptap/extension-heading"
+import { useEditor, EditorContent } from "@tiptap/react";
+import StarterKit from "@tiptap/starter-kit";
+import Link from "@tiptap/extension-link";
+import { FC, useEffect } from "react";
+import Toolbar from "@/app/_components/toolbar";
+import Underline from "@tiptap/extension-underline";
+import Heading from "@tiptap/extension-heading";
 
 const RichTextEditor = ({
   onChange,
@@ -14,10 +14,9 @@ const RichTextEditor = ({
   defaultValue,
   loading,
 }: any) => {
-  console.log(defaultValue)
   const handleChange = (newContent: string) => {
-    onChange(newContent)
-  }
+    onChange(newContent);
+  };
   const editor = useEditor({
     extensions: [
       StarterKit,
@@ -40,23 +39,23 @@ const RichTextEditor = ({
       },
     },
     onUpdate: ({ editor }) => {
-      handleChange(editor.getHTML())
+      handleChange(editor.getHTML());
     },
-  })
+  });
 
   useEffect(() => {
     if (editor) {
-      editor.setEditable(!loading) // Dynamically toggle editor's editability
-      editor.commands.setContent(resetTrigger ? "" : defaultValue)
+      editor.setEditable(!loading); // Dynamically toggle editor's editability
+      editor.commands.setContent(resetTrigger ? "" : defaultValue);
     }
-  }, [resetTrigger, editor, defaultValue])
+  }, [resetTrigger, editor, defaultValue]);
 
   return (
     <div className="w-full">
       <Toolbar editor={editor} content="" />
       <EditorContent style={{ whiteSpace: "pre-line" }} editor={editor} />
     </div>
-  )
-}
+  );
+};
 
-export default RichTextEditor
+export default RichTextEditor;

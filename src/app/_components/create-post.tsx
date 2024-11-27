@@ -73,7 +73,35 @@ const CreatePost: FC<CreatePostProps> = ({ subItem }) => {
       setIsLoading(false);
     }
   };
-  const addPeopleHandler = function () {};
+  const addPeopleHandler = async function () {
+    try {
+      setIsLoading(true);
+      const response = await fetch("/api/post/people", { method: "GET" });
+
+      if (response.statusText !== "OK") {
+        if (response.status !== 200) {
+          toast({
+            title: "Something Went Wrong",
+            description: "Try afte some time Please",
+            variant: "destructive",
+          });
+        }
+      }
+      const data = await response.json();
+
+      toast({
+        title: "New Blog is created",
+        description: "Please enter your data",
+        variant: "default",
+      });
+      router.refresh();
+      return router.push(`/dashboard/people/${data.id}`);
+    } catch (err) {
+      console.log(err);
+    } finally {
+      setIsLoading(false);
+    }
+  };
   const postCreateHandler = function (e: React.MouseEvent<HTMLButtonElement>) {
     const target = e.target as HTMLButtonElement;
 

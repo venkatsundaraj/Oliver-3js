@@ -104,8 +104,8 @@ const OurBelieve: FC<OurBelieveProps> = ({ className }) => {
         ))}
       </CarouselContent>
       <div className="absolute top-[50%] left-0 translate-y-[-50%]">
-        <CarouselPrevious />
-        <CarouselNext />
+        <CarouselPrevious className="" />
+        <CarouselNext className="" />
         <CarouselDots
           itemCount={ourProfileContent.length}
           currentIndex={currentIndex}

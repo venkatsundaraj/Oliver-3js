@@ -26,8 +26,13 @@ const page: FC<pageProps> = ({}) => {
 
       {/* {CTA Section} */}
       <section className="w-screen flex items-center justify-center bg-background py-16 md:pt-8 md:pb-8">
-        <div className="container flex items-center justify-start">
-          <ul className="grid grid-cols-1 md:grid-cols-2 w-full gap-8 md:gap-8 md:px-28">
+        <div className="container flex flex-col items-start justify-start">
+          <h2 className="flex items-start justify-start flex-col mb-8 md:mb-12 leading-[1.1]">
+            <span className="text-secondary_heading text-primary-foreground  font-heading text-left">
+              Reach out to us
+            </span>
+          </h2>
+          <ul className="grid grid-cols-1 md:grid-cols-2 w-full gap-8 md:gap-8 items-start justify-start">
             {contactUsBody.map((item, i) => (
               <li key={i} className="flex gap-6 items-start justify-start">
                 <Image src={item.icon} alt={item.name} width={35} height={35} />

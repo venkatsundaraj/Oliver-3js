@@ -173,7 +173,7 @@ const DotAnimation: FC<DotAnimationProps> = () => {
       {dotsRef.current.map((dot) => (
         <div
           key={dot.id}
-          className={`absolute bg-white rounded-full border-2 border-[#0077B9] h-${dot.size}`}
+          className={`absolute bg-white rounded-full border-2 border-transparent h-${dot.size}`}
           style={{
             width: `${dot.size * 3.6}px`, // Ensure consistent width and height
             height: `${dot.size * 3.6}px`,

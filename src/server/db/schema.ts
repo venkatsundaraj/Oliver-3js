@@ -58,6 +58,27 @@ export const workTable = createTable("work", {
     .$onUpdate(() => new Date()),
 });
 
+export const peopleTable = createTable("people", {
+  id: serial("id").primaryKey(),
+  name: varchar("name").notNull(),
+  role: varchar("subType").notNull(),
+  slug: varchar("slug", { length: 255 }).notNull(),
+  fileUrl: varchar("fileUrl", { length: 255 }).notNull(),
+  content: text("content").notNull(),
+  countryFlags: text("countryFlags")
+    .array()
+    .notNull()
+    .default(sql`'{}'::text[]`),
+  companyProfiles: text("companyProfiles")
+    .array()
+    .notNull()
+    .default(sql`'{}'::text[]`),
+  createdAt: timestamp("created_at").notNull().defaultNow(),
+  updatedAt: timestamp("updated_at")
+    .notNull()
+    .$onUpdate(() => new Date()),
+});
+
 // --------------------------------------------------------------
 
 export const users = pgTable("user", {

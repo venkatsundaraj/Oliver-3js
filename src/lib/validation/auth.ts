@@ -89,3 +89,21 @@ export const workAuthSchema = z.object({
 });
 
 export type workAuthSchemaType = z.infer<typeof workAuthSchema>;
+
+// ---------------------------------------------------------------------------
+
+export const peopleAuthSchema = z.object({
+  name: z.string().min(1),
+  role: z.string().min(1),
+  fileUrl: z.string().url("Invalid URL format"),
+  content: z.string().min(1),
+  slug: z.string().optional(),
+  companyProfiles: z
+    .array(z.string().url())
+    .min(1, "At least one file must be uploaded")
+    .optional(),
+  countryFlags: z
+    .array(z.string().url())
+    .min(1, "At least one file must be uploaded")
+    .optional(),
+});
