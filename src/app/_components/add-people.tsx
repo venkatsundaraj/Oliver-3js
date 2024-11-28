@@ -30,8 +30,6 @@ interface AddPeopleProps {
 
 type FormData = z.infer<typeof peopleAuthSchema>;
 
-const category: string[] = ["Category 1", "Category 2", "Category 3"];
-
 const AddPeople: FC<AddPeopleProps> = ({ people }) => {
   const [content, setContent] = useState<any>();
   const [trigger, setTrigger] = useState<boolean>(false);

@@ -1,8 +1,19 @@
 import { FC } from "react";
 import TeamSection from "@/app/_components/team-section";
+import { db } from "@/server/db";
+import { peopleTable } from "@/server/db/schema";
 
 interface pageProps {}
-const page: FC<pageProps> = function () {
+
+export const revalidate = 0; // This forces the page to be dynamic
+
+async function getData() {
+  const data = await db.select().from(peopleTable);
+  return data;
+}
+
+const page = async ({}: pageProps) => {
+  const data = await getData();
   return (
     <>
       <div className="bg-black text-white text-center py-16 md:pt-64 md:pb-16">
@@ -26,7 +37,7 @@ const page: FC<pageProps> = function () {
           growing large businesses across various geographies globally.
         </p>
       </div>
-      <TeamSection />
+      <TeamSection data={data} />
     </>
   );
 };

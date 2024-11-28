@@ -6,7 +6,7 @@ import { blogTable, contactFormTable, peopleTable } from "@/server/db/schema";
 import { blogAuthSchema, extendedBlogSchema } from "@/lib/validation/auth";
 import { slugify } from "@/lib/utils";
 
-export async function GET(req: NextRequest, res: NextResponse) {
+export async function POST(req: NextRequest, res: NextResponse) {
   try {
     const [people] = await db
       .insert(peopleTable)

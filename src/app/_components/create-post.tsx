@@ -18,7 +18,7 @@ const CreatePost: FC<CreatePostProps> = ({ subItem }) => {
   const addBlogHandler = async function () {
     try {
       setIsLoading(true);
-      const response = await fetch("/api/post/blog", { method: "GET" });
+      const response = await fetch("/api/post/blog", { method: "POST" });
 
       if (response.statusText !== "OK") {
         if (response.status !== 200) {
@@ -47,7 +47,7 @@ const CreatePost: FC<CreatePostProps> = ({ subItem }) => {
   const addWorkHandler = async function () {
     try {
       setIsLoading(true);
-      const response = await fetch("/api/post/work", { method: "GET" });
+      const response = await fetch("/api/post/work", { method: "POST" });
 
       if (response.statusText !== "OK") {
         if (response.status !== 200) {
@@ -76,7 +76,7 @@ const CreatePost: FC<CreatePostProps> = ({ subItem }) => {
   const addPeopleHandler = async function () {
     try {
       setIsLoading(true);
-      const response = await fetch("/api/post/people", { method: "GET" });
+      const response = await fetch("/api/post/people", { method: "POST" });
 
       if (response.statusText !== "OK") {
         if (response.status !== 200) {
@@ -104,7 +104,7 @@ const CreatePost: FC<CreatePostProps> = ({ subItem }) => {
   };
   const postCreateHandler = function (e: React.MouseEvent<HTMLButtonElement>) {
     const target = e.target as HTMLButtonElement;
-
+    console.log(target.value);
     if (target.value === "add-blog") {
       addBlogHandler();
     }

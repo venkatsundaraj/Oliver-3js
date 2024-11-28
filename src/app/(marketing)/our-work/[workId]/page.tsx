@@ -3,6 +3,7 @@ import { workTable } from "@/server/db/schema";
 import { db } from "@/server/db";
 import { eq } from "drizzle-orm";
 import { slugify } from "@/lib/utils";
+import { notFound } from "next/navigation";
 
 interface pageProps {
   params: { workId: string };
@@ -23,6 +24,8 @@ const page = async ({ params }: pageProps) => {
     .from(workTable)
     .where(eq(workTable.slug, params.workId))
     .limit(1);
+
+  if (!work) notFound();
   return (
     <>
       <section className="w-screen  items-center justify-center bg-background py-10 md:pt-40 md:pb-16 flex ">
