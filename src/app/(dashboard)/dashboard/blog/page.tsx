@@ -14,6 +14,7 @@ async function getData() {
 
 const page = async ({}: pageProps) => {
   const data = await getData();
+  console.log(data);
   return (
     <main className="bg-background min-h-screen w-full flex items-start flex-col justify-center p-4 ">
       <section className="w-full flex items-start justify-center bg-background py-4 md:py-24  min-h-screen">
@@ -27,7 +28,7 @@ const page = async ({}: pageProps) => {
                 <li key={i} className="w-full">
                   <Link
                     className="flex w-full py-4 px-4 border border-foreground rounded-md items-center justify-between"
-                    href={`/dashboard/blog/${item.slug}`}
+                    href={`/dashboard/blog/${item.id}`}
                   >
                     <h4 className="text-foreground">
                       {item.title} ({item.category})

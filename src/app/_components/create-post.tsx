@@ -19,6 +19,7 @@ const CreatePost: FC<CreatePostProps> = ({ subItem }) => {
     try {
       setIsLoading(true);
       const response = await fetch("/api/post/blog", { method: "POST" });
+      console.log(response);
 
       if (response.statusText !== "OK") {
         if (response.status !== 200) {

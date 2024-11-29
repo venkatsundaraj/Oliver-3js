@@ -14,17 +14,25 @@ export const marketingConfig: MainNavItems = [
     title: "Our Profile",
     href: "/our-profile",
     subItems: [
-      { title: "Who We Are", href: "/our-profile#who-are-we" },
-      { title: "Our Beliefs", href: "/our-profile#our-beliefs" },
-      { title: "Our Value Engine", href: "/our-profile#our-value-engine" },
+      { title: "Our inspiration", href: "/our-profile#our-inspiration" },
+      { title: "Our Persona", href: "/our-profile#our-persona" },
+      { title: "Our Belief", href: "/our-profile#our-belief" },
+      { title: "Our Values", href: "/our-profile#our-values" },
     ],
   },
   {
     title: "Our Proposition",
     href: "/our-offer",
     subItems: [
+      { title: "Our Goal", href: "/our-offer#our-goal" },
+      { title: "Our Offer", href: "/our-offer#our-Offer" },
       { title: "Our Terrain", href: "/our-offer#our-terrain" },
       { title: "Our Practices", href: "/our-offer#our-practices" },
+      { title: "Our Solution Levels", href: "/our-offer#our-solution-levels" },
+      {
+        title: "Our Functional Spirals",
+        href: "/our-offer#our-functional-spirals",
+      },
       {
         title: "Our Differentiators",
         href: "/our-offer#our-differentiators",
@@ -39,7 +47,12 @@ export const marketingConfig: MainNavItems = [
   {
     title: "Our Work",
     href: "/our-work",
-    subItems: [],
+    subItems: [
+      {
+        title: "Our Client Domains",
+        href: "/our-offer#our-client-domains",
+      },
+    ],
   },
   {
     title: "Our Views",

@@ -55,7 +55,7 @@ const Navbar: FC<NavbarProps> = ({ items, children }) => {
       {items?.length ? (
         <nav
           className={cn(
-            "hidden xl:flex items-center justify-center gap-8 flex-row ",
+            "hidden xl:flex items-center justify-center gap-8 flex-row w-[865px]",
             {}
           )}
         >
@@ -107,7 +107,7 @@ const Navbar: FC<NavbarProps> = ({ items, children }) => {
                             item.disabled,
                         },
                         item.href.startsWith(`/${segment}`)
-                          ? "text-secondary-foreground"
+                          ? "text-secondary-foreground font-bold"
                           : "text-foreground"
                       )}
                     >
@@ -120,27 +120,29 @@ const Navbar: FC<NavbarProps> = ({ items, children }) => {
                       asChild={false}
                       className={cn("border-none ")}
                     >
-                      <ul className="flex items-center justify-end w-screen gap-4 px-8 py-6">
-                        {item.subItems.map((subItem, i) => (
-                          <li
-                            key={i}
-                            className="flex items-center justify-center "
-                          >
-                            <Link
-                              className={cn(
-                                "inline-flex  items-center text-black flex-row justify-center group-hover:text-primary-foreground text-sm font-medium font-paragraph ",
-                                {
-                                  "cursor-not-allowed text-foreground/50":
-                                    item.disabled,
-                                }
-                              )}
-                              href={subItem.href}
+                      <div className="w-screen flex items-center justify-end">
+                        <ul className="flex items-center justify-start flex-wrap w-[865px] gap-12 px-8 py-6">
+                          {item.subItems.map((subItem, i) => (
+                            <li
+                              key={i}
+                              className="flex items-center justify-center "
                             >
-                              {subItem.title}
-                            </Link>
-                          </li>
-                        ))}
-                      </ul>
+                              <Link
+                                className={cn(
+                                  "inline-flex  items-center text-black flex-row justify-center group-hover:text-primary-foreground text-sm font-medium font-paragraph ",
+                                  {
+                                    "cursor-not-allowed text-foreground/50":
+                                      item.disabled,
+                                  }
+                                )}
+                                href={subItem.href}
+                              >
+                                {subItem.title}
+                              </Link>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
                     </NavigationMenuContent>
                   ) : null}
                 </NavigationMenuItem>

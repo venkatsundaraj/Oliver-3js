@@ -15,7 +15,7 @@ const page = async ({ params }: pageProps) => {
   const [blog] = await db
     .select()
     .from(blogTable)
-    .where(eq(blogTable.slug, params.blogId))
+    .where(eq(blogTable.id, Number(params.blogId)))
     .limit(1);
 
   if (!blog) notFound();
