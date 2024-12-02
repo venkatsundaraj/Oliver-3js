@@ -1,4 +1,4 @@
-import type { Config } from "tailwindcss";
+import type { Config } from "tailwindcss"
 
 const config: Config = {
   content: [
@@ -13,6 +13,13 @@ const config: Config = {
       screens: {
         "2xl": "1400px",
       },
+    },
+    screens: {
+      sm: "640px",
+      md: "768px",
+      lg: "1024px",
+      xl: "1180px",
+      "2xl": "1536px",
     },
     extend: {
       colors: {
@@ -141,5 +148,5 @@ const config: Config = {
     },
   },
   plugins: [require("tailwindcss-animate")],
-};
-export default config;
+}
+export default config
