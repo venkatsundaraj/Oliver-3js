@@ -88,7 +88,7 @@ const page: FC<pageProps> = ({}) => {
 
       {/* Our Values Engine Section */}
       <section
-        id="our-value-engine"
+        id="our-values-engine"
         className="w-screen flex items-center justify-center min-h-screen bg-background py-16 md:py-16 flex-col"
       >
         <div className="container flex items-center justify-center mb-16">

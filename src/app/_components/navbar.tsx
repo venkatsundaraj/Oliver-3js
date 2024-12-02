@@ -78,7 +78,7 @@ const Navbar: FC<NavbarProps> = ({ items, children }) => {
                 </NavigationMenuTrigger>
                 <NavigationMenuContent
                   asChild={false}
-                  className={cn("border-none bg-background w-screen")}
+                  className={cn("border-t border-b bg-background w-screen")}
                 >
                   <ul className="flex  items-center justify-start w-screen gap-8 px-8 py-12 flex-col max-h-[360px] md:max-h-[460px] overflow-y-scroll">
                     {ourSnapshotContent.subItems.length
@@ -120,8 +120,8 @@ const Navbar: FC<NavbarProps> = ({ items, children }) => {
                       asChild={false}
                       className={cn("border-none ")}
                     >
-                      <div className="w-screen flex items-center justify-end">
-                        <ul className="flex items-center justify-start flex-wrap w-[865px] gap-12 px-8 py-6">
+                      <div className="w-screen flex items-center justify-end bg-transparent">
+                        <ul className="flex items-center justify-start flex-wrap w-[865px] gap-x-12 gap-y-6 px-8 py-6">
                           {item.subItems.map((subItem, i) => (
                             <li
                               key={i}
@@ -129,7 +129,7 @@ const Navbar: FC<NavbarProps> = ({ items, children }) => {
                             >
                               <Link
                                 className={cn(
-                                  "inline-flex  items-center text-black flex-row justify-center group-hover:text-primary-foreground text-sm font-medium font-paragraph ",
+                                  "inline-flex  items-center text-foreground hover:text-secondary-foreground flex-row justify-center group-hover:text-primary-foreground text-sm font-medium font-paragraph ",
                                   {
                                     "cursor-not-allowed text-foreground/50":
                                       item.disabled,

@@ -16,9 +16,11 @@ import {
   Moon,
   ArrowLeft,
   CircleX,
+  EllipsisVertical,
   Laptop,
   Menu,
   UserRoundCog,
+  LoaderCircle,
   Play,
 } from "lucide-react";
 
@@ -27,7 +29,9 @@ export const Icons = {
   Snail,
   ChevronRight,
   UserRoundCog,
+  LoaderCircle,
   Sliders,
+  EllipsisVertical,
   ChevronLeft,
   Pencil,
   Webhook,

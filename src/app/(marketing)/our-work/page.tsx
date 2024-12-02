@@ -60,7 +60,10 @@ const page = async ({}: pageProps) => {
       </section>
 
       {/* // Map section */}
-      <section className="flex flex-col relative gap-32 items-center justify-center w-screen overflow-x-hidden min-h-screen py-8 md:py-16 bg-[url('https://utfs.io/f/ZowmNmBHF7rVnFERspbEDNIHoOZs906z1pPhXFwkyAuiWTxR')] bg-no-repeat bg-fixed bg-cover bg-center md:bg-contain">
+      <section
+        id="our-client-domains"
+        className="flex flex-col relative gap-32 items-center justify-center w-screen overflow-x-hidden min-h-screen py-8 md:py-16 bg-[url('https://utfs.io/f/ZowmNmBHF7rVnFERspbEDNIHoOZs906z1pPhXFwkyAuiWTxR')] bg-no-repeat bg-fixed bg-cover bg-center md:bg-contain"
+      >
         <div className="container flex flex-col w-full">
           <h2 className="flex items-center justify-center flex-col">
             <span className="text-extra_paragraph_heading text-foreground font-heading text-center">
@@ -81,7 +84,7 @@ const page = async ({}: pageProps) => {
             ))}
           </ul>
         </div>
-        <div className="container flex flex-col w-full">
+        <div id="our-clients" className="container flex flex-col w-full">
           <h2 className="flex items-center justify-center flex-col">
             <span className="text-extra_paragraph_heading text-foreground font-heading text-center">
               Some of our
@@ -107,7 +110,10 @@ const page = async ({}: pageProps) => {
         </div>
       </section>
 
-      <section className="w-screen flex items-center justify-center  bg-background py-8 md:py-2">
+      <section
+        id="our-projects"
+        className="w-screen flex items-center justify-center  bg-background py-8 md:py-2"
+      >
         <div className="container flex flex-col items-start justify-center">
           <div className="py-10 w-full flex flex-col gap-10">
             <h3 className="font-heading text-tertiary_heading text-foreground">

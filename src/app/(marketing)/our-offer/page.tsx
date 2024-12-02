@@ -48,12 +48,16 @@ export default function Component() {
             }}
           />
           {/* Content container */}
-          <div className="relative z-10 text-center max-w-md">
-            <p className="text-gray-200 text-[30px] mb-2 font-heading">Our</p>
-            <h1 className="text-primary-foreground leading-[1.1] text-secondary_heading font-light tracking-wide mb-6 font-heading">
-              Proposition
-            </h1>
-            <p className="text-white text-extra_paragraph_heading leading-relaxed mb-4 font-[600]">
+          <div className="relative z-10 text-center max-w-md" id="">
+            <h2 className="flex items-center text-center justify-start flex-col leading-[1.1]">
+              <span className="text-extra_paragraph_heading text-foreground font-heading text-center">
+                Our
+              </span>
+              <span className="text-primary-foreground mb-4 text-secondary_heading font-heading font-bold">
+                Proposition
+              </span>
+            </h2>
+            <p className="text-white text-extra_paragraph_heading mb-4 font-[600] leading-[1.1]">
               Insight-centered business strategy & organization design
             </p>
             <p className="text-white/90 text-extra_paragraph_heading font-light">
@@ -69,7 +73,10 @@ export default function Component() {
             width={500}
             height={500}
           />
-          <div className="absolute top-0 left-8 md:left-0">
+          <div
+            className="absolute top-0 left-8 md:left-0"
+            id="our-value-for-you"
+          >
             <span className="text-foreground text-center text-6xl font-paragraph text-extra_paragraph_heading leading-tight">
               We unlock <br />
               <strong>

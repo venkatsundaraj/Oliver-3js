@@ -32,7 +32,10 @@ const SolutionLevels = () => {
   };
 
   return (
-    <section className="bg-black-900 text-white py-16 md:py-24 flex items-center justify-center">
+    <section
+      id="our-solution-levels"
+      className="bg-black-900 text-white py-16 md:py-24 flex items-center justify-center"
+    >
       <div className="container mx-auto  px-4 md:px-8 lg:px-16">
         {/* Title */}
         <div className="text-start mb-12">

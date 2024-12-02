@@ -3,6 +3,7 @@ import { db } from "@/server/db";
 import { blogTable, workTable } from "@/server/db/schema";
 import { FC } from "react";
 import Link from "next/link";
+import EditPostButton from "@/app/_components/edit-post-button";
 
 interface pageProps {}
 export const revalidate = 0; // This forces the page to be dynamic
@@ -25,18 +26,18 @@ const page = async ({}: pageProps) => {
             {data.length ? (
               data.map((item, i) => (
                 <li key={i} className="w-full">
-                  <Link
-                    className="flex w-full py-4 px-4 border border-foreground rounded-md items-center justify-between"
-                    href={`/dashboard/work/${item.id}`}
-                  >
+                  <div className="flex w-full py-4 px-4 border border-foreground rounded-md items-center justify-between">
                     <h4 className="text-foreground">
                       {item.type} ({item.category})
                     </h4>
-                  </Link>
+                    <EditPostButton post={item} type="work" />
+                  </div>
                 </li>
               ))
             ) : (
-              <p></p>
+              <p className="text-foreground text-extra_paragraph_heading font-paragraph">
+                No posts are updated.
+              </p>
             )}
           </ul>
         </div>

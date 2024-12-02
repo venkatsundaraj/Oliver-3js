@@ -35,7 +35,10 @@ const FunctionalSpirals = () => {
     { title: "Digital", titletwo: "-Spiral", description: "Design" },
   ];
   return (
-    <section className="bg-background text-white py-16 md:py-24 flex items-center justify-center bg-[url('https://utfs.io/f/ZowmNmBHF7rV60Iee5hbQOfRazMg3kr4BxVuqK1noU7SLJGE')] bg-center bg-no-repeat bg-contain">
+    <section
+      id="our-functional-spirals"
+      className="bg-background text-white py-16 md:py-24 flex items-center justify-center bg-[url('https://utfs.io/f/ZowmNmBHF7rV60Iee5hbQOfRazMg3kr4BxVuqK1noU7SLJGE')] bg-center bg-no-repeat bg-contain"
+    >
       <div className="container mx-auto  px-4 md:px-8 lg:px-16">
         {/* Title */}
         <div className="text-start mb-12">

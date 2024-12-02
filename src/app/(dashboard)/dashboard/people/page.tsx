@@ -1,5 +1,6 @@
 import AddBlog from "@/app/_components/add-blog";
 import { db } from "@/server/db";
+import EditPostButton from "@/app/_components/edit-post-button";
 import { blogTable, peopleTable, workTable } from "@/server/db/schema";
 import { FC } from "react";
 import Link from "next/link";
@@ -25,18 +26,18 @@ const page = async ({}: pageProps) => {
             {data.length ? (
               data.map((item, i) => (
                 <li key={i} className="w-full">
-                  <Link
-                    className="flex w-full py-4 px-4 border border-foreground rounded-md items-center justify-between"
-                    href={`/dashboard/people/${item.id}`}
-                  >
+                  <div className="flex w-full py-4 px-4 border border-foreground rounded-md items-center justify-between">
                     <h4 className="text-foreground">
                       {item.name} ({item.role})
                     </h4>
-                  </Link>
+                    <EditPostButton post={item} type="people" />
+                  </div>
                 </li>
               ))
             ) : (
-              <p></p>
+              <p className="text-foreground text-extra_paragraph_heading font-paragraph">
+                No posts are updated.
+              </p>
             )}
           </ul>
         </div>

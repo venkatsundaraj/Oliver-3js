@@ -7,7 +7,10 @@ interface MobStickySliderProps {}
 
 const MobStickySlider: FC<MobStickySliderProps> = ({}) => {
   return (
-    <section className="w-screen flex flex-col md:hidden overflow-x-hidden items-center justify-center bg-background py-16 md:py-16 z-[16] relative">
+    <section
+      id="our-differentiators"
+      className="w-screen flex flex-col md:hidden overflow-x-hidden items-center justify-center bg-background py-16 md:py-16 z-[16] relative"
+    >
       <div className="container flex gap-8 flex-col items-center justify-center">
         <h2 className="flex self-start items-start justify-start flex-col ">
           <span className="text-subtitle_heading text-foreground font-heading">
