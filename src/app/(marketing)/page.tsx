@@ -1,27 +1,27 @@
-"use client";
+"use client"
 
-import { Button, buttonVariants } from "@/app/_components/button";
-import { cn } from "@/lib/utils";
-import { ScrollToHash } from "@/app/_components/scroll-to-hash";
-import { Canvas } from "@react-three/fiber";
-import dynamic from "next/dynamic";
-import Image from "next/image";
-import Link from "next/link";
-import { FC } from "react";
+import { Button, buttonVariants } from "@/app/_components/button"
+import { cn } from "@/lib/utils"
+import { ScrollToHash } from "@/app/_components/scroll-to-hash"
+import { Canvas } from "@react-three/fiber"
+import dynamic from "next/dynamic"
+import Image from "next/image"
+import Link from "next/link"
+import { FC } from "react"
 import {
   functionalSpiralContent,
   domainsData,
   differentiatorData,
   ourDifferentiatorContent,
-} from "@/config/marketing";
-import InfiniteMap from "@/app/_components/infinite-map";
+} from "@/config/marketing"
+import InfiniteMap from "@/app/_components/infinite-map"
 
 interface pageProps {}
 
 const Model = dynamic(() => import("@/app/_components/model"), {
   loading: () => <p>Loading</p>,
   ssr: false,
-});
+})
 
 const page: FC<pageProps> = ({}) => {
   return (
@@ -94,7 +94,7 @@ const page: FC<pageProps> = ({}) => {
                     Nu.
                   </h4>
                   <p className="text-foreground font-paragraph text-subtitle_heading ">
-                    Transportation
+                    Transformation
                   </p>
                 </div>
                 <div className="flex items-start flex-col justify-center py-8 relative before:content-[''] before:absolute before:top-0 before:left-0 before:w-8 before:h-8 before:rounded-full before:bg-background before:translate-y-[-50%] before:border before:border-foreground">
@@ -286,7 +286,7 @@ const page: FC<pageProps> = ({}) => {
         </div>
       </section>
     </>
-  );
-};
+  )
+}
 
-export default page;
+export default page
