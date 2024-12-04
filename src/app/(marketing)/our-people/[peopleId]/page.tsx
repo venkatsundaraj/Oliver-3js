@@ -1,27 +1,27 @@
-import Image from "next/image";
-import { FC } from "react";
-import { db } from "@/server/db";
-import { peopleTable } from "@/server/db/schema";
-import { notFound } from "next/navigation";
-import { eq } from "drizzle-orm";
-import CountryFlags from "@/app/_components/country-flags";
+import Image from "next/image"
+import { FC } from "react"
+import { db } from "@/server/db"
+import { peopleTable } from "@/server/db/schema"
+import { notFound } from "next/navigation"
+import { eq } from "drizzle-orm"
+import CountryFlags from "@/app/_components/country-flags"
 
 interface PageProps {
-  params: { peopleId: string };
+  params: { peopleId: string }
 }
 
 const page = async ({ params }: PageProps) => {
-  const { peopleId } = params;
+  const { peopleId } = params
 
   // Find the team member based on the slug
   const [member] = await db
     .select()
     .from(peopleTable)
     .where(eq(peopleTable.slug, params.peopleId))
-    .limit(1);
+    .limit(1)
 
   // Display message if member not found
-  if (!member) notFound();
+  if (!member) notFound()
 
   return (
     <>
@@ -29,11 +29,13 @@ const page = async ({ params }: PageProps) => {
         <div className="container">
           <div className="flex flex-col justify-center items-center md:flex-row h-screen md:h-[90vh] ">
             {/* Left image section */}
-            <div className="w-full md:w-2/5 ">
-              <img
+            <div className="w-full md:w-[300px] ">
+              <Image
                 src={member.fileUrl}
+                width={300}
+                height={200}
                 alt={member.name}
-                className="object-cover w-full "
+                className="w-full h-auto"
               />
             </div>
 
@@ -118,7 +120,7 @@ const page = async ({ params }: PageProps) => {
         </div>
       </section>
     </>
-  );
-};
+  )
+}
 
-export default page;
+export default page
