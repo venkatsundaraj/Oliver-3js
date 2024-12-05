@@ -1,48 +1,50 @@
-"use client";
+"use client"
 
-import { extendedBlogSchema } from "@/lib/validation/auth";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { FC, useState } from "react";
-import { Controller, useForm } from "react-hook-form";
-import * as z from "zod";
+import { extendedBlogSchema } from "@/lib/validation/auth"
+import { zodResolver } from "@hookform/resolvers/zod"
+import { FC, useState } from "react"
+import { Controller, useForm } from "react-hook-form"
+import * as z from "zod"
 
-import { Button } from "@/app/_components/button";
-import { cn, slugify } from "@/lib/utils";
+import { Button } from "@/app/_components/button"
+import { cn, slugify } from "@/lib/utils"
 
-import { Input } from "@/app/_components/ui/input";
-import { Label } from "@/app/_components/ui/label";
-import { toast } from "@/app/_components/ui/use-toast";
-import { AxiosError } from "axios";
+import { Input } from "@/app/_components/ui/input"
+import { Label } from "@/app/_components/ui/label"
+import { toast } from "@/app/_components/ui/use-toast"
+import { AxiosError } from "axios"
 
-import RichTextEditor from "@/app/_components/rich-text-editor";
-import SelectCategory from "@/app/_components/select-category";
-import { UploadButton, useUploadThing } from "@/lib/uploadthing";
-import { blogTable, peopleTable } from "@/server/db/schema";
-import { InferModel } from "drizzle-orm";
-import { useRouter } from "next/navigation";
-import { peopleAuthSchema } from "@/lib/validation/auth";
+import RichTextEditor from "@/app/_components/rich-text-editor"
+import SelectCategory from "@/app/_components/select-category"
+import { UploadButton, useUploadThing } from "@/lib/uploadthing"
+import { blogTable, peopleTable } from "@/server/db/schema"
+import { InferModel } from "drizzle-orm"
+import { useRouter } from "next/navigation"
+import { peopleAuthSchema } from "@/lib/validation/auth"
+import ImageGallery from "./image-gallery"
 
-type People = InferModel<typeof peopleTable>;
+type People = InferModel<typeof peopleTable>
 
 interface AddPeopleProps {
-  people: People;
+  people: People
 }
 
-type FormData = z.infer<typeof peopleAuthSchema>;
+type FormData = z.infer<typeof peopleAuthSchema>
 
 const AddPeople: FC<AddPeopleProps> = ({ people }) => {
-  const [content, setContent] = useState<any>();
-  const [trigger, setTrigger] = useState<boolean>(false);
-  const [isUploading, setIsUploading] = useState<boolean>(false);
+  const [content, setContent] = useState<any>()
+  const [trigger, setTrigger] = useState<boolean>(false)
+  const [isUploading, setIsUploading] = useState<boolean>(false)
 
-  const router = useRouter();
-  const { startUpload } = useUploadThing("imageUploader");
+  const router = useRouter()
+  const { startUpload } = useUploadThing("imageUploader")
   const {
     register,
     handleSubmit,
     setError,
     control,
     reset,
+    getValues,
     setValue,
     formState: { errors, isSubmitting },
   } = useForm<FormData>({
@@ -52,18 +54,18 @@ const AddPeople: FC<AddPeopleProps> = ({ people }) => {
       companyProfiles: people.companyProfiles,
       countryFlags: people.countryFlags,
     },
-  });
+  })
 
   //Utility Function
 
   const handleContentChange = (reason: string) => {
-    setValue("content", reason);
-  };
+    setValue("content", reason)
+  }
 
   const onSubmit = async function (formData: FormData) {
     try {
       //Uploadthing image uploader
-      setIsUploading(true);
+      setIsUploading(true)
 
       const data = await fetch(`/api/post/people/${people.id}`, {
         method: "PATCH",
@@ -75,42 +77,42 @@ const AddPeople: FC<AddPeopleProps> = ({ people }) => {
           ...formData,
           slug: slugify(`${formData.name}${formData.role}`),
         }),
-      });
+      })
 
       if (data.status === 200) {
-        console.log(data);
+        console.log(data)
         toast({
           title: "Your data has been Submitted",
           description: "Please Check your data",
           variant: "default",
-        });
-        setTrigger((prev) => !prev);
-        return router.push("/dashboard/people");
+        })
+        setTrigger((prev) => !prev)
+        return router.push("/dashboard/people")
       }
 
       return toast({
         title: "Something Went Wrong",
         description: "Please Check your data",
         variant: "destructive",
-      });
+      })
     } catch (err) {
-      console.log(err);
+      console.log(err)
       if (err instanceof AxiosError) {
-        return setError("root", { message: err.message });
+        return setError("root", { message: err.message })
       }
       if (err instanceof z.ZodError) {
-        return setError("root", { message: err.message });
+        return setError("root", { message: err.message })
       }
-      return setError("root", { message: "Something went wrong" });
+      return setError("root", { message: "Something went wrong" })
     }
-  };
+  }
 
   return (
     <div className={cn("grid gap-6 w-full h-full px-4 md:px-8 py-4 md:py-8")}>
       <form onSubmit={handleSubmit(onSubmit)}>
-        <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-8">
-          <div className="flex items-start flex-col justify-start gap-2 w-full ">
-            <Label className="text-foreground mb-2" htmlFor="Name">
+        <div className="grid w-full grid-cols-1 gap-8 md:grid-cols-2">
+          <div className="flex flex-col items-start justify-start w-full gap-2 ">
+            <Label className="mb-2 text-foreground" htmlFor="Name">
               Name
             </Label>
             <Input
@@ -125,7 +127,7 @@ const AddPeople: FC<AddPeopleProps> = ({ people }) => {
               required
             />
             {errors?.name ? (
-              <p className="px-1 text-xs text-destructive h-4">
+              <p className="h-4 px-1 text-xs text-destructive">
                 {errors.name.message}
               </p>
             ) : (
@@ -133,8 +135,8 @@ const AddPeople: FC<AddPeopleProps> = ({ people }) => {
             )}
           </div>
 
-          <div className="flex items-start flex-col justify-start gap-2 w-full ">
-            <Label className="text-foreground mb-2" htmlFor="Role">
+          <div className="flex flex-col items-start justify-start w-full gap-2 ">
+            <Label className="mb-2 text-foreground" htmlFor="Role">
               Role
             </Label>
             <Input
@@ -149,7 +151,7 @@ const AddPeople: FC<AddPeopleProps> = ({ people }) => {
               required
             />
             {errors?.role ? (
-              <p className="px-1 text-xs text-destructive h-4">
+              <p className="h-4 px-1 text-xs text-destructive">
                 {errors.role.message}
               </p>
             ) : (
@@ -157,8 +159,8 @@ const AddPeople: FC<AddPeopleProps> = ({ people }) => {
             )}
           </div>
 
-          <div className="flex items-start flex-col justify-start gap-2 w-full">
-            <Label className="text-foreground mb-2" htmlFor="file">
+          <div className="flex flex-col items-start justify-start w-full gap-2">
+            <Label className="mb-2 text-foreground" htmlFor="file">
               Image
             </Label>
             <Controller
@@ -177,7 +179,7 @@ const AddPeople: FC<AddPeopleProps> = ({ people }) => {
                   }}
                   onClientUploadComplete={(res) => {
                     if (res && res.length > 0) {
-                      const uploadedFileUrl = res[0].key;
+                      const uploadedFileUrl = res[0].key
 
                       setValue(
                         "fileUrl",
@@ -185,17 +187,29 @@ const AddPeople: FC<AddPeopleProps> = ({ people }) => {
                         {
                           shouldValidate: true,
                         }
-                      );
+                      )
                     }
                   }}
                   onUploadError={(error) => {
-                    console.error("Upload error: ", error);
+                    console.error("Upload error: ", error)
                   }}
                 />
               )}
             />
+            <ImageGallery
+              updateImageHandler={([value]) => {
+                setValue("fileUrl", value, {
+                  shouldValidate: true,
+                })
+              }}
+              images={
+                getValues("fileUrl")
+                  ? new Array(getValues("fileUrl"))
+                  : new Array(people.fileUrl)
+              }
+            />
             {errors?.fileUrl ? (
-              <p className="px-1 text-xs text-destructive h-4">
+              <p className="h-4 px-1 text-xs text-destructive">
                 {errors.fileUrl.message}
               </p>
             ) : (
@@ -203,8 +217,8 @@ const AddPeople: FC<AddPeopleProps> = ({ people }) => {
             )}
           </div>
 
-          <div className="flex items-start flex-col justify-start gap-2 w-full">
-            <Label className="text-foreground mb-2" htmlFor="companyProfile">
+          <div className="flex flex-col items-start justify-start w-full gap-2">
+            <Label className="mb-2 text-foreground" htmlFor="companyProfile">
               Company Profile
             </Label>
             <Controller
@@ -222,23 +236,39 @@ const AddPeople: FC<AddPeopleProps> = ({ people }) => {
                       "flex h-8 flex-col items-center justify-center px-2 text-white",
                   }}
                   onClientUploadComplete={(res) => {
-                    setIsUploading(false);
+                    setIsUploading(false)
                     if (res) {
-                      const urls = res.map((file) => file.url);
-                      console.log(urls);
+                      const existingUrls = res.map((file) => file.url)
+                      const currentUrls = getValues("companyProfiles") || []
+                      const urls = [...existingUrls, ...currentUrls]
+
                       setValue("companyProfiles", urls, {
                         shouldValidate: true,
-                      });
+                      })
                     }
                   }}
                   onUploadError={(error) => {
-                    console.error("Upload error: ", error);
+                    console.error("Upload error: ", error)
                   }}
                 />
               )}
             />
+            <ImageGallery
+              updateImageHandler={(value) => {
+                console.log(value)
+                setValue("companyProfiles", value, {
+                  shouldValidate: true,
+                })
+                console.log(getValues())
+              }}
+              images={
+                getValues("companyProfiles")
+                  ? getValues("companyProfiles") || []
+                  : people.companyProfiles
+              }
+            />
             {errors?.companyProfiles ? (
-              <p className="px-1 text-xs text-destructive h-4">
+              <p className="h-4 px-1 text-xs text-destructive">
                 {errors.companyProfiles.message}
               </p>
             ) : (
@@ -246,8 +276,8 @@ const AddPeople: FC<AddPeopleProps> = ({ people }) => {
             )}
           </div>
 
-          <div className="flex items-start flex-col justify-start gap-2 w-full">
-            <Label className="text-foreground mb-2" htmlFor="countryFlags">
+          <div className="flex flex-col items-start justify-start w-full gap-2">
+            <Label className="mb-2 text-foreground" htmlFor="countryFlags">
               Country Flog
             </Label>
             <Controller
@@ -265,23 +295,37 @@ const AddPeople: FC<AddPeopleProps> = ({ people }) => {
                       "flex h-8 flex-col items-center justify-center px-2 text-white",
                   }}
                   onClientUploadComplete={(res) => {
-                    setIsUploading(false);
+                    setIsUploading(false)
                     if (res) {
-                      const urls = res.map((file) => file.url);
-                      console.log(urls);
+                      const existingUrls = res.map((file) => file.url)
+                      const currentUrls = getValues("countryFlags") || []
+                      const urls = [...existingUrls, ...currentUrls]
+
                       setValue("countryFlags", urls, {
                         shouldValidate: true,
-                      });
+                      })
                     }
                   }}
                   onUploadError={(error) => {
-                    console.error("Upload error: ", error);
+                    console.error("Upload error: ", error)
                   }}
                 />
               )}
             />
+            <ImageGallery
+              updateImageHandler={(value) => {
+                setValue("countryFlags", value, {
+                  shouldValidate: true,
+                })
+              }}
+              images={
+                getValues("countryFlags")
+                  ? getValues("countryFlags") || []
+                  : people.countryFlags
+              }
+            />
             {errors?.countryFlags ? (
-              <p className="px-1 text-xs text-destructive h-4">
+              <p className="h-4 px-1 text-xs text-destructive">
                 {errors.countryFlags.message}
               </p>
             ) : (
@@ -289,8 +333,8 @@ const AddPeople: FC<AddPeopleProps> = ({ people }) => {
             )}
           </div>
 
-          <div className="flex items-start flex-col cols col-start-1 col-end-3 justify-start gap-2 w-full bg-background">
-            <Label className="text-foreground mb-2" htmlFor="content">
+          <div className="flex flex-col items-start justify-start w-full col-start-1 col-end-3 gap-2 cols bg-background">
+            <Label className="mb-2 text-foreground" htmlFor="content">
               Content
             </Label>
             <RichTextEditor
@@ -316,7 +360,7 @@ const AddPeople: FC<AddPeopleProps> = ({ people }) => {
         </Button>
       </form>
     </div>
-  );
-};
+  )
+}
 
-export default AddPeople;
+export default AddPeople
