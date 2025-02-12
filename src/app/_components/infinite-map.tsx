@@ -54,7 +54,7 @@ const InfiniteMap: FC<InfiniteMapProps> = ({}) => {
             >
               <Image
                 src={
-                  "https://utfs.io/f/ZowmNmBHF7rVnFERspbEDNIHoOZs906z1pPhXFwkyAuiWTxR"
+                  "https://zkok4chdpn.ufs.sh/f/ZowmNmBHF7rVYDcrIWaaWrSBMDyek5Xw2LY6d7hfVRPKHt91"
                 }
                 className="w-full h-full object-cover"
                 width={1200}

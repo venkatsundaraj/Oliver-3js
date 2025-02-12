@@ -1,7 +1,14 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    remotePatterns: [{ hostname: "utfs.io" }],
+    remotePatterns: [
+      { hostname: "utfs.io" },
+      {
+        protocol: "https",
+        hostname: "zkok4chdpn.ufs.sh",
+        pathname: "/f/**", // Matches everything under /f/
+      },
+    ],
   },
   typescript: {
     ignoreBuildErrors: true,
@@ -9,6 +16,6 @@ const nextConfig = {
   eslint: {
     ignoreDuringBuilds: true,
   },
-}
+};
 
-export default nextConfig
+export default nextConfig;
