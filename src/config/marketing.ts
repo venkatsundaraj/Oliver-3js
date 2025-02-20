@@ -24,8 +24,8 @@ export const marketingConfig: MainNavItems = [
     title: "Our Promise",
     href: "/our-offer",
     subItems: [
-      { title: "Our Proposition", href: "/our-offer#" },
-      { title: "Our Value for You", href: "/our-offer#our-value-for-you" },
+      { title: "Our Goal", href: "/our-offer#our-value-for-you" },
+      { title: "Our Offer", href: "/our-offer#" },
       { title: "Our Terrain", href: "/our-offer#our-terrain" },
       { title: "Our Practices", href: "/our-offer#our-practices" },
       { title: "Our Solution Levels", href: "/our-offer#our-solution-levels" },
@@ -85,9 +85,10 @@ export const ourSnapshotContent: { title: string; subItems: string[] } = {
   ],
 };
 export const insightCenteredContent: string[] = [
+  "Empathy",
   "Insights",
   "Imperatives",
-  "Strategy: Hero actions - Font & Back",
+  "Strategy: Hero actions - Front & Back",
   "Obj. | Goals | Metrics",
   "Mission | Purpose | Vision | Definition",
   "Star Shifts : Start | Stop | Continue",
@@ -110,6 +111,32 @@ export const locationContents: locationItem[] = [
   },
   {
     locationCount: "Kenya",
+    location: "Address Line 1, Address Line 2, Address Line 3, City - Pincode.",
+  },
+];
+export const partnersContents: locationItem[] = [
+  {
+    locationCount: "Bengalore",
+    location: "Address Line 1, Address Line 2, Address Line 3, City - Pincode.",
+  },
+  {
+    locationCount: "Delhi",
+    location: "Address Line 1, Address Line 2, Address Line 3, City - Pincode.",
+  },
+  {
+    locationCount: "Nagpur",
+    location: "Address Line 1, Address Line 2, Address Line 3, City - Pincode.",
+  },
+  {
+    locationCount: "Dubai",
+    location: "Address Line 1, Address Line 2, Address Line 3, City - Pincode.",
+  },
+  {
+    locationCount: "Toronto",
+    location: "Address Line 1, Address Line 2, Address Line 3, City - Pincode.",
+  },
+  {
+    locationCount: "Sydney",
     location: "Address Line 1, Address Line 2, Address Line 3, City - Pincode.",
   },
 ];
@@ -294,7 +321,7 @@ export const differentiatorData: {
 
 export const ourDifferentiatorContent: { title: string; imgPath: string }[] = [
   {
-    title: "Algorithmic Business Strategy",
+    title: "Algorithmic business strategy",
     imgPath:
       "https://utfs.io/f/ZowmNmBHF7rVS7N3l6RkTnuUMoapyhGFmg9lwIYORcVixtW1",
   },
@@ -324,12 +351,12 @@ export const ourDifferentiatorContent: { title: string; imgPath: string }[] = [
       "https://utfs.io/f/ZowmNmBHF7rVcGmgyCFL0cRPUsJHtd7pnFIgDZAmaLNfuQi6",
   },
   {
-    title: "End to end Accountability",
+    title: "Handholding till execution & success",
     imgPath:
       "https://utfs.io/f/ZowmNmBHF7rVih5Fmu12L9SrhBkonyJq4Z8l0ANjKH7a5euM",
   },
   {
-    title: "Bespoke approach",
+    title: "Agile remuneration",
     imgPath:
       "https://utfs.io/f/ZowmNmBHF7rVgAnj0u8GZmO7D95FyjUwVrPNpCBfxz4KHMWX",
   },
@@ -408,7 +435,7 @@ export const ourProfileContentIcon = [
 
 export const addressData: { location: string; description: string }[] = [
   {
-    location: "India",
+    location: "Mumbai",
     description: "Level 9, Platina, BKC, Mumbai - 400051. Maharashtra, India",
   },
   {
@@ -416,11 +443,11 @@ export const addressData: { location: string; description: string }[] = [
     description: "Level 19 & 20, Tower 2, 1 Raffles Place 048616, Singapore",
   },
   {
-    location: "UK",
+    location: "London",
     description: "Level 5,167 - 169 Great Portland St., London W1W 5PF, UK",
   },
   {
-    location: "Kenya",
+    location: "Nairobi",
     description:
       "Level 3, Royal Offices, Mogotio Road, Nairobi, PO 6578-00200, Kenya",
   },

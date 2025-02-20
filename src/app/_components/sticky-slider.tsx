@@ -259,7 +259,7 @@ const StickySlider: FC<OurBelieveProps> = ({ className }) => {
                         </Button>
                       ))}
                       <Image
-                        className="w-full object-contain z-0 h-full absolute left-0 top-0"
+                        className="w-full object-contain z-0 h-full absolute left-0 top-0 md:translate-y-6"
                         src={
                           "https://utfs.io/f/ZowmNmBHF7rVi72fZMu12L9SrhBkonyJq4Z8l0ANjKH7a5eu"
                         }
@@ -306,7 +306,7 @@ const StickySlider: FC<OurBelieveProps> = ({ className }) => {
                       Multinational, Regional or local giants, MSME's, start
                       ups, NFPs
                     </li>
-                    <li>NFPs Across all functions</li>
+                    <li>Across all functions</li>
                   </ul>
                 </CarouselItem>
                 <CarouselItem className="flex items-start justify-center px-16 md:px-20 flex-col gap-6">

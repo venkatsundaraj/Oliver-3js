@@ -47,9 +47,8 @@ const page: FC<pageProps> = ({}) => {
                 </span>
               </h2>
               <p className="max-w-md text-extra_paragraph_heading font-paragraph leading-loose text-foreground">
-                Operating contexts that are complex, or represent
-                discontinuities, or have a history of failure. Across
-                industries, & geographies categories, & domains.
+                We are Growth Strategists who use Insights to unlock Higher
+                Profits.
               </p>
             </div>
             <div className="flex items-center justify-center">

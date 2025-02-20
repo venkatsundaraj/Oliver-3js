@@ -1,8 +1,12 @@
-import { FC } from "react"
-import Image from "next/image"
-import { locationContents, contactUsBody } from "@/config/marketing"
-import Link from "next/link"
-import { buttonVariants } from "./button"
+import { FC } from "react";
+import Image from "next/image";
+import {
+  locationContents,
+  contactUsBody,
+  partnersContents,
+} from "@/config/marketing";
+import Link from "next/link";
+import { buttonVariants } from "./button";
 
 interface FooterProps {}
 
@@ -22,6 +26,22 @@ const Footer: FC<FooterProps> = ({}) => {
                   className="flex items-start justify-center flex-col md:basis-1/3"
                 >
                   <h5 className="font-heading text-primary-foreground text-subtitle_heading">
+                    {item.locationCount}
+                  </h5>
+                  <p className="text-subtitle_heading font-paragraph text-foreground hidden">
+                    {item.location}
+                  </p>
+                </li>
+              ))}
+            </ul>
+
+            <ul className="flex items-start justify-start gap-3  flex-wrap md:flex-nowrap md:gap-10 md:max-w-lg">
+              {partnersContents.map((item, i) => (
+                <li
+                  key={i}
+                  className="flex items-start justify-center flex-col md:basis-1/3"
+                >
+                  <h5 className="font-paragraph text-foreground text-[14px]">
                     {item.locationCount}
                   </h5>
                   <p className="text-subtitle_heading font-paragraph text-foreground hidden">
@@ -58,7 +78,7 @@ const Footer: FC<FooterProps> = ({}) => {
         </div>
       </div>
     </footer>
-  )
-}
+  );
+};
 
-export default Footer
+export default Footer;
