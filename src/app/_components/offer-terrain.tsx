@@ -38,7 +38,7 @@ const offerterrain = () => {
     {
       title: "Capability",
       description:
-        "Capability Building that is On the Job Through Everyday Processes And Delivers Results Across Industries, Categories & Geographies.",
+        "Capability Building that is On the job, through everyday processes delivering business results in an attrition resistant manner. Across Industries, Categories, & Geographies.",
     },
   ];
   return (

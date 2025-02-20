@@ -23,7 +23,7 @@ const ourpractices: FC<pageProps> = function () {
           <div className="flex items-start gap-8 md:border-t border-foreground flex-col justify-start py-8 relative before:content-[''] before:absolute before:top-0 before:left-0 before:w-8 before:h-8 before:rounded-full before:bg-background before:translate-y-[-50%] before:border before:border-foreground">
             <div className="flex flex-col items-start justify-start gap-2">
               <h4 className="text-secondary-foreground font-heading text-tertiary_heading leading-[1]">
-                Nu.
+                Nu.Cosmos
               </h4>
               <p className="text-foreground font-paragraph text-extra_paragraph_heading ">
                 Transformation{" "}
@@ -69,7 +69,7 @@ const ourpractices: FC<pageProps> = function () {
           <div className="flex items-start gap-8 md:border-t border-foreground flex-col justify-start py-8 relative before:content-[''] before:absolute before:top-0 before:left-0 before:w-8 before:h-8 before:rounded-full before:bg-background before:translate-y-[-50%] before:border before:border-foreground">
             <div className="flex flex-col items-start justify-start gap-2">
               <h4 className="text-secondary-foreground font-heading text-tertiary_heading leading-[1]">
-                Qst.
+                Qst.Cosmos
               </h4>
               <p className="text-foreground font-paragraph text-extra_paragraph_heading md:text-extra_paragraph_heading ">
                 Business Entry{" "}
@@ -105,7 +105,7 @@ const ourpractices: FC<pageProps> = function () {
           <div className="flex items-start gap-8 flex-col justify-start py-8 relative before:content-[''] before:absolute before:top-0 before:left-0 before:w-8 before:h-8 before:rounded-full before:bg-background before:translate-y-[-50%] before:border before:border-foreground">
             <div className="flex flex-col items-start justify-start gap-2">
               <h4 className="text-secondary-foreground font-heading text-tertiary_heading leading-[1]">
-                Flr.
+                Flr.Cosmos
               </h4>
               <p className="text-foreground font-paragraph text-extra_paragraph_heading md:text-extra_paragraph_heading ">
                 Capability{" "}

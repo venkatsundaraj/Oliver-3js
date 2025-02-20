@@ -1,36 +1,36 @@
-"use client"
+"use client";
 
-import { FC, Suspense, useEffect, useRef } from "react"
-import { Canvas } from "@react-three/fiber"
-import { ScrollControls, useProgress, Html } from "@react-three/drei"
-import Character from "./character"
-import { useState } from "react"
-import { cn } from "@/lib/utils"
-import CharacterOne from "./character-one"
-import { THRESHOLD_MAXIMUM_SCALE_VALUE } from "@/config/threejs-constants"
+import { FC, Suspense, useEffect, useRef } from "react";
+import { Canvas } from "@react-three/fiber";
+import { ScrollControls, useProgress, Html } from "@react-three/drei";
+import Character from "./character";
+import { useState } from "react";
+import { cn } from "@/lib/utils";
+import CharacterOne from "./character-one";
+import { THRESHOLD_MAXIMUM_SCALE_VALUE } from "@/config/threejs-constants";
 
 interface ModelProps {}
 
 function Loader() {
-  const { progress, active } = useProgress()
+  const { progress, active } = useProgress();
 
-  return <Html center>{progress.toFixed(1)} % loaded</Html>
+  return <Html center>{progress.toFixed(1)} % loaded</Html>;
 }
 
 const Model: FC<ModelProps> = ({}) => {
-  const [sectionHeight, setSectionHeight] = useState<number>(0)
-  const [frameValue, setFrameValue] = useState<number>(0)
-  const sectionRef = useRef<HTMLDivElement | null>(null)
+  const [sectionHeight, setSectionHeight] = useState<number>(0);
+  const [frameValue, setFrameValue] = useState<number>(0);
+  const sectionRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
     if (sectionRef.current) {
-      setSectionHeight(sectionRef.current.offsetHeight) // Set the section height
+      setSectionHeight(sectionRef.current.offsetHeight); // Set the section height
     }
-  }, [sectionRef])
+  }, [sectionRef]);
 
   const getFrameValue = function (value: number) {
-    setFrameValue(value)
-  }
+    setFrameValue(value);
+  };
 
   return (
     <main
@@ -105,7 +105,7 @@ const Model: FC<ModelProps> = ({}) => {
           <div className="self-start">
             <span className="text-foreground text-center text-6xl font-paragraph text-extra_paragraph_heading leading-tight">
               We unlock <br />
-              <strong>
+              <strong className="text-primary-foreground">
                 Business Growth
                 <br /> Spirals
               </strong>
@@ -114,7 +114,7 @@ const Model: FC<ModelProps> = ({}) => {
           <div className="self-end">
             <span className="text-foreground text-center text-6xl font-paragraph text-extra_paragraph_heading leading-tight">
               that are{" "}
-              <strong>
+              <strong className="text-primary-foreground">
                 Transformative
                 <br /> and Profitable
                 <br />
@@ -148,7 +148,7 @@ const Model: FC<ModelProps> = ({}) => {
         </div>
       </section>
     </main>
-  )
-}
+  );
+};
 
-export default Model
+export default Model;

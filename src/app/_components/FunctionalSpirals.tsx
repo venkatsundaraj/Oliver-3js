@@ -47,7 +47,7 @@ const FunctionalSpirals = () => {
               Our
             </span>
             <span className="text-primary-foreground text-secondary_heading font-heading font-normal">
-              Functional Spirals
+              Domain spirals
             </span>
           </h2>
         </div>

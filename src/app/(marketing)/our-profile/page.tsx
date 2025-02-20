@@ -78,7 +78,7 @@ const page: FC<pageProps> = ({}) => {
                 Our
               </span>
               <span className="text-primary-foreground text-secondary_heading font-heading font-bold">
-                Beliefs
+                Belief
               </span>
             </h2>
             <OurBelieve className="col-span-2" />

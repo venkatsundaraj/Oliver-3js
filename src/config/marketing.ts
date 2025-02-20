@@ -21,7 +21,7 @@ export const marketingConfig: MainNavItems = [
     ],
   },
   {
-    title: "Our Proposition",
+    title: "Our Promise",
     href: "/our-offer",
     subItems: [
       { title: "Our Proposition", href: "/our-offer#" },
@@ -68,7 +68,7 @@ export const marketingConfig: MainNavItems = [
     subItems: [],
   },
   {
-    title: "Contact Us",
+    title: "Our Co-ordinates",
     href: "/contact-us",
     subItems: [],
   },
@@ -87,7 +87,7 @@ export const ourSnapshotContent: { title: string; subItems: string[] } = {
 export const insightCenteredContent: string[] = [
   "Insights",
   "Imperatives",
-  "Strategy: Hero actions - Font Back",
+  "Strategy: Hero actions - Font & Back",
   "Obj. | Goals | Metrics",
   "Mission | Purpose | Vision | Definition",
   "Star Shifts : Start | Stop | Continue",
@@ -294,12 +294,12 @@ export const differentiatorData: {
 
 export const ourDifferentiatorContent: { title: string; imgPath: string }[] = [
   {
-    title: "Insights centered strategy",
+    title: "Algorithmic Business Strategy",
     imgPath:
       "https://utfs.io/f/ZowmNmBHF7rVS7N3l6RkTnuUMoapyhGFmg9lwIYORcVixtW1",
   },
   {
-    title: "Hero actions",
+    title: "P&Ls",
     imgPath:
       "https://utfs.io/f/ZowmNmBHF7rVbWDCKXkH2jDYzO9VfQms1UPwlxZdI8GBNqX7",
   },

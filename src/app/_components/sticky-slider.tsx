@@ -166,8 +166,8 @@ const StickySlider: FC<OurBelieveProps> = ({ className }) => {
                         width={38}
                         height={38}
                       />
-                      <p className="text-foreground">
-                        Insights centered strategy
+                      <p className="text-foreground text-center">
+                        {item.title}
                       </p>
                     </motion.div>
                   );
@@ -304,7 +304,7 @@ const StickySlider: FC<OurBelieveProps> = ({ className }) => {
                     <li>Across diverse scales & management types</li>
                     <li className="text-foreground/30">
                       Multinational, Regional or local giants, MSME's, start
-                      ups,
+                      ups, NFPs
                     </li>
                     <li>NFPs Across all functions</li>
                   </ul>
