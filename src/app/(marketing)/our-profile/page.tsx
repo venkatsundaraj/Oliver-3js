@@ -14,8 +14,9 @@ const page: FC<pageProps> = ({}) => {
     <>
       <ScrollToHash />
       {/* Hero Section */}
-      <section className="w-screen flex items-center justify-center h-screen bg-background py-5 ">
-        <div className="container flex items-center justify-center">
+      <section className="w-screen flex items-center justify-center h-screen bg-background py-5 relative">
+        <div className="container flex items-center justify-center relative">
+          <div className="size-18 rounded-full bg-gradient-radial  from-green-500 via-gray-50 to-violet-500 w-10 h-10 absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2" />
           <div className="container relative w-full h-full flex flex-col items-center justify-center ">
             <h1 className="text-secondary_heading text-center z-[10] font-heading text-primary-foreground mb-2 leading-tight">
               Cosmos

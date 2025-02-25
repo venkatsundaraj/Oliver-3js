@@ -1,24 +1,11 @@
 "use client";
 
-import React, { FC, useEffect, useState, useCallback, useRef } from "react";
-import Autoplay from "embla-carousel-autoplay";
-import useEmblaCarousel from "embla-carousel-react";
-import { useAnimation } from "framer-motion";
-import { motion } from "framer-motion";
-import { tailSectionData } from "@/config/marketing";
-import Image from "next/image";
-import { MotionCanvas } from "framer-motion-3d";
+import { ourProfileContent } from "@/config/marketing";
+import React, { type FC, useCallback } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { cn } from "@/lib/utils";
 import { Button } from "@/app/_components/ui/button";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-  type CarouselApi,
-} from "@/app/_components/ui/carousel";
-import { ourProfileContent } from "@/config/marketing";
+import { ChevronUp, ChevronDown } from "lucide-react";
 
 interface OurBelieveProps {
   className: string;
@@ -34,7 +21,7 @@ const CarouselDots = ({
   onDotClick: (index: number) => void;
 }) => {
   return (
-    <div className="flex flex-col items-center space-y-2 mt-4">
+    <div className="flex flex-col items-center space-y-2">
       {Array.from({ length: itemCount }).map((_, index) => (
         <Button
           key={index}
@@ -53,66 +40,93 @@ const CarouselDots = ({
 
 const OurBelieve: FC<OurBelieveProps> = ({ className }) => {
   const [currentIndex, setCurrentIndex] = React.useState(0);
-  const [api, setApi] = React.useState<any>();
+  const [isPaused, setIsPaused] = React.useState(false);
+  const intervalRef = React.useRef<NodeJS.Timeout | null>(null);
 
-  const onDotClick = useCallback(
-    (index: number) => {
-      if (api) {
-        api.scrollTo(index);
-      }
-    },
-    [api]
-  );
+  const nextSlide = useCallback(() => {
+    setCurrentIndex((prev) =>
+      prev === ourProfileContent.length - 1 ? 0 : prev + 1
+    );
+  }, []);
 
+  const previousSlide = useCallback(() => {
+    setCurrentIndex((prev) =>
+      prev === 0 ? ourProfileContent.length - 1 : prev - 1
+    );
+  }, []);
+
+  const onDotClick = useCallback((index: number) => {
+    setCurrentIndex(index);
+  }, []);
+
+  // Auto-play functionality
   React.useEffect(() => {
-    if (!api) {
-      return;
-    }
+    const startInterval = () => {
+      intervalRef.current = setInterval(() => {
+        if (!isPaused) {
+          nextSlide();
+        }
+      }, 3000); // Change slide every 3 seconds
+    };
 
-    api.on("select", () => {
-      setCurrentIndex(api.selectedScrollSnap());
-    });
-  }, [api]);
+    startInterval();
+
+    // Cleanup on unmount
+    return () => {
+      if (intervalRef.current) {
+        clearInterval(intervalRef.current);
+      }
+    };
+  }, [isPaused, nextSlide]);
 
   return (
-    <Carousel
-      setApi={setApi}
-      opts={{
-        align: "start",
-        loop: true,
-        active: true,
-      }}
-      plugins={[]}
-      orientation="vertical"
-      className={cn(
-        "w-full flex items-center justify-center relative ",
-        className
-      )}
+    <div
+      className={cn("w-full relative", className)}
+      onMouseEnter={() => setIsPaused(true)}
+      onMouseLeave={() => setIsPaused(false)}
     >
-      <CarouselContent className="-mt-1 h-[250px] md:h-[240px]">
-        {ourProfileContent.map((item, index) => (
-          <CarouselItem
-            key={index}
-            className="flex items-center justify-center px-16"
+      <div className="h-[250px] md:h-[240px] relative flex items-center justify-center px-16">
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={currentIndex}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.5, ease: "easeInOut" }}
+            className="absolute inset-0 flex items-center justify-center"
           >
-            <div className="p-1">
-              <span className="text-subtitle_heading text-foreground font-paragraph">
-                {item}
-              </span>
-            </div>
-          </CarouselItem>
-        ))}
-      </CarouselContent>
-      <div className="absolute top-[50%] left-0 translate-y-[-50%]">
-        <CarouselPrevious className="" />
-        <CarouselNext className="" />
+            <span className="text-subtitle_heading text-foreground font-paragraph text-left max-w-2xl">
+              {ourProfileContent[currentIndex]}
+            </span>
+          </motion.div>
+        </AnimatePresence>
+      </div>
+
+      <div className="absolute top-[50%] left-0 translate-y-[-50%] hidden md:flex flex-col items-center gap-4">
+        <Button
+          variant="outline"
+          size="icon"
+          onClick={previousSlide}
+          className="rounded-full"
+        >
+          <ChevronUp className="h-4 w-4 text-primary-foreground" />
+        </Button>
+
         <CarouselDots
           itemCount={ourProfileContent.length}
           currentIndex={currentIndex}
           onDotClick={onDotClick}
         />
+        <Button
+          variant="outline"
+          size="icon"
+          onClick={nextSlide}
+          className="rounded-full"
+        >
+          <ChevronDown className="h-4 w-4 text-primary-foreground" />
+        </Button>
       </div>
-    </Carousel>
+    </div>
   );
 };
 
