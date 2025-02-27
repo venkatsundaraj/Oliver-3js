@@ -62,7 +62,7 @@ const page = async ({}: pageProps) => {
       {/* // Map section */}
       <section
         id="our-client-domains"
-        className="flex flex-col relative gap-32 items-center justify-center w-screen overflow-x-hidden min-h-screen py-8 md:py-16 bg-[url('https://utfs.io/f/ZowmNmBHF7rVnFERspbEDNIHoOZs906z1pPhXFwkyAuiWTxR')] bg-no-repeat bg-fixed bg-cover bg-center md:bg-contain"
+        className="flex flex-col relative gap-32 items-center justify-center w-screen overflow-x-hidden min-h-screen py-8 md:py-16 bg-[url('https://zkok4chdpn.ufs.sh/f/ZowmNmBHF7rVYDcrIWaaWrSBMDyek5Xw2LY6d7hfVRPKHt91')] bg-no-repeat bg-fixed bg-cover bg-center md:bg-contain"
       >
         <div className="container flex flex-col w-full">
           <h2 className="flex items-center justify-center flex-col">

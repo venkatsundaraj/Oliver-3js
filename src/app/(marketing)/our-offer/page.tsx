@@ -66,7 +66,10 @@ export default function Component() {
           </div>
         </div>
       </div>
-      <section>
+      <section
+        id="our-value-for-you"
+        className="min-h-[200px] md:min-h-[600px] flex items-center justify-center"
+      >
         <div className="container">
           <div className="flex relative items-center justify-center    w-full py-5 min-h-[200px] md:min-h-[300px]">
             <Image
@@ -76,10 +79,7 @@ export default function Component() {
               width={500}
               height={500}
             />
-            <div
-              className="absolute top-0 left-1/2 -translate-x-1/2 md:translate-x-0 md:left-0"
-              id="our-value-for-you"
-            >
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 md:translate-x-0 md:left-0">
               <p className="text-foreground text-center md:text-left text-6xl font-paragraph text-extra_paragraph_heading leading-tight">
                 We unlock <br />
                 <strong>
@@ -102,9 +102,9 @@ export default function Component() {
           </div>
         </div>
       </section>
-      <StickySlider />
       <OfferTerrain />
       <OurPractices />
+      <StickySlider />
       <SolutionLevels />
       <FunctionalSpirals />
       <MobStickySlider />
