@@ -22,6 +22,7 @@ import {
   UserRoundCog,
   LoaderCircle,
   Play,
+  MoveDown,
 } from "lucide-react";
 
 export const Icons = {
@@ -29,6 +30,7 @@ export const Icons = {
   Snail,
   ChevronRight,
   UserRoundCog,
+  MoveDown,
   LoaderCircle,
   Sliders,
   EllipsisVertical,

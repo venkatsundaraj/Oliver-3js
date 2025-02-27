@@ -102,9 +102,9 @@ export default function Component() {
           </div>
         </div>
       </section>
+      <StickySlider />
       <OfferTerrain />
       <OurPractices />
-      <StickySlider />
       <SolutionLevels />
       <FunctionalSpirals />
       <MobStickySlider />

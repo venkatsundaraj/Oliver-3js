@@ -194,7 +194,7 @@ const StickySlider: FC<OurBelieveProps> = ({ className }) => {
                           Vs.
                         </p>
                       </div>
-                      <div className="flex items-center justify-center flex-col gap-8">
+                      <div className="flex items-center justify-center flex-col gap-4">
                         <Button
                           className="rounded-xl min-w-52 font-paragraph"
                           size={"lg"}
@@ -202,6 +202,7 @@ const StickySlider: FC<OurBelieveProps> = ({ className }) => {
                         >
                           Value Chain
                         </Button>
+                        <Icons.MoveDown className="text-foreground" />
                         <Button
                           className="rounded-xl min-w-52 font-paragraph"
                           size={"lg"}
