@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import { useEffect } from "react";
 import Cosmosspiralt from "../../../public/Transformation icon.svg";
 import Cosmosspiral from "../../../public/Cosmos spiral.svg";
 import Cosmosspiralth from "../../../public/Capability icon.svg";
@@ -11,7 +12,14 @@ import { Icons } from "./icons";
 
 const offerterrain = () => {
   const [activeDot, setActiveDot] = useState(0);
+  const AUTO_NEXT_INTERVAL = 3000;
+  useEffect(() => {
+    const interval = setInterval(() => {
+      handleArrowClick();
+    }, AUTO_NEXT_INTERVAL);
 
+    return () => clearInterval(interval); // Cleanup on unmount
+  }, []);
   const handleDotClick = (index: number) => {
     setActiveDot(index);
   };
@@ -41,6 +49,7 @@ const offerterrain = () => {
         "Capability Building that is On the job, through everyday processes delivering business results in an attrition resistant manner. Across Industries, Categories, & Geographies.",
     },
   ];
+
   return (
     <section
       id="our-terrain"

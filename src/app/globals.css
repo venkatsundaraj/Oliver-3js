@@ -25,7 +25,6 @@
     --border: 220 13% 91%;
     --input: 220 13% 91%;
     --ring: 262.1 83.3% 57.8%;
-    --inner-cirle:
     --radius: 0.5rem;
 
     --tail-a: 1 69% 53%;
@@ -68,7 +67,6 @@
   scrollbar-width: none; /* Firefox */
 }
 
-
 /* ------------------------------------------------- */
 
 .ProseMirror h2 {
@@ -83,10 +81,10 @@
   @apply text-subtitle_heading font-paragraph mb-4;
 }
 
-.ProseMirror ul{
-  @apply lining-nums text-subtitle_heading font-paragraph mb-4 text-foreground py-0 px-8 list-decimal mt-8
+.ProseMirror ul {
+  @apply lining-nums text-subtitle_heading font-paragraph mb-4 text-foreground py-0 px-8 list-decimal mt-8;
 }
 
-.ProseMirror ul li{
-  @apply text-subtitle_heading mb-4 font-paragraph text-foreground
+.ProseMirror ul li {
+  @apply text-subtitle_heading mb-4 font-paragraph text-foreground;
 }

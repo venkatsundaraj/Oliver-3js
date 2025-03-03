@@ -10,6 +10,7 @@ import Differentiators from "@/app/_components/Differentiators";
 import StickySlider from "@/app/_components/sticky-slider";
 import MobStickySlider from "@/app/_components/mob-sticky-slider";
 import { ScrollToHash } from "@/app/_components/scroll-to-hash";
+import VerticalCarousel from "@/app/_components/vertical-carousel";
 
 export default function Component() {
   return (
@@ -104,7 +105,8 @@ export default function Component() {
       </section>
       <OfferTerrain />
       <OurPractices />
-      <StickySlider />
+      {/* <StickySlider /> */}
+      <VerticalCarousel />
       <SolutionLevels />
       <FunctionalSpirals />
       <MobStickySlider />
