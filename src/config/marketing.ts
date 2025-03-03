@@ -321,12 +321,12 @@ export const differentiatorData: {
 
 export const ourDifferentiatorContent: { title: string; imgPath: string }[] = [
   {
-    title: "Algorithmic business strategy",
+    title: "Insights centered",
     imgPath:
       "https://utfs.io/f/ZowmNmBHF7rVS7N3l6RkTnuUMoapyhGFmg9lwIYORcVixtW1",
   },
   {
-    title: "P&Ls",
+    title: "Insights → Hero Actions → P&Ls",
     imgPath:
       "https://utfs.io/f/ZowmNmBHF7rVbWDCKXkH2jDYzO9VfQms1UPwlxZdI8GBNqX7",
   },

@@ -120,7 +120,7 @@ const page: FC<pageProps> = ({}) => {
                 >
                   <span
                     className={cn(
-                      "inline-flex items-center justify-center px-6 py-2 bg-secondary-foreground text-foreground font-paragraph text-extra_paragraph_heading min-w-[300px] md:min-w-[400px] relative",
+                      "inline-flex items-center justify-center px-6 py-2 bg-[#474747] text-foreground font-paragraph text-extra_paragraph_heading min-w-[300px] md:min-w-[400px] relative",
                       i % 2 === 0
                         ? `before:hidden before:md:block before:md:content-[''] before:w-0 before:md:w-2/3 before:h-[2px] before:absolute before:top-[50%] before:translate-y-[-50%] before:left-[100%] before:bg-foreground`
                         : ""
@@ -135,7 +135,7 @@ const page: FC<pageProps> = ({}) => {
               {Array.from({ length: 5 }).map((_, i) => (
                 <li
                   className={cn(
-                    "w-0 h-0 absolute border-r-[20px] border-l-[20px] border-l-transparent border-r-transparent border-t-[35px] border-t-foreground left-[50%] translate-x-[-50%] hidden md:block",
+                    "w-0 h-0 absolute border-r-[14px] border-l-[14px] border-l-transparent border-r-transparent border-t-[18px] border-t-foreground left-[50%] translate-x-[-50%] hidden md:block",
                     {
                       "top-[20%]": i === 0,
                       "top-[40%]": i === 1,

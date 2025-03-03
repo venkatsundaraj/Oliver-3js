@@ -185,10 +185,18 @@ const StickySlider: FC<OurBelieveProps> = ({ className }) => {
                         <h4 className="font-paragraph text-extra_paragraph_heading text-primary-foreground">
                           Traditional, algorithmic, 'engineering' approach
                         </h4>
-                        <p className="text-extra_subtitle_heading font-paragraph text-foreground">
-                          Top-down break up of problem &gt; bottom-up synthesis
-                          of solution parts Interpreting organization as sum of
-                          parts
+                        <ul className="list-disc list-inside">
+                          <li className="text-extra_subtitle_heading font-paragraph text-foreground">
+                            Top-down break up of problem &#x2192; bottom-up
+                            synthesis of solution parts Interpreting
+                            organization as sum of parts.
+                          </li>
+                          <li className="text-extra_subtitle_heading font-paragraph text-foreground">
+                            Interpreting organisation as sum of parts
+                          </li>
+                        </ul>
+                        <p className="text-extra_subtitle_heading font-paragraph text-foreground hidden">
+                          &#x2192;
                         </p>
                         <p className="font-heading text-foreground text-extra_paragraph_heading leading-[1.1]">
                           Vs.
@@ -217,12 +225,18 @@ const StickySlider: FC<OurBelieveProps> = ({ className }) => {
                         <h4 className="font-paragraph text-extra_paragraph_heading text-primary-foreground">
                           Modern, Insights centered, 'doctor' approach
                         </h4>
-                        <p className="text-extra_subtitle_heading font-paragraph text-foreground">
-                          Core insights about problem ;gt Reimagine Organisation
-                          + enterprise around insight concentrically
-                          interpreting Organisation as an engine fuelled by
-                          differentiated insights
-                        </p>
+                        <ul className="list-disc list-inside">
+                          <li className="text-extra_subtitle_heading font-paragraph text-foreground">
+                            Core insights about problem &#x2192; Reimagine
+                            Organisation + enterprise around insight
+                            concentrically
+                          </li>
+                          <li className="text-extra_subtitle_heading font-paragraph text-foreground">
+                            Interpreting Organisation as an engine fuelled by
+                            differentiated insights
+                          </li>
+                        </ul>
+
                         <p className="font-paragraph font-bold text-foreground text-extra_subtitle_heading">
                           Insights at the center of P&L and organisation vs
                           insights at the center of marketing, innovation,
