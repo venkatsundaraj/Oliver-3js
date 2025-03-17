@@ -16,10 +16,6 @@ import {
   type CarouselApi,
 } from "@/app/_components/ui/carousel";
 
-interface InfiniteMapProps {
-  className?: string;
-}
-
 const colors = [
   "bg-red-500",
   "bg-violet-500",
@@ -28,7 +24,15 @@ const colors = [
   "bg-yellow-500",
 ];
 
-const InfiniteMap: FC<InfiniteMapProps> = ({ className }) => {
+interface InfiniteMapWithImageInputProps {
+  className?: string;
+  src: string;
+}
+
+const InfiniteMapWithImageInput: FC<InfiniteMapWithImageInputProps> = ({
+  className,
+  src,
+}) => {
   return (
     <Carousel
       opts={{
@@ -36,7 +40,7 @@ const InfiniteMap: FC<InfiniteMapProps> = ({ className }) => {
         loop: true,
         active: true,
         skipSnaps: true,
-        duration: 8000,
+        duration: 12000,
       }}
       plugins={[
         Autoplay({
@@ -46,23 +50,23 @@ const InfiniteMap: FC<InfiniteMapProps> = ({ className }) => {
       ]}
       className={className}
     >
-      <CarouselContent className="w-screen h-screen pl-0 ml-0">
+      <CarouselContent className="md:w-screen  pl-0 ml-0 ">
         {Array.from({ length: 2 }).map((_, index) => (
-          <CarouselItem key={index} className=" pl-0">
+          <CarouselItem key={index} className=" pl-0 ">
             <div
               className={cn(
-                "w-full bg-background h-screen border-b-primary-foreground flex items-center flex-col justify-center "
+                "w-fit max-w-fit md:max-w-[initial] md:w-screen bg-yellow-500 gap-4 bg-transparent py-12 border-b-primary-foreground flex items-center flex-col justify-center "
               )}
             >
               <Image
-                src={
-                  "https://zkok4chdpn.ufs.sh/f/ZowmNmBHF7rVYDcrIWaaWrSBMDyek5Xw2LY6d7hfVRPKHt91"
-                }
-                className="w-full h-screen object-cover"
-                width={1200}
+                src={src}
+                className="w-fit max-w-fit md:w-screen md:max-w-[initial]  object-cover p-4"
+                width={1900}
                 alt="Heat Map"
                 height={700}
                 objectFit="cover"
+                quality={100}
+                priority
               />
               <div className="w-full h-16 py-8 bg-background  border-t overflow-visible border-t-foreground border-b border-b-foreground hidden items-center gap-8">
                 <ul className="flex items-center flex-row justify-between w-full flex-nowrap overflow-visible ml-8">
@@ -87,4 +91,4 @@ const InfiniteMap: FC<InfiniteMapProps> = ({ className }) => {
   );
 };
 
-export default InfiniteMap;
+export default InfiniteMapWithImageInput;

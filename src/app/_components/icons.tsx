@@ -22,6 +22,7 @@ import {
   UserRoundCog,
   LoaderCircle,
   Play,
+  Minus,
   MoveDown,
 } from "lucide-react";
 
@@ -33,6 +34,8 @@ export const Icons = {
   MoveDown,
   LoaderCircle,
   Sliders,
+  Plus,
+  Minus,
   EllipsisVertical,
   ChevronLeft,
   Pencil,
@@ -41,7 +44,7 @@ export const Icons = {
   Menu,
   Loader2,
   ArrowLeft,
-  Plus,
+
   MapPin,
   Sun,
   Moon,

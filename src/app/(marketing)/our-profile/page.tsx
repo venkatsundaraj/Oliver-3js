@@ -16,7 +16,6 @@ const page: FC<pageProps> = ({}) => {
       {/* Hero Section */}
       <section className="w-screen flex items-center justify-center h-screen bg-background py-5 relative">
         <div className="container flex items-center justify-center relative">
-          <div className="size-18 rounded-full bg-gradient-radial  from-green-500 via-gray-50 to-violet-500 w-10 h-10 absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2" />
           <div className="container relative w-full h-full flex flex-col items-center justify-center ">
             <h1 className="text-secondary_heading text-center z-[10] font-heading text-primary-foreground mb-2 leading-tight">
               Cosmos
@@ -29,6 +28,9 @@ const page: FC<pageProps> = ({}) => {
             <p className="text-foreground z-[10] leading-10 text-center text-6xl font-paragraph text-extra_paragraph_heading md:max-w-lg">
               An order that symbolises the hope of light in void or darkness
             </p>
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-gradient-radial -from-40% from-white/50 via-white/10 via-30%  to-transparent to-70% ">
+              {/* <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-4 h-4 bg-white/50 rounded-full"></div> */}
+            </div>
             <DotAnimation />
           </div>
         </div>

@@ -204,13 +204,10 @@ export const domainsData: string[] = [
 ];
 
 export const clientDomains: string[] = [
-  "Fortune 500",
-  "MNC's",
-  "Regional Giants",
-  "Promoter Driver Enterprises",
-  "MSME's",
-  "Start Ups",
-  "Not for Profit NGO's",
+  "India & Middle East",
+  "Indonesia China & Far East Asia",
+  "Sub Saharan Africa",
+  "Us & Europe",
 ];
 
 export const clientData: { title: string; color: string }[] = [
@@ -684,4 +681,87 @@ export const workSubType: string[] = [
   "New business strategy",
   "Corporate brand and business",
   "Value chain redesign",
+];
+
+export const ourSolutionLevelsData = [
+  {
+    text: "Cosmos Strategy",
+    subText: "Premier",
+    solution: "Solutions",
+    hoverText:
+      "Client Specific Solutions led by Consultants ahead of the industry curve",
+  },
+  {
+    text: "Cosmos Strategy",
+    subText: "Professional",
+    solution: "Solutions",
+    hoverText: "Client Specific Solutions led by Industry class Consultants",
+  },
+
+  {
+    text: "Cosmos Strategy",
+    subText: "Elemental",
+    solution: "Solutions",
+    hoverText: "Client Specific Solutions led by Yound & Energetic Consultants",
+  },
+
+  {
+    text: "Cosmos Strategy",
+    subText: "Atelier",
+    solution: "Solutions",
+    hoverText: "Group bootcamps and seminars for Client",
+  },
+];
+
+export const IpSuitesBlz = [
+  {
+    ipBrand: "B3BC-Flows",
+    scope: "Business Model Value Flows",
+    moniker: "B3BC-Flows",
+  },
+  {
+    ipBrand: "I-Spiral",
+    scope: "External 360-degree Insights",
+    moniker: "I-Spiral.Mkt.360Sight",
+  },
+  {
+    ipBrand: "I-Spiral-Xct",
+    scope: "External BD Insights",
+    moniker: "I-Spiral-BD.Mkt.360Sight",
+  },
+  {
+    ipBrand: "D-Spiral-Xct",
+    scope: "Insights Evaluation",
+    moniker: "D-Spiral.Mkt.360Sight",
+  },
+  {
+    ipBrand: "OrgAware",
+    scope: "Business Self Awareness",
+    moniker: "OrgAware.Ntrpys.360Sight",
+  },
+  {
+    ipBrand: "Passion Diamond",
+    scope: "Empathy - Passions of People",
+    moniker: "PassionDiamond.Mpth",
+  },
+  {
+    ipBrand: "Sublime",
+    scope: "Empathy - Semiotic Understanding",
+    moniker: "Sublime.Mpth",
+  },
+  {
+    ipBrand: "GrwthPrymd",
+    scope: "Share of Growth Pyramid",
+    moniker: "GrwthPyrmd",
+  },
+  {
+    ipBrand: "Induct",
+    scope: "Inductive Reasoning & Synthesis",
+    moniker: "Induct",
+  },
+  {
+    ipBrand: "Insight-Matrix",
+    scope: "Insight Definition",
+    moniker: "Insight-Matrix",
+  },
 ];

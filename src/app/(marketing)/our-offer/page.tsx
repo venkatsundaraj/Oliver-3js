@@ -11,6 +11,7 @@ import StickySlider from "@/app/_components/sticky-slider";
 import MobStickySlider from "@/app/_components/mob-sticky-slider";
 import { ScrollToHash } from "@/app/_components/scroll-to-hash";
 import VerticalCarousel from "@/app/_components/vertical-carousel";
+import OurSolutionLevelsNew from "@/app/_components/our-solution-levels-new";
 
 export default function Component() {
   return (
@@ -107,7 +108,8 @@ export default function Component() {
       <OurPractices />
       {/* <StickySlider /> */}
       <VerticalCarousel />
-      <SolutionLevels />
+      {/* <SolutionLevels /> */}
+      <OurSolutionLevelsNew />
       <FunctionalSpirals />
       <MobStickySlider />
       <Differentiators />

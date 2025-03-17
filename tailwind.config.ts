@@ -22,6 +22,9 @@ const config: Config = {
       "2xl": "1536px",
     },
     extend: {
+      backgroundImage: {
+        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -77,6 +80,7 @@ const config: Config = {
       fontSize: {
         extra_paragraph_heading: "clamp(20px,2.2vw,24px)",
         our_text_heading: "clamp(28px,2.4vw,36px)",
+        pargrpah_heading: "clamp(24px,2.75vw,36px)",
         secondary_heading: "clamp(48px,7.2vw, 74px)",
         tertiary_heading: "clamp(28px, 4.2vw, 58px)",
         subtitle_heading: "clamp(16px,1.8vw,20px)",
@@ -131,6 +135,18 @@ const config: Config = {
           from: { transform: "translateX(0)" },
           to: { transform: "translateX(-100%)" },
         },
+        backgroundScroll: {
+          "0%": { backgroundPosition: "0% center" },
+          "100%": { backgroundPosition: "100% center" },
+        },
+        scrollX: {
+          "0%": { backgroundPosition: "0 0" },
+          "100%": { backgroundPosition: "100% 0" },
+        },
+        float: {
+          "0%, 100%": { transform: "translateY(0)" },
+          "50%": { transform: "translateY(-20px)" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -144,7 +160,10 @@ const config: Config = {
         "fade-in": "fade-in 0.2s ease-out",
         "fade-out": "fade-out 0.2s ease-out",
         "rotate-180": "rotate-180 200ms linear forwards infinite",
+        "background-scroll": "backgroundScroll 4s linear infinite",
         "scroll-one": "scroll 30s linear infinite",
+        "scroll-x": "scrollX 10s linear infinite",
+        float: "float 3s ease-in-out infinite",
       },
     },
   },

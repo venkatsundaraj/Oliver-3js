@@ -10,7 +10,10 @@ import { cn } from "@/lib/utils";
 import { FC } from "react";
 import { db } from "@/server/db";
 import { workTable } from "@/server/db/schema";
+import InfiniteMap from "@/app/_components/infinite-map";
 import Image from "next/image";
+import IpSuitsAccordian from "@/app/_components/ip-suits-accordian";
+import OurWorkMapSection from "@/app/_components/our-work-map-section";
 
 interface pageProps {}
 
@@ -60,53 +63,54 @@ const page = async ({}: pageProps) => {
       </section>
 
       {/* // Map section */}
+      <OurWorkMapSection />
+
       <section
-        id="our-client-domains"
-        className="flex flex-col relative gap-32 items-center justify-center w-screen overflow-x-hidden min-h-screen py-8 md:py-16 bg-[url('https://zkok4chdpn.ufs.sh/f/ZowmNmBHF7rVYDcrIWaaWrSBMDyek5Xw2LY6d7hfVRPKHt91')] bg-no-repeat bg-fixed bg-cover bg-center md:bg-contain"
+        id="our-projects"
+        className="w-screen flex items-center justify-center  bg-background py-8 md:py-12"
       >
-        <div className="container flex flex-col w-full">
-          <h2 className="flex items-center justify-center flex-col">
+        <div className="container flex flex-col items-center justify-between gap-4">
+          <h2 className="flex text-center items-center justify-center flex-col">
             <span className="text-extra_paragraph_heading text-foreground font-heading text-center">
-              Our
+              Our approach
             </span>
             <span className="text-primary-foreground text-secondary_heading font-heading font-normal">
-              Client Domains
+              Operating pillars & IPs
             </span>
           </h2>
-          <ul className="flex flex-wrap gap-4 w-full items-center justify-center mt-8">
-            {clientDomains.map((item, i) => (
-              <li
-                className="px-8 min-w-[24rem] max-w-md py-4 border border-secondary-foreground inline-flex rounded-2xl items-center justify-center text-foreground bg-background font-paragraph text-extra_paragraph_heading"
-                key={i}
-              >
-                {item}
-              </li>
-            ))}
-          </ul>
-        </div>
-        <div id="our-clients" className="container flex flex-col w-full">
-          <h2 className="flex items-center justify-center flex-col">
-            <span className="text-extra_paragraph_heading text-foreground font-heading text-center">
-              Some of our
-            </span>
-            <span className="text-primary-foreground text-secondary_heading font-heading font-normal">
-              Clients
-            </span>
-          </h2>
-          <ul className="flex flex-wrap gap-x-6  gap-y-8 w-full items-center justify-center mt-8">
-            {clientData.map((item, i) => (
-              <li
-                style={{ backgroundColor: `${chooseColor()}` }}
-                className={cn(
-                  "min-w-[24rem] px-2 py-2 text-subtitle_heading inline-flex items-center justify-center text-foreground font-paragraph text-wrap text-center md:text-nowrap",
-                  `bg-[${item.color}]`
-                )}
-                key={i}
-              >
-                {item.title}
-              </li>
-            ))}
-          </ul>
+          <div className="flex items-center justify-center relative w-full py-14">
+            <Image
+              className="w-[40px] md:w-[120px] lg:w-[165px] absolute animate-float "
+              src={
+                "https://zkok4chdpn.ufs.sh/f/ZowmNmBHF7rVvjzpfJUjC7oDNRSq9wYtBZEIGKyc2bfVPnzX"
+              }
+              width={400}
+              alt="Operating pillars & IPs"
+              draggable="false"
+              height={300}
+            />
+
+            <Image
+              className="w-3/4"
+              src={
+                "https://zkok4chdpn.ufs.sh/f/ZowmNmBHF7rVeigN9bHzKF8PVfhHaR7CmudUQywI1cWtxBk2"
+              }
+              width={400}
+              alt="Operating pillars & IPs"
+              height={300}
+            />
+          </div>
+
+          <p className="text-foreground text-subtitle_heading text-center max-w-prose">
+            We push ourselves to have distinctively relevant points of view on
+            business. Converting those points of view into proprietary IPs or
+            thereafter into client specific processes or further deploying
+            interactive, digital solutions modelled around them helps our
+            clients. They continue to take advantage of our collaboration long
+            after we have completed the projects.
+          </p>
+
+          <IpSuitsAccordian />
         </div>
       </section>
 

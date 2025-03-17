@@ -56,7 +56,7 @@ const VerticalCarousel: FC<VerticalCarouselProps> = () => {
           <div className="flex-1 mt-4 md:mt-0">
             <TabsContent value="Insights centered" className="mt-0">
               <div className="flex items-start justify-top flex-col gap-4 md:gap-0 md:flex-row md:max-h-[500px] overflow-y-scroll scrollbar-hide">
-                <div className="grid grid-cols-1 md:grid-cols-1 px-0 md:px-2 ">
+                <div className="grid grid-cols-1 md:grid-cols-1 px-0 md:px-2 max-w-[550px]">
                   <div className="flex w-full flex-col items-start">
                     <div className="flex items-start justify-center flex-col gap-4 text-foreground">
                       <h4 className="font-paragraph text-extra_paragraph_heading text-primary-foreground">
@@ -103,7 +103,7 @@ const VerticalCarousel: FC<VerticalCarouselProps> = () => {
                     </div>
                   </div>
                 </div>
-                <div className="grid grid-cols-1 md:grid-cols-2 px-0 md:px-2">
+                <div className="grid grid-cols-1 md:grid-cols-1 px-0 md:px-2">
                   <div className="flex flex-col items-center justify-center gap-10">
                     <div className="flex items-center justify-center flex-row gap-6">
                       <Button
@@ -122,7 +122,7 @@ const VerticalCarousel: FC<VerticalCarouselProps> = () => {
                     </div>
                     <Image
                       alt="Our Trrain"
-                      className="w-full md:w-full"
+                      className="w-full md:w-3/4"
                       src="https://utfs.io/f/ZowmNmBHF7rVHVpLcCdWuQopKOivRcLqJD7x46CXtZGlw0Sh"
                       width={300}
                       height={300}

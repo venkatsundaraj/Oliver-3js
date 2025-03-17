@@ -1,8 +1,8 @@
 "use client";
 
-import { useState, useEffect, useRef, FC } from "react";
+import { useState, useEffect, useRef, type FC } from "react";
 
-interface DotAnimationProps {}
+type DotAnimationProps = {};
 
 interface Dot {
   id: number;
@@ -82,20 +82,34 @@ const DotAnimation: FC<DotAnimationProps> = () => {
         baseY: 35,
         size: randomSize(),
       },
+      // Add a central dot
+      {
+        id: 5,
+        x: 50,
+        y: 50,
+        dx: 0,
+        dy: 0,
+        baseX: 50,
+        baseY: 50,
+        size: randomSize(), // Random size like other dots
+      },
     ];
 
-    // Create connections (outer lines first, followed by inner lines)
+    // Create connections - only outer pentagon lines and connections to center
     connectionsRef.current = [
-      { from: 0, to: 1 }, // Outer lines
+      // Outer pentagon lines
+      { from: 0, to: 1 },
       { from: 1, to: 2 },
       { from: 2, to: 3 },
       { from: 3, to: 4 },
       { from: 4, to: 0 },
-      { from: 0, to: 2 }, // Inner lines
-      { from: 0, to: 3 },
-      { from: 1, to: 3 },
-      { from: 1, to: 4 },
-      { from: 2, to: 4 },
+
+      // Connections from center to all outer dots
+      { from: 5, to: 0 },
+      { from: 5, to: 1 },
+      { from: 5, to: 2 },
+      { from: 5, to: 3 },
+      { from: 5, to: 4 },
     ];
 
     const animate = () => {
@@ -138,7 +152,7 @@ const DotAnimation: FC<DotAnimationProps> = () => {
   }, []);
 
   return (
-    <div className="w-full flex md:max-w-4xl h-[500px] md:h-[800px] top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] overflow-hidden absolute z-[1]">
+    <div className="w-full flex md:max-w-4xl h-[500px] md:h-[800px] top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] overflow-hidden absolute z-[1] ">
       <svg className="w-full h-full">
         {connectionsRef.current.map((connection, index) => {
           const fromDot = dotsRef.current.find(
@@ -147,13 +161,16 @@ const DotAnimation: FC<DotAnimationProps> = () => {
           const toDot = dotsRef.current.find((dot) => dot.id === connection.to);
           if (!fromDot || !toDot) return null;
 
-          // Determine if the connection is an outer line
+          // Determine if the connection is an outer line or a connection to center
           const isOuterLine =
             (connection.from === 0 && connection.to === 1) ||
             (connection.from === 1 && connection.to === 2) ||
             (connection.from === 2 && connection.to === 3) ||
             (connection.from === 3 && connection.to === 4) ||
             (connection.from === 4 && connection.to === 0);
+
+          const isCenterConnection =
+            connection.from === 5 || connection.to === 5;
 
           return (
             <g key={index}>
@@ -162,9 +179,9 @@ const DotAnimation: FC<DotAnimationProps> = () => {
                 y1={`${fromDot.y}%`}
                 x2={`${toDot.x}%`}
                 y2={`${toDot.y}%`}
-                stroke={isOuterLine ? "#0077B9" : "#646464"} // Blue for outer, grey for inner
+                stroke={isOuterLine ? "#0077B9" : "#646464"} // Blue for outer, grey for center connections
                 strokeWidth="1"
-                strokeOpacity={isOuterLine ? "1" : "0.8"} // Slight opacity for inner lines
+                strokeOpacity={isOuterLine ? "1" : "0.8"} // Slight opacity for center connections
               />
             </g>
           );

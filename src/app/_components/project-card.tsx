@@ -14,11 +14,6 @@ interface ProjectCardProps {
 }
 
 const ProjectCard: FC<ProjectCardProps> = ({ projects, type }) => {
-  console.log(
-    projects.filter((item) => {
-      return slugify(item.type) === slugify(type);
-    })
-  );
   return (
     <div className="grid grid-cols-1 md:grid-cols-3 items-center justify-center gap-6">
       {projects.filter((item) => {
