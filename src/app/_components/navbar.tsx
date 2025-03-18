@@ -128,7 +128,7 @@ const Navbar: FC<NavbarProps> = ({ items, children }) => {
                           className={cn("border-none ")}
                         >
                           <div className="w-screen flex items-center justify-end bg-transparent">
-                            <ul className="flex items-center justify-start flex-wrap w-[930px] gap-x-12 gap-y-6 px-0 py-6">
+                            <ul className="flex items-center justify-start flex-wrap w-[930px] gap-x-12 gap-y-6 ps-0 pe-6 py-6">
                               {item.subItems.map((subItem, i) => (
                                 <li
                                   key={i}
