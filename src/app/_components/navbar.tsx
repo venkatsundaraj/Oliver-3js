@@ -36,20 +36,20 @@ const Navbar: FC<NavbarProps> = ({ items, children }) => {
     <>
       <header
         className={cn(
-          "flex flex-row items-center justify-center gap-0 py-1 z-20  fixed w-screen top-0 border-b px-4 md:px-0 backdrop-blur-sm",
+          "flex flex-row items-center justify-center gap-0 py-1 z-20  fixed w-screen top-0 border-b px-6 xl:px-4  backdrop-blur-sm",
           true && "justify-between"
         )}
       >
-        <div className="flex items-center justify-between md:w-screen  px-10 ">
-          <div className="flex items-center justify-center gap-2 py-4">
+        <div className="flex items-center justify-between md:w-screen  ">
+          <div className="flex items-center justify-start md:justify-center gap-2 py-4">
             <Link
               href="/"
-              className="inline-flex z-40 font-semibold items-center justify-center flex-nowrap gap-2"
+              className="inline-flex z-40 font-semibold items-center justify-start md:justify-center flex-nowrap gap-2 min-w-[200px]"
             >
               <Image
                 height={100}
                 width={200}
-                className="w-[100px] md:w-[200px]"
+                className="w-[100px] md:w-[240px]"
                 src={
                   "https://utfs.io/f/ZowmNmBHF7rVyt3CMIEiorYCB6GnRhmpVzbsTv5EZJ1LQ7Xc"
                 }
@@ -62,7 +62,7 @@ const Navbar: FC<NavbarProps> = ({ items, children }) => {
           {items?.length ? (
             <nav
               className={cn(
-                "hidden xl:flex items-center justify-center gap-8 flex-row w-[900px] max-w-[900px]",
+                "hidden xl:flex items-center justify-center gap-8 flex-row w-[900px] max-w-[900px] xl:pe-[30px]",
                 {}
               )}
             >

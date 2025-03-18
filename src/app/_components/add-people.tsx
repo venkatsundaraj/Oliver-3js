@@ -325,6 +325,30 @@ const AddPeople: FC<AddPeopleProps> = ({ people }) => {
             )}
           </div>
 
+          <div className="flex items-start flex-col justify-start gap-2 w-full ">
+            <Label className="text-foreground mb-2" htmlFor="Type">
+              Type
+            </Label>
+            <Input
+              id="Type"
+              autoCapitalize="off"
+              autoComplete="none"
+              className="bg-transparent focus-visible:ring-offset-0 focus-visible:outline-none focus-visible:ring-0 text-foreground"
+              type="text"
+              {...register("type")}
+              disabled={isSubmitting}
+              defaultValue={people.type}
+              required
+            />
+            {errors?.type ? (
+              <p className="px-1 text-xs text-destructive h-4">
+                {errors.type.message}
+              </p>
+            ) : (
+              <p className="h-4"></p>
+            )}
+          </div>
+
           <div className="flex items-start flex-col justify-start gap-2 w-full">
             <Label className="text-foreground mb-2" htmlFor="file">
               Image

@@ -63,6 +63,7 @@ export const peopleTable = createTable("people", {
   name: varchar("name").notNull(),
   location: varchar("location").notNull(),
   core: varchar("core").notNull(),
+  type: varchar("type").notNull(),
   skills: varchar("skills").notNull(),
   leadDomain: varchar("leadDomain").notNull(),
   supportDomains: varchar("supportDomains").notNull(),
