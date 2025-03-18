@@ -73,7 +73,7 @@ const AddPeople: FC<AddPeopleProps> = ({ people }) => {
         },
         body: JSON.stringify({
           ...formData,
-          slug: slugify(`${formData.name}${formData.role}`),
+          slug: slugify(`${formData.name}-${formData.role}`),
         }),
       });
 
@@ -151,6 +151,174 @@ const AddPeople: FC<AddPeopleProps> = ({ people }) => {
             {errors?.role ? (
               <p className="px-1 text-xs text-destructive h-4">
                 {errors.role.message}
+              </p>
+            ) : (
+              <p className="h-4"></p>
+            )}
+          </div>
+
+          <div className="flex items-start flex-col justify-start gap-2 w-full ">
+            <Label className="text-foreground mb-2" htmlFor="Location">
+              Location
+            </Label>
+            <Input
+              id="Location"
+              autoCapitalize="off"
+              autoComplete="none"
+              className="bg-transparent focus-visible:ring-offset-0 focus-visible:outline-none focus-visible:ring-0 text-foreground"
+              type="text"
+              {...register("location")}
+              disabled={isSubmitting}
+              defaultValue={people.location}
+              required
+            />
+            {errors?.location ? (
+              <p className="px-1 text-xs text-destructive h-4">
+                {errors.location.message}
+              </p>
+            ) : (
+              <p className="h-4"></p>
+            )}
+          </div>
+
+          <div className="flex items-start flex-col justify-start gap-2 w-full ">
+            <Label className="text-foreground mb-2" htmlFor="Core">
+              Core
+            </Label>
+            <Input
+              id="Core"
+              autoCapitalize="off"
+              autoComplete="none"
+              className="bg-transparent focus-visible:ring-offset-0 focus-visible:outline-none focus-visible:ring-0 text-foreground"
+              type="text"
+              {...register("core")}
+              disabled={isSubmitting}
+              defaultValue={people.core}
+              required
+            />
+            {errors?.core ? (
+              <p className="px-1 text-xs text-destructive h-4">
+                {errors.core.message}
+              </p>
+            ) : (
+              <p className="h-4"></p>
+            )}
+          </div>
+
+          <div className="flex items-start flex-col justify-start gap-2 w-full ">
+            <Label className="text-foreground mb-2" htmlFor="Experience">
+              Experience
+            </Label>
+            <Input
+              id="Experience"
+              autoCapitalize="off"
+              autoComplete="none"
+              className="bg-transparent focus-visible:ring-offset-0 focus-visible:outline-none focus-visible:ring-0 text-foreground"
+              type="text"
+              {...register("experience")}
+              disabled={isSubmitting}
+              defaultValue={people.experience}
+              required
+            />
+            {errors?.experience ? (
+              <p className="px-1 text-xs text-destructive h-4">
+                {errors.experience.message}
+              </p>
+            ) : (
+              <p className="h-4"></p>
+            )}
+          </div>
+
+          <div className="flex items-start flex-col justify-start gap-2 w-full ">
+            <Label className="text-foreground mb-2" htmlFor="Industries">
+              Industries
+            </Label>
+            <Input
+              id="Industries"
+              autoCapitalize="off"
+              autoComplete="none"
+              className="bg-transparent focus-visible:ring-offset-0 focus-visible:outline-none focus-visible:ring-0 text-foreground"
+              type="text"
+              {...register("industries")}
+              disabled={isSubmitting}
+              defaultValue={people.industries}
+              required
+            />
+            {errors?.industries ? (
+              <p className="px-1 text-xs text-destructive h-4">
+                {errors.industries.message}
+              </p>
+            ) : (
+              <p className="h-4"></p>
+            )}
+          </div>
+
+          <div className="flex items-start flex-col justify-start gap-2 w-full ">
+            <Label className="text-foreground mb-2" htmlFor="Lead Domain">
+              Lead Domain
+            </Label>
+            <Input
+              id="Lead Domain"
+              autoCapitalize="off"
+              autoComplete="none"
+              className="bg-transparent focus-visible:ring-offset-0 focus-visible:outline-none focus-visible:ring-0 text-foreground"
+              type="text"
+              {...register("leadDomain")}
+              disabled={isSubmitting}
+              defaultValue={people.leadDomain}
+              required
+            />
+            {errors?.leadDomain ? (
+              <p className="px-1 text-xs text-destructive h-4">
+                {errors.leadDomain.message}
+              </p>
+            ) : (
+              <p className="h-4"></p>
+            )}
+          </div>
+
+          <div className="flex items-start flex-col justify-start gap-2 w-full ">
+            <Label className="text-foreground mb-2" htmlFor="Support Domains">
+              Support Domains
+            </Label>
+            <Input
+              id="Support Domains"
+              autoCapitalize="off"
+              autoComplete="none"
+              className="bg-transparent focus-visible:ring-offset-0 focus-visible:outline-none focus-visible:ring-0 text-foreground"
+              type="text"
+              {...register("supportDomains")}
+              disabled={isSubmitting}
+              defaultValue={people.supportDomains}
+              required
+            />
+            {errors?.supportDomains ? (
+              <p className="px-1 text-xs text-destructive h-4">
+                {errors.supportDomains.message}
+              </p>
+            ) : (
+              <p className="h-4"></p>
+            )}
+          </div>
+
+          <div className="flex items-start flex-col justify-start gap-2 w-full ">
+            <Label className="text-foreground mb-2" htmlFor="Skills">
+              Skills
+            </Label>
+            <Input
+              id="Skills"
+              autoCapitalize="off"
+              autoComplete="none"
+              className="bg-transparent focus-visible:ring-offset-0 focus-visible:outline-none focus-visible:ring-0 text-foreground"
+              type="text"
+              {...register("skills")}
+              disabled={isSubmitting}
+              defaultValue={people.skills}
+              required
+            />
+            {errors?.skills ? (
+              <p className="px-1 text-xs text-destructive h-4">
+                {errors.skills.message}
               </p>
             ) : (
               <p className="h-4"></p>

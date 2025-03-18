@@ -61,6 +61,13 @@ export const workTable = createTable("work", {
 export const peopleTable = createTable("people", {
   id: serial("id").primaryKey(),
   name: varchar("name").notNull(),
+  location: varchar("location").notNull(),
+  core: varchar("core").notNull(),
+  skills: varchar("skills").notNull(),
+  leadDomain: varchar("leadDomain").notNull(),
+  supportDomains: varchar("supportDomains").notNull(),
+  experience: varchar("experience").notNull(),
+  industries: varchar("industries").notNull(),
   role: varchar("subType").notNull(),
   slug: varchar("slug", { length: 255 }).notNull(),
   fileUrl: varchar("fileUrl", { length: 255 }).notNull(),

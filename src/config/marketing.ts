@@ -49,17 +49,24 @@ export const marketingConfig: MainNavItems = [
     href: "/our-work",
     subItems: [
       {
-        title: "Our Client Domains",
-        href: "/our-work#our-client-domains",
-      },
-      {
-        title: "Our Clients",
-        href: "/our-work#our-clients",
-      },
-      {
         title: "Our Projects",
         href: "/our-work#our-projects",
       },
+    ],
+  },
+
+  {
+    title: "Our Client Domains",
+    href: "/our-client-domains",
+    subItems: [
+      {
+        title: "Our Client Domains",
+        href: "/our-client-domains#our-client-domains",
+      },
+      // {
+      //   title: "Our Clients",
+      //   href: "/our-client-domains#our-clients",
+      // },
     ],
   },
   {

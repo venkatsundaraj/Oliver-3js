@@ -271,7 +271,6 @@ const IpSuitsAccordian: FC<IpSuitsAccordianProps> = () => {
                   </p>
                   <span className="text-extra_paragraph_heading text-foreground py-2 font-paragraph text-left md:text-right">
                     BrndFth.Brnd
-                    <span className="text-secondary-foreground">.Blz</span>
                   </span>
                 </li>
 
@@ -284,7 +283,6 @@ const IpSuitsAccordian: FC<IpSuitsAccordianProps> = () => {
                   </p>
                   <span className="text-extra_paragraph_heading text-foreground py-2 font-paragraph text-left md:text-right">
                     BrndFth.Xtent.Brnd
-                    <span className="text-secondary-foreground">.Blz</span>
                   </span>
                 </li>
 
@@ -297,7 +295,6 @@ const IpSuitsAccordian: FC<IpSuitsAccordianProps> = () => {
                   </p>
                   <span className="text-extra_paragraph_heading text-foreground py-2 font-paragraph text-left md:text-right">
                     BrndFth.Xtensity.Brnd
-                    <span className="text-secondary-foreground">.Blz</span>
                   </span>
                 </li>
 
@@ -310,7 +307,6 @@ const IpSuitsAccordian: FC<IpSuitsAccordianProps> = () => {
                   </p>
                   <span className="text-extra_paragraph_heading text-foreground py-2 font-paragraph text-left md:text-right">
                     BrnDzine.Brnd
-                    <span className="text-secondary-foreground">.Blz</span>
                   </span>
                 </li>
 
@@ -323,7 +319,6 @@ const IpSuitsAccordian: FC<IpSuitsAccordianProps> = () => {
                   </p>
                   <span className="text-extra_paragraph_heading text-foreground py-2 font-paragraph text-left md:text-right">
                     SnSMprnt.BrnDzine.Brnd
-                    <span className="text-secondary-foreground">.Blz</span>
                   </span>
                 </li>
 
@@ -336,7 +331,6 @@ const IpSuitsAccordian: FC<IpSuitsAccordianProps> = () => {
                   </p>
                   <span className="text-extra_paragraph_heading text-foreground py-2 font-paragraph text-left md:text-right">
                     Frnchys.Brnd
-                    <span className="text-secondary-foreground">.Blz</span>
                   </span>
                 </li>
 
@@ -349,7 +343,6 @@ const IpSuitsAccordian: FC<IpSuitsAccordianProps> = () => {
                   </p>
                   <span className="text-extra_paragraph_heading text-foreground py-2 font-paragraph text-left md:text-right">
                     ReMkt.Brnd
-                    <span className="text-secondary-foreground">.Blz</span>
                   </span>
                 </li>
               </ul>

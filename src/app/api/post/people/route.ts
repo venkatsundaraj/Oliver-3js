@@ -14,8 +14,15 @@ export async function POST(req: NextRequest, res: NextResponse) {
         fileUrl: "",
         content: "",
         name: "",
+        skills: "",
         role: "",
         slug: "",
+        core: "",
+        location: "",
+        industries: "",
+        experience: "",
+        leadDomain: "",
+        supportDomains: "",
       })
       .returning({ id: peopleTable.id });
     console.log(people);

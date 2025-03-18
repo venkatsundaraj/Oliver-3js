@@ -14,29 +14,35 @@ async function getData() {
 
 const page = async ({}: pageProps) => {
   const data = await getData();
+
   return (
     <>
-      <div className="bg-black text-white text-center py-16 md:pt-64 md:pb-16">
-        {/* OUR text */}
-        <h2 className="text-[30px] font-regular font-heading leading-[1.1]">
-          Our
-        </h2>
-
-        {/* PEOPLE text */}
-        <h1 className="text-secondary_heading leading-[1.1] font-bold text-[#00aeef] font-heading">
-          People
-        </h1>
-
-        {/* Paragraph */}
-        <p
-          className="text-[20px] max-w-3xl mx-auto"
-          style={{ fontFamily: "Roboto, sans-serif" }}
-        >
-          The leadership team at Cosmos comprises senior professionals, with
-          more than 500 years of cumulative experience in building, managing &
-          growing large businesses across various geographies globally.
-        </p>
-      </div>
+      <section className="bg-background text-foreground text-center py-16 md:pb-16 min-h-screen flex items-center justify-center">
+        <div className="container flex flex-col items-center justify-center gap-4 ">
+          {/* OUR text */}
+          <h2 className="flex items-center justify-start flex-col leading-[1.1]">
+            <span className="text-extra_paragraph_heading text-foreground font-heading text-center">
+              Our
+            </span>
+            <span className="text-primary-foreground text-secondary_heading font-heading font-bold">
+              People
+            </span>
+          </h2>
+          {/* Paragraph */}
+          <p className="text-extra_paragraph_heading max-w-prose mx-auto mt-5 leading-normal font-paragraph text-foreground">
+            We are senior professionals, with more than 500 years of Cumulative
+            experience in building, managing & growing large businesses across
+            various geographies globally.
+          </p>{" "}
+          <p className="text-extra_paragraph_heading max-w-prose mx-auto mt-5 md:mt-7 leading-normal font-paragraph text-foreground">
+            We stay with you right from proposals to solutions to execution.{" "}
+          </p>{" "}
+          <p className="text-extra_paragraph_heading max-w-prose mx-auto mt-5 md:mt-7 leading-normal font-paragraph text-foreground">
+            We are based across India, Singapore, Australia, UAE, Sub Saharan
+            Africa, Europe, North America.
+          </p>
+        </div>
+      </section>
       <TeamSection data={data} />
     </>
   );

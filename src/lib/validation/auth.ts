@@ -93,6 +93,13 @@ export type workAuthSchemaType = z.infer<typeof workAuthSchema>;
 export const peopleAuthSchema = z.object({
   name: z.string().min(1),
   role: z.string().min(1),
+  location: z.string(),
+  core: z.string(),
+  skills: z.string(),
+  leadDomain: z.string(),
+  supportDomains: z.string(),
+  experience: z.string(),
+  industries: z.string(),
   fileUrl: z.string().url("Invalid URL format"),
   content: z.string().min(1),
   slug: z.string().optional(),

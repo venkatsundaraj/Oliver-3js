@@ -1,5 +1,6 @@
 "use client";
 
+import { cn } from "@/lib/utils";
 import { useState, useEffect, useRef, type FC } from "react";
 
 type DotAnimationProps = {};
@@ -190,7 +191,10 @@ const DotAnimation: FC<DotAnimationProps> = () => {
       {dotsRef.current.map((dot) => (
         <div
           key={dot.id}
-          className={`absolute bg-white rounded-full border-2 border-transparent h-${dot.size}`}
+          className={cn(
+            `absolute bg-white rounded-full border-2 border-transparent h-${dot.size}`,
+            dot.id === 5 ? "bg-white/40" : null
+          )}
           style={{
             width: `${dot.size * 3.6}px`, // Ensure consistent width and height
             height: `${dot.size * 3.6}px`,
