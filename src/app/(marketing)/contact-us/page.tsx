@@ -1,8 +1,14 @@
 import { FC } from "react";
-import { addressData, contactUsBody } from "@/config/marketing";
+import {
+  addressData,
+  contactUsBody,
+  partnersContents,
+} from "@/config/marketing";
 import Image from "next/image";
 import Link from "next/link";
 import ContactForm from "@/app/_components/contact-form";
+import InfiniteMap from "@/app/_components/infinite-map";
+import OurOffices from "@/app/_components/our-offices";
 
 interface pageProps {}
 
@@ -47,35 +53,7 @@ const page: FC<pageProps> = ({}) => {
           </ul>
         </div>
       </section>
-
-      {/* {Our offices Section} */}
-      <section className="w-screen flex items-center justify-center bg-background py-16 md:pt-16 md:pb-16">
-        <div className="container flex items-start justify-center flex-col">
-          <h2 className="flex items-start justify-start flex-col leading-[1.1]">
-            <span className="text-extra_paragraph_heading text-foreground font-heading text-center">
-              Our
-            </span>
-            <span className="text-primary-foreground text-secondary_heading font-heading font-bold">
-              Offices
-            </span>
-          </h2>
-          <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8">
-            {addressData.map((item, i) => (
-              <li
-                key={i}
-                className="flex bg-secondary-foreground items-start justify-start flex-col gap-4 md:gap-6 p-8 "
-              >
-                <p className="font-paragraph text-extra_paragraph_heading text-background leading-normal">
-                  {item.location}
-                </p>
-                <p className="font-paragraph text-extra_paragraph_heading text-foreground leading-normal">
-                  {item.description}
-                </p>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </section>
+      <OurOffices />
     </>
   );
 };

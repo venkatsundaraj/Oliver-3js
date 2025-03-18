@@ -139,6 +139,10 @@ export const partnersContents: locationItem[] = [
     locationCount: "Sydney",
     location: "Address Line 1, Address Line 2, Address Line 3, City - Pincode.",
   },
+  {
+    locationCount: "Barcelona",
+    location: "Address Line 1, Address Line 2, Address Line 3, City - Pincode.",
+  },
 ];
 
 export const contactUsBody: contactUsItem[] = [

@@ -17,6 +17,8 @@ import {
 } from "@/app/_components/ui/carousel";
 
 const colors = [
+  "blue",
+  "green",
   "bg-red-500",
   "bg-violet-500",
   "bg-orange-500",
@@ -50,17 +52,21 @@ const InfiniteMapWithImageInput: FC<InfiniteMapWithImageInputProps> = ({
       ]}
       className={className}
     >
-      <CarouselContent className="md:w-screen  pl-0 ml-0 ">
+      <CarouselContent className=" md:w-screen  pl-0 ml-0 ">
         {Array.from({ length: 2 }).map((_, index) => (
-          <CarouselItem key={index} className=" pl-0 ">
+          <CarouselItem
+            key={index}
+            className="pl-0 w-screen"
+            // style={{ backgroundColor: `${colors[index]}` }}
+          >
             <div
               className={cn(
-                "w-fit max-w-fit md:max-w-[initial] md:w-screen bg-yellow-500 gap-4 bg-transparent py-12 border-b-primary-foreground flex items-center flex-col justify-center "
+                " md:max-w-[initial] md:w-screen  gap-4 bg-transparent py-12 border-b-primary-foreground flex items-center flex-col justify-center "
               )}
             >
               <Image
                 src={src}
-                className="w-fit max-w-fit md:w-screen md:max-w-[initial]  object-cover p-4"
+                className=" md:w-screen md:max-w-[initial]  scale-100 md:scale-100  object-cover p-4"
                 width={1900}
                 alt="Heat Map"
                 height={700}
