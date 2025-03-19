@@ -41,7 +41,7 @@ const offerterrain = () => {
     {
       title: "Entry",
       description:
-        "Entry Points that leverage existing skills and assets and provide avenues for growth.",
+        "New Business Entry tasks that are complex Or Represent discontinuities or have a history of failure. Across Industries, Categories, & Geographies.",
     },
     {
       title: "Capability",
@@ -115,11 +115,12 @@ const offerterrain = () => {
             >
               {/* Center Icon/Image */}
               <div className="absolute top-[55%] left-1/2 transform -translate-x-1/2 -translate-y-1/2  rounded-full  flex items-center justify-center z-10">
-                <Image
+                {/* <Image
                   src={Cosmosspiral}
                   alt="Entry Icon"
                   className="w-[60%] "
-                />
+                /> */}
+                <div className="w-[50px] h-[50px] border-2 border-secondary-white  rounded-full "></div>
               </div>
 
               {/* Transformation Sphere */}

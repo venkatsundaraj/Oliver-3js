@@ -39,7 +39,7 @@ const ourpractices: FC<pageProps> = function () {
                   </span>
                 </h4>
                 <p className="text-foreground font-paragraph text-extra_paragraph_heading ">
-                  Turnaround
+                  Transformation - Turnaround
                 </p>
               </div>
               <div className="flex flex-col items-start justify-center gap-2">
@@ -50,7 +50,7 @@ const ourpractices: FC<pageProps> = function () {
                   </span>
                 </h4>
                 <p className="text-foreground font-paragraph text-extra_paragraph_heading ">
-                  Scale Up
+                  Transformation - Scale Up
                 </p>
               </div>
               <div className="flex flex-col items-start justify-center gap-2">
@@ -61,7 +61,7 @@ const ourpractices: FC<pageProps> = function () {
                   </span>
                 </h4>
                 <p className="text-foreground font-paragraph text-extra_paragraph_heading ">
-                  Operating Culture
+                  Transformation - Operating Culture
                 </p>
               </div>
             </div>

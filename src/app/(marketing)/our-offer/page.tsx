@@ -17,7 +17,53 @@ export default function Component() {
   return (
     <>
       <ScrollToHash />
-      <div className="relative min-h-[100vh] md:min-h-[120vh] bg-background flex items-center justify-center p-4 ">
+      <section
+        id="our-value-for-you"
+        className="min-h-[500px] md:min-h-[80vh]  flex items-center justify-center"
+      >
+        <div className="container">
+          <div className="flex transform md:translate-y-5 mb-6 md:mb-24">
+            <h2 className="flex items-start text-left justify-start flex-col leading-[1.1]">
+              <span className="text-extra_paragraph_heading text-foreground font-heading text-left">
+                Our
+              </span>
+              <span className="text-primary-foreground mb-4 text-secondary_heading font-heading font-bold">
+                Goal
+              </span>
+            </h2>
+          </div>
+          <div className="flex relative items-center justify-center    w-full py-5 min-h-[200px] md:min-h-[300px]">
+            <Image
+              alt="Our Trrain"
+              className="w-[400px] md:w-[1000px]"
+              src="https://utfs.io/f/ZowmNmBHF7rVjSZRQ6W8lWpd9eUfvNKun5Rza3Jr2k7oD6Gb"
+              width={500}
+              height={500}
+            />
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 md:translate-x-0 md:left-0">
+              <p className="text-foreground text-center md:text-left text-6xl font-paragraph text-extra_paragraph_heading leading-tight">
+                We unlock <br />
+                <strong>
+                  Business Growth
+                  <br /> Spirals
+                </strong>
+              </p>
+            </div>
+            <div className="absolute bottom-[-20px] md:bottom-0  mt-4 md:mt-0 right-1/2 translate-x-1/2 md:translate-x-0 md:right-0">
+              <p className="text-foreground text-center md:text-left text-6xl font-paragraph text-extra_paragraph_heading leading-tight">
+                that are{" "}
+                <strong>
+                  Transformative
+                  <br /> and Profitable
+                  <br />
+                </strong>
+                for our clients
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <div className="relative min-h-[80vh] md:min-h-[100vh] bg-background flex items-center w-screen overflow-x-hidden justify-center p-4">
         <div className="relative bottom-[50px] w-[80vw] max-w-[600px] h-[80vw]  max-h-[600px] flex items-center justify-center">
           {/* Static Circle */}
           <div className="absolute w-[80%] h-[80%] rounded-full border-2 border-white"></div>
@@ -59,55 +105,20 @@ export default function Component() {
                 Offer
               </span>
             </h2>
-            <p className="text-white text-extra_paragraph_heading mb-4 font-[600] leading-[1.1]">
+            <p className="text-white text-extra_paragraph_heading mb-4  font-paragraph font-[600] leading-[1.1]">
               Insight-centered business strategy & organization design
             </p>
-            <p className="text-white/90 text-extra_paragraph_heading font-light">
+            <p className="text-white/90 text-extra_paragraph_heading font-paragraph  font-light">
               with collaboration & accountability
             </p>
           </div>
         </div>
       </div>
-      <section
-        id="our-value-for-you"
-        className="min-h-[200px] md:min-h-[600px] flex items-center justify-center"
-      >
-        <div className="container">
-          <div className="flex relative items-center justify-center    w-full py-5 min-h-[200px] md:min-h-[300px]">
-            <Image
-              alt="Our Trrain"
-              className="w-[400px] md:w-[1000px]"
-              src="https://utfs.io/f/ZowmNmBHF7rVjSZRQ6W8lWpd9eUfvNKun5Rza3Jr2k7oD6Gb"
-              width={500}
-              height={500}
-            />
-            <div className="absolute top-0 left-1/2 -translate-x-1/2 md:translate-x-0 md:left-0">
-              <p className="text-foreground text-center md:text-left text-6xl font-paragraph text-extra_paragraph_heading leading-tight">
-                We unlock <br />
-                <strong>
-                  Business Growth
-                  <br /> Spirals
-                </strong>
-              </p>
-            </div>
-            <div className="absolute bottom-[-20px] md:bottom-0  mt-4 md:mt-0 right-1/2 translate-x-1/2 md:translate-x-0 md:right-0">
-              <p className="text-foreground text-center md:text-left text-6xl font-paragraph text-extra_paragraph_heading leading-tight">
-                that are{" "}
-                <strong>
-                  Transformative
-                  <br /> and Profitable
-                  <br />
-                </strong>
-                for our clients
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
+      <VerticalCarousel />
       <OfferTerrain />
       <OurPractices />
       {/* <StickySlider /> */}
-      <VerticalCarousel />
+
       {/* <SolutionLevels /> */}
       <OurSolutionLevelsNew />
       <FunctionalSpirals />

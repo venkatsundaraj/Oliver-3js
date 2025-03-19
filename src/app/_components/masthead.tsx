@@ -6,7 +6,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { cn } from "@/lib/utils";
 
 const cityNames = [
-  "Bengalore",
+  "Bengaluru",
   "Delhi",
   "Nagpur",
   "Dubai",

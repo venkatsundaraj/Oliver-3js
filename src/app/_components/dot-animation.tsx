@@ -192,8 +192,8 @@ const DotAnimation: FC<DotAnimationProps> = () => {
         <div
           key={dot.id}
           className={cn(
-            `absolute bg-white rounded-full border-2 border-transparent h-${dot.size}`,
-            dot.id === 5 ? "bg-white/40" : null
+            `absolute bg-foreground/30 rounded-full border-2 border-transparent h-${dot.size}`
+            // dot.id === 5 ? "bg-white/40" : null
           )}
           style={{
             width: `${dot.size * 3.6}px`, // Ensure consistent width and height

@@ -116,10 +116,14 @@ const Model: FC<ModelProps> = ({}) => {
               that are{" "}
               <strong className="text-primary-foreground">
                 Transformative
-                <br /> and Profitable
+              </strong>
+              <br /> and{" "}
+              <strong className="text-primary-foreground">
+                Profitable
                 <br />
               </strong>
-              for our clients
+              for our{" "}
+              <strong className="text-primary-foreground">clients</strong>
             </span>
           </div>
         </div>

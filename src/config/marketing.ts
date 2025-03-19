@@ -56,7 +56,7 @@ export const marketingConfig: MainNavItems = [
   },
 
   {
-    title: "Our Client Domains",
+    title: "Our Clients",
     href: "/our-client-domains",
     subItems: [
       {
@@ -123,7 +123,7 @@ export const locationContents: locationItem[] = [
 ];
 export const partnersContents: locationItem[] = [
   {
-    locationCount: "Bengalore",
+    locationCount: "Bengaluru",
     location: "Address Line 1, Address Line 2, Address Line 3, City - Pincode.",
   },
   {
@@ -339,7 +339,7 @@ export const ourDifferentiatorContent: { title: string; imgPath: string }[] = [
       "https://utfs.io/f/ZowmNmBHF7rVbWDCKXkH2jDYzO9VfQms1UPwlxZdI8GBNqX7",
   },
   {
-    title: "360 deg co-creation",
+    title: "360 degree co-creation",
     imgPath:
       "https://utfs.io/f/ZowmNmBHF7rVerDO2THzKF8PVfhHaR7CmudUQywI1cWtxBk2",
   },

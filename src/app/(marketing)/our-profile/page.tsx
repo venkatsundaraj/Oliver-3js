@@ -6,6 +6,7 @@ import OurBelieve from "@/app/_components/our-belief";
 import DotAnimation from "@/app/_components/dot-animation";
 import { ScrollToHash } from "@/app/_components/scroll-to-hash";
 import CosmicSvgAnimation from "@/app/_components/cosmic-svg-animation";
+import { Icons } from "@/app/_components/icons";
 
 interface pageProps {}
 
@@ -14,21 +15,24 @@ const page: FC<pageProps> = ({}) => {
     <>
       <ScrollToHash />
       {/* Hero Section */}
-      <section className="w-screen flex items-center justify-center h-screen bg-background py-5 relative">
+      <section className="w-full flex items-center justify-center h-screen bg-background py-5 relative">
         <div className="container flex items-center justify-center relative">
           <div className="container relative w-full h-full flex flex-col items-center justify-center ">
-            <h1 className="text-secondary_heading text-center z-[10] font-heading text-primary-foreground mb-2 leading-tight">
+            <h1 className="text-secondary_heading text-center z-[10] font-heading text-primary-foreground leading-[1]">
               Cosmos
+              <br />
             </h1>
+            <span className="text-subtitle_heading font-heading leading-normal font-normal text-foreground mb-8">
+              /ˈkɒzmɒs/ . Noun
+            </span>
             <p className="text-foreground mb-4 leading-10 z-[10] text-center text-6xl font-paragraph text-extra_paragraph_heading md:max-w-lg">
-              /ˈkɒzmɒs/ . Noun <br />
               An order that’s fluid & dynamic held together harmoniously by
               invisible laws or universal insights
             </p>
             <p className="text-foreground z-[10] leading-10 text-center text-6xl font-paragraph text-extra_paragraph_heading md:max-w-lg">
               An order that symbolises the hope of light in void or darkness
             </p>
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-gradient-radial -from-40% from-white/50 via-white/10 via-30%  to-transparent to-70% ">
+            <div className="hidden absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-gradient-radial -from-40% from-white/50 via-white/10 via-30%  to-transparent to-70% ">
               {/* <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-4 h-4 bg-white/50 rounded-full"></div> */}
             </div>
             <DotAnimation />
@@ -110,6 +114,7 @@ const page: FC<pageProps> = ({}) => {
             <p className="text-foreground leading-10 text-center mt-4 md:mt-8 font-heading text-tertiary_heading">
               Depth, Empathy, Holism, Practice, Collaboration, Joy
             </p>
+            <Icons.MoveDown className="h-[80px] w-[80px]  text-white transform translate-y-10" />
           </div>
         </div>
         <div className="container">

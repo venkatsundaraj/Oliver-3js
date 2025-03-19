@@ -32,14 +32,14 @@ const OurSolutionLevelsNew: FC<OurSolutionLevelsNewProps> = () => {
                 "group" // Add any other classes you need
               )}
             >
-              <p className="text-subtitle_heading font-normal text-primary-foreground font-heading">
+              <p className="text-our_text_heading font-normal text-primary-foreground font-heading">
                 {item.text}
               </p>
               <h3 className="font-heading text-center text-tertiary_heading text-foreground leading-[0.8]">
                 {item.subText}
               </h3>
               <p className="text-subtitle_heading text-center font-normal text-secondary-foreground font-paragraph uppercase">
-                {item.text}
+                {item.solution}
               </p>
               <div className="absolute w-full h-full  items-center justify-center bg-white hidden group-hover:flex p-2 md:p-4">
                 <p className="text-subtitle_heading font-normal text-popover-foreground/60 text-center font-paragraph">

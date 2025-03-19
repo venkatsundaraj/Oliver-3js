@@ -62,16 +62,18 @@ const VerticalCarousel: FC<VerticalCarouselProps> = () => {
                       <h4 className="font-paragraph text-extra_paragraph_heading text-primary-foreground">
                         Traditional, algorithmic, 'engineering' approach
                       </h4>
-                      <ul className="list-disc list-inside">
-                        <li className="text-extra_subtitle_heading font-paragraph text-foreground">
-                          Top-down break up of problem &#x2192; bottom-up
-                          synthesis of solution parts Interpreting organization
-                          as sum of parts.
-                        </li>
-                        <li className="text-extra_subtitle_heading font-paragraph text-foreground">
-                          Interpreting organisation as sum of parts
-                        </li>
-                      </ul>
+                      <div className="p-2">
+                        <ul className="list-disc list-outside">
+                          <li className="text-extra_subtitle_heading font-paragraph text-foreground mb-2">
+                            Top-down break up of problem &#x2192; bottom-up
+                            synthesis of solution parts Interpreting
+                            organization as sum of parts.
+                          </li>
+                          <li className="text-extra_subtitle_heading font-paragraph text-foreground">
+                            Interpreting organisation as sum of parts.
+                          </li>
+                        </ul>
+                      </div>
                       <p className="text-extra_subtitle_heading font-paragraph text-foreground hidden">
                         &#x2192;
                       </p>
@@ -83,18 +85,19 @@ const VerticalCarousel: FC<VerticalCarouselProps> = () => {
                       <h4 className="font-paragraph text-extra_paragraph_heading text-primary-foreground">
                         Modern, Insights centered, 'doctor' approach
                       </h4>
-                      <ul className="list-disc list-inside">
-                        <li className="text-extra_subtitle_heading font-paragraph text-foreground">
-                          Core insights about problem &#x2192; Reimagine
-                          Organisation + enterprise around insight
-                          concentrically
-                        </li>
-                        <li className="text-extra_subtitle_heading font-paragraph text-foreground">
-                          Interpreting Organisation as an engine fuelled by
-                          differentiated insights
-                        </li>
-                      </ul>
-
+                      <div className="p-2">
+                        <ul className="list-disc list-inside">
+                          <li className="text-extra_subtitle_heading font-paragraph text-foreground mb-2">
+                            Core insights about problem &#x2192; Reimagine
+                            Organisation + enterprise around insight
+                            concentrically.
+                          </li>
+                          <li className="text-extra_subtitle_heading font-paragraph text-foreground">
+                            Interpreting Organisation as an engine fuelled by
+                            differentiated insights.
+                          </li>
+                        </ul>
+                      </div>
                       <p className="font-paragraph font-bold text-foreground text-extra_subtitle_heading">
                         Insights at the center of P&L and organisation vs
                         insights at the center of marketing, innovation, design,
@@ -165,7 +168,7 @@ const VerticalCarousel: FC<VerticalCarouselProps> = () => {
                 </div>
               </h1>
             </TabsContent>
-            <TabsContent value="360 deg co-creation" className="mt-0">
+            <TabsContent value="360 degree co-creation" className="mt-0">
               <h4 className="font-paragraph text-extra_paragraph_heading text-primary-foreground">
                 Intensive 360 degree solution co-creation & collaboration
                 workshops
@@ -187,17 +190,21 @@ const VerticalCarousel: FC<VerticalCarouselProps> = () => {
               </h4>
             </TabsContent>
             <TabsContent value="Tremendous diversity" className="mt-0">
-              <h4 className="font-paragraph text-extra_paragraph_heading text-primary-foreground">
+              <h4 className="font-paragraph text-extra_paragraph_heading text-primary-foreground mb-7">
                 Tremendous diversity of experience
               </h4>
-              <ul className="text-foreground font-paragraph text-extra_paragraph_heading flex flex-col items-start gap-2 list-none">
+              <ul className="text-foreground font-paragraph text-extra_paragraph_heading flex flex-col items-start gap-5 list-none">
                 <li>Across 60+ b2c, b2b, b2p industries</li>
                 <li>Across all inhabited continents </li>
                 <li>Across diverse scales & management types</li>
-                <li className="text-foreground/30">
-                  Multinational, Regional or local giants, MSME's, start ups,
-                  NFPs
-                </li>
+                <div className="p-0 -mt-3">
+                  <ol className="list-disc list-inside">
+                    <li className="text-foreground/30">
+                      Multinational, Regional or local giants, MSME's, start
+                      ups, NFPs
+                    </li>
+                  </ol>
+                </div>
                 <li>Across all functions</li>
               </ul>
             </TabsContent>
