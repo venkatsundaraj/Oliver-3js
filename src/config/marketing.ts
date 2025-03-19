@@ -26,16 +26,16 @@ export const marketingConfig: MainNavItems = [
     subItems: [
       { title: "Our Goal", href: "/our-offer#our-value-for-you" },
       { title: "Our Offer", href: "/our-offer#" },
+      {
+        title: "Our Differentiators",
+        href: "/our-offer#our-differentiators",
+      },
       { title: "Our Terrain", href: "/our-offer#our-terrain" },
       { title: "Our Practices", href: "/our-offer#our-practices" },
       { title: "Our Solution Levels", href: "/our-offer#our-solution-levels" },
       {
         title: "Our Functional Spirals",
         href: "/our-offer#our-functional-spirals",
-      },
-      {
-        title: "Our Differentiators",
-        href: "/our-offer#our-differentiators",
       },
     ],
   },
@@ -775,4 +775,32 @@ export const IpSuitesBlz = [
     scope: "Insight Definition",
     moniker: "Insight-Matrix",
   },
+];
+
+export const ourDomainSpiral = [
+  "Enterprise",
+  "Brand",
+  "Marketing",
+  "Innovation",
+  "Human Capital",
+  "Sales",
+  "Finance",
+  "Operations",
+  "Synthesis",
+  "Tech",
+  "Digital",
+  "Design",
+  "Strategy & Program Spirals",
+  "Business",
+  "Brand",
+  "Marketing",
+  "Innovation",
+  "Human Resources",
+  "Sales, Business Development & Distribution",
+  "Financial Management, Management Accountancy",
+  "Operations & Supply Chain",
+  "Data Analytics, Synthesis & Reasoning",
+  "Technology",
+  "Digital & Social",
+  "Design",
 ];

@@ -70,7 +70,7 @@ export default function Component() {
 
           {/* Animated expanding circle with smooth fade-out and no reappearance glitch */}
           <motion.div
-            className="absolute rounded-full border-2  border-white"
+            className="absolute rounded-full border-2  border-white overflow-hidden"
             initial={{ width: "80%", height: "80%", opacity: 1 }}
             animate={{ width: "200%", height: "200%", opacity: [1, 1, 0] }}
             transition={{
@@ -83,7 +83,7 @@ export default function Component() {
           />
           {/* Second animated expanding circle, triggered after the first */}
           <motion.div
-            className="absolute rounded-full border-2  border-white"
+            className="absolute rounded-full border-2  border-white  overflow-hidden"
             initial={{ width: "80%", height: "80%", opacity: 1 }}
             animate={{ width: "200%", height: "200%", opacity: [1, 1, 0] }}
             transition={{

@@ -2,6 +2,7 @@ import { FC } from "react";
 import TeamSection from "@/app/_components/team-section";
 import { db } from "@/server/db";
 import { peopleTable } from "@/server/db/schema";
+import AccordianTeamThumbnail from "@/app/_components/accordian-team-thumbnail";
 
 interface pageProps {}
 
@@ -43,7 +44,8 @@ const page = async ({}: pageProps) => {
           </p>
         </div>
       </section>
-      <TeamSection data={data} />
+      {/* <TeamSection data={data} /> */}
+      <AccordianTeamThumbnail data={data} />
     </>
   );
 };

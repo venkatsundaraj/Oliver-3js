@@ -6,7 +6,10 @@ interface OurSolutionLevelsNewProps {}
 
 const OurSolutionLevelsNew: FC<OurSolutionLevelsNewProps> = () => {
   return (
-    <section className="relative flex items-center justify-center py-8 md:py-16 w-full ">
+    <section
+      className="relative flex items-center justify-center py-8 md:py-16 w-full "
+      id="our-solution-levels"
+    >
       <div className="container flex items-center justify-center flex-col gap-8">
         <h2 className="flex items-start justify-start flex-col leading-[1.1] text-center">
           <span className="text-extra_paragraph_heading text-foreground font-heading text-center w-full">

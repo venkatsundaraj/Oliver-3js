@@ -25,14 +25,14 @@ const CustomTrigger = ({
     <div className="relative">
       <AccordionTrigger className={cn(className, "[&>svg]:hidden")} {...props}>
         {children}
+        <div className="absolute right-4 md:left-0  md:top-1/2 md:-translate-y-1/2 md:-translate-x-1/2 bottom-4 md:bottom-[initial] md:right-[initial]">
+          {isOpen ? (
+            <Icons.Minus className=" w-6 h-6 bg-secondary-foreground/40 hover:bg-secondary-foreground/50 rounded-full text-foreground" />
+          ) : (
+            <Icons.Plus className=" w-6 h-6 bg-secondary-foreground/40 hover:bg-secondary-foreground/50 rounded-full text-foreground" />
+          )}
+        </div>
       </AccordionTrigger>
-      <div className="absolute right-4 md:left-0  md:top-1/2 md:-translate-y-1/2 md:-translate-x-1/2 bottom-4 md:bottom-[initial] md:right-[initial]">
-        {isOpen ? (
-          <Icons.Minus className=" w-6 h-6 bg-secondary-foreground/40 hover:bg-secondary-foreground/50 rounded-full text-foreground" />
-        ) : (
-          <Icons.Plus className=" w-6 h-6 bg-secondary-foreground/40 hover:bg-secondary-foreground/50 rounded-full text-foreground" />
-        )}
-      </div>
     </div>
   );
 };
@@ -78,7 +78,9 @@ const IpSuitsAccordian: FC<IpSuitsAccordianProps> = () => {
             </div>
           </CustomTrigger>
 
-          <AccordionContent className="border-b border-foreground/40 py-8">
+          <AccordionContent className="border-b border-foreground/40 py-8 px-4 md:px-8">
+            {" "}
+            {/*/*hell*/}
             <div className="w-full flex flex-col items-start gap-4">
               <p className="text-pargrpah_heading mb-1 text-[#ED7D31] font-heading leading-normal">
                 To Uncover Blazing Insights
@@ -86,13 +88,13 @@ const IpSuitsAccordian: FC<IpSuitsAccordianProps> = () => {
               {/* Title Bar */}
               <div className="w-full grid grid-cols-2 md:grid-cols-3 bg-secondary-foreground py-3 px-2 items-center ">
                 <h4 className="text-extra_paragraph_heading text-primary-foreground py-2 font-paragraph text-left">
-                  Blz
+                  IP Brand
                 </h4>
                 <p className="text-extra_paragraph_heading text-foreground py-2 font-paragraph text-center">
                   Scope
                 </p>
                 <span className="text-extra_paragraph_heading text-foreground py-2 font-paragraph text-left md:text-right">
-                  Insight
+                  Moniker
                 </span>
               </div>
               {/* List Items */}
