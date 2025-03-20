@@ -25,9 +25,9 @@ const page = async ({ params }: PageProps) => {
 
   return (
     <>
-      <section>
+      <section className="w-screen flex flex-col items-center justify-center">
         <div className="container">
-          <div className="flex flex-col justify-center items-center md:flex-row h-screen md:h-[90vh] ">
+          <div className="flex flex-col justify-center items-center gap-8 md:gap-3 md:flex-row pt-32 pb-16 md:pt-40 md:pb-16 ">
             {/* Left image section */}
             <div className="w-full md:w-2/5 ">
               <img
@@ -48,12 +48,12 @@ const page = async ({ params }: PageProps) => {
             </div>
           </div>
 
-          <div className="flex flex-col justify-start items-center md:flex-row  gap-8 mt-8 mb-8  md:py-8">
+          <div className="flex flex-col justify-start items-center md:flex-row  gap-8 mb-8  md:py-8">
             {/* Left image section */}
             <section className="w-screen  items-center justify-center min-h-screen bg-background py-5 flex">
               <div className="container flex items-start justify-center flex-col">
                 <div
-                  className="ProseMirror text-foreground border-slate-700 py-4 rounded-lg"
+                  className="ProseMirror text-foreground border-slate-700 py-4 rounded-lg "
                   style={{ whiteSpace: "pre-line" }}
                   dangerouslySetInnerHTML={{ __html: member.content }}
                 />
@@ -66,7 +66,7 @@ const page = async ({ params }: PageProps) => {
                 <h2 className="text-[#00aeef] font-heading text-[30px] mb-2">
                   Domains
                 </h2>
-                <ul className="text-white font-paragraph space-y-1">
+                <ul className="text-white font-paragraph flex flex-row md:flex-col items-center justify-center gap-4">
                   <li>FMCG</li>
                   <li>Consumer Durables</li>
                   <li>Retail</li>
@@ -82,14 +82,14 @@ const page = async ({ params }: PageProps) => {
             </div>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 items-center justify-center py-8 bg-background gap-10">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 w-full max-w-lg md:max-w-2xl ">
+            <div className="grid grid-cols-2 md:grid-cols-5 gap-4 w-full max-w-lg md:max-w-2xl ">
               <CountryFlags data={member.companyProfiles} />
             </div>
             <div className="flex flex-col gap-4 items-start justify-center">
               <h2 className="font-heading text-secondary-foreground text-secondary_heading">
                 Domains
               </h2>
-              <ul className="text-white font-paragraph flex-col flex items-start justify-center gap-4">
+              <ul className="text-white font-paragraph flex-row flex-wrap md:flex-col flex items-start justify-start gap-4">
                 <li>FMCG</li>
                 <li>Consumer Durables</li>
                 <li>Retail</li>
@@ -111,7 +111,7 @@ const page = async ({ params }: PageProps) => {
                 Countries
               </h2>
             </div>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 w-full max-w-lg md:max-w-2xl ">
+            <div className="grid grid-cols-2 md:grid-cols-5 gap-4 w-full max-w-lg md:max-w-2xl ">
               <CountryFlags data={member.countryFlags} />
             </div>
           </div>

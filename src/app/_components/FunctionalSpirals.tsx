@@ -53,12 +53,12 @@ const FunctionalSpirals = () => {
             </span>
           </h2>
         </div>
-        <ul className="grid grid-cols-2 max-w-xl items-start gap-x-3 md:gap-x-10 gap-y-2 justify-center relative ">
-          <li className="absolute h-full w-[1px] top-0 bg-[#ED7D31] left-1/2 -translate-x-1/2" />
-          <li className="text-secondary-foreground font-heading font-normal text-[clamp(18px,1.7vw,30px)] leading-tight text-right">
+        <ul className="grid grid-cols-2 md:grid-cols-3 max-w-4xl items-start gap-x-3 md:gap-x-14 gap-y-2 justify-center relative ">
+          <li className="absolute h-full w-[1px] top-0 bg-[#ED7D31] left-1/2 md:left-1/3 -translate-x-1/2" />
+          <li className="text-secondary-foreground font-heading font-normal text-[clamp(24px,2vw,38px)] leading-tight text-right">
             Cosmos-Spirals
           </li>
-          <li className="text-secondary-foreground font-heading font-normal text-[clamp(18px,1.7vw,30px)] leading-tight">
+          <li className="text-secondary-foreground font-heading font-normal text-[clamp(24px,2vw,38px)] leading-tight md:col-start-2 md:col-end-4">
             Strategy & Program Spirals
           </li>
           {ourDomainSpiral.map((item, i) => (
@@ -66,7 +66,7 @@ const FunctionalSpirals = () => {
               key={i}
               className={cn(
                 "text-foreground font-heading font-normal text-[clamp(18px,1.7vw,30px)] leading-tight",
-                i % 2 == 0 ? "text-right " : ""
+                i % 2 == 0 ? "text-right" : " md:col-start-2 md:col-end-4"
               )}
             >
               {item}

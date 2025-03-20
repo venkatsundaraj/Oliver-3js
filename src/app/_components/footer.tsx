@@ -67,7 +67,7 @@ const Footer: FC<FooterProps> = ({}) => {
             <p className="text-secondary-foreground font-paragraph text-subtitle_heading hidden md:block py-2  border-y-muted-foreground border-y">
               Bengaluru - Delhi - Nagpur - Dubai - Toronto - Sydney - Barcelona
             </p>
-            <div className="flex flex-col items-start justify-start gap-2 pt-4">
+            <div className="flex flex-col items-start justify-start gap-2 pt-8 pb-4 md:pb-0">
               <p className="font-paragraph text-muted-foreground text-subtitle_heading font-bold">
                 Our Geographies
               </p>

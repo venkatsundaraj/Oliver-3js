@@ -129,7 +129,7 @@ const page: FC<pageProps> = ({}) => {
                     className={cn(
                       "inline-flex items-center justify-center px-6 py-2 bg-[#474747] text-foreground font-paragraph text-subtitle_heading text-center min-w-[140px] md:min-w-[400px] relative",
                       i % 2 === 0
-                        ? `before:md:block before:md:content-[''] before:w-10 before:md:w-2/3 before:h-[2px] before:absolute before:top-[50%] before:translate-y-[-50%] before:left-[100%] before:bg-foreground`
+                        ? `before:md:block before:md:content-[''] before:w-16 before:md:w-2/3 before:h-[2px] before:absolute before:top-[50%] before:translate-y-[-50%] before:left-[100%] before:bg-foreground`
                         : ""
                     )}
                   >
