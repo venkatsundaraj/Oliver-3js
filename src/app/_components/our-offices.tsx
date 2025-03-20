@@ -7,7 +7,7 @@ interface OurOfficesProps {}
 
 const OurOffices: FC<OurOfficesProps> = () => {
   return (
-    <section className="w-screen flex items-center justify-center bg-background py-16 md:pt-16 md:pb-16 relative">
+    <section className="w-screen flex items-center justify-center bg-background py-16 md:pt-16 md:pb-16 relative overflow-hidden">
       <InfiniteMap className="absolute z-0" />
       <div className="container flex items-start justify-center flex-col gap-4 z-10">
         <h2 className="flex items-start justify-start flex-col leading-[1.1]">

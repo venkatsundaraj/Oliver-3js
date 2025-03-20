@@ -103,7 +103,7 @@ const page = async ({}: pageProps) => {
       </section>
 
       <section
-        id="our-projects"
+        id="our-ips"
         className="w-screen flex items-center justify-center  bg-background py-8 md:py-12"
       >
         <div className="container flex flex-col items-center justify-between gap-4">

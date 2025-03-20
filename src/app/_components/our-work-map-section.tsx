@@ -17,11 +17,12 @@ const colors: string[] = [
   "rgba(55, 153, 207, 0.5)",
 ];
 
+export const chooseColor = function () {
+  const value = Math.floor(Math.random() * 5);
+  return colors[value];
+};
+
 const OurWorkMapSection: FC<OurWorkMapSectionProps> = () => {
-  const chooseColor = function () {
-    const value = Math.floor(Math.random() * 5);
-    return colors[value];
-  };
   return (
     <section
       id="our-client-domains"
@@ -30,7 +31,7 @@ const OurWorkMapSection: FC<OurWorkMapSectionProps> = () => {
       <InfiniteMap className="sticky top-0 overflow-x-hidden w-screen z-0" />
       <div className="flex flex-col items-center justify-start w-screen z-10 -translate-y-1/2">
         <div className="container flex flex-col  overflow-x-hidden w-screen z-10 ">
-          <h2 className="flex items-center justify-center flex-col">
+          <h2 className="flex items-center justify-center flex-col leading-[1]">
             <span className="text-extra_paragraph_heading text-foreground font-heading text-center">
               Our
             </span>
@@ -53,6 +54,14 @@ const OurWorkMapSection: FC<OurWorkMapSectionProps> = () => {
           src="https://zkok4chdpn.ufs.sh/f/ZowmNmBHF7rV8HT0SsqKutYEbdyi5prBsLjqX1DQMJGPFINW"
           className="md:w-screen"
         />
+        <h2 className="flex items-center justify-center flex-col leading-[1]">
+          <span className="text-extra_paragraph_heading text-foreground font-heading text-center">
+            Our
+          </span>
+          <span className="text-primary-foreground text-secondary_heading font-heading font-normal">
+            Clients
+          </span>
+        </h2>
         <InfiniteMapWithImageInput
           src="https://zkok4chdpn.ufs.sh/f/ZowmNmBHF7rVeoIs1xXHzKF8PVfhHaR7CmudUQywI1cWtxBk"
           className="md:w-screen"

@@ -24,8 +24,8 @@ export const marketingConfig: MainNavItems = [
     title: "Our Promise",
     href: "/our-offer",
     subItems: [
-      { title: "Our Goal", href: "/our-offer#our-value-for-you" },
-      { title: "Our Offer", href: "/our-offer#" },
+      { title: "Our Goal", href: "/our-offer#our-goal" },
+      { title: "Our Offer", href: "/our-offer#our-offer" },
       {
         title: "Our Differentiators",
         href: "/our-offer#our-differentiators",
@@ -51,6 +51,10 @@ export const marketingConfig: MainNavItems = [
       {
         title: "Our Projects",
         href: "/our-work#our-projects",
+      },
+      {
+        title: "Our IPs",
+        href: "/our-work#our-ips",
       },
     ],
   },
@@ -155,24 +159,29 @@ export const partnersContents: locationItem[] = [
 export const contactUsBody: contactUsItem[] = [
   {
     icon: "https://utfs.io/f/ZowmNmBHF7rVuWjyjgtWdTHI3LNzMgCnc7u9iRa5BAtXG2yv",
-    name: "+91 22670 00505",
-    link: "tel:+91 22670 00505",
+    name: "+91 8169531703",
+    link: "tel:+91 8169531703",
+  },
+  {
+    icon: "https://utfs.io/f/ZowmNmBHF7rVuWjyjgtWdTHI3LNzMgCnc7u9iRa5BAtXG2yv",
+    name: "+91 9821342244",
+    link: "tel:+91 9821342244",
   },
   {
     icon: "https://utfs.io/f/ZowmNmBHF7rVj1hVHcW8lWpd9eUfvNKun5Rza3Jr2k7oD6Gb",
     name: "contact@cosmostrategy.com",
-    link: "email:contact@cosmostrategy.com",
+    link: "mailto:contact@cosmostrategy.com",
   },
   {
     icon: "https://utfs.io/f/ZowmNmBHF7rVKgolOqILRN7EY2f498lBm1DhqtyXeHvZVid5",
-    name: "contact@cosmostrategy.com",
-    link: "email:contact@cosmostrategy.com",
+    name: "+91 8169531703",
+    link: "https://wa.me/+918169531703",
   },
-  {
-    icon: "https://utfs.io/f/ZowmNmBHF7rVy1dEBYiorYCB6GnRhmpVzbsTv5EZJ1LQ7Xc0",
-    name: "cosmos-strategy-consultants-llp/",
-    link: "cosmos-strategy-consultants-llp/",
-  },
+  // {
+  //   icon: "https://utfs.io/f/ZowmNmBHF7rVy1dEBYiorYCB6GnRhmpVzbsTv5EZJ1LQ7Xc0",
+  //   name: "cosmos-strategy-consultants-llp/",
+  //   link: "cosmos-strategy-consultants-llp/",
+  // },
 ];
 
 export const functionalSpiralContent: functionalSpiralItem[] = [
@@ -719,7 +728,7 @@ export const ourSolutionLevelsData = [
   {
     text: "Cosmos Strategy",
     subText: "Atelier",
-    solution: "Solutions",
+    solution: "Experiences",
     hoverText: "Group bootcamps and seminars for Client",
   },
 ];
@@ -779,28 +788,28 @@ export const IpSuitesBlz = [
 
 export const ourDomainSpiral = [
   "Enterprise",
-  "Brand",
-  "Marketing",
-  "Innovation",
-  "Human Capital",
-  "Sales",
-  "Finance",
-  "Operations",
-  "Synthesis",
-  "Tech",
-  "Digital",
-  "Design",
-  "Strategy & Program Spirals",
   "Business",
   "Brand",
+  "Brand",
+  "Marketing",
   "Marketing",
   "Innovation",
+  "Innovation",
+  "Human Capital",
   "Human Resources",
+  "Sales",
   "Sales, Business Development & Distribution",
+  "Finance",
   "Financial Management, Management Accountancy",
+  "Operations",
   "Operations & Supply Chain",
+  "Synthesis",
   "Data Analytics, Synthesis & Reasoning",
+  "Tech",
   "Technology",
+  "Digital",
   "Digital & Social",
+  "Design",
+
   "Design",
 ];

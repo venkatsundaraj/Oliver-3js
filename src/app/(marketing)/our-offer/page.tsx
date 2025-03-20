@@ -19,11 +19,11 @@ export default function Component() {
       <ScrollToHash />
       <section
         id="our-value-for-you"
-        className="min-h-[500px] md:min-h-[80vh]  flex items-center justify-center"
+        className="min-h-[500px] md:min-h-[80vh]  flex items-center justify-center py-16 md:pt-40 md:py-28"
       >
         <div className="container">
           <div className="flex transform md:translate-y-5 mb-6 md:mb-24">
-            <h2 className="flex items-start text-left justify-start flex-col leading-[1.1]">
+            <h2 className="flex items-center text-center justify-center flex-col w-full leading-[1.1]">
               <span className="text-extra_paragraph_heading text-foreground font-heading text-left">
                 Our
               </span>
@@ -40,30 +40,37 @@ export default function Component() {
               width={500}
               height={500}
             />
-            <div className="absolute top-0 left-1/2 -translate-x-1/2 md:translate-x-0 md:left-0">
-              <p className="text-foreground text-center md:text-left text-6xl font-paragraph text-extra_paragraph_heading leading-tight">
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 text-center">
+              <p className="text-foreground text-center md:text-center text-6xl font-paragraph text-extra_paragraph_heading leading-tight">
                 We unlock <br />
-                <strong>
+                <strong className="text-primary-foreground">
                   Business Growth
                   <br /> Spirals
                 </strong>
               </p>
             </div>
-            <div className="absolute bottom-[-20px] md:bottom-0  mt-4 md:mt-0 right-1/2 translate-x-1/2 md:translate-x-0 md:right-0">
-              <p className="text-foreground text-center md:text-left text-6xl font-paragraph text-extra_paragraph_heading leading-tight">
+            <div className="absolute bottom-[-20px] md:bottom-0  mt-4 md:mt-0 right-1/2 translate-x-1/2 text-center">
+              <p className="text-foreground text-center md:text-center text-6xl font-paragraph text-extra_paragraph_heading leading-tight">
                 that are{" "}
-                <strong>
+                <strong className="text-primary-foreground">
                   Transformative
-                  <br /> and Profitable
+                </strong>
+                <br /> and{" "}
+                <strong className="text-primary-foreground">
+                  Profitable
                   <br />
                 </strong>
-                for our clients
+                for our{" "}
+                <strong className="text-primary-foreground">clients</strong>
               </p>
             </div>
           </div>
         </div>
       </section>
-      <div className="relative min-h-[80vh] md:min-h-[100vh] bg-background flex items-center w-screen overflow-x-hidden justify-center p-4">
+      <div
+        id="our-offer"
+        className="relative min-h-[80vh] md:min-h-[100vh] bg-background flex items-center w-screen overflow-x-hidden md:overflow-visible justify-center p-4 md:py-40"
+      >
         <div className="relative bottom-[50px] w-[80vw] max-w-[600px] h-[80vw]  max-h-[600px] flex items-center justify-center">
           {/* Static Circle */}
           <div className="absolute w-[80%] h-[80%] rounded-full border-2 border-white"></div>
@@ -122,8 +129,8 @@ export default function Component() {
       {/* <SolutionLevels /> */}
       <OurSolutionLevelsNew />
       <FunctionalSpirals />
-      <MobStickySlider />
-      <Differentiators />
+      {/* <MobStickySlider /> */}
+      {/* <Differentiators /> */}
     </>
   );
 }

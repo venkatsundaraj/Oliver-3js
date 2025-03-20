@@ -78,7 +78,7 @@ const Model: FC<ModelProps> = ({}) => {
             <span className="text-foreground text-center text-6xl font-heading text-our_text_heading">
               Who use
             </span>
-            <h1 className="text-secondary_heading text-center font-heading text-primary-foreground leading-normal">
+            <h1 className="text-secondary_heading text-center font-heading text-primary-foreground leading-[0.9]">
               Insights
             </h1>
           </div>
@@ -86,7 +86,7 @@ const Model: FC<ModelProps> = ({}) => {
             <span className="text-foreground text-center text-6xl font-heading text-our_text_heading">
               to unlock
             </span>
-            <h1 className="text-secondary_heading text-left font-heading text-primary-foreground leading-[1]">
+            <h1 className="text-secondary_heading text-left font-heading text-primary-foreground leading-[0.9]">
               Higher <br />
               Profits
             </h1>
@@ -136,13 +136,15 @@ const Model: FC<ModelProps> = ({}) => {
             : "opacity-0 translate-y-10 z-[-1]"
         )}
       >
-        <div className="container w-full h-full flex flex-col items-center justify-center leading-[1]">
-          <span className="text-foreground text-center text-6xl font-heading text-our_text_heading">
-            Our
-          </span>
-          <h1 className="text-secondary_heading text-center font-heading text-primary-foreground mb-2 leading-tight">
-            Proposition
-          </h1>
+        <div className="container w-full h-full flex flex-col items-center justify-center leading-[0.9]">
+          <h2 className="flex items-center justify-center flex-col leading-[1] mb-4">
+            <span className="text-extra_paragraph_heading text-foreground font-heading text-center">
+              Our
+            </span>
+            <span className="text-primary-foreground text-secondary_heading font-heading font-normal text-center">
+              Proposition
+            </span>
+          </h2>
           <p className="text-foreground leading-10 text-center text-6xl font-paragraph text-extra_paragraph_heading md:max-w-lg">
             <strong>
               Insight-centered business strategy & organization design

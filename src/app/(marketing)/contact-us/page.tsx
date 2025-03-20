@@ -31,7 +31,7 @@ const page: FC<pageProps> = ({}) => {
       </section>
 
       {/* {CTA Section} */}
-      <section className="w-screen flex items-center justify-center bg-background py-16 md:pt-8 md:pb-8">
+      <section className="w-screen flex items-center justify-center bg-background py-16 md:py-16">
         <div className="container flex flex-col items-start justify-start">
           <h2 className="flex items-start justify-start flex-col mb-8 md:mb-12 leading-[1.1]">
             <span className="text-secondary_heading text-primary-foreground  font-heading text-left">
@@ -45,6 +45,7 @@ const page: FC<pageProps> = ({}) => {
                 <Link
                   className="font-paragraph text-foreground text-subtitle_heading"
                   href={item.link}
+                  target="_blank"
                 >
                   {item.name}
                 </Link>

@@ -54,7 +54,7 @@ const MobileNav: FC<MobileNavProps> = ({ items, children, removeHandler }) => {
                             <li>
                               <Link
                                 key={index}
-                                href={item.disabled ? "#" : item.href}
+                                href={item.disabled ? "#" : subItem.href}
                                 onClick={removeHandler}
                                 className={cn(
                                   "flex w-full items-center rounded-md px-2 text-sm font-medium hover:underline",

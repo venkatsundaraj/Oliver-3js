@@ -33,8 +33,8 @@ const AccordianTeamThumbnail: FC<AccordianTeamThumbnailProps> = ({ data }) => {
           defaultValue="item-1"
         >
           <AccordionItem value="item-1">
-            <AccordionTrigger className="text-foreground md:[&>svg]:w-28 md:[&>svg]:h-28 [&>svg]:stroke-1">
-              <h3 className="text-secondary_heading text-primary-foreground font-heading font-semibold w-full text-left">
+            <AccordionTrigger className="text-foreground [&>svg]:w-14 [&>svg]:h-14 md:[&>svg]:w-28 md:[&>svg]:h-28 [&>svg]:stroke-1">
+              <h3 className="text-secondary_heading text-primary-foreground font-heading font-semibold w-full text-left leading-[0.9]">
                 Our People | <span className="text-foreground">Core</span>
               </h3>
             </AccordionTrigger>

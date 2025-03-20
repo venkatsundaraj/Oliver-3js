@@ -1,27 +1,31 @@
-"use client"
+"use client";
 
-import { Button, buttonVariants } from "@/app/_components/button"
-import { cn } from "@/lib/utils"
-import { ScrollToHash } from "@/app/_components/scroll-to-hash"
-import { Canvas } from "@react-three/fiber"
-import dynamic from "next/dynamic"
-import Image from "next/image"
-import Link from "next/link"
-import { FC } from "react"
+import { Button, buttonVariants } from "@/app/_components/button";
+import { cn } from "@/lib/utils";
+import { ScrollToHash } from "@/app/_components/scroll-to-hash";
+import { Canvas } from "@react-three/fiber";
+import dynamic from "next/dynamic";
+import Image from "next/image";
+import Link from "next/link";
+import { FC } from "react";
 import {
   functionalSpiralContent,
   domainsData,
   differentiatorData,
   ourDifferentiatorContent,
-} from "@/config/marketing"
-import InfiniteMap from "@/app/_components/infinite-map"
+} from "@/config/marketing";
+import InfiniteMap from "@/app/_components/infinite-map";
+import { clientDomains } from "@/config/marketing";
+import { clientData } from "@/config/marketing";
+import { chooseColor } from "@/app/_components/our-work-map-section";
+import InfiniteMapWithImageInput from "@/app/_components/infinite-map-with-image-input";
 
 interface pageProps {}
 
 const Model = dynamic(() => import("@/app/_components/model"), {
   loading: () => <p>Loading</p>,
   ssr: false,
-})
+});
 
 const page: FC<pageProps> = ({}) => {
   return (
@@ -36,7 +40,7 @@ const page: FC<pageProps> = ({}) => {
         <div className="container flex items-center justify-center">
           <div className="grid grid-cols-1 md:grid-cols-2 w-full gap-12 md:gap-0">
             <div className="flex items-start flex-col justify-center gap-4">
-              <h2 className="flex items-start justify-start flex-col leading-[1.1]">
+              <h2 className="flex items-start justify-start flex-col leading-[1]">
                 <span className="text-extra_paragraph_heading text-foreground font-heading">
                   Our
                 </span>
@@ -90,7 +94,7 @@ const page: FC<pageProps> = ({}) => {
               </h2>
               <div className="grid grid-cols-2 w-full md:grid-cols-3 md:border-t border-foreground relative mt-8">
                 <div className="flex items-start flex-col justify-center py-8 relative before:content-[''] before:absolute before:top-0 before:left-0 before:w-8 before:h-8 before:rounded-full before:bg-background before:translate-y-[-50%] before:border before:border-foreground">
-                  <h4 className="text-secondary-foreground font-heading text-extra_paragraph_heading ">
+                  <h4 className="text-secondary-foreground font-heading text-our_text_heading ">
                     Nu.
                   </h4>
                   <p className="text-foreground font-paragraph text-subtitle_heading ">
@@ -98,7 +102,7 @@ const page: FC<pageProps> = ({}) => {
                   </p>
                 </div>
                 <div className="flex items-start flex-col justify-center py-8 relative before:content-[''] before:absolute before:top-0 before:left-0 before:w-8 before:h-8 before:rounded-full before:bg-background before:translate-y-[-50%] before:border before:border-foreground">
-                  <h4 className="text-secondary-foreground font-heading text-extra_paragraph_heading ">
+                  <h4 className="text-secondary-foreground font-heading text-our_text_heading ">
                     Qst.
                   </h4>
                   <p className="text-foreground font-paragraph text-subtitle_heading ">
@@ -106,7 +110,7 @@ const page: FC<pageProps> = ({}) => {
                   </p>
                 </div>
                 <div className="flex items-start flex-col justify-center py-8 relative before:content-[''] before:absolute before:top-0 before:left-0 before:w-8 before:h-8 before:rounded-full before:bg-background before:translate-y-[-50%] before:border before:border-foreground">
-                  <h4 className="text-secondary-foreground font-heading text-extra_paragraph_heading ">
+                  <h4 className="text-secondary-foreground font-heading text-our_text_heading ">
                     Flr.
                   </h4>
                   <p className="text-foreground font-paragraph text-subtitle_heading ">
@@ -175,28 +179,21 @@ const page: FC<pageProps> = ({}) => {
               Client Domains
             </span>
           </h2>
-          <ul className="flex flex-wrap gap-4 w-full items-center justify-center mt-8">
-            <li className="px-8 min-w-[24rem] max-w-md py-4 border border-secondary-foreground inline-flex rounded-2xl items-center justify-center text-foreground bg-background font-paragraph text-extra_paragraph_heading">
-              Fortune 500
-            </li>
-            <li className="px-8 min-w-[24rem] max-w-md py-4 border border-secondary-foreground inline-flex rounded-2xl items-center justify-center text-foreground bg-background font-paragraph text-extra_paragraph_heading">
-              MNC's
-            </li>
-          </ul>
-          <ul className="flex flex-wrap gap-4 w-full items-center justify-center mt-8">
-            {domainsData.map((item, i) => (
-              <>
+
+          <ul className="flex flex-wrap gap-x-6  gap-y-8 w-full items-center justify-center mt-8">
+            <ul className="flex flex-wrap gap-4 w-full items-center justify-center mt-8">
+              {clientDomains.map((item, i) => (
                 <li
-                  className="px-8 min-w-[24rem] max-w-md py-4 border border-secondary-foreground inline-flex rounded-2xl items-center justify-center text-foreground bg-background font-paragraph text-extra_paragraph_heading"
+                  className="px-8 min-w-[16rem] max-w-md py-4 border border-secondary-foreground inline-flex rounded-3xl items-center justify-center text-foreground bg-secondary-foreground font-paragraph text-extra_paragraph_heading"
                   key={i}
                 >
                   {item}
                 </li>
-              </>
-            ))}
+              ))}
+            </ul>
           </ul>
           <Link
-            href={"/our-work"}
+            href={"/our-client"}
             className={cn(
               buttonVariants({ variant: "outline", size: "lg" }),
               "text-foreground rounded-none mt-8 uppercase "
@@ -215,7 +212,7 @@ const page: FC<pageProps> = ({}) => {
             <div className="flex items-start flex-col justify-center gap-4">
               <h2 className="flex items-start justify-start flex-col leading-[1.1]">
                 <span className="text-extra_paragraph_heading text-foreground font-heading">
-                  Some of our
+                  Our
                 </span>
                 <span className="text-primary-foreground text-secondary_heading font-normal font-heading">
                   People
@@ -251,7 +248,7 @@ const page: FC<pageProps> = ({}) => {
       </section>
 
       {/* Projectjs Section */}
-      <section className="w-screen flex items-center justify-center bg-background py-16 md:py-16 z-[16] relative">
+      <section className="w-screen flex items-center justify-center bg-background py-16 md:pb-32 md:py-16 z-[16] relative">
         <div className="container flex items-center justify-center">
           <div className="grid grid-cols-1  w-full">
             <div className="flex items-start flex-col justify-center gap-4">
@@ -286,7 +283,7 @@ const page: FC<pageProps> = ({}) => {
         </div>
       </section>
     </>
-  )
-}
+  );
+};
 
-export default page
+export default page;

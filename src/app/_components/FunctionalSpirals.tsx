@@ -1,4 +1,6 @@
 import React from "react";
+import { ourDomainSpiral } from "@/config/marketing";
+import { cn } from "@/lib/utils";
 
 const FunctionalSpirals = () => {
   const spirals = [
@@ -42,7 +44,7 @@ const FunctionalSpirals = () => {
       <div className="container mx-auto  px-4 md:px-8 lg:px-16">
         {/* Title */}
         <div className="text-start mb-12">
-          <h2 className="flex items-start justify-start flex-col leading-[1.1]">
+          <h2 className="flex items-center justify-center flex-col leading-[1.1]">
             <span className="text-extra_paragraph_heading text-foreground font-heading">
               Our
             </span>
@@ -51,198 +53,32 @@ const FunctionalSpirals = () => {
             </span>
           </h2>
         </div>
+        <ul className="grid grid-cols-2 max-w-xl items-start gap-x-3 md:gap-x-10 gap-y-2 justify-center relative ">
+          <li className="absolute h-full w-[1px] top-0 bg-[#ED7D31] left-1/2 -translate-x-1/2" />
+          <li className="text-secondary-foreground font-heading font-normal text-[clamp(18px,1.7vw,30px)] leading-tight text-right">
+            Cosmos-Spirals
+          </li>
+          <li className="text-secondary-foreground font-heading font-normal text-[clamp(18px,1.7vw,30px)] leading-tight">
+            Strategy & Program Spirals
+          </li>
+          {ourDomainSpiral.map((item, i) => (
+            <li
+              key={i}
+              className={cn(
+                "text-foreground font-heading font-normal text-[clamp(18px,1.7vw,30px)] leading-tight",
+                i % 2 == 0 ? "text-right " : ""
+              )}
+            >
+              {item}
+              <span className="text-secondary-foreground font-heading">
+                {i % 2 === 1 ? "" : "-Spiral"}
+              </span>
+            </li>
+          ))}
+        </ul>
       </div>
     </section>
   );
 };
 
 export default FunctionalSpirals;
-
-{
-  /* <div className="  items-center justify-start  bg-transparent bg-opacity-90 p-4 md:p-8 hidden">
-  <div
-    className={` w-full relative transition-opacity duration-700 `}
-    style={{
-      // backgroundImage: "url('/placeholder.svg?height=800&width=1200')",
-      backgroundSize: "cover",
-      backgroundPosition: "center",
-      backgroundBlendMode: "overlay",
-    }}
-  >
-    <div className="absolute inset-0 bg-transparent bg-opacity-80"></div>
-
-    <div className="relative  z-10 grid grid-cols-2 md:grid-cols-4 gap-0">
-      {/* Left Column *
-      <div className="flex flex-col items-end text-right pr-6 py-8">
-        <h2 className="text-pargrpah_heading font-heading font-light text-secondary-foreground mb-8">
-          Cosmos-Spirals
-        </h2>
-
-        <div className="space-y-4">
-          <div className="flex justify-end">
-            <span className="text-foreground text-subtitle_heading font-light">
-              Enterprise-
-            </span>
-            <span className="text-secondary-foreground text-subtitle_heading font-light">
-              Spiral
-            </span>
-          </div>
-
-          <div className="flex justify-end">
-            <span className="text-foreground text-subtitle_heading font-light">
-              Brand-
-            </span>
-            <span className="text-secondary-foreground text-subtitle_heading font-light">
-              Spiral
-            </span>
-          </div>
-
-          <div className="flex justify-end">
-            <span className="text-foreground text-subtitle_heading font-light">
-              Marketing-
-            </span>
-            <span className="text-secondary-foreground text-subtitle_heading font-light">
-              Spiral
-            </span>
-          </div>
-
-          <div className="flex justify-end">
-            <span className="text-foreground text-subtitle_heading font-light">
-              Innovation-
-            </span>
-            <span className="text-secondary-foreground text-subtitle_heading font-light">
-              Spiral
-            </span>
-          </div>
-
-          <div className="flex justify-end">
-            <span className="text-foreground text-subtitle_heading font-light">
-              Human Capital-
-            </span>
-            <span className="text-secondary-foreground text-subtitle_heading font-light">
-              Spiral
-            </span>
-          </div>
-
-          <div className="flex justify-end">
-            <span className="text-foreground text-subtitle_heading font-light">
-              Sales-
-            </span>
-            <span className="text-secondary-foreground text-subtitle_heading font-light">
-              Spiral
-            </span>
-          </div>
-
-          <div className="flex justify-end">
-            <span className="text-foreground text-subtitle_heading font-light">
-              Finance-
-            </span>
-            <span className="text-secondary-foreground text-subtitle_heading font-light">
-              Spiral
-            </span>
-          </div>
-
-          <div className="flex justify-end">
-            <span className="text-foreground text-subtitle_heading font-light">
-              Operations-
-            </span>
-            <span className="text-secondary-foreground text-subtitle_heading font-light">
-              Spiral
-            </span>
-          </div>
-
-          <div className="flex justify-end">
-            <span className="text-foreground text-subtitle_heading font-light">
-              Synthesis-
-            </span>
-            <span className="text-secondary-foreground text-subtitle_heading font-light">
-              Spiral
-            </span>
-          </div>
-
-          <div className="flex justify-end">
-            <span className="text-foreground text-subtitle_heading font-light">
-              Tech-
-            </span>
-            <span className="text-secondary-foreground text-subtitle_heading font-light">
-              Spiral
-            </span>
-          </div>
-
-          <div className="flex justify-end">
-            <span className="text-foreground text-subtitle_heading font-light">
-              Digital-
-            </span>
-            <span className="text-secondary-foreground text-subtitle_heading font-light">
-              Spiral
-            </span>
-          </div>
-
-          <div className="flex justify-end">
-            <span className="text-foreground text-subtitle_heading font-light">
-              Design-
-            </span>
-            <span className="text-secondary-foreground text-subtitle_heading font-light">
-              Spiral
-            </span>
-          </div>
-        </div>
-      </div>
-
-      {/* Divider *
-      <div className="block absolute left-1/2 md:left-1/4 top-0 bottom-0 w-0.5 bg-orange-500 transform -translate-x-1/2"></div>
-
-       Mobile Divider 
-      {/* <div className="md:hidden w-full h-0.5 bg-orange-500 my-4"></div> */
-}
-
-{
-  /* Right Column 
-      <div className="flex flex-col items-start text-left pl-6 py-8 md:col-start-2 md:col-end-4">
-        <h2 className="text-pargrpah_heading font-heading font-light text-secondary-foreground mb-8">
-          Strategy & Program Spirals
-        </h2>
-
-        <div className="space-y-4">
-          <div className="text-foreground text-subtitle_heading font-light">
-            Business
-          </div>
-          <div className="text-foreground text-subtitle_heading font-light">
-            Brand
-          </div>
-          <div className="text-foreground text-subtitle_heading font-light">
-            Marketing
-          </div>
-          <div className="text-foreground text-subtitle_heading font-light">
-            Innovation
-          </div>
-          <div className="text-foreground text-subtitle_heading font-light">
-            Human Resources
-          </div>
-          <div className="text-foreground text-subtitle_heading font-light">
-            Sales, Business Development & Distribution
-          </div>
-          <div className="text-foreground text-subtitle_heading font-light">
-            Financial Management, Management Accountancy
-          </div>
-          <div className="text-foreground text-subtitle_heading font-light">
-            Operations & Supply Chain
-          </div>
-          <div className="text-foreground text-subtitle_heading font-light">
-            Data Analytics, Synthesis & Reasoning
-          </div>
-          <div className="text-foreground text-subtitle_heading font-light">
-            Technology
-          </div>
-          <div className="text-foreground text-subtitle_heading font-light">
-            Digital & Social
-          </div>
-          <div className="text-foreground text-subtitle_heading font-light">
-            Design
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>; */
-}

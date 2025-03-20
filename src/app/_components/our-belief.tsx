@@ -102,7 +102,7 @@ const OurBelieve: FC<OurBelieveProps> = ({ className }) => {
         </AnimatePresence>
       </div>
 
-      <div className="absolute top-[50%] left-0 translate-y-[-50%] hidden md:flex flex-col items-center gap-4">
+      <div className="absolute bottom-0 left-0 md:bottom-[initial] md:top-[50%] md:left-0 rotate-90 origin-bottom-left md:rotate-0 md:translate-y-[-50%] flex flex-col items-center gap-4 ">
         <Button
           variant="outline"
           size="icon"
