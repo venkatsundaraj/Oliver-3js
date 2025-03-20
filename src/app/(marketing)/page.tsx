@@ -193,7 +193,7 @@ const page: FC<pageProps> = ({}) => {
             </ul>
           </ul>
           <Link
-            href={"/our-client"}
+            href={"/our-client-domains"}
             className={cn(
               buttonVariants({ variant: "outline", size: "lg" }),
               "text-foreground rounded-none mt-8 uppercase "
