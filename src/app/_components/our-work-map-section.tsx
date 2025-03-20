@@ -24,13 +24,13 @@ export const chooseColor = function () {
 
 const OurWorkMapSection: FC<OurWorkMapSectionProps> = () => {
   return (
-    <section
-      id="our-client-domains"
-      className="flex flex-col gap-32 items-center justify-start w-screen  min-h-screen py-8 md:py-16  md:max-h-fit  bg-repeat-x bg-[length:200%] animate-scroll-x bg-fixed relative "
-    >
+    <section className="flex flex-col gap-32 items-center justify-start w-screen  min-h-screen py-8 md:py-16  md:max-h-fit  bg-repeat-x bg-[length:200%] animate-scroll-x bg-fixed relative ">
       <InfiniteMap className="sticky top-0 overflow-x-hidden w-screen z-0" />
       <div className="flex flex-col items-center justify-start w-screen z-10 -translate-y-1/2">
-        <div className="container flex flex-col  overflow-x-hidden w-screen z-10 ">
+        <div
+          className="container flex flex-col  overflow-x-hidden w-screen z-10 "
+          id="our-client-domains"
+        >
           <h2 className="flex items-center justify-center flex-col leading-[1]">
             <span className="text-extra_paragraph_heading text-foreground font-heading text-center">
               Our
@@ -66,11 +66,11 @@ const OurWorkMapSection: FC<OurWorkMapSectionProps> = () => {
           src="https://zkok4chdpn.ufs.sh/f/ZowmNmBHF7rVeoIs1xXHzKF8PVfhHaR7CmudUQywI1cWtxBk"
           className="md:w-screen"
         />
-        <div
-          id="our-clients"
-          className="container hidden flex-col overflow-x-hidden w-screen z-10 py-14 "
-        >
-          <h2 className="flex items-center justify-center flex-col">
+        <div className="container hidden flex-col overflow-x-hidden w-screen z-10 py-14 ">
+          <h2
+            id="our-clients"
+            className="flex items-center justify-center flex-col"
+          >
             <span className="text-extra_paragraph_heading text-foreground font-heading text-center">
               Some of our
             </span>
