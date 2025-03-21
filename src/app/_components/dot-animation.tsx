@@ -115,6 +115,11 @@ const DotAnimation: FC<DotAnimationProps> = () => {
 
     const animate = () => {
       dotsRef.current = dotsRef.current.map((dot) => {
+        // Skip movement calculations for the central dot (id: 5)
+        if (dot.id === 5) {
+          return dot;
+        }
+
         let { x, y, dx, dy, baseX, baseY } = dot;
 
         // Define the movement range (10cm = 10% of the screen area)
@@ -192,8 +197,8 @@ const DotAnimation: FC<DotAnimationProps> = () => {
         <div
           key={dot.id}
           className={cn(
-            `absolute bg-foreground/30 rounded-full border-2 border-transparent h-${dot.size}`
-            // dot.id === 5 ? "bg-white/40" : null
+            `absolute bg-foreground/30 rounded-full border-2 border-transparent h-${dot.size}`,
+            dot.id === 5 ? "bg-white/40" : ""
           )}
           style={{
             width: `${dot.size * 3.6}px`, // Ensure consistent width and height

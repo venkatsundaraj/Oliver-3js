@@ -12,7 +12,7 @@ import { Icons } from "./icons";
 
 const offerterrain = () => {
   const [activeDot, setActiveDot] = useState(0);
-  const AUTO_NEXT_INTERVAL = 3000;
+  const AUTO_NEXT_INTERVAL = 6000;
   useEffect(() => {
     const interval = setInterval(() => {
       handleArrowClick();
