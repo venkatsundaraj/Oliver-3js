@@ -12,11 +12,14 @@ import MobStickySlider from "@/app/_components/mob-sticky-slider";
 import { ScrollToHash } from "@/app/_components/scroll-to-hash";
 import VerticalCarousel from "@/app/_components/vertical-carousel";
 import OurSolutionLevelsNew from "@/app/_components/our-solution-levels-new";
+import { Suspense } from "react";
 
 export default function Component() {
   return (
     <>
-      <ScrollToHash />
+      <Suspense fallback={null}>
+        <ScrollToHash />
+      </Suspense>
       <section
         id="our-value-for-you"
         className="min-h-[500px] md:min-h-[80vh]  flex items-center justify-center py-16 md:pt-40 md:py-28"

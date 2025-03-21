@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC, Suspense } from "react";
 import OurWorkMapSection from "@/app/_components/our-work-map-section";
 import IpSuitsAccordian from "@/app/_components/ip-suits-accordian";
 import Image from "next/image";
@@ -9,7 +9,9 @@ interface OurClientDomainsProps {}
 const OurClientDomains: FC<OurClientDomainsProps> = () => {
   return (
     <>
-      <ScrollToHash />
+      <Suspense fallback={null}>
+        <ScrollToHash />
+      </Suspense>
       <OurWorkMapSection />
     </>
   );

@@ -7,7 +7,7 @@ import {
   ourProjects,
 } from "@/config/marketing";
 import { cn } from "@/lib/utils";
-import { FC } from "react";
+import { FC, Suspense } from "react";
 import { db } from "@/server/db";
 import { workTable } from "@/server/db/schema";
 import InfiniteMap from "@/app/_components/infinite-map";
@@ -45,7 +45,9 @@ const page = async ({}: pageProps) => {
   return (
     <>
       {/* // Hero section */}
-      <ScrollToHash />
+      <Suspense fallback={null}>
+        <ScrollToHash />
+      </Suspense>
       <section className="w-screen flex items-center justify-center h-screen bg-background py-8 md:py-16">
         <div className="container flex items-center justify-center flex-col">
           <h2 className="flex items-center justify-center flex-col">

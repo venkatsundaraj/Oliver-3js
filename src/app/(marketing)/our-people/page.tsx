@@ -3,6 +3,8 @@ import TeamSection from "@/app/_components/team-section";
 import { db } from "@/server/db";
 import { peopleTable } from "@/server/db/schema";
 import AccordianTeamThumbnail from "@/app/_components/accordian-team-thumbnail";
+import { ScrollToHash } from "@/app/_components/scroll-to-hash";
+import { Suspense } from "react";
 
 interface pageProps {}
 
@@ -18,6 +20,9 @@ const page = async ({}: pageProps) => {
 
   return (
     <>
+      <Suspense fallback={null}>
+        <ScrollToHash />
+      </Suspense>
       <section className="bg-background text-foreground text-center py-16 md:pb-16 min-h-screen flex items-center justify-center">
         <div className="container flex flex-col items-center justify-center gap-4 ">
           {/* OUR text */}

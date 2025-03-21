@@ -7,7 +7,7 @@ import { Canvas } from "@react-three/fiber";
 import dynamic from "next/dynamic";
 import Image from "next/image";
 import Link from "next/link";
-import { FC } from "react";
+import { FC, Suspense } from "react";
 import {
   functionalSpiralContent,
   domainsData,
@@ -31,7 +31,9 @@ const page: FC<pageProps> = ({}) => {
   return (
     <>
       <Model />
-      <ScrollToHash />
+      <Suspense fallback={null}>
+        <ScrollToHash />
+      </Suspense>
       {/* Our Terrain Section */}
       <section
         id="our-terrain"

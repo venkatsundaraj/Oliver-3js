@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC, Suspense } from "react";
 import Image from "next/image";
 import { valueEngineContent } from "@/config/marketing";
 import { cn } from "@/lib/utils";
@@ -13,7 +13,9 @@ interface pageProps {}
 const page: FC<pageProps> = ({}) => {
   return (
     <>
-      <ScrollToHash />
+      <Suspense fallback={null}>
+        <ScrollToHash />
+      </Suspense>
       {/* Hero Section */}
       <section className="w-full flex items-center justify-center h-screen bg-background py-5 relative">
         <div className="container flex items-center justify-center relative">
