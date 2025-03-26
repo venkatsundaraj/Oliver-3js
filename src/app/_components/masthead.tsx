@@ -55,7 +55,7 @@ const MasThead: FC<MasTheadProps> = () => {
 
   return (
     <div
-      className={cn("w-full relative py-2 hidden md:flex")}
+      className={cn("w-full relative py-2 hidden xl:flex")}
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
     >
