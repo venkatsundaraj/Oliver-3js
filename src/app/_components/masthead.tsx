@@ -6,6 +6,10 @@ import { motion, AnimatePresence } from "framer-motion";
 import { cn } from "@/lib/utils";
 
 const cityNames = [
+  "Singapore",
+  "Mumbai",
+  "Nairobi",
+  "London",
   "Bengaluru",
   "Delhi",
   "Nagpur",
@@ -69,7 +73,16 @@ const MasThead: FC<MasTheadProps> = () => {
             transition={{ duration: 0.5, ease: "easeInOut" }}
             className=" flex items-center justify-center"
           >
-            <span className="text-[14px]  text-primary-foreground font-paragraph text-left uppercase min-w-[200px] ">
+            <span
+              className={cn(
+                "text-our_text_heading ms-4  font-paragraph text-left  min-w-[200px]",
+                `${
+                  currentIndex > 3
+                    ? "text-secondary-foreground"
+                    : "text-primary-foreground"
+                }`
+              )}
+            >
               {cityNames[currentIndex]}
             </span>
           </motion.div>

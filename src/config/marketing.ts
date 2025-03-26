@@ -34,7 +34,7 @@ export const marketingConfig: MainNavItems = [
       { title: "Our Practices", href: "/our-offer#our-practices" },
       { title: "Our Solution Levels", href: "/our-offer#our-solution-levels" },
       {
-        title: "Our Functional Spirals",
+        title: "Our Domain Spirals",
         href: "/our-offer#our-functional-spirals",
       },
     ],
@@ -67,10 +67,10 @@ export const marketingConfig: MainNavItems = [
         title: "Our Client Domains",
         href: "/our-client-domains#our-client-domains",
       },
-      // {
-      //   title: "Our Clients",
-      //   href: "/our-client-domains#our-clients",
-      // },
+      {
+        title: "Our Clients",
+        href: "/our-client-domains#some-of-our-clients",
+      },
     ],
   },
   {
@@ -92,7 +92,7 @@ export const ourSnapshotContent: { title: string; subItems: string[] } = {
     "We are a bunch of growth strategists, with almost 500 years of cross category and geography experience cumulatively straddling almost all aspects of business. Bulk of this experience comes from client or practitioner side in leadership roles further supplemented by high end consulting experience.",
     "We emphasize using insight driven business strategy to help clients in business entry and transformations. This entails uncovering business insights & utilising them in a manner that helps clients do not just better marketing or operations but better business strategy & organisation design: an approach that goes beyond value chain & efficiency led incremental business strategy discourse. This further leads to specific actions or programs that the business needs to start doing over multiple time horizons. We are sector agnostic, and we cherish discontinuities. Our work in business entry straddles new category, new industry or new geography entry. In business transformations, we enjoy tasks pertaining to P&L transformations, rapid business scale ups or complex organisation culture transformations. A particularly gratifying part of our work pertains to strategic, on job business process & capability building - something where our proprietary approaches have helped organisations get better skilled with effective business results through light yet meaningful processes. As part of the overall task, we do undertake significant functional projects in marketing, sales & distribution, supply chain, IT, human capital, and performance management but they are invariably linked to holistic organisation & PnL evolution.",
     "Our overall approach is highly accountable & collaborative. A big part of solution development happens through on job, collaborative workshops. Further, we run along with our clients during execution as that's where strategies need to be continually fine-tuned. This approach combined with our client-side practitioner experience helps us remain granular & feasible in our advice to clients. We have a network of downstream alliance partners globally [design, activation, communication, analytics, direct marketing, valuation, people etc.] who can help execute the programs we design on shared accountability.",
-    "Over the last 9 years, Cosmos Strategy has evolved to a firm of 18 senior professionals with decades of diverse experience, clients across 5 countries & 3 continents, more than 12 associate firms, solutions across FMCG, Telecom, Pharma, Polyester, Apparel, Jewellery, Maintenance Services, Media, Beauty, Foods, Auto ... Most of these solutions have revolved around simplifying complex situations that has allowed us to continually learn, collaborate, co-create & own up our clients' objectives.",
+    "Over the last 10 years, Cosmos Strategy has evolved to a firm of 16+ senior professionals with decades of diverse experience, clients across 5 countries & 3 continents, more than 12 associate firms, solutions across FMCG, Telecom, Pharma, Polyester, Apparel, Jewellery, Maintenance Services, Media, Beauty, Foods, Auto ... Most of these solutions have revolved around simplifying complex situations that has allowed us to continually learn, collaborate, co-create & own up our clients' objectives.",
   ],
 };
 export const insightCenteredContent: string[] = [
@@ -225,7 +225,7 @@ export const domainsData: string[] = [
 
 export const clientDomains: string[] = [
   "India & Middle East",
-  "Indonesia China & Far East Asia",
+  "Indonesia, China & Far East Asia",
   "Sub Saharan Africa",
   "Us & Europe",
 ];

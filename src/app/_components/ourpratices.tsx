@@ -38,8 +38,8 @@ const ourpractices: FC<pageProps> = function () {
                     Turnaround
                   </span>
                 </h4>
-                <p className="text-foreground font-paragraph text-extra_paragraph_heading ">
-                  Transformation - Turnaround
+                <p className="text-muted-foreground font-paragraph text-extra_paragraph_heading ">
+                  P&L and Growth Turnarounds
                 </p>
               </div>
               <div className="flex flex-col items-start justify-center gap-2">
@@ -49,8 +49,8 @@ const ourpractices: FC<pageProps> = function () {
                     Scale
                   </span>
                 </h4>
-                <p className="text-foreground font-paragraph text-extra_paragraph_heading ">
-                  Transformation - Scale Up
+                <p className="text-muted-foreground font-paragraph text-extra_paragraph_heading ">
+                  Rampant Business Scale-ups
                 </p>
               </div>
               <div className="flex flex-col items-start justify-center gap-2">
@@ -60,8 +60,8 @@ const ourpractices: FC<pageProps> = function () {
                     Op-Culture
                   </span>
                 </h4>
-                <p className="text-foreground font-paragraph text-extra_paragraph_heading ">
-                  Transformation - Operating Culture
+                <p className="text-muted-foreground font-paragraph text-extra_paragraph_heading ">
+                  Complex Operating Culture Transformations
                 </p>
               </div>
             </div>
@@ -85,8 +85,8 @@ const ourpractices: FC<pageProps> = function () {
                     Geography
                   </span>
                 </h4>
-                <p className="text-foreground font-paragraph text-extra_paragraph_heading ">
-                  Geographic Entry
+                <p className="text-muted-foreground font-paragraph text-extra_paragraph_heading ">
+                  New Countries and Continents
                 </p>
               </div>
               <div className="flex flex-col items-start justify-center gap-2">
@@ -96,8 +96,8 @@ const ourpractices: FC<pageProps> = function () {
                     Category
                   </span>
                 </h4>
-                <p className="text-foreground font-paragraph text-extra_paragraph_heading ">
-                  Category or Industry Entry
+                <p className="text-muted-foreground font-paragraph text-extra_paragraph_heading ">
+                  New Category and Industries
                 </p>
               </div>
             </div>
@@ -121,7 +121,7 @@ const ourpractices: FC<pageProps> = function () {
                     Innate
                   </span>
                 </h4>
-                <p className="text-foreground font-paragraph text-extra_paragraph_heading ">
+                <p className="text-muted-foreground font-paragraph text-extra_paragraph_heading ">
                   Potential Solutions
                 </p>
               </div>
@@ -132,7 +132,7 @@ const ourpractices: FC<pageProps> = function () {
                     Manifest
                   </span>
                 </h4>
-                <p className="text-foreground font-paragraph text-extra_paragraph_heading ">
+                <p className="text-muted-foreground font-paragraph text-extra_paragraph_heading ">
                   Skill Solutions
                 </p>
               </div>

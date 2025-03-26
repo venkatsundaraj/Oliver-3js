@@ -49,7 +49,7 @@ const Navbar: FC<NavbarProps> = ({ items, children }) => {
               <Image
                 height={100}
                 width={200}
-                className="w-[100px] md:w-[240px]"
+                className="w-[100px] md:w-[240px] md:border-r md:border-r-foreground"
                 src={
                   "https://utfs.io/f/ZowmNmBHF7rVyt3CMIEiorYCB6GnRhmpVzbsTv5EZJ1LQ7Xc"
                 }

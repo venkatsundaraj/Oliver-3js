@@ -7,6 +7,8 @@ import DotAnimation from "@/app/_components/dot-animation";
 import { ScrollToHash } from "@/app/_components/scroll-to-hash";
 import CosmicSvgAnimation from "@/app/_components/cosmic-svg-animation";
 import { Icons } from "@/app/_components/icons";
+import Link from "next/link";
+import { buttonVariants } from "@/app/_components/button";
 
 interface pageProps {}
 
@@ -49,7 +51,7 @@ const page: FC<pageProps> = ({}) => {
       >
         <div className="container flex items-center justify-center relative">
           <div className="grid grid-cols-1 md:grid-cols-2 w-full gap-8 md:gap-0">
-            <div className="flex items-start flex-col justify-center gap-4">
+            <div className="flex items-start flex-col justify-center gap-3">
               <h2 className="flex items-start justify-start flex-col">
                 <span className="text-secondary_heading text-primary-foreground font-heading">
                   Who are we?
@@ -59,6 +61,15 @@ const page: FC<pageProps> = ({}) => {
                 We are Growth Strategists who use Insights to unlock Higher
                 Profits.
               </p>
+              <Link
+                href={"/our-offer#our-goal"}
+                className={cn(
+                  buttonVariants({ variant: "outline", size: "lg" }),
+                  "text-foreground rounded-none mt-4 uppercase"
+                )}
+              >
+                Our Goal
+              </Link>
             </div>
             <div className="flex items-center justify-center">
               <Image
@@ -120,7 +131,7 @@ const page: FC<pageProps> = ({}) => {
           </div>
         </div>
         <div className="container">
-          <div className="min-w-full max-w-6xl p-8 md:p-12 border border-foreground relative">
+          <div className="min-w-full max-w-6xl p-8 md:p-12 border border-border relative">
             <ul className="grid grid-cols-2 md:grid-cols-2 gap-12 relative ">
               {valueEngineContent.map((item, i) => (
                 <li

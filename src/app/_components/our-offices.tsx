@@ -48,7 +48,7 @@ const OurOffices: FC<OurOfficesProps> = () => {
         <div className="w-full flex items-center justify-center">
           <p className="bg-muted-foreground/60 text-foreground text-extra_paragraph_heading flex items-center justify-center w-full max-w-prose text-center px-4 py-2">
             Our Geographies : South Asia | Far East Asia | Sub Saharan Africa |
-            UK | US
+            UK | Europe | US
           </p>
         </div>
       </div>

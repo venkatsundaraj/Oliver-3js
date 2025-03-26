@@ -54,7 +54,10 @@ const OurWorkMapSection: FC<OurWorkMapSectionProps> = () => {
           src="https://zkok4chdpn.ufs.sh/f/ZowmNmBHF7rV8HT0SsqKutYEbdyi5prBsLjqX1DQMJGPFINW"
           className="md:w-screen"
         />
-        <h2 className="flex items-center justify-center flex-col leading-[1]">
+        <h2
+          className="flex items-center justify-center flex-col leading-[1]"
+          id="some-of-our-clients"
+        >
           <span className="text-extra_paragraph_heading text-foreground font-heading text-center">
             Our
           </span>
@@ -66,33 +69,6 @@ const OurWorkMapSection: FC<OurWorkMapSectionProps> = () => {
           src="https://zkok4chdpn.ufs.sh/f/ZowmNmBHF7rVeoIs1xXHzKF8PVfhHaR7CmudUQywI1cWtxBk"
           className="md:w-screen"
         />
-        <div className="container hidden flex-col overflow-x-hidden w-screen z-10 py-14 ">
-          <h2
-            id="our-clients"
-            className="flex items-center justify-center flex-col"
-          >
-            <span className="text-extra_paragraph_heading text-foreground font-heading text-center">
-              Some of our
-            </span>
-            <span className="text-primary-foreground text-secondary_heading font-heading font-normal">
-              Clients
-            </span>
-          </h2>
-          <ul className="flex flex-wrap gap-x-6  gap-y-8 w-full items-center justify-center mt-8">
-            {clientData.map((item, i) => (
-              <li
-                style={{ backgroundColor: `${chooseColor()}` }}
-                className={cn(
-                  "min-w-[24rem] px-2 py-2 text-subtitle_heading inline-flex items-center justify-center text-foreground font-paragraph text-wrap text-center md:text-nowrap",
-                  `bg-[${item.color}]`
-                )}
-                key={i}
-              >
-                {item.title}
-              </li>
-            ))}
-          </ul>
-        </div>
       </div>
     </section>
   );

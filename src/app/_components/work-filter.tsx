@@ -93,14 +93,14 @@ const WorkFilter: FC<WorkFilterProps> = ({ filteredWork, work }) => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 w-full">
             {filteredData.length
               ? filteredData.map((item, i) => (
-                  <div className="flex bg-secondary-foreground p-4 items-start justify-start flex-col min-h-[240px] gap-4">
-                    <span className="font-paragraph text-subtitle_heading text-background">
+                  <div className="flex bg-primary-foreground p-4 items-start justify-start flex-col min-h-[240px] gap-4">
+                    <span className="font-paragraph text-subtitle_heading text-foreground font-bold">
                       {item.location}
                     </span>
-                    <h4 className="font-heading text-2xl text-background">
+                    <h4 className="font-heading text-2xl text-foreground">
                       {item.category}
                     </h4>
-                    <h4 className="font-paragraph text-subtitle_heading text-background">
+                    <h4 className="font-paragraph text-subtitle_heading text-foreground">
                       {item.content}
                     </h4>
                   </div>

@@ -41,7 +41,7 @@ const page: FC<pageProps> = ({}) => {
       >
         <div className="container flex items-center justify-center">
           <div className="grid grid-cols-1 md:grid-cols-2 w-full gap-12 md:gap-0">
-            <div className="flex items-start flex-col justify-center gap-4">
+            <div className="flex items-start flex-col justify-center gap-3">
               <h2 className="flex items-start justify-start flex-col leading-[1]">
                 <span className="text-extra_paragraph_heading text-foreground font-heading">
                   Our
@@ -50,14 +50,21 @@ const page: FC<pageProps> = ({}) => {
                   Terrain
                 </span>
               </h2>
-              <p className="max-w-md text-extra_paragraph_heading font-paragraph leading-loose text-foreground">
-                Operating contexts that are complex, or represent
-                discontinuities, or have a history of failure.
-              </p>
-              <p className="max-w-md text-extra_paragraph_heading font-paragraph leading-loose text-foreground">
-                {" "}
-                Across industries, & geographies categories, & domains.
-              </p>
+              <div className="flex flex-col items-start">
+                <p className="max-w-md text-extra_paragraph_heading font-paragraph leading-loose text-foreground">
+                  Operating contexts that are complex, Or
+                </p>
+                <p className="max-w-md text-extra_paragraph_heading font-paragraph leading-loose text-foreground">
+                  represent discontinuities, Or
+                </p>
+                <p className="max-w-md text-extra_paragraph_heading font-paragraph leading-loose text-foreground">
+                  Have a history of failure.
+                </p>
+                <p className="max-w-md text-extra_paragraph_heading font-paragraph leading-loose text-foreground">
+                  {" "}
+                  Across industries, & geographies categories, & domains.
+                </p>
+              </div>
               <Link
                 href={"/our-offer#our-terrain"}
                 className={cn(
