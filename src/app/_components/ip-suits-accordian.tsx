@@ -82,7 +82,7 @@ const IpSuitsAccordian: FC<IpSuitsAccordianProps> = () => {
             {" "}
             {/*/*hell*/}
             <div className="w-full flex flex-col items-start gap-4">
-              <p className="text-pargrpah_heading mb-1 text-[#ED7D31] font-heading leading-normal">
+              <p className="text-pargrpah_heading mb-1 text-foreground font-heading leading-normal">
                 To Uncover Blazing Insights
               </p>
               {/* Title Bar */}
@@ -90,7 +90,7 @@ const IpSuitsAccordian: FC<IpSuitsAccordianProps> = () => {
                 <h4 className="text-extra_paragraph_heading text-primary-foreground py-2 font-paragraph text-left">
                   IP Brand
                 </h4>
-                <p className="text-extra_paragraph_heading text-foreground py-2 font-paragraph text-center">
+                <p className="text-extra_paragraph_heading text-foreground py-2 font-paragraph text-left md:max-w-[280px]">
                   Scope
                 </p>
                 <span className="text-extra_paragraph_heading text-foreground py-2 font-paragraph text-left md:text-right">
@@ -103,7 +103,7 @@ const IpSuitsAccordian: FC<IpSuitsAccordianProps> = () => {
                   <h4 className="text-extra_subtitle_heading text-primary-foreground py-2 font-paragraph text-left">
                     B3BC-Flows
                   </h4>
-                  <p className="text-extra_subtitle_heading text-foreground py-2 font-paragraph text-center leading-normal">
+                  <p className="text-extra_subtitle_heading text-foreground py-2 font-paragraph  leading-normal text-left md:max-w-[280px]">
                     B3BC-Flows.Blz
                   </p>
                   <span className="text-extra_subtitle_heading text-foreground py-2 font-paragraph text-left md:text-right">
@@ -116,7 +116,7 @@ const IpSuitsAccordian: FC<IpSuitsAccordianProps> = () => {
                   <h4 className="text-extra_subtitle_heading text-primary-foreground py-2 font-paragraph text-left">
                     I-Spiral
                   </h4>
-                  <p className="text-extra_subtitle_heading text-foreground py-2 font-paragraph text-center leading-normal">
+                  <p className="text-extra_subtitle_heading text-foreground py-2 font-paragraph text-left md:max-w-[280px] leading-normal">
                     I-Spiral.Mkt.360Sight.Blz
                   </p>
                   <span className="text-extra_subtitle_heading text-foreground py-2 font-paragraph text-left md:text-right">
@@ -128,7 +128,7 @@ const IpSuitsAccordian: FC<IpSuitsAccordianProps> = () => {
                   <h4 className="text-extra_subtitle_heading text-primary-foreground py-2 font-paragraph text-left">
                     I-Spiral-Xct
                   </h4>
-                  <p className="text-extra_subtitle_heading text-foreground py-2 font-paragraph text-center leading-normal">
+                  <p className="text-extra_subtitle_heading text-foreground py-2 font-paragraph text-left md:max-w-[280px] leading-normal">
                     I-Spiral-BD.Mkt.360Sight.Blz
                   </p>
                   <span className="text-extra_subtitle_heading text-foreground py-2 font-paragraph text-left md:text-right">
@@ -140,7 +140,7 @@ const IpSuitsAccordian: FC<IpSuitsAccordianProps> = () => {
                   <h4 className="text-extra_subtitle_heading text-primary-foreground py-2 font-paragraph text-left">
                     D-Spiral
                   </h4>
-                  <p className="text-extra_subtitle_heading text-foreground py-2 font-paragraph text-center leading-normal">
+                  <p className="text-extra_subtitle_heading text-foreground py-2 font-paragraph text-left md:max-w-[280px] leading-normal">
                     D-Spiral.Mkt.360Sight.Blz
                   </p>
                   <span className="text-extra_subtitle_heading text-foreground py-2 font-paragraph text-left md:text-right">
@@ -153,7 +153,7 @@ const IpSuitsAccordian: FC<IpSuitsAccordianProps> = () => {
                   <h4 className="text-extra_subtitle_heading text-primary-foreground py-2 font-paragraph text-left">
                     OrgAware
                   </h4>
-                  <p className="text-extra_subtitle_heading text-foreground py-2 font-paragraph text-center leading-normal">
+                  <p className="text-extra_subtitle_heading text-foreground py-2 font-paragraph text-left md:max-w-[280px] leading-normal">
                     OrgAware.Ntrprys.360Sight.Blz
                   </p>
                   <span className="text-extra_subtitle_heading text-foreground py-2 font-paragraph text-left md:text-right">
@@ -166,7 +166,7 @@ const IpSuitsAccordian: FC<IpSuitsAccordianProps> = () => {
                   <h4 className="text-extra_subtitle_heading text-primary-foreground py-2 font-paragraph text-left">
                     PassionDiamond
                   </h4>
-                  <p className="text-extra_subtitle_heading text-foreground py-2 font-paragraph text-center leading-normal">
+                  <p className="text-extra_subtitle_heading text-foreground py-2 font-paragraph text-left md:max-w-[280px] leading-normal">
                     PassionDiamond.Mpth.Blz
                   </p>
                   <span className="text-extra_subtitle_heading text-foreground py-2 font-paragraph text-left md:text-right">
@@ -178,7 +178,7 @@ const IpSuitsAccordian: FC<IpSuitsAccordianProps> = () => {
                   <h4 className="text-extra_subtitle_heading text-primary-foreground py-2 font-paragraph text-left">
                     Sublime
                   </h4>
-                  <p className="text-extra_subtitle_heading text-foreground py-2 font-paragraph text-center leading-normal">
+                  <p className="text-extra_subtitle_heading text-foreground py-2 font-paragraph text-left md:max-w-[280px] leading-normal">
                     Sublime.Mpth.Blz
                   </p>
                   <span className="text-extra_subtitle_heading text-foreground py-2 font-paragraph text-left md:text-right">
@@ -191,7 +191,7 @@ const IpSuitsAccordian: FC<IpSuitsAccordianProps> = () => {
                   <h4 className="text-extra_subtitle_heading text-primary-foreground py-2 font-paragraph text-left">
                     GrwthPyrmd
                   </h4>
-                  <p className="text-extra_subtitle_heading text-foreground py-2 font-paragraph text-center leading-normal">
+                  <p className="text-extra_subtitle_heading text-foreground py-2 font-paragraph text-left md:max-w-[280px] leading-normal">
                     GrwthPyrmd.Blz
                   </p>
                   <span className="text-extra_subtitle_heading text-foreground py-2 font-paragraph text-left md:text-right">
@@ -203,7 +203,7 @@ const IpSuitsAccordian: FC<IpSuitsAccordianProps> = () => {
                   <h4 className="text-extra_subtitle_heading text-primary-foreground py-2 font-paragraph text-left">
                     Induct
                   </h4>
-                  <p className="text-extra_subtitle_heading text-foreground py-2 font-paragraph text-center leading-normal">
+                  <p className="text-extra_subtitle_heading text-foreground py-2 font-paragraph text-left md:max-w-[280px] leading-normal">
                     Induct.Blz
                   </p>
                   <span className="text-extra_subtitle_heading text-foreground py-2 font-paragraph text-left md:text-right">
@@ -215,7 +215,7 @@ const IpSuitsAccordian: FC<IpSuitsAccordianProps> = () => {
                   <h4 className="text-extra_subtitle_heading text-primary-foreground py-2 font-paragraph text-left">
                     Insight-Matrix
                   </h4>
-                  <p className="text-extra_subtitle_heading text-foreground py-2 font-paragraph text-center leading-normal">
+                  <p className="text-extra_subtitle_heading text-foreground py-2 font-paragraph text-left md:max-w-[280px] leading-normal">
                     Insight-Matrix.Blz
                   </p>
                   <span className="text-extra_subtitle_heading text-foreground py-2 font-paragraph text-left md:text-right">
@@ -246,7 +246,7 @@ const IpSuitsAccordian: FC<IpSuitsAccordianProps> = () => {
           </CustomTrigger>
           <AccordionContent className="border-b border-foreground/40 py-8 px-4 md:px-8">
             <div className="w-full flex flex-col items-start gap-4">
-              <p className="text-pargrpah_heading mb-1 text-[#ED7D31] font-heading leading-normal">
+              <p className="text-pargrpah_heading mb-1 text-foreground font-heading leading-normal">
                 To define & propel most powerful & inspiring brands
               </p>
               {/* Title Bar */}
@@ -255,7 +255,7 @@ const IpSuitsAccordian: FC<IpSuitsAccordianProps> = () => {
                 <h4 className="text-extra_paragraph_heading text-primary-foreground py-2 font-paragraph text-left">
                   IP Brand
                 </h4>
-                <p className="text-extra_paragraph_heading text-foreground py-2 font-paragraph text-center">
+                <p className="text-extra_paragraph_heading text-foreground py-2 font-paragraph text-left md:max-w-[280px]">
                   Scope
                 </p>
                 <span className="text-extra_paragraph_heading text-foreground py-2 font-paragraph text-left md:text-right">
@@ -268,7 +268,7 @@ const IpSuitsAccordian: FC<IpSuitsAccordianProps> = () => {
                   <h4 className="text-extra_subtitle_heading text-primary-foreground py-2 font-paragraph text-left">
                     4Win
                   </h4>
-                  <p className="text-extra_subtitle_heading text-foreground py-2 font-paragraph text-center leading-normal">
+                  <p className="text-extra_subtitle_heading text-foreground py-2 font-paragraph text-left md:max-w-[280px] leading-normal">
                     Cust, Consumer, Brand, Shopper Propositions
                   </p>
                   <span className="text-extra_subtitle_heading text-foreground py-2 font-paragraph text-left md:text-right">
@@ -281,7 +281,7 @@ const IpSuitsAccordian: FC<IpSuitsAccordianProps> = () => {
                   <h4 className="text-extra_subtitle_heading text-primary-foreground py-2 font-paragraph text-left">
                     Bortals
                   </h4>
-                  <p className="text-extra_subtitle_heading text-foreground py-2 font-paragraph text-center">
+                  <p className="text-extra_subtitle_heading text-foreground py-2 font-paragraph text-left md:max-w-[280px]">
                     Brand Portfolio Strategy
                   </p>
                   <span className="text-extra_subtitle_heading text-foreground py-2 font-paragraph text-left md:text-right">
@@ -294,7 +294,7 @@ const IpSuitsAccordian: FC<IpSuitsAccordianProps> = () => {
                   <h4 className="text-extra_subtitle_heading text-primary-foreground py-2 font-paragraph text-left">
                     Brandricity.Ntrprys
                   </h4>
-                  <p className="text-extra_subtitle_heading text-foreground py-2 font-paragraph text-center">
+                  <p className="text-extra_subtitle_heading text-foreground py-2 font-paragraph text-left md:max-w-[280px]">
                     Brand Centric Organisations
                   </p>
                   <span className="text-extra_subtitle_heading text-foreground py-2 font-paragraph text-left md:text-right">
@@ -306,7 +306,7 @@ const IpSuitsAccordian: FC<IpSuitsAccordianProps> = () => {
                   <h4 className="text-extra_subtitle_heading text-primary-foreground py-2 font-paragraph text-left">
                     Brandricity.Role
                   </h4>
-                  <p className="text-extra_subtitle_heading text-foreground py-2 font-paragraph text-center">
+                  <p className="text-extra_subtitle_heading text-foreground py-2 font-paragraph text-left md:max-w-[280px]">
                     Roles of Brand in Organisations
                   </p>
                   <span className="text-extra_subtitle_heading text-foreground py-2 font-paragraph text-left md:text-right">
@@ -319,7 +319,7 @@ const IpSuitsAccordian: FC<IpSuitsAccordianProps> = () => {
                   <h4 className="text-extra_subtitle_heading text-primary-foreground py-2 font-paragraph text-left">
                     Brnd.Def
                   </h4>
-                  <p className="text-extra_subtitle_heading text-foreground py-2 font-paragraph text-center">
+                  <p className="text-extra_subtitle_heading text-foreground py-2 font-paragraph text-left md:max-w-[280px]">
                     Brand Definition
                   </p>
                   <span className="text-extra_subtitle_heading text-foreground py-2 font-paragraph text-left md:text-right">
@@ -331,7 +331,7 @@ const IpSuitsAccordian: FC<IpSuitsAccordianProps> = () => {
                   <h4 className="text-extra_subtitle_heading text-primary-foreground py-2 font-paragraph text-left">
                     BrnDeus
                   </h4>
-                  <p className="text-extra_subtitle_heading text-foreground py-2 font-paragraph text-center">
+                  <p className="text-extra_subtitle_heading text-foreground py-2 font-paragraph text-left md:max-w-[280px]">
                     Brand Definition Framework
                   </p>
                   <span className="text-extra_subtitle_heading text-foreground py-2 font-paragraph text-left md:text-right">
@@ -343,7 +343,7 @@ const IpSuitsAccordian: FC<IpSuitsAccordianProps> = () => {
                   <h4 className="text-extra_subtitle_heading text-primary-foreground py-2 font-paragraph text-left">
                     Brnd.Prtrt
                   </h4>
-                  <p className="text-extra_subtitle_heading text-foreground py-2 font-paragraph text-center">
+                  <p className="text-extra_subtitle_heading text-foreground py-2 font-paragraph text-left md:max-w-[280px]">
                     Brand Portrait
                   </p>
                   <span className="text-extra_subtitle_heading text-foreground py-2 font-paragraph text-left md:text-right">
@@ -355,7 +355,7 @@ const IpSuitsAccordian: FC<IpSuitsAccordianProps> = () => {
                   <h4 className="text-extra_subtitle_heading text-primary-foreground py-2 font-paragraph text-left">
                     Brnd.Stroice
                   </h4>
-                  <p className="text-extra_subtitle_heading text-foreground py-2 font-paragraph text-center">
+                  <p className="text-extra_subtitle_heading text-foreground py-2 font-paragraph text-left md:max-w-[280px]">
                     Brand Strategy Definition
                   </p>
                   <span className="text-extra_subtitle_heading text-foreground py-2 font-paragraph text-left md:text-right">
@@ -367,7 +367,7 @@ const IpSuitsAccordian: FC<IpSuitsAccordianProps> = () => {
                   <h4 className="text-extra_subtitle_heading text-primary-foreground py-2 font-paragraph text-left">
                     Brnd.Ntrprys.Stroice
                   </h4>
-                  <p className="text-extra_subtitle_heading text-foreground py-2 font-paragraph text-center">
+                  <p className="text-extra_subtitle_heading text-foreground py-2 font-paragraph text-left md:max-w-[280px]">
                     Brand: Business Strategy Definition
                   </p>
                   <span className="text-extra_subtitle_heading text-foreground py-2 font-paragraph text-left md:text-right">
@@ -378,7 +378,7 @@ const IpSuitsAccordian: FC<IpSuitsAccordianProps> = () => {
                   <h4 className="text-extra_subtitle_heading text-primary-foreground py-2 font-paragraph text-left">
                     BrndFth
                   </h4>
-                  <p className="text-extra_subtitle_heading text-foreground py-2 font-paragraph text-center">
+                  <p className="text-extra_subtitle_heading text-foreground py-2 font-paragraph text-left md:max-w-[280px]">
                     Brand Valuation Model
                   </p>
                   <span className="text-extra_subtitle_heading text-foreground py-2 font-paragraph text-left md:text-right">
@@ -390,7 +390,7 @@ const IpSuitsAccordian: FC<IpSuitsAccordianProps> = () => {
                   <h4 className="text-extra_subtitle_heading text-primary-foreground py-2 font-paragraph text-left">
                     Xtent
                   </h4>
-                  <p className="text-extra_subtitle_heading text-foreground py-2 font-paragraph text-center">
+                  <p className="text-extra_subtitle_heading text-foreground py-2 font-paragraph text-left md:max-w-[280px]">
                     Brand Value Quantum
                   </p>
                   <span className="text-extra_subtitle_heading text-foreground py-2 font-paragraph text-left md:text-right">
@@ -402,7 +402,7 @@ const IpSuitsAccordian: FC<IpSuitsAccordianProps> = () => {
                   <h4 className="text-extra_subtitle_heading text-primary-foreground py-2 font-paragraph text-left">
                     Xtensity
                   </h4>
-                  <p className="text-extra_subtitle_heading text-foreground py-2 font-paragraph text-center">
+                  <p className="text-extra_subtitle_heading text-foreground py-2 font-paragraph text-left md:max-w-[280px]">
                     Brand Value Intensity
                   </p>
                   <span className="text-extra_subtitle_heading text-foreground py-2 font-paragraph text-left md:text-right">
@@ -414,7 +414,7 @@ const IpSuitsAccordian: FC<IpSuitsAccordianProps> = () => {
                   <h4 className="text-extra_subtitle_heading text-primary-foreground py-2 font-paragraph text-left">
                     BrnDzine
                   </h4>
-                  <p className="text-extra_subtitle_heading text-foreground py-2 font-paragraph text-center">
+                  <p className="text-extra_subtitle_heading text-foreground py-2 font-paragraph text-left md:max-w-[280px]">
                     Brand Design & Expression
                   </p>
                   <span className="text-extra_subtitle_heading text-foreground py-2 font-paragraph text-left md:text-right">
@@ -426,7 +426,7 @@ const IpSuitsAccordian: FC<IpSuitsAccordianProps> = () => {
                   <h4 className="text-extra_subtitle_heading text-primary-foreground py-2 font-paragraph text-left">
                     SnSMprnt
                   </h4>
-                  <p className="text-extra_subtitle_heading text-foreground py-2 font-paragraph text-center">
+                  <p className="text-extra_subtitle_heading text-foreground py-2 font-paragraph text-left md:max-w-[280px]">
                     Sensorial Imprint of Brand
                   </p>
                   <span className="text-extra_subtitle_heading text-foreground py-2 font-paragraph text-left md:text-right">
@@ -438,7 +438,7 @@ const IpSuitsAccordian: FC<IpSuitsAccordianProps> = () => {
                   <h4 className="text-extra_subtitle_heading text-primary-foreground py-2 font-paragraph text-left">
                     Frnchys
                   </h4>
-                  <p className="text-extra_subtitle_heading text-foreground py-2 font-paragraph text-center">
+                  <p className="text-extra_subtitle_heading text-foreground py-2 font-paragraph text-left md:max-w-[280px]">
                     Brand Franchise Management
                   </p>
                   <span className="text-extra_subtitle_heading text-foreground py-2 font-paragraph text-left md:text-right">
@@ -450,7 +450,7 @@ const IpSuitsAccordian: FC<IpSuitsAccordianProps> = () => {
                   <h4 className="text-extra_subtitle_heading text-primary-foreground py-2 font-paragraph text-left">
                     ReMkt
                   </h4>
-                  <p className="text-extra_subtitle_heading text-foreground py-2 font-paragraph text-center">
+                  <p className="text-extra_subtitle_heading text-foreground py-2 font-paragraph text-left md:max-w-[280px]">
                     Restructuring markets using Brand
                   </p>
                   <span className="text-extra_subtitle_heading text-foreground py-2 font-paragraph text-left md:text-right">
@@ -481,7 +481,7 @@ const IpSuitsAccordian: FC<IpSuitsAccordianProps> = () => {
           </CustomTrigger>
           <AccordionContent className="border-b border-foreground/40 py-8 px-4 md:px-8">
             <div className="w-full flex flex-col items-start gap-4">
-              <p className="text-pargrpah_heading mb-1 text-[#ED7D31] font-heading leading-normal">
+              <p className="text-pargrpah_heading mb-1 text-white font-heading leading-normal">
                 To craft unique strategic choices and propel winning strategy
               </p>
               {/* Title Bar */}
@@ -489,7 +489,7 @@ const IpSuitsAccordian: FC<IpSuitsAccordianProps> = () => {
                 <h4 className="text-extra_paragraph_heading text-primary-foreground py-2 font-paragraph text-left">
                   IP Brand
                 </h4>
-                <p className="text-extra_paragraph_heading text-foreground py-2 font-paragraph text-center">
+                <p className="text-extra_paragraph_heading text-foreground py-2 font-paragraph text-left md:max-w-[280px]">
                   Scope
                 </p>
                 <span className="text-extra_paragraph_heading text-foreground py-2 font-paragraph text-left md:text-right">
@@ -502,7 +502,7 @@ const IpSuitsAccordian: FC<IpSuitsAccordianProps> = () => {
                   <h4 className="text-extra_subtitle_heading text-primary-foreground py-2 font-paragraph text-left">
                     Bizcope
                   </h4>
-                  <p className="text-extra_subtitle_heading text-foreground py-2 font-paragraph text-center">
+                  <p className="text-extra_subtitle_heading text-foreground py-2 font-paragraph text-left md:max-w-[280px]">
                     Operating scope of Biz
                   </p>
                   <span className="text-extra_subtitle_heading text-foreground py-2 font-paragraph text-left md:text-right">
@@ -514,7 +514,7 @@ const IpSuitsAccordian: FC<IpSuitsAccordianProps> = () => {
                   <h4 className="text-extra_subtitle_heading text-primary-foreground py-2 font-paragraph text-left">
                     Stroice.Def
                   </h4>
-                  <p className="text-extra_subtitle_heading text-foreground py-2 font-paragraph text-center">
+                  <p className="text-extra_subtitle_heading text-foreground py-2 font-paragraph text-left md:max-w-[280px]">
                     Strategy Definition
                   </p>
                   <span className="text-extra_subtitle_heading text-foreground py-2 font-paragraph text-left md:text-right">
@@ -526,7 +526,7 @@ const IpSuitsAccordian: FC<IpSuitsAccordianProps> = () => {
                   <h4 className="text-extra_subtitle_heading text-primary-foreground py-2 font-paragraph text-left">
                     OpCap-Diads
                   </h4>
-                  <p className="text-extra_subtitle_heading text-foreground py-2 font-paragraph text-center">
+                  <p className="text-extra_subtitle_heading text-foreground py-2 font-paragraph text-left md:max-w-[280px]">
                     Opportunity – Capability Diads
                   </p>
                   <span className="text-extra_subtitle_heading text-foreground py-2 font-paragraph text-left md:text-right">
@@ -538,7 +538,7 @@ const IpSuitsAccordian: FC<IpSuitsAccordianProps> = () => {
                   <h4 className="text-extra_subtitle_heading text-primary-foreground py-2 font-paragraph text-left">
                     Prps.Ntrprys
                   </h4>
-                  <p className="text-extra_subtitle_heading text-foreground py-2 font-paragraph text-center">
+                  <p className="text-extra_subtitle_heading text-foreground py-2 font-paragraph text-left md:max-w-[280px]">
                     Enterprise Purpose Statement & Charter
                   </p>
                   <span className="text-extra_subtitle_heading text-foreground py-2 font-paragraph text-left md:text-right">
@@ -551,7 +551,7 @@ const IpSuitsAccordian: FC<IpSuitsAccordianProps> = () => {
                   <h4 className="text-extra_subtitle_heading text-primary-foreground py-2 font-paragraph text-left">
                     Prps.Ntrprys.Charter
                   </h4>
-                  <p className="text-extra_subtitle_heading text-foreground py-2 font-paragraph text-center">
+                  <p className="text-extra_subtitle_heading text-foreground py-2 font-paragraph text-left md:max-w-[280px]">
                     Enterprise Purpose Statement & Charter
                   </p>
                   <span className="text-extra_subtitle_heading text-foreground py-2 font-paragraph text-left md:text-right">
@@ -563,7 +563,7 @@ const IpSuitsAccordian: FC<IpSuitsAccordianProps> = () => {
                   <h4 className="text-extra_subtitle_heading text-primary-foreground py-2 font-paragraph text-left">
                     Plybk
                   </h4>
-                  <p className="text-extra_subtitle_heading text-foreground py-2 font-paragraph text-center">
+                  <p className="text-extra_subtitle_heading text-foreground py-2 font-paragraph text-left md:max-w-[280px]">
                     Enterprise Expansion Playbook
                   </p>
                   <span className="text-extra_subtitle_heading text-foreground py-2 font-paragraph text-left md:text-right">
@@ -575,7 +575,7 @@ const IpSuitsAccordian: FC<IpSuitsAccordianProps> = () => {
                   <h4 className="text-extra_subtitle_heading text-primary-foreground py-2 font-paragraph text-left">
                     Straxcellence
                   </h4>
-                  <p className="text-extra_subtitle_heading text-foreground py-2 font-paragraph text-center">
+                  <p className="text-extra_subtitle_heading text-foreground py-2 font-paragraph text-left md:max-w-[280px]">
                     Levers of Strategic Excellence
                   </p>
                   <span className="text-extra_subtitle_heading text-foreground py-2 font-paragraph text-left md:text-right">
@@ -606,7 +606,7 @@ const IpSuitsAccordian: FC<IpSuitsAccordianProps> = () => {
           </CustomTrigger>
           <AccordionContent className="border-b border-foreground/40 py-8 px-4 md:px-8">
             <div className="w-full flex flex-col items-start gap-4">
-              <p className="text-pargrpah_heading mb-1 text-[#ED7D31] font-heading leading-normal">
+              <p className="text-pargrpah_heading mb-1 text-foreground font-heading leading-normal">
                 To design & activate best sales, distribution and business
                 development solutions
               </p>
@@ -615,7 +615,7 @@ const IpSuitsAccordian: FC<IpSuitsAccordianProps> = () => {
                 <h4 className="text-extra_paragraph_heading text-primary-foreground py-2 font-paragraph text-left">
                   IP Brand
                 </h4>
-                <p className="text-extra_paragraph_heading text-foreground py-2 font-paragraph text-center">
+                <p className="text-extra_paragraph_heading text-foreground py-2 font-paragraph text-left md:max-w-[280px]">
                   Scope
                 </p>
                 <span className="text-extra_paragraph_heading text-foreground py-2 font-paragraph text-left md:text-right">
@@ -628,7 +628,7 @@ const IpSuitsAccordian: FC<IpSuitsAccordianProps> = () => {
                   <h4 className="text-extra_subtitle_heading text-primary-foreground py-2 font-paragraph text-left">
                     ProDact
                   </h4>
-                  <p className="text-extra_subtitle_heading text-foreground py-2 font-paragraph text-center">
+                  <p className="text-extra_subtitle_heading text-foreground py-2 font-paragraph text-left md:max-w-[280px]">
                     Professional Demand Activation
                   </p>
                   <span className="text-extra_subtitle_heading text-foreground py-2 font-paragraph text-left md:text-right">
@@ -640,7 +640,7 @@ const IpSuitsAccordian: FC<IpSuitsAccordianProps> = () => {
                   <h4 className="text-extra_subtitle_heading text-primary-foreground py-2 font-paragraph text-left">
                     SHoM
                   </h4>
-                  <p className="text-extra_subtitle_heading text-foreground py-2 font-paragraph text-center">
+                  <p className="text-extra_subtitle_heading text-foreground py-2 font-paragraph text-left md:max-w-[280px]">
                     Stakeholder Management
                   </p>
                   <span className="text-extra_subtitle_heading text-foreground py-2 font-paragraph text-left md:text-right">
@@ -652,7 +652,7 @@ const IpSuitsAccordian: FC<IpSuitsAccordianProps> = () => {
                   <h4 className="text-extra_subtitle_heading text-primary-foreground py-2 font-paragraph text-left">
                     OYC
                   </h4>
-                  <p className="text-extra_subtitle_heading text-foreground py-2 font-paragraph text-center">
+                  <p className="text-extra_subtitle_heading text-foreground py-2 font-paragraph text-left md:max-w-[280px]">
                     Own Your Customer
                   </p>
                   <span className="text-extra_subtitle_heading text-foreground py-2 font-paragraph text-left md:text-right">
@@ -664,7 +664,7 @@ const IpSuitsAccordian: FC<IpSuitsAccordianProps> = () => {
                   <h4 className="text-extra_subtitle_heading text-primary-foreground py-2 font-paragraph text-left">
                     KCM
                   </h4>
-                  <p className="text-extra_subtitle_heading text-foreground py-2 font-paragraph text-center">
+                  <p className="text-extra_subtitle_heading text-foreground py-2 font-paragraph text-left md:max-w-[280px]">
                     Key Customer Management
                   </p>
                   <span className="text-extra_subtitle_heading text-foreground py-2 font-paragraph text-left md:text-right">
@@ -676,7 +676,7 @@ const IpSuitsAccordian: FC<IpSuitsAccordianProps> = () => {
                   <h4 className="text-extra_subtitle_heading text-primary-foreground py-2 font-paragraph text-left">
                     MaVTree
                   </h4>
-                  <p className="text-extra_subtitle_heading text-foreground py-2 font-paragraph text-center">
+                  <p className="text-extra_subtitle_heading text-foreground py-2 font-paragraph text-left md:max-w-[280px]">
                     Market Value Tree
                   </p>
                   <span className="text-extra_subtitle_heading text-foreground py-2 font-paragraph text-left md:text-right">
@@ -688,7 +688,7 @@ const IpSuitsAccordian: FC<IpSuitsAccordianProps> = () => {
                   <h4 className="text-extra_subtitle_heading text-primary-foreground py-2 font-paragraph text-left">
                     CustEF
                   </h4>
-                  <p className="text-extra_subtitle_heading text-foreground py-2 font-paragraph text-center">
+                  <p className="text-extra_subtitle_heading text-foreground py-2 font-paragraph text-left md:max-w-[280px]">
                     Customer Engagement Funnel
                   </p>
                   <span className="text-extra_subtitle_heading text-foreground py-2 font-paragraph text-left md:text-right">
@@ -700,7 +700,7 @@ const IpSuitsAccordian: FC<IpSuitsAccordianProps> = () => {
                   <h4 className="text-extra_subtitle_heading text-primary-foreground py-2 font-paragraph text-left">
                     Aufr
                   </h4>
-                  <p className="text-extra_subtitle_heading text-foreground py-2 font-paragraph text-center">
+                  <p className="text-extra_subtitle_heading text-foreground py-2 font-paragraph text-left md:max-w-[280px]">
                     Product, Service, Relationship Offer
                   </p>
                   <span className="text-extra_subtitle_heading text-foreground py-2 font-paragraph text-left md:text-right">
@@ -712,7 +712,7 @@ const IpSuitsAccordian: FC<IpSuitsAccordianProps> = () => {
                   <h4 className="text-extra_subtitle_heading text-primary-foreground py-2 font-paragraph text-left">
                     Dist-Evolve
                   </h4>
-                  <p className="text-extra_subtitle_heading text-foreground py-2 font-paragraph text-center">
+                  <p className="text-extra_subtitle_heading text-foreground py-2 font-paragraph text-left md:max-w-[280px]">
                     Distributor Evolution
                   </p>
                   <span className="text-extra_subtitle_heading text-foreground py-2 font-paragraph text-left md:text-right">
@@ -724,7 +724,7 @@ const IpSuitsAccordian: FC<IpSuitsAccordianProps> = () => {
                   <h4 className="text-extra_subtitle_heading text-primary-foreground py-2 font-paragraph text-left">
                     SalesCentricity
                   </h4>
-                  <p className="text-extra_subtitle_heading text-foreground py-2 font-paragraph text-center">
+                  <p className="text-extra_subtitle_heading text-foreground py-2 font-paragraph text-left md:max-w-[280px]">
                     Sales Centric Organisations
                   </p>
                   <span className="text-extra_subtitle_heading text-foreground py-2 font-paragraph text-left md:text-right">
@@ -767,7 +767,7 @@ const IpSuitsAccordian: FC<IpSuitsAccordianProps> = () => {
           </CustomTrigger>
           <AccordionContent className="border-b border-foreground/40 py-8 px-4 md:px-8">
             <div className="w-full flex flex-col items-start gap-4">
-              <p className="text-pargrpah_heading mb-1 text-[#ED7D31] font-heading leading-normal">
+              <p className="text-pargrpah_heading mb-1 text-foreground font-heading leading-normal">
                 To trigger, frame and oversee future facing transformations
               </p>
               {/* Title Bar */}
@@ -775,7 +775,7 @@ const IpSuitsAccordian: FC<IpSuitsAccordianProps> = () => {
                 <h4 className="text-extra_paragraph_heading text-primary-foreground py-2 font-paragraph text-left">
                   IP Brand
                 </h4>
-                <p className="text-extra_paragraph_heading text-foreground py-2 font-paragraph text-center">
+                <p className="text-extra_paragraph_heading text-foreground py-2 font-paragraph text-left md:max-w-[280px]">
                   Scope
                 </p>
                 <span className="text-extra_paragraph_heading text-foreground py-2 font-paragraph text-left md:text-right">
@@ -788,7 +788,7 @@ const IpSuitsAccordian: FC<IpSuitsAccordianProps> = () => {
                   <h4 className="text-extra_subtitle_heading text-primary-foreground py-2 font-paragraph text-left">
                     NuForm.Process
                   </h4>
-                  <p className="text-extra_subtitle_heading text-foreground py-2 font-paragraph text-center">
+                  <p className="text-extra_subtitle_heading text-foreground py-2 font-paragraph text-left md:max-w-[280px]">
                     Insights to Actions Transformation Process
                   </p>
                   <span className="text-extra_subtitle_heading text-foreground py-2 font-paragraph text-left md:text-right">
@@ -800,7 +800,7 @@ const IpSuitsAccordian: FC<IpSuitsAccordianProps> = () => {
                   <h4 className="text-extra_subtitle_heading text-primary-foreground py-2 font-paragraph text-left">
                     NuForm.Program
                   </h4>
-                  <p className="text-extra_subtitle_heading text-foreground py-2 font-paragraph text-center">
+                  <p className="text-extra_subtitle_heading text-foreground py-2 font-paragraph text-left md:max-w-[280px]">
                     Transformation Program Mgmt
                   </p>
                   <span className="text-extra_subtitle_heading text-foreground py-2 font-paragraph text-left md:text-right">
@@ -812,7 +812,7 @@ const IpSuitsAccordian: FC<IpSuitsAccordianProps> = () => {
                   <h4 className="text-extra_subtitle_heading text-primary-foreground py-2 font-paragraph text-left">
                     HiroZ
                   </h4>
-                  <p className="text-extra_subtitle_heading text-foreground py-2 font-paragraph text-center">
+                  <p className="text-extra_subtitle_heading text-foreground py-2 font-paragraph text-left md:max-w-[280px]">
                     Hero Actions
                   </p>
                   <span className="text-extra_subtitle_heading text-foreground py-2 font-paragraph text-left md:text-right">
@@ -824,7 +824,7 @@ const IpSuitsAccordian: FC<IpSuitsAccordianProps> = () => {
                   <h4 className="text-extra_subtitle_heading text-primary-foreground py-2 font-paragraph text-left">
                     XtarZ
                   </h4>
-                  <p className="text-extra_subtitle_heading text-foreground py-2 font-paragraph text-center">
+                  <p className="text-extra_subtitle_heading text-foreground py-2 font-paragraph text-left md:max-w-[280px]">
                     Star Shifts
                   </p>
                   <span className="text-extra_subtitle_heading text-foreground py-2 font-paragraph text-left md:text-right">
@@ -836,7 +836,7 @@ const IpSuitsAccordian: FC<IpSuitsAccordianProps> = () => {
                   <h4 className="text-extra_subtitle_heading text-primary-foreground py-2 font-paragraph text-left">
                     XtarZ.GTM
                   </h4>
-                  <p className="text-extra_subtitle_heading text-foreground py-2 font-paragraph text-center">
+                  <p className="text-extra_subtitle_heading text-foreground py-2 font-paragraph text-left md:max-w-[280px]">
                     GTM Star Shifts
                   </p>
                   <span className="text-extra_subtitle_heading text-foreground py-2 font-paragraph text-left md:text-right">
@@ -867,7 +867,7 @@ const IpSuitsAccordian: FC<IpSuitsAccordianProps> = () => {
           </CustomTrigger>
           <AccordionContent className="border-b border-foreground/40 py-8 px-4 md:px-8">
             <div className="w-full flex flex-col items-start gap-4">
-              <p className="text-pargrpah_heading mb-1 text-[#ED7D31] font-heading leading-normal">
+              <p className="text-pargrpah_heading mb-1 text-foreground font-heading leading-tight">
                 To identify, frame, define, design and develop winning
                 innovations while managing a strategic innovations portfolio
               </p>
@@ -876,7 +876,7 @@ const IpSuitsAccordian: FC<IpSuitsAccordianProps> = () => {
                 <h4 className="text-extra_paragraph_heading text-primary-foreground py-2 font-paragraph text-left">
                   IP Brand
                 </h4>
-                <p className="text-extra_paragraph_heading text-foreground py-2 font-paragraph text-center">
+                <p className="text-extra_paragraph_heading text-foreground py-2 font-paragraph text-left md:max-w-[280px]">
                   Scope
                 </p>
                 <span className="text-extra_paragraph_heading text-foreground py-2 font-paragraph text-left md:text-right">
@@ -889,7 +889,7 @@ const IpSuitsAccordian: FC<IpSuitsAccordianProps> = () => {
                   <h4 className="text-extra_subtitle_heading text-primary-foreground py-2 font-paragraph text-left">
                     Stranovate.Def
                   </h4>
-                  <p className="text-extra_subtitle_heading text-foreground py-2 font-paragraph text-center">
+                  <p className="text-extra_subtitle_heading text-foreground py-2 font-paragraph text-left md:max-w-[280px]">
                     Innovation Definition
                   </p>
                   <span className="text-extra_subtitle_heading text-foreground py-2 font-paragraph text-left md:text-right">
@@ -901,7 +901,7 @@ const IpSuitsAccordian: FC<IpSuitsAccordianProps> = () => {
                   <h4 className="text-extra_subtitle_heading text-primary-foreground py-2 font-paragraph text-left">
                     Stranovate.Value
                   </h4>
-                  <p className="text-extra_subtitle_heading text-foreground py-2 font-paragraph text-center">
+                  <p className="text-extra_subtitle_heading text-foreground py-2 font-paragraph text-left md:max-w-[280px]">
                     Value Innovation Process
                   </p>
                   <span className="text-extra_subtitle_heading text-foreground py-2 font-paragraph text-left md:text-right">
@@ -913,7 +913,7 @@ const IpSuitsAccordian: FC<IpSuitsAccordianProps> = () => {
                   <h4 className="text-extra_subtitle_heading text-primary-foreground py-2 font-paragraph text-left">
                     Stranovate.Cost
                   </h4>
-                  <p className="text-extra_subtitle_heading text-foreground py-2 font-paragraph text-center">
+                  <p className="text-extra_subtitle_heading text-foreground py-2 font-paragraph text-left md:max-w-[280px]">
                     Cost Innovation Process
                   </p>
                   <span className="text-extra_subtitle_heading text-foreground py-2 font-paragraph text-left md:text-right">
@@ -925,7 +925,7 @@ const IpSuitsAccordian: FC<IpSuitsAccordianProps> = () => {
                   <h4 className="text-extra_subtitle_heading text-primary-foreground py-2 font-paragraph text-left">
                     I-Stroice
                   </h4>
-                  <p className="text-extra_subtitle_heading text-foreground py-2 font-paragraph text-center">
+                  <p className="text-extra_subtitle_heading text-foreground py-2 font-paragraph text-left md:max-w-[280px]">
                     Innovation Strategy
                   </p>
                   <span className="text-extra_subtitle_heading text-foreground py-2 font-paragraph text-left md:text-right">
@@ -937,7 +937,7 @@ const IpSuitsAccordian: FC<IpSuitsAccordianProps> = () => {
                   <h4 className="text-extra_subtitle_heading text-primary-foreground py-2 font-paragraph text-left">
                     I-Portals
                   </h4>
-                  <p className="text-extra_subtitle_heading text-foreground py-2 font-paragraph text-center">
+                  <p className="text-extra_subtitle_heading text-foreground py-2 font-paragraph text-left md:max-w-[280px]">
                     Innovation Portfolio Management
                   </p>
                   <span className="text-extra_subtitle_heading text-foreground py-2 font-paragraph text-left md:text-right">
@@ -968,7 +968,7 @@ const IpSuitsAccordian: FC<IpSuitsAccordianProps> = () => {
           </CustomTrigger>
           <AccordionContent className="border-b border-foreground/40 py-8 px-4 md:px-8">
             <div className="w-full flex flex-col items-start gap-4">
-              <p className="text-pargrpah_heading mb-1 text-[#ED7D31] font-heading leading-normal">
+              <p className="text-pargrpah_heading mb-1 text-foreground font-heading leading-normal">
                 To identify, frame, define, design and develop, winning
                 activations and brand properties
               </p>
@@ -977,7 +977,7 @@ const IpSuitsAccordian: FC<IpSuitsAccordianProps> = () => {
                 <h4 className="text-extra_paragraph_heading text-primary-foreground py-2 font-paragraph text-left">
                   IP Brand
                 </h4>
-                <p className="text-extra_paragraph_heading text-foreground py-2 font-paragraph text-center">
+                <p className="text-extra_paragraph_heading text-foreground py-2 font-paragraph text-left md:max-w-[280px]">
                   Scope
                 </p>
                 <span className="text-extra_paragraph_heading text-foreground py-2 font-paragraph text-left md:text-right">
@@ -990,7 +990,7 @@ const IpSuitsAccordian: FC<IpSuitsAccordianProps> = () => {
                   <h4 className="text-extra_subtitle_heading text-primary-foreground py-2 font-paragraph text-left">
                     Stranovate.Def
                   </h4>
-                  <p className="text-extra_subtitle_heading text-foreground py-2 font-paragraph text-center">
+                  <p className="text-extra_subtitle_heading text-foreground py-2 font-paragraph text-left md:max-w-[280px]">
                     Innovation Definition
                   </p>
                   <span className="text-extra_subtitle_heading text-foreground py-2 font-paragraph text-left md:text-right">
@@ -1021,7 +1021,7 @@ const IpSuitsAccordian: FC<IpSuitsAccordianProps> = () => {
           </CustomTrigger>
           <AccordionContent className="border-b border-foreground/40 py-8 px-4 md:px-8">
             <div className="w-full flex flex-col items-start gap-4">
-              <p className="text-pargrpah_heading mb-1 text-[#ED7D31] font-heading leading-normal">
+              <p className="text-pargrpah_heading mb-1 text-foreground font-heading leading-normal">
                 To Uncover Blazing Insights
               </p>
               {/* Title Bar */}
@@ -1029,7 +1029,7 @@ const IpSuitsAccordian: FC<IpSuitsAccordianProps> = () => {
                 <h4 className="text-extra_paragraph_heading text-primary-foreground py-2 font-paragraph text-left">
                   IP Brand
                 </h4>
-                <p className="text-extra_paragraph_heading text-foreground py-2 font-paragraph text-center">
+                <p className="text-extra_paragraph_heading text-foreground py-2 font-paragraph text-left md:max-w-[280px]">
                   Scope
                 </p>
                 <span className="text-extra_paragraph_heading text-foreground py-2 font-paragraph text-left md:text-right">
@@ -1042,7 +1042,7 @@ const IpSuitsAccordian: FC<IpSuitsAccordianProps> = () => {
                   <h4 className="text-extra_subtitle_heading text-primary-foreground py-2 font-paragraph text-left">
                     Innate
                   </h4>
-                  <p className="text-extra_subtitle_heading text-foreground py-2 font-paragraph text-center">
+                  <p className="text-extra_subtitle_heading text-foreground py-2 font-paragraph text-left md:max-w-[280px]">
                     Potential Management
                   </p>
                   <span className="text-extra_subtitle_heading text-foreground py-2 font-paragraph text-left md:text-right">
@@ -1054,7 +1054,7 @@ const IpSuitsAccordian: FC<IpSuitsAccordianProps> = () => {
                   <h4 className="text-extra_subtitle_heading text-primary-foreground py-2 font-paragraph text-left">
                     Manifest
                   </h4>
-                  <p className="text-extra_subtitle_heading text-foreground py-2 font-paragraph text-center">
+                  <p className="text-extra_subtitle_heading text-foreground py-2 font-paragraph text-left md:max-w-[280px]">
                     Skills Management
                   </p>
                   <span className="text-extra_subtitle_heading text-foreground py-2 font-paragraph text-left md:text-right">
@@ -1066,7 +1066,7 @@ const IpSuitsAccordian: FC<IpSuitsAccordianProps> = () => {
                   <h4 className="text-extra_subtitle_heading text-primary-foreground py-2 font-paragraph text-left">
                     I-Purpose
                   </h4>
-                  <p className="text-extra_subtitle_heading text-foreground py-2 font-paragraph text-center">
+                  <p className="text-extra_subtitle_heading text-foreground py-2 font-paragraph text-left md:max-w-[280px]">
                     Individual Coaching
                   </p>
                   <span className="text-extra_subtitle_heading text-foreground py-2 font-paragraph text-left md:text-right">
@@ -1078,7 +1078,7 @@ const IpSuitsAccordian: FC<IpSuitsAccordianProps> = () => {
                   <h4 className="text-extra_subtitle_heading text-primary-foreground py-2 font-paragraph text-left">
                     UnProcess
                   </h4>
-                  <p className="text-extra_subtitle_heading text-foreground py-2 font-paragraph text-center">
+                  <p className="text-extra_subtitle_heading text-foreground py-2 font-paragraph text-left md:max-w-[280px]">
                     Intuitive Processes
                   </p>
                   <span className="text-extra_subtitle_heading text-foreground py-2 font-paragraph text-left md:text-right">
@@ -1090,7 +1090,7 @@ const IpSuitsAccordian: FC<IpSuitsAccordianProps> = () => {
                   <h4 className="text-extra_subtitle_heading text-primary-foreground py-2 font-paragraph text-left">
                     QnA
                   </h4>
-                  <p className="text-extra_subtitle_heading text-foreground py-2 font-paragraph text-center">
+                  <p className="text-extra_subtitle_heading text-foreground py-2 font-paragraph text-left md:max-w-[280px]">
                     QnA Process
                   </p>
                   <span className="text-extra_subtitle_heading text-foreground py-2 font-paragraph text-left md:text-right">

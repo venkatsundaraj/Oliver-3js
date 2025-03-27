@@ -66,13 +66,14 @@ export const peopleTable = createTable("people", {
   type: varchar("type").notNull(),
   skills: varchar("skills").notNull(),
   leadDomain: varchar("leadDomain").notNull(),
-  supportDomains: varchar("supportDomains").notNull(),
+  supportDomains: text("supportDomains").notNull(),
   experience: varchar("experience").notNull(),
   industries: varchar("industries").notNull(),
-  role: varchar("subType").notNull(),
+  role: varchar("role").notNull(),
   slug: varchar("slug", { length: 255 }).notNull(),
   fileUrl: varchar("fileUrl", { length: 255 }).notNull(),
   content: text("content").notNull(),
+  domains: text("domains").notNull(),
   countryFlags: text("countryFlags")
     .array()
     .notNull()

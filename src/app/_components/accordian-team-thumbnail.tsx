@@ -100,9 +100,13 @@ const AccordianTeamThumbnail: FC<AccordianTeamThumbnailProps> = ({ data }) => {
                               </span>
                               :
                             </h4>
-                            <p className="text-foreground text-extra_subtitle_heading text-left leading-normal">
-                              {item.supportDomains}
-                            </p>
+                            <div
+                              className="ProseMirror-supplydomain text-foreground border-slate-700  rounded-lg "
+                              style={{ whiteSpace: "pre-line" }}
+                              dangerouslySetInnerHTML={{
+                                __html: item.supportDomains,
+                              }}
+                            />
                           </div>
                         </div>
                         <p className="font-paragraph text-left text-extra_subtitle_heading font-normal leading-normal text-secondary-foreground">

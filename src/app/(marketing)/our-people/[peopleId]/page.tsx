@@ -26,27 +26,78 @@ const page = async ({ params }: PageProps) => {
   return (
     <>
       <section className="w-screen flex flex-col items-center justify-center">
-        <div className="container">
-          <div className="flex flex-col justify-center items-center gap-8 md:gap-3 md:flex-row pt-32 pb-16 md:pt-40 md:pb-16 ">
-            {/* Left image section */}
-            <div className="w-full md:w-2/5 ">
-              <img
-                src={member.fileUrl}
-                alt={member.name}
-                className="object-cover w-full "
-              />
-            </div>
+        <div className="container flex flex-col ">
+          <article className="grid grid-cols-1 md:grid-cols-3 items-start justify-center gap-4 w-full pt-40 pb-16">
+            <Image
+              src={member.fileUrl}
+              alt={member.name}
+              className="w-full object-cover  md:p-8"
+              width={200}
+              height={400}
+            />
+            <div className="flex items-start justify-start flex-col gap-4 md:col-start-2 md:col-end-4">
+              <div className="flex flex-wrap md:flex-nowrap items-center justify-start md:justify-center gap-2 md:gap-4">
+                <h4 className="font-heading text-left text-tertiary_heading font-normal text-primary-foreground leading-tight">
+                  {member.name}
+                </h4>
+                <span className="bg-[#ED7D31] font-paragraph text-[16px] rounded-xl text-background px-3 py-1">
+                  {member.role}
+                </span>
+              </div>
+              <p className="text-secondary-foreground text-subtitle_heading font-paragraph leading-tight text-left">
+                {member.skills}
+              </p>
+              <span className="text-foreground font-paragraph text-extra_subtitle_heading leading-tight">
+                {member.location}
+              </span>
+              <div className="flex items-start justify-start flex-col gap-4 py-2">
+                <div className="flex flex-wrap md:flex-nowrap items-start justify-start md:justify-center gap-2 md:gap-4">
+                  <h4 className="flex gap-4">
+                    <span className="flex md:min-w-40 text-extra_subtitle_heading text-primary-foreground">
+                      Core
+                    </span>
+                    :
+                  </h4>
+                  <p className="text-foreground text-extra_subtitle_heading">
+                    {member.core}
+                  </p>
+                </div>
+                <div className="flex flex-wrap md:flex-nowrap items-start justify-start md:justify-center gap-2 md:gap-4">
+                  <h4 className="flex gap-4">
+                    <span className="flex md:min-w-40 text-extra_subtitle_heading text-primary-foreground">
+                      Lead Domain
+                    </span>
+                    :
+                  </h4>
 
-            {/* Main content area */}
-            <div className=" bg-black flex flex-col justify-center items-center md:items-start px-6 md:px-10 text-white">
-              <h1 className="text-secondary_heading font-heading text-secondary-foreground leading-[1.1]">
-                {member.name}
-              </h1>
-              <p className="text-extra_paragraph_heading font-light font-heading">
-                {member.role}
+                  <p className="text-foreground text-extra_subtitle_heading">
+                    {member.leadDomain}
+                  </p>
+                </div>
+                <div className="flex flex-wrap md:flex-nowrap items-start justify-start md:justify-center gap-2 md:gap-4">
+                  <h4 className="flex gap-4">
+                    <span className="flex md:min-w-40 text-extra_subtitle_heading text-primary-foreground">
+                      Support Domains
+                    </span>
+                    :
+                  </h4>
+                  <div
+                    className="ProseMirror-supplydomain text-foreground border-slate-700  rounded-lg "
+                    style={{ whiteSpace: "pre-line" }}
+                    dangerouslySetInnerHTML={{
+                      __html: member.supportDomains,
+                    }}
+                  />
+                </div>
+              </div>
+              <p className="font-paragraph text-left text-extra_subtitle_heading font-normal leading-normal text-secondary-foreground">
+                {member.experience}
+              </p>
+              <p className="font-paragraph text-left text-extra_subtitle_heading font-normal leading-normal text-foreground">
+                {member.industries}
               </p>
             </div>
-          </div>
+          </article>
 
           <div className="flex flex-col justify-start items-center md:flex-row  gap-8 mb-8  md:py-8">
             {/* Left image section */}
@@ -61,47 +112,16 @@ const page = async ({ params }: PageProps) => {
             </section>
 
             {/* Main content area */}
-            <div className=" bg-black hidden flex-col justify-center items-center md:items-start px-6 md:px-10 text-white">
-              <div className=" text-center md:text-left mx-auto">
-                <h2 className="text-[#00aeef] font-heading text-[30px] mb-2">
-                  Domains
-                </h2>
-                <ul className="text-white font-paragraph flex flex-row md:flex-col items-center justify-center gap-4">
-                  <li>FMCG</li>
-                  <li>Consumer Durables</li>
-                  <li>Retail</li>
-                  <li>Real Estate</li>
-                  <li>Fashion</li>
-                  <li>Agri Products</li>
-                  <li>Media</li>
-                  <li>Logistics</li>
-                  <li>Textile</li>
-                  <li>Automotive</li>
-                </ul>
-              </div>
-            </div>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 items-center justify-center py-8 bg-background gap-10">
             <div className="grid grid-cols-2 md:grid-cols-5 gap-4 w-full max-w-lg md:max-w-2xl ">
               <CountryFlags data={member.companyProfiles} />
             </div>
-            <div className="flex flex-col gap-4 items-start justify-center">
-              <h2 className="font-heading text-secondary-foreground text-secondary_heading">
-                Domains
-              </h2>
-              <ul className="text-white font-paragraph flex-row flex-wrap md:flex-col flex items-start justify-start gap-4">
-                <li>FMCG</li>
-                <li>Consumer Durables</li>
-                <li>Retail</li>
-                <li>Real Estate</li>
-                <li>Fashion</li>
-                <li>Agri Products</li>
-                <li>Media</li>
-                <li>Logistics</li>
-                <li>Textile</li>
-                <li>Automotive</li>
-              </ul>
-            </div>
+            <div
+              className="ProseMirror text-foreground border-slate-700 py-4 rounded-lg "
+              style={{ whiteSpace: "pre-line" }}
+              dangerouslySetInnerHTML={{ __html: member.domains }}
+            />
           </div>
 
           {/* Centered Countries Section */}

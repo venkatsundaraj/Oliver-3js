@@ -59,6 +59,7 @@ const EditPostButton: FC<EditPostButtonProps> = ({ post, type }) => {
         >
           Edit
         </Link>
+        <div className="w-full h-[1px] bg-foreground my-1" />
         <DropdownMenuSeparator />
         <Button
           onClick={() => deletePostHandler(post.id, type)}

@@ -73,8 +73,8 @@
   @apply text-tertiary_heading  font-heading mb-5 mt-5 text-secondary-foreground leading-tight;
 }
 
-.ProseMirror h4 {
-  @apply text-4xl  font-heading mb-4 mt-4 text-secondary-foreground leading-[1];
+.ProseMirror h3 {
+  @apply text-subtitle_heading font-paragraph mb-4 text-border;
 }
 
 .ProseMirror p {
@@ -90,4 +90,20 @@
 
 .ProseMirror ul li {
   @apply text-subtitle_heading mb-4 font-paragraph text-foreground;
+}
+
+.ProseMirror-supplydomain ul {
+  @apply p-0 m-0 flex flex-col items-start gap-0;
+}
+
+.ProseMirror-supplydomain ul li {
+  @apply text-[14px] font-paragraph text-foreground text-left pb-0 mb-1;
+}
+
+.ProseMirror-supplydomain ul li:nth-child(even) {
+  @apply text-primary-foreground/80;
+}
+
+.ProseMirror-supplydomain ul li p {
+  @apply mb-0 pb-0;
 }

@@ -698,9 +698,12 @@ export const workSubType: string[] = [
   "Cultural Fore-sighting with business implications",
   "Business strategy and organisation design",
   "Brand and Innovation",
-  "New business strategy",
+  "New business opportunities",
   "Corporate brand and business",
   "Value chain redesign",
+  "Innovation & Brand property Creation",
+  "Efficiency, Productivity & Quality",
+  "Capability, Culture & Internal Engagement",
 ];
 
 export const ourSolutionLevelsData = [

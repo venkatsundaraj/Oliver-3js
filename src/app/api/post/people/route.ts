@@ -17,6 +17,7 @@ export async function POST(req: NextRequest, res: NextResponse) {
         skills: "",
         role: "",
         type: "",
+        domains: "",
         slug: "",
         core: "",
         location: "",

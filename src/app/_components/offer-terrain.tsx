@@ -12,7 +12,7 @@ import { Icons } from "./icons";
 
 const offerterrain = () => {
   const [activeDot, setActiveDot] = useState(0);
-  const AUTO_NEXT_INTERVAL = 6000;
+  const AUTO_NEXT_INTERVAL = 18000;
   useEffect(() => {
     const interval = setInterval(() => {
       handleArrowClick();
@@ -41,7 +41,7 @@ const offerterrain = () => {
     {
       title: "Entry",
       description:
-        "New Business Entry tasks that are complex Or Represent discontinuities or have a history of failure. Across Industries, Categories, & Geographies.",
+        "Entry Points that leverage existing skills and assets and provide avenues for growth.",
     },
     {
       title: "Capability",
@@ -121,6 +121,17 @@ const offerterrain = () => {
                   className="w-[60%] "
                 /> */}
                 <div className="w-[50px] h-[50px] border-2 border-secondary-white  rounded-full "></div>
+                <div className="absolute top-[110%] left-1/2 transform -translate-x-1/2 text-center text-sm">
+                  <span>
+                    {activeDot === 1
+                      ? "Transformation"
+                      : activeDot === 2
+                      ? "Entry"
+                      : activeDot === 3
+                      ? "Capability"
+                      : ""}
+                  </span>
+                </div>
               </div>
 
               {/* Transformation Sphere */}

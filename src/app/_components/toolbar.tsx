@@ -1,7 +1,7 @@
-"use client"
+"use client";
 
-import React from "react"
-import { type Editor } from "@tiptap/react"
+import React from "react";
+import { type Editor } from "@tiptap/react";
 import {
   Bold,
   Strikethrough,
@@ -16,30 +16,31 @@ import {
   Code,
   Link,
   Heading4,
-} from "lucide-react"
+  Heading3,
+} from "lucide-react";
 
 type Props = {
-  editor: Editor | null
-  content: string
-}
+  editor: Editor | null;
+  content: string;
+};
 
 const Toolbar = ({ editor }: Props) => {
   if (!editor) {
-    return null
+    return null;
   }
 
   const setLink = () => {
-    const previousUrl = editor.getAttributes("link").href
-    const url = window.prompt("Enter the URL", previousUrl)
+    const previousUrl = editor.getAttributes("link").href;
+    const url = window.prompt("Enter the URL", previousUrl);
 
     if (url === null) {
       // If canceled, don't apply any changes
-      return
+      return;
     }
 
     if (url === "") {
       // Empty string will remove the link
-      editor.chain().focus().extendMarkRange("link").unsetLink().run()
+      editor.chain().focus().extendMarkRange("link").unsetLink().run();
     } else {
       // Apply the link with the URL provided
       editor
@@ -47,9 +48,9 @@ const Toolbar = ({ editor }: Props) => {
         .focus()
         .extendMarkRange("link")
         .setLink({ href: url })
-        .run()
+        .run();
     }
-  }
+  };
   return (
     <div
       className="px-4 py-3 rounded-tl-md rounded-tr-md flex justify-between items-start
@@ -58,8 +59,8 @@ const Toolbar = ({ editor }: Props) => {
       <div className="flex justify-start items-center gap-5 w-full lg:w-10/12 flex-wrap ">
         <button
           onClick={(e) => {
-            e.preventDefault()
-            editor.chain().focus().toggleBold().run()
+            e.preventDefault();
+            editor.chain().focus().toggleBold().run();
           }}
           className={
             editor.isActive("bold")
@@ -71,8 +72,8 @@ const Toolbar = ({ editor }: Props) => {
         </button>
         <button
           onClick={(e) => {
-            e.preventDefault()
-            editor.chain().focus().toggleItalic().run()
+            e.preventDefault();
+            editor.chain().focus().toggleItalic().run();
           }}
           className={
             editor.isActive("italic")
@@ -84,8 +85,8 @@ const Toolbar = ({ editor }: Props) => {
         </button>
         <button
           onClick={(e) => {
-            e.preventDefault()
-            editor.chain().focus().toggleUnderline().run()
+            e.preventDefault();
+            editor.chain().focus().toggleUnderline().run();
           }}
           className={
             editor.isActive("underline")
@@ -97,8 +98,8 @@ const Toolbar = ({ editor }: Props) => {
         </button>
         <button
           onClick={(e) => {
-            e.preventDefault()
-            editor.chain().focus().toggleStrike().run()
+            e.preventDefault();
+            editor.chain().focus().toggleStrike().run();
           }}
           className={
             editor.isActive("strike")
@@ -120,8 +121,8 @@ const Toolbar = ({ editor }: Props) => {
         </button>
         <button
           onClick={(e) => {
-            e.preventDefault()
-            editor.chain().focus().toggleHeading({ level: 2 }).run()
+            e.preventDefault();
+            editor.chain().focus().toggleHeading({ level: 2 }).run();
           }}
           className={
             editor.isActive("heading", { level: 2 })
@@ -134,8 +135,8 @@ const Toolbar = ({ editor }: Props) => {
 
         <button
           onClick={(e) => {
-            e.preventDefault()
-            editor.chain().focus().toggleHeading({ level: 3 }).run()
+            e.preventDefault();
+            editor.chain().focus().toggleHeading({ level: 3 }).run();
           }}
           className={
             editor.isActive("heading", { level: 3 })
@@ -143,13 +144,13 @@ const Toolbar = ({ editor }: Props) => {
               : "text-primary-foreground p-2"
           }
         >
-          <Heading4 className="w-5 h-5" />
+          <Heading3 className="w-5 h-5" />
         </button>
 
         <button
           onClick={(e) => {
-            e.preventDefault()
-            editor.chain().focus().toggleBulletList().run()
+            e.preventDefault();
+            editor.chain().focus().toggleBulletList().run();
           }}
           className={
             editor.isActive("bulletList")
@@ -161,8 +162,8 @@ const Toolbar = ({ editor }: Props) => {
         </button>
         <button
           onClick={(e) => {
-            e.preventDefault()
-            editor.chain().focus().toggleOrderedList().run()
+            e.preventDefault();
+            editor.chain().focus().toggleOrderedList().run();
           }}
           className={
             editor.isActive("orderedList")
@@ -174,8 +175,8 @@ const Toolbar = ({ editor }: Props) => {
         </button>
         <button
           onClick={(e) => {
-            e.preventDefault()
-            editor.chain().focus().toggleBlockquote().run()
+            e.preventDefault();
+            editor.chain().focus().toggleBlockquote().run();
           }}
           className={
             editor.isActive("blockquote")
@@ -187,8 +188,8 @@ const Toolbar = ({ editor }: Props) => {
         </button>
         <button
           onClick={(e) => {
-            e.preventDefault()
-            editor.chain().focus().setCode().run()
+            e.preventDefault();
+            editor.chain().focus().setCode().run();
           }}
           className={
             editor.isActive("code")
@@ -200,8 +201,8 @@ const Toolbar = ({ editor }: Props) => {
         </button>
         <button
           onClick={(e) => {
-            e.preventDefault()
-            editor.chain().focus().undo().run()
+            e.preventDefault();
+            editor.chain().focus().undo().run();
           }}
           className={
             editor.isActive("undo")
@@ -213,8 +214,8 @@ const Toolbar = ({ editor }: Props) => {
         </button>
         <button
           onClick={(e) => {
-            e.preventDefault()
-            editor.chain().focus().redo().run()
+            e.preventDefault();
+            editor.chain().focus().redo().run();
           }}
           className={
             editor.isActive("redo")
@@ -226,7 +227,7 @@ const Toolbar = ({ editor }: Props) => {
         </button>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Toolbar
+export default Toolbar;

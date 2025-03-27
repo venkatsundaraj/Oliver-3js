@@ -60,10 +60,19 @@ const AddPeople: FC<AddPeopleProps> = ({ people }) => {
     setValue("content", reason);
   };
 
+  const handleSupplyDomainChange = function (value: string) {
+    setValue("supportDomains", value);
+  };
+  const handleDomainChange = function (value: string) {
+    setValue("domains", value);
+  };
+
   const onSubmit = async function (formData: FormData) {
     try {
       //Uploadthing image uploader
       setIsUploading(true);
+
+      console.log(formData);
 
       const data = await fetch(`/api/post/people/${people.id}`, {
         method: "PATCH",
@@ -278,30 +287,6 @@ const AddPeople: FC<AddPeopleProps> = ({ people }) => {
           </div>
 
           <div className="flex items-start flex-col justify-start gap-2 w-full ">
-            <Label className="text-foreground mb-2" htmlFor="Support Domains">
-              Support Domains
-            </Label>
-            <Input
-              id="Support Domains"
-              autoCapitalize="off"
-              autoComplete="none"
-              className="bg-transparent focus-visible:ring-offset-0 focus-visible:outline-none focus-visible:ring-0 text-foreground"
-              type="text"
-              {...register("supportDomains")}
-              disabled={isSubmitting}
-              defaultValue={people.supportDomains}
-              required
-            />
-            {errors?.supportDomains ? (
-              <p className="px-1 text-xs text-destructive h-4">
-                {errors.supportDomains.message}
-              </p>
-            ) : (
-              <p className="h-4"></p>
-            )}
-          </div>
-
-          <div className="flex items-start flex-col justify-start gap-2 w-full ">
             <Label className="text-foreground mb-2" htmlFor="Skills">
               Skills
             </Label>
@@ -440,7 +425,7 @@ const AddPeople: FC<AddPeopleProps> = ({ people }) => {
 
           <div className="flex items-start flex-col justify-start gap-2 w-full">
             <Label className="text-foreground mb-2" htmlFor="countryFlags">
-              Country Flog
+              Country Flag
             </Label>
             <Controller
               name="countryFlags"
@@ -482,6 +467,30 @@ const AddPeople: FC<AddPeopleProps> = ({ people }) => {
           </div>
 
           <div className="flex items-start flex-col cols col-start-1 col-end-3 justify-start gap-2 w-full bg-background">
+            <Label className="text-foreground mb-2" htmlFor="Support Domains">
+              Support Domains
+            </Label>
+            <RichTextEditor
+              {...register("supportDomains")}
+              name="supportDomains"
+              loading={isSubmitting}
+              defaultValue={people.supportDomains}
+              id="supportDomains"
+              onChange={(newContent: string) =>
+                handleSupplyDomainChange(newContent)
+              }
+              resetTrigger={trigger}
+            />
+            {errors?.supportDomains ? (
+              <p className="px-1 text-xs text-destructive h-4">
+                {errors.supportDomains.message}
+              </p>
+            ) : (
+              <p className="h-4"></p>
+            )}
+          </div>
+
+          <div className="flex items-start flex-col cols col-start-1 col-end-3 justify-start gap-2 w-full bg-background">
             <Label className="text-foreground mb-2" htmlFor="content">
               Content
             </Label>
@@ -492,6 +501,21 @@ const AddPeople: FC<AddPeopleProps> = ({ people }) => {
               defaultValue={people.content}
               id="content"
               onChange={(newContent: string) => handleContentChange(newContent)}
+              resetTrigger={trigger}
+            />
+          </div>
+
+          <div className="flex items-start flex-col cols col-start-1 col-end-3 justify-start gap-2 w-full bg-background">
+            <Label className="text-foreground mb-2" htmlFor="domains">
+              Domains
+            </Label>
+            <RichTextEditor
+              {...register("domains")}
+              name="domains"
+              loading={isSubmitting}
+              defaultValue={people.domains}
+              id="domains"
+              onChange={(newContent: string) => handleDomainChange(newContent)}
               resetTrigger={trigger}
             />
           </div>

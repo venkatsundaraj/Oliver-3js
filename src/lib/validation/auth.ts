@@ -95,6 +95,7 @@ export const peopleAuthSchema = z.object({
   role: z.string().min(1),
   location: z.string().min(1),
   core: z.string().min(1),
+  domains: z.string().min(1),
   skills: z.string().min(1),
   type: z.string().min(1),
   leadDomain: z.string().min(1),
