@@ -41,7 +41,7 @@ const AccordianTeamThumbnail: FC<AccordianTeamThumbnailProps> = ({ data }) => {
             <AccordionContent className="flex flex-col w-full gap-8">
               {data.length ? (
                 data
-                  .filter((item) => item.type === "Core")
+                  .filter((item) => item.type === "Core" && item.id === 1)
                   .sort((a, b) => a.id - b.id)
                   .map((item, i) => (
                     <article
@@ -146,7 +146,7 @@ const AccordianTeamThumbnail: FC<AccordianTeamThumbnailProps> = ({ data }) => {
             <AccordionContent className="flex flex-col w-full gap-8 ">
               {data.length ? (
                 data
-                  .filter((item) => item.type === "Multipliers")
+                  .filter((item) => item.type === "Core" && item.id === 1)
                   .map((item, i) => (
                     <article
                       key={i}

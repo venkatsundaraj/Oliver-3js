@@ -114,8 +114,8 @@ const page = async ({ params }: PageProps) => {
 
             {/* Main content area */}
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 items-center justify-center py-8 bg-background gap-10">
-            <div className="grid grid-cols-5 md:grid-cols-5 gap-4 w-full max-w-lg md:max-w-2xl ">
+          <div className="grid grid-cols-1 md:grid-cols-2 items-start justify-center py-8 bg-background gap-10">
+            <div className="gap-4 w-full ">
               <CountryFlags data={member.companyProfiles} />
             </div>
             <div className="flex flex-col items-start">

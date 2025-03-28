@@ -73,9 +73,9 @@ const MasThead: FC<MasTheadProps> = () => {
             transition={{ duration: 0.5, ease: "easeInOut" }}
             className=" flex items-center justify-center"
           >
-            <span
+            <p
               className={cn(
-                "text-our_text_heading ms-4  font-paragraph text-left  min-w-[200px]",
+                "ms-4 flex font-paragraph text-left  min-w-[210px] text-[20px] md:text-[23px]",
                 `${
                   currentIndex > 3
                     ? "text-secondary-foreground"
@@ -84,7 +84,7 @@ const MasThead: FC<MasTheadProps> = () => {
               )}
             >
               {cityNames[currentIndex]}
-            </span>
+            </p>
           </motion.div>
         </AnimatePresence>
       </div>
