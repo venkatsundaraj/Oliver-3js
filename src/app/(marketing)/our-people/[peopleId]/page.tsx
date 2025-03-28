@@ -21,13 +21,14 @@ const page = async ({ params }: PageProps) => {
     .limit(1);
 
   // Display message if member not found
+
   if (!member) notFound();
 
   return (
     <>
       <section className="w-screen flex flex-col items-center justify-center">
         <div className="container flex flex-col ">
-          <article className="grid grid-cols-1 md:grid-cols-3 items-start justify-center gap-4 w-full pt-40 pb-16">
+          <article className="grid grid-cols-1 md:grid-cols-3 items-center justify-center gap-4 w-full pt-40 pb-2">
             <Image
               src={member.fileUrl}
               alt={member.name}
@@ -101,7 +102,7 @@ const page = async ({ params }: PageProps) => {
 
           <div className="flex flex-col justify-start items-center md:flex-row  gap-8 mb-8  md:py-8">
             {/* Left image section */}
-            <section className="w-screen  items-center justify-center min-h-screen bg-background py-5 flex">
+            <section className="w-screen  items-center justify-center  bg-background py-5 flex">
               <div className="container flex items-start justify-center flex-col">
                 <div
                   className="ProseMirror text-foreground border-slate-700 py-4 rounded-lg "
@@ -114,14 +115,21 @@ const page = async ({ params }: PageProps) => {
             {/* Main content area */}
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 items-center justify-center py-8 bg-background gap-10">
-            <div className="grid grid-cols-2 md:grid-cols-5 gap-4 w-full max-w-lg md:max-w-2xl ">
+            <div className="grid grid-cols-5 md:grid-cols-5 gap-4 w-full max-w-lg md:max-w-2xl ">
               <CountryFlags data={member.companyProfiles} />
             </div>
-            <div
-              className="ProseMirror text-foreground border-slate-700 py-4 rounded-lg "
-              style={{ whiteSpace: "pre-line" }}
-              dangerouslySetInnerHTML={{ __html: member.domains }}
-            />
+            <div className="flex flex-col items-start">
+              {member.domains !== "<p></p>" ? (
+                <h2 className="font-heading text-secondary-foreground text-secondary_heading">
+                  Domains
+                </h2>
+              ) : null}
+              <div
+                className="ProseMirror text-foreground border-slate-700 py-4 rounded-lg "
+                style={{ whiteSpace: "pre-line" }}
+                dangerouslySetInnerHTML={{ __html: member.domains }}
+              />
+            </div>
           </div>
 
           {/* Centered Countries Section */}

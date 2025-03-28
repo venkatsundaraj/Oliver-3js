@@ -9,6 +9,7 @@ import Cosmosspiralo from "../../../public/Entry Icon.svg";
 import circleline from "../../../public/Circle line.svg";
 import rightarrow from "../../../public/right arrow.svg";
 import { Icons } from "./icons";
+import { Item } from "@radix-ui/react-navigation-menu";
 
 const offerterrain = () => {
   const [activeDot, setActiveDot] = useState(0);
@@ -30,23 +31,39 @@ const offerterrain = () => {
   const contentData = [
     {
       title: "",
-      description:
-        "Operating Contexts that are Complex or Represent discontinuities or have a history of failure. Across Categories, Industries, Geographies & Domains.",
+      description: [
+        "Operating Contexts that are Complex",
+        "Or Represent discontinuities",
+        "Or have a history of failure.",
+        "Across Categories, Industries, Geographies & Domains.",
+      ],
     },
     {
       title: "Transformation",
-      description:
-        "Transformations that are Complex or Represent discontinuities or have a history of failure. Across Industries, Geographies & Management Types.",
+      description: [
+        "Transformations that are Complex",
+        "Or Represent discontinuities",
+        "Or have a history of failure",
+        "Across Industries, Geographies & Management Types.",
+      ],
     },
     {
       title: "Entry",
-      description:
-        "Entry Points that leverage existing skills and assets and provide avenues for growth.",
+      description: [
+        "New Business Entry tasks that are Complex",
+        "Or Represent discontinuities",
+        "Or Have a history of failure",
+        "Across Industries, Categories & Geographies",
+      ],
     },
     {
       title: "Capability",
-      description:
-        "Capability Building that is On the job, through everyday processes delivering business results in an attrition resistant manner. Across Industries, Categories, & Geographies.",
+      description: [
+        "Capability Building that is On the job",
+        "Through everyday processes",
+        "And delivers results",
+        "Across Industries Categories & Geographics",
+      ],
     },
   ];
 
@@ -75,9 +92,13 @@ const offerterrain = () => {
                       <h2 className="mt-4 text-2xl font-semibold h-[40px] hidden">
                         {content.title}
                       </h2>
-                      <p className="mt-2 text-lg leading-relaxed font-paragraph mb-4 md:mb-0 md:w-[520px] h-[90px]">
-                        {content.description}
-                      </p>
+                      <div className="flex flex-col items-start justify-between gap-1">
+                        {content.description.map((item, i) => (
+                          <p className="mt-2 text-lg leading-relaxed font-paragraph mb-1 md:mb-0 md:w-[520px]">
+                            {item}
+                          </p>
+                        ))}
+                      </div>
                     </div>
                   )
               )}

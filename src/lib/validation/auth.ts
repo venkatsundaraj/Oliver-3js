@@ -97,7 +97,9 @@ export const peopleAuthSchema = z.object({
   core: z.string().min(1),
   domains: z.string().min(1),
   skills: z.string().min(1),
-  type: z.string().min(1),
+  type: z.string().refine((val) => ["Core", "Multipliers"].includes(val), {
+    message: "Type must be either Core or Multipliers",
+  }),
   leadDomain: z.string().min(1),
   supportDomains: z.string().min(1),
   experience: z.string().min(1),

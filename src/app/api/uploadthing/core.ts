@@ -29,7 +29,7 @@ export const ourFileRouter = {
       return { uploadedBy: metadata.userId, file };
     }),
   companyProfileUploader: f({
-    image: { maxFileSize: "16MB", maxFileCount: 24 },
+    image: { maxFileSize: "16MB", maxFileCount: 48 },
   })
     // Set permissions and file types for this FileRoute
     .middleware(async ({ req }) => {

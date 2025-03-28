@@ -50,7 +50,7 @@ const ourpractices: FC<pageProps> = function () {
                   </span>
                 </h4>
                 <p className="text-muted-foreground font-paragraph text-extra_paragraph_heading ">
-                  Rampant Business Scale-ups
+                  Ramp it, Business Scale-ups
                 </p>
               </div>
               <div className="flex flex-col items-start justify-center gap-2">
@@ -86,7 +86,7 @@ const ourpractices: FC<pageProps> = function () {
                   </span>
                 </h4>
                 <p className="text-muted-foreground font-paragraph text-extra_paragraph_heading ">
-                  New Countries and Continents
+                  New Countries or Continents
                 </p>
               </div>
               <div className="flex flex-col items-start justify-center gap-2">
@@ -97,7 +97,7 @@ const ourpractices: FC<pageProps> = function () {
                   </span>
                 </h4>
                 <p className="text-muted-foreground font-paragraph text-extra_paragraph_heading ">
-                  New Category and Industries
+                  New Category or Industries
                 </p>
               </div>
             </div>

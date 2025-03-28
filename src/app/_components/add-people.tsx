@@ -401,9 +401,19 @@ const AddPeople: FC<AddPeopleProps> = ({ people }) => {
                   onClientUploadComplete={(res) => {
                     setIsUploading(false);
                     if (res) {
-                      const urls = res.map((file) => file.url);
-                      console.log(urls);
-                      setValue("companyProfiles", urls, {
+                      const newUrls = res.map((file) => file.url);
+
+                      // Get current values
+                      const currentUrls = Array.isArray(
+                        control._formValues.companyProfiles
+                      )
+                        ? control._formValues.companyProfiles
+                        : [];
+
+                      // Combine existing and new URLs
+                      const combinedUrls = [...currentUrls, ...newUrls];
+
+                      setValue("companyProfiles", combinedUrls, {
                         shouldValidate: true,
                       });
                     }
@@ -444,9 +454,19 @@ const AddPeople: FC<AddPeopleProps> = ({ people }) => {
                   onClientUploadComplete={(res) => {
                     setIsUploading(false);
                     if (res) {
-                      const urls = res.map((file) => file.url);
-                      console.log(urls);
-                      setValue("countryFlags", urls, {
+                      const newUrls = res.map((file) => file.url);
+
+                      // Get current values
+                      const currentUrls = Array.isArray(
+                        control._formValues.countryFlags
+                      )
+                        ? control._formValues.countryFlags
+                        : [];
+
+                      // Combine existing and new URLs
+                      const combinedUrls = [...currentUrls, ...newUrls];
+
+                      setValue("countryFlags", combinedUrls, {
                         shouldValidate: true,
                       });
                     }

@@ -38,19 +38,20 @@ const AccordianTeamThumbnail: FC<AccordianTeamThumbnailProps> = ({ data }) => {
                 Our People | <span className="text-foreground">Core</span>
               </h3>
             </AccordionTrigger>
-            <AccordionContent className="flex flex-col w-full ">
+            <AccordionContent className="flex flex-col w-full gap-8">
               {data.length ? (
                 data
                   .filter((item) => item.type === "Core")
+                  .sort((a, b) => a.id - b.id)
                   .map((item, i) => (
                     <article
                       key={i}
-                      className="grid grid-cols-1 md:grid-cols-3 items-start justify-center gap-4 w-full"
+                      className="grid grid-cols-1 md:grid-cols-3 items-start justify-center gap-4 w-full border-b border-b-border py-8"
                     >
                       <Image
                         src={item.fileUrl}
                         alt={item.name}
-                        className="w-full object-cover  md:p-8"
+                        className="w-full md:h-[500px] object-cover  md:p-8"
                         width={200}
                         height={400}
                       />
@@ -142,19 +143,19 @@ const AccordianTeamThumbnail: FC<AccordianTeamThumbnailProps> = ({ data }) => {
                 <span className="text-foreground">Multipliers</span>
               </h3>
             </AccordionTrigger>
-            <AccordionContent className="flex flex-col w-full ">
+            <AccordionContent className="flex flex-col w-full gap-8 ">
               {data.length ? (
                 data
-                  .filter((item) => item.type === "Core")
+                  .filter((item) => item.type === "Multipliers")
                   .map((item, i) => (
                     <article
                       key={i}
-                      className="grid grid-cols-1 md:grid-cols-3 items-start justify-center gap-4 w-full"
+                      className="grid grid-cols-1 md:grid-cols-3 items-start justify-center gap-4 w-full border-b border-b-border py-8"
                     >
                       <Image
                         src={item.fileUrl}
                         alt={item.name}
-                        className="w-full object-cover  md:p-8"
+                        className="w-full md:h-[500px] object-cover  md:p-8"
                         width={200}
                         height={400}
                       />
@@ -204,9 +205,13 @@ const AccordianTeamThumbnail: FC<AccordianTeamThumbnailProps> = ({ data }) => {
                               </span>
                               :
                             </h4>
-                            <p className="text-foreground text-extra_subtitle_heading text-left leading-normal">
-                              {item.supportDomains}
-                            </p>
+                            <div
+                              className="ProseMirror-supplydomain text-foreground border-slate-700  rounded-lg "
+                              style={{ whiteSpace: "pre-line" }}
+                              dangerouslySetInnerHTML={{
+                                __html: item.supportDomains,
+                              }}
+                            />
                           </div>
                         </div>
                         <p className="font-paragraph text-left text-extra_subtitle_heading font-normal leading-normal text-secondary-foreground">

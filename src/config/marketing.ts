@@ -163,9 +163,9 @@ export const contactUsBody: contactUsItem[] = [
     link: "tel:+91 8169531703",
   },
   {
-    icon: "https://utfs.io/f/ZowmNmBHF7rVuWjyjgtWdTHI3LNzMgCnc7u9iRa5BAtXG2yv",
-    name: "+91 9821342244",
-    link: "tel:+91 9821342244",
+    icon: "https://zkok4chdpn.ufs.sh/f/ZowmNmBHF7rVWKqF8k12uX31TIjKoHYR0aPnSbMcFkhvmy76",
+    name: "All about us",
+    link: "https://zkok4chdpn.ufs.sh/f/ZowmNmBHF7rVUwEtCAAY7SB9WamizGsyEwM4ZK2vHxtIn0kh",
   },
   {
     icon: "https://utfs.io/f/ZowmNmBHF7rVj1hVHcW8lWpd9eUfvNKun5Rza3Jr2k7oD6Gb",
@@ -227,7 +227,7 @@ export const clientDomains: string[] = [
   "India & Middle East",
   "Indonesia, China & Far East Asia",
   "Sub Saharan Africa",
-  "Us & Europe",
+  "US & Europe",
 ];
 
 export const clientData: { title: string; color: string }[] = [

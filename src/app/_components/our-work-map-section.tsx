@@ -28,7 +28,7 @@ const OurWorkMapSection: FC<OurWorkMapSectionProps> = () => {
       <InfiniteMap className="sticky top-0 overflow-x-hidden w-screen z-0" />
       <div className="flex flex-col items-center justify-start w-screen z-10 -translate-y-1/2">
         <div
-          className="container flex flex-col  overflow-x-hidden w-screen z-10 "
+          className="container flex flex-col  overflow-x-hidden mb-12 w-screen z-10 "
           id="our-client-domains"
         >
           <h2 className="flex items-center justify-center flex-col leading-[1]">
@@ -50,6 +50,10 @@ const OurWorkMapSection: FC<OurWorkMapSectionProps> = () => {
             ))}
           </ul>
         </div>
+        <InfiniteMapWithImageInput
+          src="https://zkok4chdpn.ufs.sh/f/ZowmNmBHF7rV4lLuKq58tCRcZbLox5S9hfdI037uwUEjeQWF"
+          className="md:w-screen"
+        />
         <InfiniteMapWithImageInput
           src="https://zkok4chdpn.ufs.sh/f/ZowmNmBHF7rV8HT0SsqKutYEbdyi5prBsLjqX1DQMJGPFINW"
           className="md:w-screen"

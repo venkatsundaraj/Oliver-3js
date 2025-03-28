@@ -52,15 +52,15 @@ const page: FC<pageProps> = ({}) => {
               </h2>
               <div className="flex flex-col items-start">
                 <p className="max-w-md text-extra_paragraph_heading font-paragraph leading-loose text-foreground">
-                  Operating contexts that are complex, Or
+                  Operating Contexts that are Complex
                 </p>
                 <p className="max-w-md text-extra_paragraph_heading font-paragraph leading-loose text-foreground">
-                  represent discontinuities, Or
+                  Or Represent discontinuities
                 </p>
                 <p className="max-w-md text-extra_paragraph_heading font-paragraph leading-loose text-foreground">
-                  Have a history of failure.
+                  Or Have a history of failure.
                 </p>
-                <p className="max-w-md text-extra_paragraph_heading font-paragraph leading-loose text-foreground">
+                <p className="max-w-md text-extra_paragraph_heading font-paragraph leading-normal text-foreground">
                   {" "}
                   Across industries, & geographies categories, & domains.
                 </p>

@@ -14,12 +14,29 @@ interface ProjectCardProps {
 }
 
 const ProjectCard: FC<ProjectCardProps> = ({ projects, type }) => {
+  const uniqueProjects = Array.from(
+    new Set(
+      projects
+        .filter((item) => slugify(item.type) === slugify(type))
+        .map((item) => item.subType)
+    )
+  )
+    .map((subType) => projects.find((item) => item.subType === subType))
+    .filter((item): item is Work => !!item);
+
+  if (!uniqueProjects) {
+    return (
+      <p className="text-foreground text-extra_subtitle_heading font-paragraph">
+        No projects are updated.
+      </p>
+    );
+  }
   return (
     <div className="grid grid-cols-1 md:grid-cols-3 items-center justify-center gap-6">
-      {projects.filter((item) => {
+      {uniqueProjects.filter((item) => {
         return slugify(item.type) === slugify(type);
       }).length ? (
-        projects
+        uniqueProjects
           .filter((item) => {
             return slugify(item.type) === slugify(type);
           })
