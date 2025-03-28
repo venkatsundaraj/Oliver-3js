@@ -46,7 +46,7 @@ const IpSuitsAccordian: FC<IpSuitsAccordianProps> = () => {
         <h4 className="text-pargrpah_heading text-secondary-foreground py-2 font-heading text-left">
           IP Suites
         </h4>
-        <h4 className="text-pargrpah_heading text-secondary-foreground py-2 font-heading text-center">
+        <h4 className="text-pargrpah_heading text-secondary-foreground py-2 font-heading  leading-normal text-left md:max-w-[280px]">
           IP-Suites@Cosmos
         </h4>
         <h4 className="text-our_text_heading text-secondary-foreground py-2 font-heading text-left md:text-right ">
@@ -69,7 +69,7 @@ const IpSuitsAccordian: FC<IpSuitsAccordianProps> = () => {
               <h4 className="text-pargrpah_heading text-primary-foreground py-2 font-heading text-left">
                 Blz
               </h4>
-              <p className="text-pargrpah_heading text-primary-foreground py-2 font-heading text-center">
+              <p className="text-pargrpah_heading text-primary-foreground py-2 font-heading  leading-normal text-left md:max-w-[280px]">
                 Blz<span className="text-foreground">@Cosmos</span>
               </p>
               <span className="text-extra_paragraph_heading text-muted-foreground py-2 font-paragraph text-left md:text-right">
@@ -236,7 +236,7 @@ const IpSuitsAccordian: FC<IpSuitsAccordianProps> = () => {
               <h4 className="text-pargrpah_heading text-primary-foreground py-2 font-heading text-left">
                 Brnd
               </h4>
-              <p className="text-pargrpah_heading text-primary-foreground py-2 font-heading text-center">
+              <p className="text-pargrpah_heading text-primary-foreground py-2 font-heading  leading-normal text-left md:max-w-[280px]">
                 Brnd<span className="text-foreground">@Cosmos</span>
               </p>
               <span className="text-extra_paragraph_heading text-muted-foreground py-2 font-paragraph text-left md:text-right">
@@ -471,7 +471,7 @@ const IpSuitsAccordian: FC<IpSuitsAccordianProps> = () => {
               <h4 className="text-pargrpah_heading text-primary-foreground py-2 font-heading text-left">
                 Stroice
               </h4>
-              <p className="text-pargrpah_heading text-primary-foreground py-2 font-heading text-center">
+              <p className="text-pargrpah_heading text-primary-foreground py-2 font-heading  leading-normal text-left md:max-w-[280px]">
                 Stroice<span className="text-foreground">@Cosmos</span>
               </p>
               <span className="text-extra_paragraph_heading text-muted-foreground py-2 font-paragraph text-left md:text-right">
@@ -596,7 +596,7 @@ const IpSuitsAccordian: FC<IpSuitsAccordianProps> = () => {
               <h4 className="text-pargrpah_heading text-primary-foreground py-2 font-heading text-left">
                 Xct
               </h4>
-              <p className="text-pargrpah_heading text-primary-foreground py-2 font-heading text-center">
+              <p className="text-pargrpah_heading text-primary-foreground py-2 font-heading  leading-normal text-left md:max-w-[280px]">
                 Xct<span className="text-foreground">@Cosmos</span>
               </p>
               <span className="text-extra_paragraph_heading text-muted-foreground py-2 font-paragraph text-left md:text-right">
@@ -736,7 +736,7 @@ const IpSuitsAccordian: FC<IpSuitsAccordianProps> = () => {
                   <h4 className="text-extra_subtitle_heading text-primary-foreground py-2 font-paragraph text-left">
                     SalesCentricity.PeopleRoles
                   </h4>
-                  <p className="text-extra_subtitle_heading text-foreground py-2 font-paragraph text-center">
+                  <p className="text-extra_subtitle_heading text-foreground py-2 font-paragraph text-left md:max-w-[280px]">
                     Sales People Roles
                   </p>
                   <span className="text-extra_subtitle_heading text-foreground py-2 font-paragraph text-left md:text-right">
@@ -757,7 +757,7 @@ const IpSuitsAccordian: FC<IpSuitsAccordianProps> = () => {
               <h4 className="text-pargrpah_heading text-primary-foreground py-2 font-heading text-left">
                 NuForm
               </h4>
-              <p className="text-pargrpah_heading text-primary-foreground py-2 font-heading text-center">
+              <p className="text-pargrpah_heading text-primary-foreground py-2 font-heading  leading-normal text-left md:max-w-[280px]">
                 NuForm<span className="text-foreground">@Cosmos</span>
               </p>
               <span className="text-extra_paragraph_heading text-muted-foreground py-2 font-paragraph text-left md:text-right">
@@ -857,7 +857,7 @@ const IpSuitsAccordian: FC<IpSuitsAccordianProps> = () => {
               <h4 className="text-pargrpah_heading text-primary-foreground py-2 font-heading text-left">
                 Stranovate
               </h4>
-              <p className="text-pargrpah_heading text-primary-foreground py-2 font-heading text-center">
+              <p className="text-pargrpah_heading text-primary-foreground py-2 font-heading  leading-normal text-left md:max-w-[280px]">
                 Stranovate<span className="text-foreground">@Cosmos</span>
               </p>
               <span className="text-extra_paragraph_heading text-muted-foreground py-2 font-paragraph text-left md:text-right">
@@ -958,7 +958,7 @@ const IpSuitsAccordian: FC<IpSuitsAccordianProps> = () => {
               <h4 className="text-pargrpah_heading text-primary-foreground py-2 font-heading text-left">
                 Stractivate
               </h4>
-              <p className="text-pargrpah_heading text-primary-foreground py-2 font-heading text-center">
+              <p className="text-pargrpah_heading text-primary-foreground py-2 font-heading  leading-normal text-left md:max-w-[280px]">
                 Stractivate<span className="text-foreground">@Cosmos</span>
               </p>
               <span className="text-extra_paragraph_heading text-muted-foreground py-2 font-paragraph text-left md:text-right">
@@ -1011,7 +1011,7 @@ const IpSuitsAccordian: FC<IpSuitsAccordianProps> = () => {
               <h4 className="text-pargrpah_heading text-primary-foreground py-2 font-heading text-left">
                 Flr
               </h4>
-              <p className="text-pargrpah_heading text-primary-foreground py-2 font-heading text-center">
+              <p className="text-pargrpah_heading text-primary-foreground py-2 font-heading  leading-normal text-left md:max-w-[280px]">
                 Flr<span className="text-foreground">@Cosmos</span>
               </p>
               <span className="text-extra_paragraph_heading text-muted-foreground py-2 font-paragraph text-left md:text-right">
