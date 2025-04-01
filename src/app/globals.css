@@ -92,12 +92,16 @@
   @apply text-subtitle_heading mb-4 font-paragraph text-foreground;
 }
 
+.ProseMirror ul li:last-child {
+  @apply mb-3;
+}
+
 .ProseMirror-supplydomain ul {
   @apply p-0 m-0 flex flex-col items-start gap-0;
 }
 
 .ProseMirror-supplydomain ul li {
-  @apply text-[14px] font-paragraph text-foreground text-left pb-0 mb-1;
+  @apply text-[14px] md:text-[16px] font-paragraph text-foreground text-left pb-0 mb-1;
 }
 
 .ProseMirror-supplydomain ul li:nth-child(even) {

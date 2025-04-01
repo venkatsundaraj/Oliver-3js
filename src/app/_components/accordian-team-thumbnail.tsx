@@ -67,16 +67,25 @@ const AccordianTeamThumbnail: FC<AccordianTeamThumbnailProps> = ({ data }) => {
                         <p className="text-secondary-foreground text-subtitle_heading font-paragraph leading-tight text-left">
                           {item.skills}
                         </p>
-                        <span className="text-foreground font-paragraph text-extra_subtitle_heading leading-tight">
-                          {item.location}
-                        </span>
+
                         <div className="flex items-start justify-start flex-col gap-4 py-2">
+                          <div className="flex flex-wrap md:flex-nowrap items-start justify-start md:justify-center gap-2 md:gap-4">
+                            <h4 className="flex gap-4">
+                              <span className="flex md:min-w-40 text-extra_subtitle_heading text-primary-foreground">
+                                Location
+                              </span>
+                              <span className="text-foreground">:</span>
+                            </h4>
+                            <p className="text-foreground text-extra_subtitle_heading">
+                              {item.location}
+                            </p>
+                          </div>
                           <div className="flex flex-wrap md:flex-nowrap items-start justify-start md:justify-center gap-2 md:gap-4">
                             <h4 className="flex gap-4">
                               <span className="flex md:min-w-40 text-extra_subtitle_heading text-primary-foreground">
                                 Core
                               </span>
-                              :
+                              <span className="text-foreground">:</span>
                             </h4>
                             <p className="text-foreground text-extra_subtitle_heading">
                               {item.core}
@@ -87,7 +96,7 @@ const AccordianTeamThumbnail: FC<AccordianTeamThumbnailProps> = ({ data }) => {
                               <span className="flex md:min-w-40 text-extra_subtitle_heading text-primary-foreground">
                                 Lead Domain
                               </span>
-                              :
+                              <span className="text-foreground">:</span>
                             </h4>
 
                             <p className="text-foreground text-extra_subtitle_heading">
@@ -99,7 +108,7 @@ const AccordianTeamThumbnail: FC<AccordianTeamThumbnailProps> = ({ data }) => {
                               <span className="flex md:min-w-40 text-extra_subtitle_heading text-primary-foreground">
                                 Support Domains
                               </span>
-                              :
+                              <span className="text-foreground">:</span>
                             </h4>
                             <div
                               className="ProseMirror-supplydomain text-foreground border-slate-700  rounded-lg "
@@ -171,16 +180,25 @@ const AccordianTeamThumbnail: FC<AccordianTeamThumbnailProps> = ({ data }) => {
                         <p className="text-secondary-foreground text-subtitle_heading font-paragraph leading-tight text-left">
                           {item.skills}
                         </p>
-                        <span className="text-foreground font-paragraph text-extra_subtitle_heading leading-tight">
-                          {item.location}
-                        </span>
+
                         <div className="flex items-start justify-start flex-col gap-4 py-2">
+                          <div className="flex flex-wrap md:flex-nowrap items-start justify-start md:justify-center gap-2 md:gap-4">
+                            <h4 className="flex gap-4">
+                              <span className="flex md:min-w-40 text-extra_subtitle_heading text-primary-foreground">
+                                Location
+                              </span>
+                              <span className="text-foreground">:</span>
+                            </h4>
+                            <p className="text-foreground text-extra_subtitle_heading">
+                              {item.location}
+                            </p>
+                          </div>
                           <div className="flex flex-wrap md:flex-nowrap items-start justify-start md:justify-center gap-2 md:gap-4">
                             <h4 className="flex gap-4">
                               <span className="flex md:min-w-40 text-extra_subtitle_heading text-primary-foreground">
                                 Core
                               </span>
-                              :
+                              <span className="text-foreground">:</span>
                             </h4>
                             <p className="text-foreground text-extra_subtitle_heading">
                               {item.core}
@@ -191,7 +209,7 @@ const AccordianTeamThumbnail: FC<AccordianTeamThumbnailProps> = ({ data }) => {
                               <span className="flex md:min-w-40 text-extra_subtitle_heading text-primary-foreground">
                                 Lead Domain
                               </span>
-                              :
+                              <span className="text-foreground">:</span>
                             </h4>
 
                             <p className="text-foreground text-extra_subtitle_heading">
@@ -203,7 +221,7 @@ const AccordianTeamThumbnail: FC<AccordianTeamThumbnailProps> = ({ data }) => {
                               <span className="flex md:min-w-40 text-extra_subtitle_heading text-primary-foreground">
                                 Support Domains
                               </span>
-                              :
+                              <span className="text-foreground">:</span>
                             </h4>
                             <div
                               className="ProseMirror-supplydomain text-foreground border-slate-700  rounded-lg "

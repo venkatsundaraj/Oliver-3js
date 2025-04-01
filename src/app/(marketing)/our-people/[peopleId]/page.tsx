@@ -48,16 +48,25 @@ const page = async ({ params }: PageProps) => {
               <p className="text-secondary-foreground text-subtitle_heading font-paragraph leading-tight text-left">
                 {member.skills}
               </p>
-              <span className="text-foreground font-paragraph text-extra_subtitle_heading leading-tight">
-                {member.location}
-              </span>
+
               <div className="flex items-start justify-start flex-col gap-4 py-2">
+                <div className="flex flex-wrap md:flex-nowrap items-start justify-start md:justify-center gap-2 md:gap-4">
+                  <h4 className="flex gap-4">
+                    <span className="flex md:min-w-40 text-extra_subtitle_heading text-primary-foreground">
+                      Location
+                    </span>
+                    <span className="text-foreground">:</span>
+                  </h4>
+                  <p className="text-foreground text-extra_subtitle_heading">
+                    {member.location}
+                  </p>
+                </div>
                 <div className="flex flex-wrap md:flex-nowrap items-start justify-start md:justify-center gap-2 md:gap-4">
                   <h4 className="flex gap-4">
                     <span className="flex md:min-w-40 text-extra_subtitle_heading text-primary-foreground">
                       Core
                     </span>
-                    :
+                    <span className="text-foreground">:</span>
                   </h4>
                   <p className="text-foreground text-extra_subtitle_heading">
                     {member.core}
@@ -68,7 +77,7 @@ const page = async ({ params }: PageProps) => {
                     <span className="flex md:min-w-40 text-extra_subtitle_heading text-primary-foreground">
                       Lead Domain
                     </span>
-                    :
+                    <span className="text-foreground">:</span>
                   </h4>
 
                   <p className="text-foreground text-extra_subtitle_heading">
@@ -80,7 +89,7 @@ const page = async ({ params }: PageProps) => {
                     <span className="flex md:min-w-40 text-extra_subtitle_heading text-primary-foreground">
                       Support Domains
                     </span>
-                    :
+                    <span className="text-foreground">:</span>
                   </h4>
                   <div
                     className="ProseMirror-supplydomain text-foreground border-slate-700  rounded-lg "
@@ -133,16 +142,20 @@ const page = async ({ params }: PageProps) => {
           </div>
 
           {/* Centered Countries Section */}
-          <div className="flex flex-col justify-start items-start md:flex-col  gap-8 mt-8 mb-8 md:py-8">
-            <div>
-              <h2 className="text-secondary-foreground font-heading text-secondary_heading  mb-2">
-                Countries
-              </h2>
+          {member.countryFlags.length > 1 ? null : (
+            <div className="grid grid-cols-1 md:grid-cols-2 items-start justify-center py-8 bg-background gap-10">
+              <div className="flex flex-col justify-start items-start md:flex-col  gap-8 mt-8 mb-8 md:py-8">
+                <div>
+                  <h2 className="text-secondary-foreground font-heading text-secondary_heading  mb-2">
+                    Countries
+                  </h2>
+                </div>
+                <div className="gap-4 w-full ">
+                  <CountryFlags data={member.countryFlags} />
+                </div>
+              </div>
             </div>
-            <div className="grid grid-cols-2 md:grid-cols-5 gap-4 w-full max-w-lg md:max-w-2xl ">
-              <CountryFlags data={member.countryFlags} />
-            </div>
-          </div>
+          )}
         </div>
       </section>
     </>

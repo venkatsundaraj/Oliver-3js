@@ -13,6 +13,7 @@ import { Button, buttonVariants } from "@/app/_components/ui/button";
 import { cn } from "@/lib/utils";
 
 import { deletePost } from "@/lib/delete-post";
+import { toast } from "@/app/_components/ui/use-toast";
 import { useRouter } from "next/navigation";
 import { DropdownMenuSeparator } from "@radix-ui/react-dropdown-menu";
 
@@ -30,15 +31,21 @@ const EditPostButton: FC<EditPostButtonProps> = ({ post, type }) => {
   const router = useRouter();
   const deletePostHandler = async function (id: number, type: string) {
     setIsLoading(true);
-    const result = await deletePost(post.id, type);
-    if (result.success) {
-      setIsLoading(false);
-      // Refresh the current route
-      router.refresh();
-    } else {
-      // Handle error, maybe show a toast notification
-      console.error(result.error);
-    }
+
+    toast({
+      title: "You accidently Pressed the key",
+      description: "Please Check your data",
+      variant: "default",
+    });
+    // const result = await deletePost(post.id, type);
+    // if (result.success) {
+    //   setIsLoading(false);
+    //   // Refresh the current route
+    //   router.refresh();
+    // } else {
+    //   // Handle error, maybe show a toast notification
+    //   console.error(result.error);
+    // }
   };
   return (
     <DropdownMenu>

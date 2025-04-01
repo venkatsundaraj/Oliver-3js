@@ -7,7 +7,15 @@ interface CountryFlagsProps {
 
 const CountryFlags: FC<CountryFlagsProps> = ({ data }) => {
   return data.map((item, i) => (
-    <Image src={item} width={200} height={100} alt="logo" className="w-full" />
+    <Image
+      src={item}
+      width={640}
+      height={200}
+      alt="logo"
+      className="w-full h-auto"
+      priority={true}
+      quality={100}
+    />
   ));
 };
 
