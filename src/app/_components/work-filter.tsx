@@ -20,16 +20,22 @@ type Work = InferModel<typeof workTable>;
 interface WorkFilterProps {
   filteredWork: Work;
   work: Work[];
+  searchParams?: string;
 }
 
-const WorkFilter: FC<WorkFilterProps> = ({ filteredWork, work }) => {
+const WorkFilter: FC<WorkFilterProps> = ({
+  filteredWork,
+  work,
+  searchParams,
+}) => {
+  console.log(filteredWork);
   const [projectType, setProjectType] = useState(filteredWork.type);
   const [subType, setSubType] = useState("all");
   const [location, setLocation] = useState("all");
   const [filteredData, setFilteredData] = useState<Work[]>([]);
 
   const [typeArray, subTypeArray, locationArray] = splitArray(work);
-  console.log(splitArray(work));
+
   useEffect(() => {
     const newFilteredData = work.filter(
       (item) =>
@@ -38,7 +44,7 @@ const WorkFilter: FC<WorkFilterProps> = ({ filteredWork, work }) => {
         (location === "all" || item.location === location)
     );
     setFilteredData(newFilteredData);
-    console.log(newFilteredData);
+    // console.log(newFilteredData);
   }, [projectType, subType, location]);
   return (
     <>
@@ -54,7 +60,9 @@ const WorkFilter: FC<WorkFilterProps> = ({ filteredWork, work }) => {
                 {Array.from(typeArray)
                   .filter((item) => item)
                   .map((item, i) => (
-                    <SelectItem value={item}>{item}</SelectItem>
+                    <SelectItem value={item} key={i}>
+                      {item}
+                    </SelectItem>
                   ))}
               </SelectContent>
             </Select>
@@ -67,7 +75,9 @@ const WorkFilter: FC<WorkFilterProps> = ({ filteredWork, work }) => {
                 {Array.from(subTypeArray)
                   .filter((item) => item)
                   .map((item, i) => (
-                    <SelectItem value={item}>{item}</SelectItem>
+                    <SelectItem value={item} key={i}>
+                      {item}
+                    </SelectItem>
                   ))}
               </SelectContent>
             </Select>
@@ -80,7 +90,9 @@ const WorkFilter: FC<WorkFilterProps> = ({ filteredWork, work }) => {
                 {Array.from(locationArray)
                   .filter((item) => item)
                   .map((item, i) => (
-                    <SelectItem value={item}>{item}</SelectItem>
+                    <SelectItem value={item} key={i}>
+                      {item}
+                    </SelectItem>
                   ))}
               </SelectContent>
             </Select>

@@ -7,6 +7,7 @@ import { notFound } from "next/navigation";
 
 interface pageProps {
   params: { workId: string };
+  searchParams: { query?: string };
 }
 
 export const revalidate = 0; // This forces the page to be dynamic
@@ -16,9 +17,9 @@ async function getData() {
   return data;
 }
 
-const page = async ({ params }: pageProps) => {
+const page = async ({ params, searchParams }: pageProps) => {
   const data = await getData();
-
+  console.log(searchParams);
   const [work] = await db
     .select()
     .from(workTable)
@@ -41,7 +42,11 @@ const page = async ({ params }: pageProps) => {
         </div>
       </section>
 
-      <WorkFilter filteredWork={work} work={data} />
+      <WorkFilter
+        filteredWork={work}
+        work={data}
+        searchParams={searchParams.query}
+      />
     </>
   );
 };
