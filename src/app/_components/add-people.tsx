@@ -400,22 +400,16 @@ const AddPeople: FC<AddPeopleProps> = ({ people }) => {
                   }}
                   onClientUploadComplete={(res) => {
                     setIsUploading(false);
-                    if (res) {
-                      const newUrls = res.map((file) => file.url);
+                    if (res && res.length > 0) {
+                      const uploadedFileUrl = res[0].key;
 
-                      // Get current values
-                      const currentUrls = Array.isArray(
-                        control._formValues.companyProfiles
-                      )
-                        ? control._formValues.companyProfiles
-                        : [];
-
-                      // Combine existing and new URLs
-                      const combinedUrls = [...currentUrls, ...newUrls];
-
-                      setValue("companyProfiles", combinedUrls, {
-                        shouldValidate: true,
-                      });
+                      setValue(
+                        "companyProfiles",
+                        [`https://utfs.io/f/${uploadedFileUrl}`],
+                        {
+                          shouldValidate: true,
+                        }
+                      );
                     }
                   }}
                   onUploadError={(error) => {
@@ -453,22 +447,16 @@ const AddPeople: FC<AddPeopleProps> = ({ people }) => {
                   }}
                   onClientUploadComplete={(res) => {
                     setIsUploading(false);
-                    if (res) {
-                      const newUrls = res.map((file) => file.url);
+                    if (res && res.length > 0) {
+                      const uploadedFileUrl = res[0].key;
 
-                      // Get current values
-                      const currentUrls = Array.isArray(
-                        control._formValues.countryFlags
-                      )
-                        ? control._formValues.countryFlags
-                        : [];
-
-                      // Combine existing and new URLs
-                      const combinedUrls = [...currentUrls, ...newUrls];
-
-                      setValue("countryFlags", combinedUrls, {
-                        shouldValidate: true,
-                      });
+                      setValue(
+                        "countryFlags",
+                        [`https://utfs.io/f/${uploadedFileUrl}`],
+                        {
+                          shouldValidate: true,
+                        }
+                      );
                     }
                   }}
                   onUploadError={(error) => {
