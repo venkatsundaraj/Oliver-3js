@@ -3,6 +3,8 @@ import { db } from "@/server/db";
 import { NextRequest, NextResponse } from "next/server";
 import { ZodError } from "zod";
 import { contactFormTable } from "@/server/db/schema";
+import { Resend } from "resend";
+import { env } from "@/env";
 
 export async function POST(req: NextRequest, res: NextResponse) {
   try {
@@ -14,6 +16,18 @@ export async function POST(req: NextRequest, res: NextResponse) {
       .insert(contactFormTable)
       .values(validatedBody);
 
+    const resend = new Resend(env.RESEND_API_KEY);
+    const response = await resend.emails.create({
+      from: "cosmos-strategy@jeyakumarjeyaraj.in",
+      to: validatedBody.email,
+      subject: "Thank you for contacting us",
+      text: `Thank you for contacting us. We will get back to you soon.`,
+      headers: {
+        "X-Entity-Ref-ID": new Date().getTime() + "",
+      },
+    });
+
+    console.log(response);
     return NextResponse.json({
       message: "Message Received Successfully",
       status: 200,

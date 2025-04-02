@@ -46,19 +46,19 @@ const InfiniteMap: FC<InfiniteMapProps> = ({ className }) => {
       ]}
       className={className}
     >
-      <CarouselContent className="w-screen h-screen pl-0 ml-0">
+      <CarouselContent className="w-screen min-h-[80vh] md:h-screen pl-0 ml-0">
         {Array.from({ length: 2 }).map((_, index) => (
           <CarouselItem key={index} className=" pl-0">
             <div
               className={cn(
-                "w-full bg-background h-screen border-b-primary-foreground flex items-center flex-col justify-center "
+                "w-full bg-background min-h-[80vh] md:h-screen border-b-primary-foreground flex items-center flex-col justify-center "
               )}
             >
               <Image
                 src={
                   "https://zkok4chdpn.ufs.sh/f/ZowmNmBHF7rVYDcrIWaaWrSBMDyek5Xw2LY6d7hfVRPKHt91"
                 }
-                className="w-full h-screen object-contain md:object-cover"
+                className="w-full min-h-[80vh] md:h-screen object-contain md:object-cover"
                 width={1200}
                 alt="Heat Map"
                 height={700}
