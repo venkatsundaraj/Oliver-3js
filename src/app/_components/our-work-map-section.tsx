@@ -24,7 +24,7 @@ export const chooseColor = function () {
 
 const OurWorkMapSection: FC<OurWorkMapSectionProps> = () => {
   return (
-    <section className="flex flex-col gap-32 items-center justify-start w-screen  min-h-screen py-8 md:py-16  md:max-h-fit  bg-repeat-x  animate-scroll-x bg-fixed relative ">
+    <section className="flex flex-col gap-32 items-center justify-start w-screen  min-h-screen py-8 md:py-16  md:max-h-fit  bg-repeat-x  animate-scroll-x overflow-hidden bg-fixed relative ">
       <InfiniteMap className="fixed top-0  w-screen h-screen z-0 " />
       <div className="flex flex-col items-center justify-start w-screen z-10 py-16">
         <div
