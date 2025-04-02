@@ -62,7 +62,7 @@ const InfiniteMapWithImageInput: FC<InfiniteMapWithImageInputProps> = ({
             >
               <Image
                 src={src}
-                className=" md:w-full   scale-100 md:scale-100  object-cover p-4 h-full"
+                className=" md:w-full   scale-100 md:scale-100 object-cover p-4 h-full"
                 width={1900}
                 alt="Heat Map"
                 height={700}

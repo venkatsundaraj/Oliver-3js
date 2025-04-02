@@ -24,9 +24,9 @@ export const chooseColor = function () {
 
 const OurWorkMapSection: FC<OurWorkMapSectionProps> = () => {
   return (
-    <section className="flex flex-col gap-32 items-center justify-start w-screen  min-h-screen py-8 md:py-16  md:max-h-fit  bg-repeat-x bg-[length:200%] animate-scroll-x bg-fixed relative ">
-      <InfiniteMap className="sticky top-0 overflow-x-hidden w-screen z-0" />
-      <div className="flex flex-col items-center justify-start w-screen z-10 -translate-y-1/2">
+    <section className="flex flex-col gap-32 items-center justify-start w-screen  min-h-screen py-8 md:py-16  md:max-h-fit  bg-repeat-x  animate-scroll-x bg-fixed relative ">
+      <InfiniteMap className="fixed top-0  w-screen h-screen z-0 " />
+      <div className="flex flex-col items-center justify-start w-screen z-10 py-16">
         <div
           className="container flex flex-col  overflow-x-hidden mb-12 w-screen z-10 "
           id="our-client-domains"
@@ -42,7 +42,7 @@ const OurWorkMapSection: FC<OurWorkMapSectionProps> = () => {
           <ul className="flex flex-wrap gap-4 w-full items-center justify-center mt-8">
             {clientDomains.map((item, i) => (
               <li
-                className="px-8 min-w-[16rem] max-w-md py-4 border border-secondary-foreground inline-flex rounded-3xl items-center justify-center text-foreground bg-secondary-foreground font-paragraph text-extra_paragraph_heading"
+                className="px-8 min-w-[16rem] max-w-md py-4 text-center border border-secondary-foreground inline-flex rounded-3xl items-center justify-center text-foreground bg-secondary-foreground font-paragraph text-extra_paragraph_heading"
                 key={i}
               >
                 {item}

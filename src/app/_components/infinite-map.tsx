@@ -58,7 +58,7 @@ const InfiniteMap: FC<InfiniteMapProps> = ({ className }) => {
                 src={
                   "https://zkok4chdpn.ufs.sh/f/ZowmNmBHF7rVYDcrIWaaWrSBMDyek5Xw2LY6d7hfVRPKHt91"
                 }
-                className="w-full h-screen object-cover"
+                className="w-full h-screen object-contain md:object-cover"
                 width={1200}
                 alt="Heat Map"
                 height={700}

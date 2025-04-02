@@ -131,7 +131,7 @@ const page: FC<pageProps> = ({}) => {
                   href={"/our-offer#our-practices"}
                   className={cn(
                     buttonVariants({ variant: "outline" }),
-                    "bg-background w-[180px] md:w-auto uppercase mt-4 md:mt-0 md:absolute top-0 md:translate-y-[-50%] right-0 text-foreground rounded-none"
+                    "bg-background w-[140px] md:w-auto uppercase mt-4 md:mt-0 md:absolute top-0 md:translate-y-[-50%] right-0 text-foreground rounded-none"
                   )}
                 >
                   Know More
@@ -194,7 +194,7 @@ const page: FC<pageProps> = ({}) => {
             <ul className="flex flex-wrap gap-4 w-full items-center justify-center mt-8">
               {clientDomains.map((item, i) => (
                 <li
-                  className="px-8 min-w-[16rem] max-w-md py-4 border border-secondary-foreground inline-flex rounded-3xl items-center justify-center text-foreground bg-secondary-foreground font-paragraph text-extra_paragraph_heading"
+                  className="px-8 min-w-[16rem] text-center max-w-md py-4 border border-secondary-foreground inline-flex rounded-3xl items-center justify-center text-foreground bg-secondary-foreground font-paragraph text-extra_paragraph_heading"
                   key={i}
                 >
                   {item}

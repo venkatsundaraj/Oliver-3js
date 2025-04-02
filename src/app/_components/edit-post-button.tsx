@@ -32,20 +32,15 @@ const EditPostButton: FC<EditPostButtonProps> = ({ post, type }) => {
   const deletePostHandler = async function (id: number, type: string) {
     setIsLoading(true);
 
-    toast({
-      title: "You accidently Pressed the key",
-      description: "Please Check your data",
-      variant: "default",
-    });
-    // const result = await deletePost(post.id, type);
-    // if (result.success) {
-    //   setIsLoading(false);
-    //   // Refresh the current route
-    //   router.refresh();
-    // } else {
-    //   // Handle error, maybe show a toast notification
-    //   console.error(result.error);
-    // }
+    const result = await deletePost(post.id, type);
+    if (result.success) {
+      setIsLoading(false);
+      // Refresh the current route
+      router.refresh();
+    } else {
+      // Handle error, maybe show a toast notification
+      console.error(result.error);
+    }
   };
   return (
     <DropdownMenu>

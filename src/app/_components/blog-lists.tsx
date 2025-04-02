@@ -1,34 +1,38 @@
-import { Button } from "@/app/_components/ui/button"
+import { Button } from "@/app/_components/ui/button";
 
-import { Input } from "@/app/_components/ui/input"
-import { Label } from "@/app/_components/ui/label"
-import { blogCategoryTitle } from "@/config/marketing"
-import { FC } from "react"
-import { blogCategoryContent } from "@/config/marketing"
+import { Input } from "@/app/_components/ui/input";
+import { Label } from "@/app/_components/ui/label";
+import { blogCategoryTitle } from "@/config/marketing";
+import { FC } from "react";
+import { blogCategoryContent } from "@/config/marketing";
 import {
   Tabs,
   TabsContent,
   TabsList,
   TabsTrigger,
-} from "@/app/_components/ui/tabs"
-import Image from "next/image"
-import Link from "next/link"
-import { cn, slugify } from "@/lib/utils"
-import { blogTable } from "@/server/db/schema"
+} from "@/app/_components/ui/tabs";
+import Image from "next/image";
+import Link from "next/link";
+import { cn, slugify } from "@/lib/utils";
+import { blogTable } from "@/server/db/schema";
 
-import { InferModel } from "drizzle-orm"
+import { InferModel } from "drizzle-orm";
 
-type Blog = InferModel<typeof blogTable>
+type Blog = InferModel<typeof blogTable>;
 
 interface BlogListsProps {
-  blogs: Blog[]
+  blogs: Blog[];
 }
 
 const BlogLists: FC<BlogListsProps> = ({ blogs }) => {
   if (blogs.length === 0) {
-    return <p>Blogs are yet to be uploaded</p>
+    return (
+      <p className="text-white text-secondary_heading font-heading">
+        Blogs are coming soon
+      </p>
+    );
   }
-  console.log(blogs)
+  console.log(blogs);
   return (
     <Tabs
       defaultValue={blogs[0].category}
@@ -86,7 +90,7 @@ const BlogLists: FC<BlogListsProps> = ({ blogs }) => {
           : null}
       </div>
     </Tabs>
-  )
-}
+  );
+};
 
-export default BlogLists
+export default BlogLists;
