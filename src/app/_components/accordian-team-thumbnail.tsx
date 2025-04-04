@@ -51,7 +51,7 @@ const AccordianTeamThumbnail: FC<AccordianTeamThumbnailProps> = ({ data }) => {
                       <Image
                         src={item.fileUrl}
                         alt={item.name}
-                        className="w-full md:h-[500px] object-cover  md:p-8"
+                        className="w-full md:h-[500px] object-cover grayscale md:p-8"
                         width={200}
                         height={400}
                       />

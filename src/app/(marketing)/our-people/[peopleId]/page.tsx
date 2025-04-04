@@ -32,7 +32,7 @@ const page = async ({ params }: PageProps) => {
             <Image
               src={member.fileUrl}
               alt={member.name}
-              className="w-full object-cover  md:p-8"
+              className="w-full object-cover grayscale md:p-8"
               width={200}
               height={400}
             />
