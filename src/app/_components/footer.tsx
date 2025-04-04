@@ -77,7 +77,8 @@ const Footer: FC<FooterProps> = ({}) => {
             </div>
           </div>
           <span className="text-[14px] font-paragraph text-foreground mt-8 justify-items-end hidden md:block">
-            ©2024 Cosmos Strategy · Built with love by Firebrand Labs
+            ©{new Date().getFullYear()} Cosmos Strategy · Built with love by
+            Firebrand Labs
           </span>
         </div>
         <div className="flex items-start justify-start flex-col gap-4 bg-secondary-foreground p-2 md:p-4 ps-4 md:ps-10 pe-4 md:pe-10 pt-4 md:pt-10 border-l border-l-foreground">
