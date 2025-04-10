@@ -41,7 +41,7 @@ const page = async ({ params }: PageProps) => {
                 <h4 className="font-heading text-left text-tertiary_heading font-normal text-primary-foreground leading-tight">
                   {member.name}
                 </h4>
-                <span className="bg-[#ED7D31] font-paragraph text-[16px] rounded-xl text-background px-3 py-1">
+                <span className="bg-muted-foreground font-paragraph text-[16px] rounded-xl text-foreground px-3 py-1">
                   {member.role}
                 </span>
               </div>
