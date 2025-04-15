@@ -28,7 +28,7 @@ const page = async ({ params }: PageProps) => {
     <>
       <section className="w-screen flex flex-col items-center justify-center">
         <div className="container flex flex-col ">
-          <article className="grid grid-cols-1 md:grid-cols-3 items-center justify-center gap-4 w-full pt-40 pb-2">
+          <article className="grid grid-cols-1 md:grid-cols-3 items-center justify-center border border-muted-foreground gap-4 w-full mt-40 pb-2">
             <Image
               src={member.fileUrl}
               alt={member.name}
@@ -36,14 +36,16 @@ const page = async ({ params }: PageProps) => {
               width={200}
               height={400}
             />
-            <div className="flex items-start justify-start flex-col gap-4 md:col-start-2 md:col-end-4">
+            <div className="flex items-start justify-start flex-col gap-4 md:col-start-2 md:col-end-4 md:p-8">
               <div className="flex flex-wrap md:flex-nowrap items-center justify-start md:justify-center gap-2 md:gap-4">
                 <h4 className="font-heading text-left text-tertiary_heading font-normal text-primary-foreground leading-tight">
                   {member.name}
                 </h4>
-                <span className="bg-muted-foreground font-paragraph text-[16px] rounded-xl text-foreground px-3 py-1">
-                  {member.role}
-                </span>
+                {member.role === "Founder" || member.role === "Co-Founder" ? (
+                  <span className="bg-muted-foreground font-paragraph text-[16px] rounded-xl text-foreground px-3 py-1">
+                    {member.role}
+                  </span>
+                ) : null}
               </div>
               <p className="text-secondary-foreground text-subtitle_heading font-paragraph leading-tight text-left">
                 {member.skills}
@@ -127,22 +129,38 @@ const page = async ({ params }: PageProps) => {
             <div className="gap-4 w-full ">
               <CountryFlags data={member.companyProfiles} />
             </div>
-            <div className="flex flex-col items-start">
-              {member.domains !== "<p></p>" ? (
-                <h2 className="font-heading text-secondary-foreground text-secondary_heading">
-                  Domains
-                </h2>
-              ) : null}
-              <div
-                className="ProseMirror text-foreground border-slate-700 py-4 rounded-lg "
-                style={{ whiteSpace: "pre-line" }}
-                dangerouslySetInnerHTML={{ __html: member.domains }}
-              />
+            <div className="flex items-start justify-start flex-col w-full">
+              {!member.countryFlags ? null : (
+                <div className="w-full">
+                  <div className="flex flex-col justify-start items-start md:flex-col w-full gap-8 mb-8 ">
+                    <div>
+                      <h2 className="text-secondary-foreground font-heading text-secondary_heading  mb-2">
+                        Countries
+                      </h2>
+                    </div>
+                    <div className="gap-4 w-full ">
+                      <CountryFlags data={member.countryFlags} />
+                    </div>
+                  </div>
+                </div>
+              )}
+              <div className="flex flex-col items-start">
+                {member.domains !== "<p></p>" ? (
+                  <h2 className="font-heading text-secondary-foreground text-secondary_heading">
+                    Domains
+                  </h2>
+                ) : null}
+                <div
+                  className="ProseMirror text-foreground border-slate-700 py-4 rounded-lg "
+                  style={{ whiteSpace: "pre-line" }}
+                  dangerouslySetInnerHTML={{ __html: member.domains }}
+                />
+              </div>
             </div>
           </div>
 
           {/* Centered Countries Section */}
-          {member.countryFlags.length > 1 ? null : (
+          {member.countryFlags ? null : (
             <div className="grid grid-cols-1 md:grid-cols-2 items-start justify-center py-8 bg-background gap-10">
               <div className="flex flex-col justify-start items-start md:flex-col  gap-8 mt-8 mb-8 md:py-8">
                 <div>

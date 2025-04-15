@@ -164,7 +164,7 @@ export const contactUsBody: contactUsItem[] = [
   },
   {
     icon: "https://zkok4chdpn.ufs.sh/f/ZowmNmBHF7rVWKqF8k12uX31TIjKoHYR0aPnSbMcFkhvmy76",
-    name: "All about us",
+    name: "Download Profile",
     link: "https://zkok4chdpn.ufs.sh/f/ZowmNmBHF7rVUwEtCAAY7SB9WamizGsyEwM4ZK2vHxtIn0kh",
   },
   {
@@ -373,7 +373,7 @@ export const ourDifferentiatorContent: { title: string; imgPath: string }[] = [
       "https://utfs.io/f/ZowmNmBHF7rVih5Fmu12L9SrhBkonyJq4Z8l0ANjKH7a5euM",
   },
   {
-    title: "Agile remuneration",
+    title: "Customised approach & remuneration",
     imgPath:
       "https://utfs.io/f/ZowmNmBHF7rVgAnj0u8GZmO7D95FyjUwVrPNpCBfxz4KHMWX",
   },

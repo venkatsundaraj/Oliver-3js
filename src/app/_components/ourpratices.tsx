@@ -22,17 +22,16 @@ const ourpractices: FC<pageProps> = function () {
         <div className="grid grid-cols-2  w-full md:grid-cols-3 gap-6 md:gap-0 relative">
           <div className="flex items-start gap-8 md:border-t border-foreground flex-col justify-start py-8 relative before:content-[''] before:absolute before:top-0 before:left-0 before:w-8 before:h-8 before:rounded-full before:bg-background before:translate-y-[-50%] before:border before:border-foreground">
             <div className="flex flex-col items-start justify-start gap-2">
-              <h4 className="text-secondary-foreground font-heading text-tertiary_heading leading-[1]">
-                Nu.Cosmos
+              <h4 className="text-foreground font-heading text-tertiary_heading leading-[1]">
+                <span className="text-primary-foreground">Nu.</span>Cosmos
               </h4>
-              <p className="text-foreground font-paragraph text-extra_paragraph_heading ">
-                Transformation{" "}
-                <span className="text-secondary-foreground">Practice</span>
+              <p className="text-muted-foreground font-paragraph text-extra_paragraph_heading ">
+                Transformation Practice
               </p>
             </div>
             <div className="flex flex-col items-start justify-center gap-8 mt-6 md:mt-10">
               <div className="flex flex-col items-start justify-center gap-2">
-                <h4 className="text-secondary-foreground font-heading text-our_text_heading leading-[1] ">
+                <h4 className="text-primary-foreground font-heading text-our_text_heading leading-[1] ">
                   Nu.
                   <span className="text-foreground text-our_text_heading leading-[1.1] ">
                     Turnaround
@@ -43,7 +42,7 @@ const ourpractices: FC<pageProps> = function () {
                 </p>
               </div>
               <div className="flex flex-col items-start justify-center gap-2">
-                <h4 className="text-secondary-foreground font-heading text-our_text_heading leading-[1] ">
+                <h4 className="text-primary-foreground font-heading text-our_text_heading leading-[1] ">
                   Nu.
                   <span className="text-foreground text-our_text_heading leading-[1.1] ">
                     Scale
@@ -54,7 +53,7 @@ const ourpractices: FC<pageProps> = function () {
                 </p>
               </div>
               <div className="flex flex-col items-start justify-center gap-2">
-                <h4 className="text-secondary-foreground font-heading text-our_text_heading leading-[1] ">
+                <h4 className="text-primary-foreground font-heading text-our_text_heading leading-[1] ">
                   Nu.
                   <span className="text-foreground text-our_text_heading leading-[1.1] ">
                     Op-Culture
@@ -68,18 +67,17 @@ const ourpractices: FC<pageProps> = function () {
           </div>
           <div className="flex items-start gap-8 md:border-t border-foreground flex-col justify-start py-8 relative before:content-[''] before:absolute before:top-0 before:left-0 before:w-8 before:h-8 before:rounded-full before:bg-background before:translate-y-[-50%] before:border before:border-foreground">
             <div className="flex flex-col items-start justify-start gap-2">
-              <h4 className="text-secondary-foreground font-heading text-tertiary_heading leading-[1]">
-                Qst.Cosmos
+              <h4 className="text-foreground font-heading text-tertiary_heading leading-[1]">
+                <span className="text-primary-foreground">Qst.</span>Cosmos
               </h4>
-              <p className="text-foreground font-paragraph text-extra_paragraph_heading md:text-extra_paragraph_heading ">
-                Business Entry{" "}
-                <span className="text-secondary-foreground">Practice</span>
+              <p className="text-muted-foreground font-paragraph text-extra_paragraph_heading ">
+                Business Entry Practice
               </p>
             </div>
 
             <div className="flex flex-col items-start justify-center gap-8 mt-6 md:mt-10">
               <div className="flex flex-col items-start justify-center gap-2">
-                <h4 className="text-secondary-foreground font-heading text-our_text_heading leading-[1] ">
+                <h4 className="text-primary-foreground font-heading text-our_text_heading leading-[1] ">
                   Qst.
                   <span className="text-foreground text-our_text_heading leading-[1.1] ">
                     Geography
@@ -90,7 +88,7 @@ const ourpractices: FC<pageProps> = function () {
                 </p>
               </div>
               <div className="flex flex-col items-start justify-center gap-2">
-                <h4 className="text-secondary-foreground font-heading text-our_text_heading leading-[1] ">
+                <h4 className="text-primary-foreground font-heading text-our_text_heading leading-[1] ">
                   Qst.
                   <span className="text-foreground text-our_text_heading leading-[1.1] ">
                     Category
@@ -104,18 +102,17 @@ const ourpractices: FC<pageProps> = function () {
           </div>
           <div className="flex items-start gap-8 flex-col justify-start py-8 relative before:content-[''] before:absolute before:top-0 before:left-0 before:w-8 before:h-8 before:rounded-full before:bg-background before:translate-y-[-50%] before:border before:border-foreground">
             <div className="flex flex-col items-start justify-start gap-2">
-              <h4 className="text-secondary-foreground font-heading text-tertiary_heading leading-[1]">
-                Flr.Cosmos
+              <h4 className="text-foreground font-heading text-tertiary_heading leading-[1]">
+                <span className="text-primary-foreground">Flr.</span>Cosmos
               </h4>
-              <p className="text-foreground font-paragraph text-extra_paragraph_heading md:text-extra_paragraph_heading ">
-                Capability{" "}
-                <span className="text-secondary-foreground">Practice</span>
+              <p className="text-muted-foreground font-paragraph text-extra_paragraph_heading ">
+                Capability Practice
               </p>
             </div>
 
             <div className="flex flex-col items-start justify-center gap-8 mt-6 md:mt-10">
               <div className="flex flex-col items-start justify-center gap-2">
-                <h4 className="text-secondary-foreground font-heading text-our_text_heading leading-[1] ">
+                <h4 className="text-primary-foreground font-heading text-our_text_heading leading-[1] ">
                   Flr.
                   <span className="text-foreground text-our_text_heading leading-[1.1] ">
                     Innate
@@ -126,7 +123,7 @@ const ourpractices: FC<pageProps> = function () {
                 </p>
               </div>
               <div className="flex flex-col items-start justify-center gap-2">
-                <h4 className="text-secondary-foreground font-heading text-our_text_heading leading-[1] ">
+                <h4 className="text-primary-foreground font-heading text-our_text_heading leading-[1] ">
                   Flr.
                   <span className="text-foreground text-our_text_heading leading-[1.1] ">
                     Manifest

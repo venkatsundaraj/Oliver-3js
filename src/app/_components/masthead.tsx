@@ -16,6 +16,7 @@ const cityNames = [
   "Dubai",
   "Toronto",
   "Sydney",
+  "Barcelona",
 ];
 
 interface MasTheadProps {}

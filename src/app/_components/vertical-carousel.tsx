@@ -15,9 +15,9 @@ interface VerticalCarouselProps {}
 
 const colors = [
   "#5CB7E3",
-  "#3799CF",
+  "#007AB8",
   "#6b7280",
-  "#3799CF",
+  "#007AB8",
   "#6b7280",
   "#5CB7E3",
   "#6b7280",
@@ -70,24 +70,40 @@ const VerticalCarousel: FC<VerticalCarouselProps> = () => {
               value="Insights centered"
               className="mt-0 flex items-start justify-center flex-col"
             >
-              <div className="flex items-start justify-top flex-col gap-4 md:gap-0 md:flex-row md:max-h-[500px] overflow-y-scroll scrollbar-hide">
-                <div className="grid grid-cols-1 md:grid-cols-1 px-0 md:px-2 max-w-[550px]">
+              <div className="flex items-start justify-top flex-col gap-4 md:gap-0 md:flex-row  overflow-y-scroll scrollbar-hide">
+                <div className="grid grid-cols-1 md:grid-cols-1 px-0 md:px-2">
                   <div className="flex w-full flex-col items-start">
                     <div className="flex items-start justify-center flex-col gap-4 text-foreground">
-                      <h4 className="font-paragraph text-extra_paragraph_heading text-primary-foreground">
-                        Traditional, algorithmic, 'engineering' approach
-                      </h4>
-                      <div className="p-2">
-                        <ul className="list-disc list-outside">
-                          <li className="text-extra_subtitle_heading font-paragraph text-foreground mb-2">
-                            Top-down break up of problem &#x2192; bottom-up
-                            synthesis of solution parts Interpreting
-                            organization as sum of parts.
-                          </li>
-                          <li className="text-extra_subtitle_heading font-paragraph text-foreground">
-                            Interpreting organisation as sum of parts.
-                          </li>
-                        </ul>
+                      <div className="flex flex-wrap md:flex-nowrap items-center justify-start gap-8">
+                        <div className="flex items-start justify-center flex-col gap-4 text-foreground md:basis-3/4">
+                          <h4 className="font-paragraph text-extra_paragraph_heading text-primary-foreground">
+                            Modern, Insights centered, 'doctor' approach
+                          </h4>
+                          <div className="p-2">
+                            <ul className="list-disc list-outside">
+                              <li className="text-extra_subtitle_heading font-paragraph text-foreground mb-2">
+                                Core insights about problem &#x2192; Reimagine
+                                Organisation + enterprise around insight
+                                concentrically.
+                              </li>
+                              <li className="text-extra_subtitle_heading font-paragraph text-foreground">
+                                Interpreting Organisation as an engine fuelled
+                                by differentiated insights.
+                              </li>
+                              <li className="text-extra_subtitle_heading font-paragraph text-foreground">
+                                Insights at the center of marketing, innovation,
+                                design, etc.
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                        <Image
+                          alt="Our Trrain"
+                          className="w-full md:w-1/4"
+                          src="https://utfs.io/f/ZowmNmBHF7rVHVpLcCdWuQopKOivRcLqJD7x46CXtZGlw0Sh"
+                          width={300}
+                          height={300}
+                        />
                       </div>
                       <p className="text-extra_subtitle_heading font-paragraph text-foreground hidden">
                         &#x2192;
@@ -97,31 +113,47 @@ const VerticalCarousel: FC<VerticalCarouselProps> = () => {
                       </p>
                     </div>
                     <div className="flex items-start justify-center flex-col gap-4 text-foreground">
-                      <h4 className="font-paragraph text-extra_paragraph_heading text-primary-foreground">
-                        Modern, Insights centered, 'doctor' approach
-                      </h4>
-                      <div className="p-2">
-                        <ul className="list-disc list-outside">
-                          <li className="text-extra_subtitle_heading font-paragraph text-foreground mb-2">
-                            Core insights about problem &#x2192; Reimagine
-                            Organisation + enterprise around insight
-                            concentrically.
-                          </li>
-                          <li className="text-extra_subtitle_heading font-paragraph text-foreground">
-                            Interpreting Organisation as an engine fuelled by
-                            differentiated insights.
-                          </li>
-                        </ul>
+                      <div className="flex flex-wrap md:flex-nowrap items-center justify-start gap-8">
+                        <div className="flex items-start justify-center flex-col gap-4 text-foreground md:basis-3/4">
+                          <h4 className="font-paragraph text-extra_paragraph_heading text-primary-foreground">
+                            Traditional, algorithmic, 'engineering' approach
+                          </h4>
+                          <div className="p-2">
+                            <ul className="list-disc list-outside">
+                              <li className="text-extra_subtitle_heading font-paragraph text-foreground mb-2">
+                                Top-down break up of problem &#x2192; bottom-up
+                                synthesis of solution parts.
+                              </li>
+                              <li className="text-extra_subtitle_heading font-paragraph text-foreground">
+                                Interpreting organisation as sum of parts.
+                              </li>
+                              <li className="text-extra_subtitle_heading font-paragraph text-foreground">
+                                Insights at the center of P&L and organisation.
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                        <div className="flex items-center justify-center flex-row gap-6">
+                          <Button
+                            className="rounded-xl min-w-24 font-paragraph bg-muted-foreground"
+                            variant={"default"}
+                          >
+                            Value Chain
+                          </Button>
+                          <Icons.ArrowRight className="text-foreground" />
+                          <Button
+                            className="rounded-xl min-w-24 font-paragraph bg-muted-foreground"
+                            variant={"default"}
+                          >
+                            Business
+                          </Button>
+                        </div>
                       </div>
-                      <p className="font-paragraph font-bold text-foreground text-extra_subtitle_heading">
-                        Insights at the center of P&L and organisation vs
-                        insights at the center of marketing, innovation, design,
-                        etc.
-                      </p>
                     </div>
                   </div>
                 </div>
-                <div className="grid grid-cols-1 md:grid-cols-1 px-0 md:px-2 md:h-full">
+
+                <div className=" grid-cols-1 md:grid-cols-1 px-0 md:px-2 md:h-full hidden">
                   <div className="flex flex-col items-center justify-between gap-10">
                     <div className="flex items-center justify-center flex-row gap-6">
                       <Button
@@ -208,8 +240,14 @@ const VerticalCarousel: FC<VerticalCarouselProps> = () => {
               className="mt-0 flex items-center justify-center flex-col "
             >
               <h4 className="font-paragraph  text-extra_paragraph_heading text-primary-foreground">
-                Only senior industry leaders as
-                <br /> collaborative consultants working across all levels
+                <span className="text-foreground">
+                  Only senior industry leaders
+                </span>{" "}
+                <br /> As
+                <span> collaborative consultants</span> <br />{" "}
+                <span className="text-foreground">
+                  Working across all levels
+                </span>
               </h4>
             </TabsContent>
             <TabsContent
@@ -217,8 +255,13 @@ const VerticalCarousel: FC<VerticalCarouselProps> = () => {
               className="mt-0 flex items-start justify-center flex-col"
             >
               <h4 className="font-paragraph text-extra_paragraph_heading text-primary-foreground">
-                500+ years of experience : 70% client side,
-                <br /> practitioner experience
+                <span className="text-foreground">
+                  500+ years of experience :
+                </span>{" "}
+                <br />
+                <span>70% client side,</span>
+                <br />{" "}
+                <span className="text-foreground">practitioner experience</span>
               </h4>
             </TabsContent>
             <TabsContent
@@ -248,16 +291,22 @@ const VerticalCarousel: FC<VerticalCarouselProps> = () => {
               className="mt-0 flex items-start justify-center flex-col"
             >
               <h4 className="font-paragraph text-extra_paragraph_heading text-primary-foreground">
-                Strategy, Plan, <br /> Execution Oversight, <br /> on job
-                Capability Building
+                <span className="text-foreground">Strategy,</span>
+                <br />
+                <span> Plan,</span>
+                <br />{" "}
+                <span className="text-foreground">
+                  Execution Oversight,
+                </span>{" "}
+                <br /> On Job Capability Building
               </h4>
             </TabsContent>
             <TabsContent
-              value="Agile remuneration"
+              value="Customised approach & remuneration"
               className="mt-0 flex items-start justify-center flex-col"
             >
               <h4 className="font-paragraph text-extra_paragraph_heading text-primary-foreground">
-                Customized Renumeration
+                Customised Approach & Remuneration
               </h4>
             </TabsContent>
           </div>

@@ -61,15 +61,10 @@ const page: FC<pageProps> = ({}) => {
                 We are Growth Strategists who use Insights to unlock Higher
                 Profits.
               </p>
-              <Link
-                href={"/our-offer#our-goal"}
-                className={cn(
-                  buttonVariants({ variant: "outline", size: "lg" }),
-                  "text-foreground rounded-none mt-4 uppercase"
-                )}
-              >
-                Our Goal
-              </Link>
+              <p className="max-w-md text-extra_paragraph_heading font-paragraph leading-loose text-muted-foreground">
+                We unlock Business Growth Spirals that are Transformative and
+                Profitable for our Clients
+              </p>
             </div>
             <div className="flex items-center justify-center">
               <Image

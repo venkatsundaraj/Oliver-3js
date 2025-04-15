@@ -34,7 +34,7 @@ const page = async ({ params, searchParams }: pageProps) => {
           <div className="grid grid-cols-1 md:grid-cols-2 w-full gap-8 md:gap-0">
             <div className="flex items-start flex-col justify-center gap-4">
               <h2 className="font-heading text-secondary_heading text-secondary-foreground leading-tight md:leading-[55px]">
-                Questions we have loved something
+                Some questions we have enjoyed answering
               </h2>
             </div>
             <div className="hidden items-center justify-center"></div>
