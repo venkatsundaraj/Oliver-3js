@@ -20,6 +20,7 @@ function Loader() {
 const Model: FC<ModelProps> = ({}) => {
   const [sectionHeight, setSectionHeight] = useState<number>(0);
   const [frameValue, setFrameValue] = useState<number>(0);
+  const [scrollValue, setScrollValue] = useState<number>(0);
   const sectionRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
@@ -35,7 +36,7 @@ const Model: FC<ModelProps> = ({}) => {
   return (
     <main
       ref={sectionRef}
-      className="w-screen h-[1000vh] relative overflow-hidden z-0"
+      className="w-screen h-[100vh] relative overflow-hidden z-0 overflow-y-hidden"
     >
       <Canvas
         gl={{ antialias: true }}
@@ -47,7 +48,11 @@ const Model: FC<ModelProps> = ({}) => {
         <ambientLight intensity={4} />
         <Suspense fallback={<Loader />}>
           {/* <Character height={sectionHeight} frameValue={getFrameValue} /> */}
-          <CharacterOne height={sectionHeight} frameValue={getFrameValue} />
+          <CharacterOne
+            height={sectionHeight}
+            frameValue={getFrameValue}
+            getScrollValue={scrollValue}
+          />
         </Suspense>
       </Canvas>
       <section

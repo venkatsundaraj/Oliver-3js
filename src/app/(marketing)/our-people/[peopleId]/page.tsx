@@ -10,6 +10,11 @@ interface PageProps {
   params: { peopleId: string };
 }
 
+const EMPTY_VALUE = [
+  "https://utfs.io/f/ZowmNmBHF7rV84mXkPqKutYEbdyi5prBsLjqX1DQMJGPFINW",
+  "https://utfs.io/f/ZowmNmBHF7rVI8p9Q7B68J3F67djWLVkcNPZneu0vAlKHYBC",
+];
+
 const page = async ({ params }: PageProps) => {
   const { peopleId } = params;
 
@@ -21,7 +26,7 @@ const page = async ({ params }: PageProps) => {
     .limit(1);
 
   // Display message if member not found
-
+  console.log(member);
   if (!member) notFound();
 
   return (
@@ -130,7 +135,8 @@ const page = async ({ params }: PageProps) => {
               <CountryFlags data={member.companyProfiles} />
             </div>
             <div className="flex items-start justify-start flex-col w-full">
-              {!member.countryFlags ? null : (
+              {!member.countryFlags ||
+              EMPTY_VALUE.includes(member.countryFlags[0]) ? null : (
                 <div className="w-full">
                   <div className="flex flex-col justify-start items-start md:flex-col w-full gap-8 mb-8 ">
                     <div>
@@ -160,7 +166,8 @@ const page = async ({ params }: PageProps) => {
           </div>
 
           {/* Centered Countries Section */}
-          {member.countryFlags ? null : (
+          {member.countryFlags ||
+          member.countryFlags[0] === EMPTY_VALUE ? null : (
             <div className="grid grid-cols-1 md:grid-cols-2 items-start justify-center py-8 bg-background gap-10">
               <div className="flex flex-col justify-start items-start md:flex-col  gap-8 mt-8 mb-8 md:py-8">
                 <div>

@@ -237,7 +237,7 @@ const VerticalCarousel: FC<VerticalCarouselProps> = () => {
             </TabsContent>
             <TabsContent
               value="Only senior consultants"
-              className="mt-0 flex items-center justify-center flex-col "
+              className="mt-0 flex items-start justify-center flex-col "
             >
               <h4 className="font-paragraph  text-extra_paragraph_heading text-primary-foreground">
                 <span className="text-foreground">
@@ -249,6 +249,13 @@ const VerticalCarousel: FC<VerticalCarouselProps> = () => {
                   Working across all levels
                 </span>
               </h4>
+              <Image
+                alt="Our Trrain"
+                className="w-[280px] mt-6"
+                src="https://zkok4chdpn.ufs.sh/f/ZowmNmBHF7rVzMSnmIFNlZ1PCvG0BIV6jrxgaOSWF5w3QdTL"
+                width={300}
+                height={300}
+              />
             </TabsContent>
             <TabsContent
               value="500+ years, 70% practitioners"
@@ -263,6 +270,13 @@ const VerticalCarousel: FC<VerticalCarouselProps> = () => {
                 <br />{" "}
                 <span className="text-foreground">practitioner experience</span>
               </h4>
+              <Image
+                alt="Our Trrain"
+                className="w-[280px] mt-6"
+                src="https://zkok4chdpn.ufs.sh/f/ZowmNmBHF7rV4W9wl258tCRcZbLox5S9hfdI037uwUEjeQWF"
+                width={300}
+                height={300}
+              />
             </TabsContent>
             <TabsContent
               value="Tremendous diversity"
@@ -300,14 +314,73 @@ const VerticalCarousel: FC<VerticalCarouselProps> = () => {
                 </span>{" "}
                 <br /> On Job Capability Building
               </h4>
+              <Image
+                alt="Our Trrain"
+                className="w-[280px] mt-6"
+                src="https://zkok4chdpn.ufs.sh/f/ZowmNmBHF7rV2IioqKZO6bH9JTFpDjWtfnc42Y073CdaRmov"
+                width={300}
+                height={300}
+              />
             </TabsContent>
             <TabsContent
               value="Customised approach & remuneration"
-              className="mt-0 flex items-start justify-center flex-col"
+              className="mt-0 flex items-start justify-center flex-col gap-8"
             >
               <h4 className="font-paragraph text-extra_paragraph_heading text-primary-foreground">
                 Customised Approach & Remuneration
               </h4>
+              <div className="flex flex-col items-start justify-center gap-8">
+                <div className="flex flex-col items-start justify-center gap-3 w-full">
+                  <h4 className="font-paragraph text-extra_paragraph_heading text-secondary-foreground">
+                    Engagement
+                  </h4>
+                  <ul className="grid grid-cols-2 items-start justify-center w-full gap-4">
+                    <li className="font-paragraph text-foreground text-subtitle_heading">
+                      3 levels
+                    </li>
+                    <li className="font-paragraph text-foreground text-subtitle_heading">
+                      <span className="inline-flex "> : </span>
+                      {"   "}Premier | Professional | Elemental
+                    </li>
+                    <li className="font-paragraph text-foreground text-subtitle_heading">
+                      3 scopes
+                    </li>
+                    <li className="font-paragraph text-foreground text-subtitle_heading">
+                      <span className="inline-flex "> : </span>
+                      {"   "}Modular Sequential | Modula | All - in
+                    </li>
+                    <li className="font-paragraph text-foreground text-subtitle_heading">
+                      2 approaches
+                    </li>
+                    <li className="font-paragraph text-foreground text-subtitle_heading">
+                      <span className="inline-flex "> : </span>
+                      {"   "}Collaborative | Transactive
+                    </li>
+                  </ul>
+                </div>
+                <div className="flex flex-col items-start justify-center gap-3 w-full">
+                  <h4 className="font-paragraph text-extra_paragraph_heading text-secondary-foreground">
+                    Remuneration
+                  </h4>
+                  <ul className="grid grid-cols-2 items-start justify-center w-full gap-4">
+                    <li className="font-paragraph text-foreground text-subtitle_heading">
+                      3 options
+                    </li>
+                    <li className="font-paragraph text-foreground text-subtitle_heading">
+                      <span className="inline-flex "> : </span>
+                      {"   "}Project Fees | Retainer | Sweat Stake
+                    </li>
+                    <li className="font-paragraph text-foreground text-subtitle_heading">
+                      2 components
+                    </li>
+                    <li className="font-paragraph text-foreground text-subtitle_heading">
+                      <span className="inline-flex "> : </span>
+                      {"   "}Fixed Fees | Empirical Satisfaction Linked Variable
+                      Fees
+                    </li>
+                  </ul>
+                </div>
+              </div>
             </TabsContent>
           </div>
         </Tabs>

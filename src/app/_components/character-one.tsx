@@ -15,52 +15,21 @@ import { useScroll, MotionValue, useTransform } from "framer-motion";
 interface CharacterOneProps {
   height: number;
   frameValue: (value: number) => void;
+  getScrollValue: number;
 }
 
 export default function CharacterOne({
   height,
   frameValue,
+  getScrollValue,
 }: CharacterOneProps) {
-  const [scrollValue, setScrollValue] = useState<number>(0);
+  const [scrollValue, setScrollValue] = useState<number>(getScrollValue);
   const [scaleValue, setScaleValue] = useState<number>(0);
+  const [startAnimation, setStartAnimation] = useState<boolean>(true);
 
   const { nodes, materials, animations } = useGLTF("f22noanime.glb") as any;
   const { actions } = useAnimations(animations);
   const ref = useRef<THREE.Group>(null);
-  const tl = useRef<gsap.core.Timeline | null>(null);
-  const { viewport } = useThree();
-  const resRatio = viewport.width / 2;
-  const isMobile = window.innerWidth < 768;
-  function useParallax(value: MotionValue<number>, distance: number) {
-    return useTransform(value, [0, 1], [-distance, distance]);
-  }
-  useEffect(() => {
-    const scrollEvent = function (e: Event) {
-      setScrollValue(window.scrollY);
-    };
-    window.addEventListener("scroll", scrollEvent);
-    return () => {
-      window.removeEventListener("scroll", scrollEvent);
-    };
-  }, []);
-
-  const CircleOutline = ({
-    radius = 1,
-    segments = 64,
-    color = "black",
-  }: {
-    radius?: number;
-    segments?: number;
-    color?: string;
-  }) => {
-    const points: Array<[number, number, number]> = [];
-    for (let i = 0; i <= segments; i++) {
-      const angle = (i / segments) * Math.PI * 2;
-      points.push([Math.cos(angle) * radius, Math.sin(angle) * radius, 0]);
-    }
-
-    return <Line points={points} color={color} lineWidth={2.5} />;
-  };
 
   const spira = useRef<THREE.Group>(null);
   const dot1 = useRef<THREE.Mesh>(null);
@@ -86,6 +55,57 @@ export default function CharacterOne({
   const sprea = useRef<THREE.Group>(null);
   const overalls = useRef<THREE.Group>(null);
 
+  const tl = useRef<gsap.core.Timeline | null>(null);
+  const { viewport } = useThree();
+  const resRatio = viewport.width / 2;
+  const isMobile = window.innerWidth < 768;
+  function useParallax(value: MotionValue<number>, distance: number) {
+    return useTransform(value, [0, 1], [-distance, distance]);
+  }
+
+  useEffect(() => {
+    // const scrollEvent = function (e: Event) {
+    //   // getScrollValue > 0 ? (window.scrollY = getScrollValue) : window.scrollY;
+    //   setScrollValue(window.scrollY);
+    // };
+    // window.addEventListener("scroll", scrollEvent);
+    // return () => {
+    //   window.removeEventListener("scroll", scrollEvent);
+    // };
+    const initiateAnimation = async function () {
+      // setStartAnimation(true);
+      await new Promise((resolve) => setTimeout(resolve, 2000));
+      let value = 0;
+
+      const interval = setInterval(() => {
+        value === 100 ? (value = 0) : (value += 1);
+        setScrollValue(value + 1);
+      }, 100);
+
+      return () => clearInterval(interval);
+    };
+
+    initiateAnimation();
+  }, []);
+
+  const CircleOutline = ({
+    radius = 1,
+    segments = 64,
+    color = "black",
+  }: {
+    radius?: number;
+    segments?: number;
+    color?: string;
+  }) => {
+    const points: Array<[number, number, number]> = [];
+    for (let i = 0; i <= segments; i++) {
+      const angle = (i / segments) * Math.PI * 2;
+      points.push([Math.cos(angle) * radius, Math.sin(angle) * radius, 0]);
+    }
+
+    return <Line points={points} color={color} lineWidth={2.5} />;
+  };
+
   const { scrollYProgress } = useScroll();
   const springScale = useSpring(scrollYProgress, {
     stiffness: 50,
@@ -94,7 +114,14 @@ export default function CharacterOne({
   });
   useFrame(() => {
     const maxScroll = height - window.innerHeight;
-    const scrollFactor = Math.min(scrollValue / maxScroll, 1);
+    // const scrollFactor = Math.min(scrollValue / maxScroll, 1);
+    const scrollFactor = Math.min(scrollValue / 100, 1);
+
+    if (scrollFactor === 1) {
+      // setStartAnimation((prev) => !prev);
+      // console.log(startAnimation);
+    }
+
     frameValue(scrollFactor);
 
     if (tl.current) {
