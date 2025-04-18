@@ -77,8 +77,13 @@ export default function CharacterOne({
       await new Promise((resolve) => setTimeout(resolve, 2000));
       let value = 0;
 
-      const interval = setInterval(() => {
-        value === 100 ? (value = 0) : (value += 1);
+      const interval = setInterval(async () => {
+        if (value === 200) {
+          value = 0;
+          await new Promise((resolve) => setTimeout(resolve, 2000));
+        } else {
+          value += 1;
+        }
         setScrollValue(value + 1);
       }, 100);
 
@@ -115,12 +120,7 @@ export default function CharacterOne({
   useFrame(() => {
     const maxScroll = height - window.innerHeight;
     // const scrollFactor = Math.min(scrollValue / maxScroll, 1);
-    const scrollFactor = Math.min(scrollValue / 100, 1);
-
-    if (scrollFactor === 1) {
-      // setStartAnimation((prev) => !prev);
-      // console.log(startAnimation);
-    }
+    const scrollFactor = Math.min(scrollValue / 200, 1);
 
     frameValue(scrollFactor);
 

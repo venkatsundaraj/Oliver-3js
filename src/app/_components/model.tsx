@@ -30,6 +30,7 @@ const Model: FC<ModelProps> = ({}) => {
   }, [sectionRef]);
 
   const getFrameValue = function (value: number) {
+    console.log(value);
     setFrameValue(value);
   };
 
@@ -41,7 +42,7 @@ const Model: FC<ModelProps> = ({}) => {
       <Canvas
         gl={{ antialias: true }}
         className={cn(
-          "!h-svh !fixed top-0 left-0 flex items-center transition-opacity duration-500 justify-center",
+          "!h-svh  left-0 flex items-center transition-opacity duration-500 justify-center",
           frameValue === 1 ? "opacity-0" : ""
         )}
       >
@@ -57,7 +58,7 @@ const Model: FC<ModelProps> = ({}) => {
       </Canvas>
       <section
         className={cn(
-          "flex items-center  justify-center flex-col fixed left-0 top-0  w-screen h-screen duration-500 transition-opacity overflow-hidden ",
+          "flex items-center  justify-center flex-col absolute left-0 top-0  w-screen h-screen duration-500 transition-opacity overflow-hidden ",
           frameValue === 0 || frameValue < 0
             ? "opacity-1 translate-y-0 z-10"
             : "opacity-0 translate-y-10 z-[-1]"
@@ -72,7 +73,7 @@ const Model: FC<ModelProps> = ({}) => {
       </section>
       <section
         className={cn(
-          "flex items-center justify-start fixed left-0 top-0 bg-transparent w-screen transition-all h-screen duration-500 overflow-hidden",
+          "flex items-center justify-start absolute  left-0 top-0 bg-transparent w-screen transition-all h-screen duration-500 overflow-hidden",
           frameValue > 0 && frameValue < 0.1
             ? "opacity-1 translate-y-0 z-10"
             : "opacity-0 translate-y-10 z-[-1]"
@@ -100,7 +101,7 @@ const Model: FC<ModelProps> = ({}) => {
       </section>
       <section
         className={cn(
-          "flex items-center  justify-start fixed left-0 top-0 w-screen h-screen duration-500 transition-all overflow-hidden",
+          "flex items-center  justify-start absolute left-0 top-0 w-screen h-screen duration-500 transition-all overflow-hidden",
           frameValue > 0.1 && frameValue < 0.2
             ? "opacity-1 translate-y-0 z-10"
             : "opacity-0 translate-y-10 z-[-1]"
