@@ -8,6 +8,7 @@ import { useState } from "react";
 import { cn } from "@/lib/utils";
 import CharacterOne from "./character-one";
 import { THRESHOLD_MAXIMUM_SCALE_VALUE } from "@/config/threejs-constants";
+import { Icons } from "./icons";
 
 interface ModelProps {}
 
@@ -56,6 +57,7 @@ const Model: FC<ModelProps> = ({}) => {
           />
         </Suspense>
       </Canvas>
+      <Icons.ArrowDown className="absolute bottom-[40px] left-1/2 -translate-x-1/2 stroke-foreground animate-bounce  p-1 w-8 h-auto rounded-full border border-foreground" />
       <section
         className={cn(
           "flex items-center  justify-center flex-col absolute left-0 top-0  w-screen h-screen duration-500 transition-opacity overflow-hidden ",
@@ -74,7 +76,7 @@ const Model: FC<ModelProps> = ({}) => {
       <section
         className={cn(
           "flex items-center justify-start absolute  left-0 top-0 bg-transparent w-screen transition-all h-screen duration-500 overflow-hidden",
-          frameValue > 0 && frameValue < 0.1
+          frameValue > 0 && frameValue < 0.4
             ? "opacity-1 translate-y-0 z-10"
             : "opacity-0 translate-y-10 z-[-1]"
         )}
@@ -102,7 +104,7 @@ const Model: FC<ModelProps> = ({}) => {
       <section
         className={cn(
           "flex items-center  justify-start absolute left-0 top-0 w-screen h-screen duration-500 transition-all overflow-hidden",
-          frameValue > 0.1 && frameValue < 0.2
+          frameValue > 0.4 && frameValue < 0.78
             ? "opacity-1 translate-y-0 z-10"
             : "opacity-0 translate-y-10 z-[-1]"
         )}

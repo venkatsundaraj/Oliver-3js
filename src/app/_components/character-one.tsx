@@ -64,28 +64,24 @@ export default function CharacterOne({
   }
 
   useEffect(() => {
-    // const scrollEvent = function (e: Event) {
-    //   // getScrollValue > 0 ? (window.scrollY = getScrollValue) : window.scrollY;
-    //   setScrollValue(window.scrollY);
-    // };
-    // window.addEventListener("scroll", scrollEvent);
-    // return () => {
-    //   window.removeEventListener("scroll", scrollEvent);
-    // };
     const initiateAnimation = async function () {
-      // setStartAnimation(true);
       await new Promise((resolve) => setTimeout(resolve, 2000));
       let value = 0;
 
       const interval = setInterval(async () => {
-        if (value === 200) {
-          value = 0;
-          await new Promise((resolve) => setTimeout(resolve, 2000));
+        if (value >= 198) {
+          await new Promise((resolve) =>
+            setTimeout(() => {
+              value = -10;
+              return resolve;
+            }, 2000)
+          );
         } else {
           value += 1;
         }
-        setScrollValue(value + 1);
-      }, 100);
+
+        setScrollValue(value);
+      }, 20);
 
       return () => clearInterval(interval);
     };
@@ -137,8 +133,8 @@ export default function CharacterOne({
         ? 1
         : scrollFactor > THRESHOLD_MAXIMUM_SCALE_VALUE
         ? 1
-        : NaN;
-
+        : 1;
+    console.log(scaleNumber);
     setScaleValue(scaleNumber);
   });
 
