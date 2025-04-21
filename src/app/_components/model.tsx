@@ -111,7 +111,7 @@ const Model: FC<ModelProps> = ({}) => {
       <section
         className={cn(
           "flex items-center  justify-start absolute left-0 top-0 w-screen h-screen duration-500 transition-all overflow-hidden",
-          frameValue > 0.4 && frameValue < 0.78
+          frameValue > 0.4 && frameValue < 0.85
             ? "opacity-1 translate-y-0 z-10"
             : "opacity-0 translate-y-10 z-[-1]"
         )}
@@ -146,7 +146,7 @@ const Model: FC<ModelProps> = ({}) => {
       <section
         className={cn(
           "flex items-center justify-start absolute left-0 top-0 w-screen h-screen duration-500 transition-all overflow-hidden",
-          frameValue > 0.85 && frameValue < 1
+          frameValue > 0.9 && frameValue < 1
             ? "opacity-1 translate-y-0 z-10"
             : "opacity-0 translate-y-10 z-[-1]"
         )}
