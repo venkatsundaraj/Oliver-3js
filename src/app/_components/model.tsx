@@ -31,7 +31,6 @@ const Model: FC<ModelProps> = ({}) => {
   }, [sectionRef]);
 
   const getFrameValue = function (value: number) {
-    console.log(value);
     setFrameValue(value);
   };
 
@@ -57,7 +56,9 @@ const Model: FC<ModelProps> = ({}) => {
           />
         </Suspense>
       </Canvas>
-      <Icons.ArrowDown className="absolute bottom-[40px] left-1/2 -translate-x-1/2 stroke-foreground animate-bounce  p-1 w-8 h-auto rounded-full border border-foreground" />
+      <div className="absolute bottom-[40px] left-1/2 -translate-x-1/2 bg-transparent ">
+        <Icons.ArrowDown className="stroke-foreground animate-bounce relative  p-1 w-8 h-auto rounded-full border border-foreground before:content-[''] before:w-full before:h-full before:bg-foreground before:top-0 before:left-0" />
+      </div>
       <section
         className={cn(
           "flex items-center  justify-center flex-col absolute left-0 top-0  w-screen h-screen duration-500 transition-opacity overflow-hidden ",
@@ -138,7 +139,7 @@ const Model: FC<ModelProps> = ({}) => {
       </section>
       <section
         className={cn(
-          "flex items-center justify-start fixed left-0 top-0 w-screen h-screen duration-500 transition-all overflow-hidden",
+          "flex items-center justify-start absolute left-0 top-0 w-screen h-screen duration-500 transition-all overflow-hidden",
           frameValue > 0.85 && frameValue < 1
             ? "opacity-1 translate-y-0 z-10"
             : "opacity-0 translate-y-10 z-[-1]"

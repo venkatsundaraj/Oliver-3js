@@ -67,20 +67,65 @@ export default function CharacterOne({
     const initiateAnimation = async function () {
       await new Promise((resolve) => setTimeout(resolve, 2000));
       let value = 0;
+      let isResetting = false;
 
       const interval = setInterval(async () => {
-        if (value >= 198) {
+        if (value >= 198 && !isResetting) {
+          isResetting = true;
+          console.log(isResetting);
           await new Promise((resolve) =>
-            setTimeout(() => {
+            setTimeout(async () => {
+              await new Promise((resolve) => setTimeout(resolve, 3000));
+              const values = [
+                spira,
+                dot1,
+                dot2,
+                dot3,
+                dot4,
+                dot5,
+                dot6,
+                dot7,
+                dot8,
+                dot9,
+                dot10,
+                onecir,
+                seccir,
+                centerball,
+                centercir,
+                spreaone,
+                outonecir,
+                sprea,
+                three,
+                four,
+                five,
+              ];
+
+              values.forEach((val) => {
+                if (val.current) {
+                  val.current.visible = false;
+                }
+              });
+
+              await new Promise((resolve) => setTimeout(resolve, 1000));
               value = -10;
+              setScrollValue(value);
+
+              await new Promise((resolve) => setTimeout(resolve, 1000));
+
+              values.forEach((val) => {
+                if (val.current) {
+                  val.current.visible = true;
+                }
+              });
+
+              isResetting = false;
               return resolve;
             }, 2000)
           );
-        } else {
+        } else if (!isResetting) {
           value += 1;
+          setScrollValue(value);
         }
-
-        setScrollValue(value);
       }, 20);
 
       return () => clearInterval(interval);
@@ -118,10 +163,20 @@ export default function CharacterOne({
     // const scrollFactor = Math.min(scrollValue / maxScroll, 1);
     const scrollFactor = Math.min(scrollValue / 200, 1);
 
+    const refinedScrollValue = Math.max(scrollFactor, 0);
+
     frameValue(scrollFactor);
 
     if (tl.current) {
-      tl.current.seek(scrollFactor * tl.current.duration());
+      const timelineProgress = Math.min(
+        Math.max(refinedScrollValue * tl.current.duration(), 0),
+        tl.current.duration()
+      );
+      tl.current.seek(timelineProgress);
+      console.log(
+        Math.max(refinedScrollValue * tl.current.duration(), 0),
+        refinedScrollValue
+      );
     }
 
     // enlarging and reducing the scales
@@ -134,7 +189,7 @@ export default function CharacterOne({
         : scrollFactor > THRESHOLD_MAXIMUM_SCALE_VALUE
         ? 1
         : 1;
-    console.log(scaleNumber);
+
     setScaleValue(scaleNumber);
   });
 
