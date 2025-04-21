@@ -85,7 +85,7 @@ export default function CircularProgressArrow({
       </svg>
 
       {/* Arrow icon in the center */}
-      <div className="relative z-10">
+      <div className="relative z-10 translate-y-[20%]">
         <ArrowDown
           className="stroke-foreground animate-bounce"
           size={size * 0.5}
