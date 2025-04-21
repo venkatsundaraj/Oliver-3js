@@ -9,6 +9,7 @@ import { cn } from "@/lib/utils";
 import CharacterOne from "./character-one";
 import { THRESHOLD_MAXIMUM_SCALE_VALUE } from "@/config/threejs-constants";
 import { Icons } from "./icons";
+import CircularProgressArrow from "@/app/_components/circular-arrow-progress";
 
 interface ModelProps {}
 
@@ -57,7 +58,12 @@ const Model: FC<ModelProps> = ({}) => {
         </Suspense>
       </Canvas>
       <div className="absolute bottom-[40px] left-1/2 -translate-x-1/2 bg-transparent ">
-        <Icons.ArrowDown className="stroke-foreground animate-bounce relative  p-1 w-8 h-auto rounded-full border border-foreground before:content-[''] before:w-full before:h-full before:bg-foreground before:top-0 before:left-0" />
+        <CircularProgressArrow
+          progress={Math.max(frameValue * 100, 0)}
+          size={50}
+          strokeWidth={3}
+          className="text-secondary-foreground"
+        />
       </div>
       <section
         className={cn(
