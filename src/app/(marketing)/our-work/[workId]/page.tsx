@@ -29,7 +29,7 @@ const page = async ({ params, searchParams }: pageProps) => {
   if (!work) notFound();
   return (
     <>
-      <section className="w-screen  items-center justify-center bg-background py-10 md:pt-40 md:pb-16 flex ">
+      <section className="w-screen  items-center justify-center bg-background pt-28 pb-4 md:pt-40 md:pb-16 flex ">
         <div className="container flex items-start justify-center flex-col">
           <div className="grid grid-cols-1 md:grid-cols-2 w-full gap-8 md:gap-0">
             <div className="flex items-start flex-col justify-center gap-4">

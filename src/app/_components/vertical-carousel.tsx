@@ -347,7 +347,7 @@ const VerticalCarousel: FC<VerticalCarouselProps> = () => {
                     </li>
                     <li className="font-paragraph text-foreground text-subtitle_heading">
                       <span className="inline-flex "> : </span>
-                      {"   "}Modular Sequential | Modula | All - in
+                      {"   "}Modular Sequential | Modular | All - in
                     </li>
                     <li className="font-paragraph text-foreground text-subtitle_heading">
                       2 approaches

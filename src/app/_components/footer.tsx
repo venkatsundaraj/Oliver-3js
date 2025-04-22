@@ -99,7 +99,8 @@ const Footer: FC<FooterProps> = ({}) => {
             ))}
           </ul>
           <span className="text-[14px] font-paragraph text-foreground mt-8 justify-items-end block md:hidden">
-            ©2024 Cosmos Strategy · Built with love by Firebrand Labs
+            @{new Date().getFullYear()} Cosmos Strategy · Built with love by
+            Firebrand Labs
           </span>
         </div>
       </div>

@@ -46,7 +46,7 @@ const AccordianTeamThumbnail: FC<AccordianTeamThumbnailProps> = ({ data }) => {
                   .map((item, i) => (
                     <article
                       key={i}
-                      className="grid grid-cols-1 md:grid-cols-3 items-start justify-center gap-4 w-full border border-muted-foreground"
+                      className="grid grid-cols-1 md:grid-cols-3 items-start justify-center gap-4 w-full border p-2 border-muted-foreground"
                     >
                       <Image
                         src={item.fileUrl}
@@ -55,7 +55,7 @@ const AccordianTeamThumbnail: FC<AccordianTeamThumbnailProps> = ({ data }) => {
                         width={200}
                         height={400}
                       />
-                      <div className="flex items-start justify-start flex-col gap-4 md:col-start-2 md:col-end-4 md:p-8">
+                      <div className="flex items-start justify-start flex-col gap-4 p-2 md:col-start-2 md:col-end-4 md:p-8">
                         <div className="flex flex-wrap md:flex-nowrap items-center justify-start md:justify-center gap-2 md:gap-4">
                           <h4 className="font-heading text-left text-tertiary_heading font-normal text-primary-foreground leading-tight">
                             {item.name}
@@ -163,7 +163,7 @@ const AccordianTeamThumbnail: FC<AccordianTeamThumbnailProps> = ({ data }) => {
                   .map((item, i) => (
                     <article
                       key={i}
-                      className="grid grid-cols-1 md:grid-cols-3 items-start justify-center gap-4 w-full border border-muted-foreground"
+                      className="grid grid-cols-1 p-2 md:grid-cols-3 items-start justify-center gap-4 w-full border border-muted-foreground"
                     >
                       <Image
                         src={item.fileUrl}
@@ -172,7 +172,7 @@ const AccordianTeamThumbnail: FC<AccordianTeamThumbnailProps> = ({ data }) => {
                         width={200}
                         height={400}
                       />
-                      <div className="flex items-start justify-start flex-col gap-4 md:col-start-2 md:col-end-4  md:p-8">
+                      <div className="flex items-start justify-start flex-col p-2 gap-4 md:col-start-2 md:col-end-4  md:p-8">
                         <div className="flex flex-wrap md:flex-nowrap items-center justify-start md:justify-center gap-2 md:gap-4">
                           <h4 className="font-heading text-left text-tertiary_heading font-normal text-primary-foreground leading-tight">
                             {item.name}

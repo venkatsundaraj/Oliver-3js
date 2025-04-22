@@ -33,7 +33,7 @@ const page = async ({ params }: PageProps) => {
     <>
       <section className="w-screen flex flex-col items-center justify-center">
         <div className="container flex flex-col ">
-          <article className="grid grid-cols-1 md:grid-cols-3 items-center justify-center border border-muted-foreground gap-4 w-full mt-40 pb-2">
+          <article className="grid grid-cols-1 md:grid-cols-3 p-2 items-center justify-center border border-muted-foreground gap-4 w-full mt-40 pb-2">
             <Image
               src={member.fileUrl}
               alt={member.name}
@@ -41,7 +41,7 @@ const page = async ({ params }: PageProps) => {
               width={200}
               height={400}
             />
-            <div className="flex items-start justify-start flex-col gap-4 md:col-start-2 md:col-end-4 md:p-8">
+            <div className="flex items-start justify-start flex-col p-2 gap-4 md:col-start-2 md:col-end-4 md:p-8">
               <div className="flex flex-wrap md:flex-nowrap items-center justify-start md:justify-center gap-2 md:gap-4">
                 <h4 className="font-heading text-left text-tertiary_heading font-normal text-primary-foreground leading-tight">
                   {member.name}
