@@ -28,7 +28,7 @@ const Model: FC<ModelProps> = ({}) => {
 
   useEffect(() => {
     if (sectionRef.current) {
-      setSectionHeight(sectionRef.current.offsetHeight); // Set the section height
+      setSectionHeight(sectionRef.current.offsetHeight); // Set the section heightgit fddd
     }
   }, [sectionRef]);
 
