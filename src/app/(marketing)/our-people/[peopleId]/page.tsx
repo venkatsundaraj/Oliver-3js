@@ -135,7 +135,7 @@ const page = async ({ params }: PageProps) => {
               <div className="flex flex-col justify-start items-start md:flex-col w-full gap-8 mb-8 ">
                 <div>
                   {member.companyProfiles.length ? (
-                    <h2 className="text-secondary-foreground font-heading text-secondary_heading  mb-2">
+                    <h2 className="text-secondary-foreground font-heading text-secondary_heading hidden  mb-2">
                       Global Client Portfolio
                     </h2>
                   ) : null}
