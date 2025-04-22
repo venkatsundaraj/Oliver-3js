@@ -10,6 +10,7 @@ import CharacterOne from "./character-one";
 import { THRESHOLD_MAXIMUM_SCALE_VALUE } from "@/config/threejs-constants";
 import { Icons } from "./icons";
 import CircularProgressArrow from "@/app/_components/circular-arrow-progress";
+import Link from "next/link";
 
 interface ModelProps {}
 
@@ -57,14 +58,17 @@ const Model: FC<ModelProps> = ({}) => {
           />
         </Suspense>
       </Canvas>
-      <div className="absolute bottom-[40px] left-1/2 -translate-x-1/2 bg-transparent ">
+      <Link
+        href={"/#our-terrain"}
+        className="absolute bottom-[40px] left-1/2 -translate-x-1/2 bg-transparent z-[50]"
+      >
         <CircularProgressArrow
           progress={Math.max(frameValue * 100, 0)}
           size={50}
           strokeWidth={3}
           className="text-secondary-foreground"
         />
-      </div>
+      </Link>
       <section
         className={cn(
           "flex items-center  justify-center flex-col absolute left-0 top-0  w-screen h-screen duration-500 transition-opacity overflow-hidden ",

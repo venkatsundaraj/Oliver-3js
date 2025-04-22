@@ -132,7 +132,18 @@ const page = async ({ params }: PageProps) => {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 items-start justify-center py-8 bg-background gap-10">
             <div className="gap-4 w-full ">
-              <CountryFlags data={member.companyProfiles} />
+              <div className="flex flex-col justify-start items-start md:flex-col w-full gap-8 mb-8 ">
+                <div>
+                  {member.companyProfiles.length ? (
+                    <h2 className="text-secondary-foreground font-heading text-secondary_heading  mb-2">
+                      Global Client Portfolio
+                    </h2>
+                  ) : null}
+                </div>
+                <div className="gap-4 w-full ">
+                  <CountryFlags data={member.companyProfiles} />
+                </div>
+              </div>
             </div>
             <div className="flex items-start justify-start flex-col w-full">
               {!member.countryFlags ||
@@ -140,9 +151,11 @@ const page = async ({ params }: PageProps) => {
                 <div className="w-full">
                   <div className="flex flex-col justify-start items-start md:flex-col w-full gap-8 mb-8 ">
                     <div>
-                      <h2 className="text-secondary-foreground font-heading text-secondary_heading  mb-2">
-                        Countries
-                      </h2>
+                      {member.countryFlags.length ? (
+                        <h2 className="text-secondary-foreground font-heading text-secondary_heading  mb-2">
+                          Countries
+                        </h2>
+                      ) : null}
                     </div>
                     <div className="gap-4 w-full ">
                       <CountryFlags data={member.countryFlags} />
@@ -171,9 +184,11 @@ const page = async ({ params }: PageProps) => {
             <div className="grid grid-cols-1 md:grid-cols-2 items-start justify-center py-8 bg-background gap-10">
               <div className="flex flex-col justify-start items-start md:flex-col  gap-8 mt-8 mb-8 md:py-8">
                 <div>
-                  <h2 className="text-secondary-foreground font-heading text-secondary_heading  mb-2">
-                    Countries
-                  </h2>
+                  {member.countryFlags[0] ? (
+                    <h2 className="text-secondary-foreground font-heading text-secondary_heading  mb-2">
+                      Countries
+                    </h2>
+                  ) : null}
                 </div>
                 <div className="gap-4 w-full ">
                   <CountryFlags data={member.countryFlags} />

@@ -230,7 +230,7 @@ const VerticalCarousel: FC<VerticalCarouselProps> = () => {
               <Image
                 alt="Our Trrain"
                 className="w-[280px] mt-6"
-                src="https://zkok4chdpn.ufs.sh/f/ZowmNmBHF7rVXcTfDvNPNKpEC2qHOlTSV3oM1muw8adnj5RY"
+                src="https://zkok4chdpn.ufs.sh/f/ZowmNmBHF7rV4j0m9M58tCRcZbLox5S9hfdI037uwUEjeQWF"
                 width={300}
                 height={300}
               />
@@ -268,7 +268,7 @@ const VerticalCarousel: FC<VerticalCarouselProps> = () => {
                 <br />
                 <span>70% client side,</span>
                 <br />{" "}
-                <span className="text-foreground">practitioner experience</span>
+                <span className="text-foreground">Practitioner experience</span>
               </h4>
               <Image
                 alt="Our Trrain"
@@ -334,7 +334,7 @@ const VerticalCarousel: FC<VerticalCarouselProps> = () => {
                   <h4 className="font-paragraph text-extra_paragraph_heading text-secondary-foreground">
                     Engagement
                   </h4>
-                  <ul className="grid grid-cols-2 items-start justify-center w-full gap-4">
+                  <ul className="grid grid-cols-2  items-start justify-center w-full gap-4">
                     <li className="font-paragraph text-foreground text-subtitle_heading">
                       3 levels
                     </li>

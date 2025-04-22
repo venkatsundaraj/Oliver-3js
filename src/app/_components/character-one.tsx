@@ -126,7 +126,7 @@ export default function CharacterOne({
           value += 1;
           setScrollValue(value);
         }
-      }, 20);
+      }, 65);
 
       return () => clearInterval(interval);
     };

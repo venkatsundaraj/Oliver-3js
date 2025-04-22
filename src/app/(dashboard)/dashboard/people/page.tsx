@@ -27,9 +27,7 @@ const page = async ({}: pageProps) => {
               data.map((item, i) => (
                 <li key={i} className="w-full">
                   <div className="flex w-full py-4 px-4 border border-foreground rounded-md items-center justify-between">
-                    <h4 className="text-foreground">
-                      {item.name} ({item.role})
-                    </h4>
+                    <h4 className="text-foreground">{item.name}</h4>
                     <EditPostButton post={item} type="people" />
                   </div>
                 </li>

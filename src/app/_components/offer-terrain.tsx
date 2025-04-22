@@ -13,7 +13,7 @@ import { Item } from "@radix-ui/react-navigation-menu";
 
 const offerterrain = () => {
   const [activeDot, setActiveDot] = useState(0);
-  const AUTO_NEXT_INTERVAL = 8000;
+  const AUTO_NEXT_INTERVAL = 5000;
   useEffect(() => {
     const interval = setInterval(() => {
       handleArrowClick();
